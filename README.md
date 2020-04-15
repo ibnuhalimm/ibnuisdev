@@ -22,6 +22,14 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
 ## Do this command
-- composer update
-- npm install
-- npm run watch / production
+```bash
+$~ composer update
+```
+
+```bash
+$~ npm install
+```
+
+```bash
+$~ npm run watch / production
+```
