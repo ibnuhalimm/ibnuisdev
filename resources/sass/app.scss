@@ -8,6 +8,17 @@
 // @import '~bootstrap/scss/bootstrap';
 
 // Tailwindcss
+/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
+/* purgecss end ignore */
+
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+.bg-image {
+    background-image: url('../bg.jpg');
+}
+
 @tailwind utilities;

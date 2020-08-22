@@ -6,90 +6,52 @@
 
         <title>Ibnu Halim Mustofa</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ URL::asset('css/icons/flaticon.css') }}">
+        <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
     </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Hi, Welcome
-                </div>
-
-                <div class="links">
-                    <a href="javascript:;">
-                        {{ app()->version() }}
+    <body class="bg-image bg-top sm:bg-center bg-no-repeat bg-cover bg-fixed">
+        <div class="mx-auto sm:w-full min-h-screen flex flex-col sm:justify-center">
+            <h1 class="mt-6 sm:mt-0 uppercase text-blue-one text-5xl font-bold text-center tracking-widest" style="font-size: 5.65rem">
+                <span class="block">Coming</span>
+                <span class="block -mt-10">Soon</span>
+            </h1>
+            <h2 class="text-center mt-8 text-3xl text-blue-two tracking-wider">
+                <span class="block">
+                    I will launch my new website
+                </span>
+                <span>very soon!</span>
+            </h2>
+            <ul class="block mt-6 text-center">
+                <li class="inline-block mx-3">
+                    <a href="https://github.com/ibnuhalimm" target="_blank" class="block text-pink-one hover:text-pink-two p-1">
+                        <i class="flaticon-github"></i>
                     </a>
-                </div>
-            </div>
+                </li>
+                <li class="inline-block mx-3">
+                    <a href="mailto:ibnuhalimm@gmail.com" target="_blank" class="block text-pink-one hover:text-pink-two p-1">
+                        <i class="flaticon-email"></i>
+                    </a>
+                </li>
+                <li class="inline-block mx-3">
+                    <a href="https://linkedin.com/in/ibnuhalimm" target="_blank" class="block text-pink-one hover:text-pink-two p-1">
+                        <i class="flaticon-linkedin"></i>
+                    </a>
+                </li>
+                <li class="inline-block mx-3">
+                    <a href="https://instagram.com/ibnuisdev" target="_blank" class="block text-pink-one hover:text-pink-two p-1">
+                        <i class="flaticon-instagram"></i>
+                    </a>
+                </li>
+                <li class="inline-block mx-3">
+                    <a href="https://twitter.com/ibnuisdev" target="_blank" class="block text-pink-one hover:text-pink-two p-1">
+                        <i class="flaticon-twitter"></i>
+                    </a>
+                </li>
+            </ul>
+            <p class="text-gray-600 sm:text-gray-400 mt-32 sm:mt-40 text-center text-xs tracking-wider">
+                Credits Image By pawel-czerwinski (Unsplash)
+            </p>
         </div>
     </body>
 </html>
