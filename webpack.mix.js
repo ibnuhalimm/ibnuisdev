@@ -21,7 +21,7 @@ mix.js('resources/js/app.js', 'public/js')
    })
    .purgeCss({
       enabled: mix.inProduction(),
-      folders: ['src', 'templates'],
+      folders: ['src', 'templates', 'resources/views'],
       extensions: ['html', 'js', 'php', 'vue'],
       whitelistPatternsChildren: [/^bg/, /^text/]
    });

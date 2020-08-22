@@ -1,8 +1,8 @@
 module.exports = {
   purge: [
-    // './resource/views/*.html',
-    // './resource/views/*.vue',
-    './resource/views/*.php'
+    // './resources/views/*.html',
+    // './resources/views/*.vue',
+    './resources/views/*.php'
   ],
   theme: {
     extend: {
