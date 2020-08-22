@@ -19,4 +19,9 @@ mix.js('resources/js/app.js', 'public/js')
       processCssUrls: false,
       postCss: [tailwindcss('./tailwind.config.js')],
    })
-   .purgeCss();
+   .purgeCss({
+      enabled: mix.inProduction(),
+      folders: ['src', 'templates'],
+      extensions: ['html', 'js', 'php', 'vue'],
+      whitelistPatternsChildren: [/^bg/, /^text/]
+   });
