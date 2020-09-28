@@ -1,24 +1,21 @@
 // Fonts
 // @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
-// @import 'variables';
-
-// Bootstrap
-// @import '~bootstrap/scss/bootstrap';
-
 // Tailwindcss
 /* purgecss start ignore */
 @tailwind base;
 @tailwind components;
 /* purgecss end ignore */
 
+html {
+    scroll-behavior: smooth;
+}
 body {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
-// .bg-image {
-//     background-image: url('../bg.jpg');
-// }
+[x-cloak] {
+    display: none;
+}
 
 @tailwind utilities;
