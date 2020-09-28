@@ -93,8 +93,7 @@
                         Hi, my name is Ibnu
                     </h2>
                     <p class="mt-2 leading-6 xl:text-lg">
-                        I'm Fullstack Web Developer with robust problem-solving skills and proven experience in creating
-                        and designing high quality software.
+                        {{ $top->description ?? '' }}
                     </p>
                 </div>
                 <div class="flex justify-center my-6">
@@ -116,7 +115,9 @@
                     <h2 class="text-2xl xl:text-3xl font-bold">
                         Portfolio
                     </h2>
-                    <h3 class="xl:text-lg">List of projects I've worked on</h3>
+                    <h3 class="xl:text-lg">
+                        {{ $portfolio->description ?? '' }}
+                    </h3>
                 </div>
                 <div class="grid grid-cols-2 xl:grid-cols-4 gap-0 xl:gap-2">
                     <div class="w-full h-32 bg-gray-200 flex flex-col justify-end">
@@ -188,7 +189,9 @@
                     <h2 class="text-2xl xl:text-3xl font-bold">
                         Skills
                     </h2>
-                    <h3 class="text-lg">Keep learning and growing up</h3>
+                    <h3 class="text-lg">
+                        {{ $skills->description ?? '' }}
+                    </h3>
                 </div>
                 <div class="grid grid-cols-2 xl:grid-cols-4 gap-0">
                     <div class="w-full h-16 xl:h-12 bg-ib-two text-ib-four flex items-center justify-center">
@@ -242,7 +245,9 @@
                     <h2 class="text-2xl xl:text-3xl font-bold">
                         Contact
                     </h2>
-                    <h3 class="text-lg">Just feel free to reaching me out</h3>
+                    <h3 class="text-lg">
+                        {{ $contact->description ?? '' }}
+                    </h3>
                 </div>
                 <div>
                     <div class="mb-5">

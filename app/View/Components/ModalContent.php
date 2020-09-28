@@ -21,7 +21,7 @@ class ModalContent extends Component
                 break;
 
             case 'medium':
-                $this->width = 'w-1/3';
+                $this->width = 'w-1/2';
                 break;
 
             case 'large':
