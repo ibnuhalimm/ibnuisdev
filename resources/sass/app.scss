@@ -18,4 +18,20 @@ body {
     display: none;
 }
 
+@media (min-width: 1280px) {
+    [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+    [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+        font-size: 14px;
+    }
+
+    .menu-item--sub {
+        display: none;
+        min-width: 8.5rem;
+    }
+    .menu-item:hover .menu-item--sub,
+    .menu-item:focus .menu-item--sub {
+        display: block;
+    }
+}
+
 @tailwind utilities;

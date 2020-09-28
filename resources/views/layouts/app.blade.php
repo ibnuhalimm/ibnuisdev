@@ -1,80 +1,120 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Ibnu's Dashboard</title>
+    <meta name="robots" content="noindex, nofollow">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    @stack('top_css')
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @stack('bottom_css')
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+    @livewireStyles
+
+    @stack('top_scripts')
+
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+<body class="bg-gray-200 flex flex-col min-h-screen justify-between text-sm" :class="{'overflow-hidden': opendropdown, 'overflow-y-auto': !opendropdown}" x-data="{ opendropdown: false }">
+    <nav class="">
+        <div class="w-full fixed z-30 h-1 top-0 left-0 right-0 bg-ib-three"></div>
+        <div class="w-full fixed z-30 top-0 left-0 right-0 bg-ib-one shadow-md xl:shadow-none py-3 xl:py-5 leading-9 xl:leading-6 mt-1">
+            <div class="w-11/12 sm:w-3/5 xl:w-4/5 mx-auto xl:flex xl:flex-row xl:items-center xl:justify-between">
+                <div class="flex flex-row items-center justify-between xl:w-1/6">
+                    <a href="{{ route('home') }}" class="font-bold text-xl uppercase text-white">
+                        Ibnu's
+                    </a>
+                    <button class="p-1 outline-none hover:outline-none focus:outline-none xl:hidden" @click="opendropdown = !opendropdown;">
+                        <svg viewBox="0 0 20 20" fill="currentColor" class="menu-alt3 w-6 h-6 fill-current text-white"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+                <div :class="{'block': opendropdown, 'hidden': !opendropdown}" class="xl:flex xl:flex-row xl:items-center xl:justify-between mt-6 xl:mt-0 sm:pb-10 xl:pb-0 w-full min-h-screen xl:min-h-0 z-40">
+                    <div class="flex flex-row items-center justify-center xl:justify-start text-center xl:text-left py-1 px-3 xl:py-1">
+                        @auth
+                            <ul>
+                                <li class="mb-3 xl:mb-0 xl:inline-block">
+                                    <a href="{{ route('home') }}" class="block px-6 text-white hover:text-gray-300 @if (Request::is('home')) font-bold @endif">Dashboard</a>
                                 </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                <li class="mb-3 xl:mb-0 xl:inline-block">
+                                    <a href="#" class="block px-6 text-white hover:text-gray-300">
+                                        Section
+                                    </a>
+                                </li>
+                                <li class="mb-3 xl:mb-0 xl:inline-block">
+                                    <a href="#" class="block px-6 text-white hover:text-gray-300">
+                                        Projects
+                                    </a>
+                                </li>
+                                <li class="mb-3 xl:mb-0 xl:inline-block">
+                                    <a href="#" class="block px-6 text-white hover:text-gray-300">
+                                        Skills
+                                    </a>
+                                </li>
+                                <li class="mb-3 xl:mb-0 xl:inline-block">
+                                    <a href="#" class="block px-6 text-white hover:text-gray-300">
+                                        Messages
+                                    </a>
+                                </li>
+                            </ul>
+                        @endauth
+                    </div>
+                    <hr class="w-full h-1 mt-2 border border-r-0 border-b-0 border-l-0 border-solid border-gray-600 block xl:hidden">
+                    <div class="h-full sm:h-64 xl:h-auto sm:overflow-y-auto xl:overflow-hidden text-center xl:text-right mt-1 xl:mt-0 py-5 xl:py-0">
+                        <ul>
+                            <li class="mb-3 xl:mb-0 xl:inline-block menu-item">
+                                @guest
+                                    <span class="px-3 text-white hover:text-gray-300 inline-flex menu-item--link">
+                                        Login
+                                    </span>
+                                @else
+                                    <a href="#" class="px-3 text-white hover:text-gray-300 inline-flex menu-item--link">
+                                        {{ Auth::user()->name }}
+                                        <svg class="fill-current h-6 w-4 ml-2 hidden xl:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                                        </svg>
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
+                                    <ul class="xl:absolute px-0 bg-ib-one py-2 xl:pt-8 xl:pb-4 md:rounded-bl-md md:rounded-br-md md:shadow-md menu-item--sub xl:text-left">
+                                        <li>
+                                            <a href="#" class="block px-5 py-2 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm xl:text-base">
+                                                Profil
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('auth.logout') }}" class="block px-5 py-2 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm xl:text-base">
+                                                Logout
+                                            </a>
+                                        </li>
+                                    </ul>
+                                @endguest
                             </li>
-                        @endguest
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </nav>
+        </div>
+    </nav>
+    <main class="mt-16 xl:mt-20 mb-auto pt-6 pb-10">
+        <div class="w-11/12 sm:w-3/5 xl:w-4/5 mx-auto">
 
-        <main class="py-4">
             @yield('content')
-        </main>
-    </div>
+
+        </div>
+    </main>
+    <footer class="w-full text-center py-4 bg-white text-xs">
+        <p class="text-ib-three">
+            Ibnu's - Copyright 2020 @if (date('Y') != 2020) {{ ' - ' . date('Y') }} @endif
+        </p>
+    </footer>
+
+    @livewireScripts
+    @stack('bottom_scripts')
+
 </body>
 </html>
