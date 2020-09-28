@@ -278,7 +278,7 @@
         </div>
     </main>
     <footer class="w-full text-center py-4 bg-ib-one text-ib-four text-xs">
-        Copyright 2020 - All Right Reserved
+        Copyright 2020 @if (date('Y') != 2020) {{ ' - ' . date('Y') }} @endif  | All Right Reserved
     </footer>
 
 
