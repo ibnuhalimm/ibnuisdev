@@ -13,10 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     @stack('top_css')
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @livewireStyles
     @stack('bottom_css')
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
-    @livewireStyles
 
     @stack('top_scripts')
 
@@ -47,7 +47,7 @@
                                     </a>
                                 </li>
                                 <li class="mb-3 xl:mb-0 xl:inline-block">
-                                    <a href="#" class="block px-6 text-white hover:text-gray-300">
+                                    <a href="{{ route('dashboard.project.index') }}" class="block px-6 text-white hover:text-gray-300  @if (Request::is('home/project*')) font-bold @endif">
                                         Projects
                                     </a>
                                 </li>

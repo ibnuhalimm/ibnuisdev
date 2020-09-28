@@ -19,13 +19,14 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @livewireStyles
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
 </head>
 
 <body class="bg-ib-one text-ib-four flex flex-col min-h-screen justify-between text-base"
     :class="{'overflow-hidden': opendropdown, 'overflow-y-auto': !opendropdown}"
-    x-data="{ opendropdown: false, is_modal_open: false }">
+    x-data="{ opendropdown: false }">
     <nav class="w-full fixed bg-ib-one z-30 top-0 left-0 right-0 py-3 xl:py-5 leading-9 xl:leading-7">
         <div class="w-11/12 sm:w-3/5 xl:w-3/4 mx-auto xl:flex xl:flex-row xl:items-center xl:justify-center">
             <div class="flex flex-row items-center justify-between xl:hidden">
@@ -119,69 +120,7 @@
                         {{ $portfolio->description ?? '' }}
                     </h3>
                 </div>
-                <div class="grid grid-cols-2 xl:grid-cols-4 gap-0 xl:gap-2">
-                    <div class="w-full h-32 bg-gray-200 flex flex-col justify-end">
-                        <a href="javascript:;"
-                            class="block py-1 px-3 text-center bg-ib-one bg-opacity-75 hover:text-ib-three outline-none focus:outline-none"
-                            @click="is_modal_open = true">
-                            <p class="truncate text-sm">Koperasi Pengadilan Tinggi Jawa Tengah</p>
-                        </a>
-                    </div>
-                    <div class="w-full h-32 bg-gray-400 flex flex-col justify-end">
-                        <a href="javascript:;"
-                            class="block py-1 px-3 text-center bg-ib-one bg-opacity-75 hover:text-ib-three outline-none focus:outline-none"
-                            @click="is_modal_open = true">
-                            <p class="truncate text-sm">Sistem Antrian Kaca PT Glassmart Semarang</p>
-                        </a>
-                    </div>
-                    <div class="w-full h-32 bg-gray-400 flex flex-col justify-end">
-                        <a href="javascript:;"
-                            class="block py-1 px-3 text-center bg-ib-one bg-opacity-75 hover:text-ib-three outline-none focus:outline-none"
-                            @click="is_modal_open = true">
-                            <p class="truncate text-sm">HR dan Presensi PT Trans Marga Jateng</p>
-                        </a>
-                    </div>
-                    <div class="w-full h-32 bg-gray-200 flex flex-col justify-end">
-                        <a href="javascript:;"
-                            class="block py-1 px-3 text-center bg-ib-one bg-opacity-75 hover:text-ib-three outline-none focus:outline-none"
-                            @click="is_modal_open = true">
-                            <p class="truncate text-sm">Company Profile PT Trans Marga Jateng</p>
-                        </a>
-                    </div>
-                    <div class="w-full h-32 bg-gray-200  flex flex-col justify-end">
-                        <a href="javascript:;"
-                            class="block py-1 px-3 text-center bg-ib-one bg-opacity-75 hover:text-ib-three outline-none focus:outline-none"
-                            @click="is_modal_open = true">
-                            <p class="truncate text-sm">Lainnya Lagi di PT Entah Mana</p>
-                        </a>
-                    </div>
-                    <div class="w-full h-32 bg-gray-400 flex flex-col justify-end">
-                        <a href="javascript:;"
-                            class="block py-1 px-3 text-center bg-ib-one bg-opacity-75 hover:text-ib-three outline-none focus:outline-none"
-                            @click="is_modal_open = true">
-                            <p class="truncate text-sm">Booking System App at TukuTiket.com</p>
-                        </a>
-                    </div>
-                    <div class="w-full h-32 bg-gray-200 flex flex-col justify-end">
-                        <a href="javascript:;"
-                            class="block py-1 px-3 text-center bg-ib-one bg-opacity-75 hover:text-ib-three outline-none focus:outline-none"
-                            @click="is_modal_open = true">
-                            <p class="truncate text-sm">Koperasi Pengadilan Tinggi Jawa Tengah</p>
-                        </a>
-                    </div>
-                    <div class="w-full h-32 bg-gray-400 flex flex-col justify-end">
-                        <a href="javascript:;"
-                            class="block py-1 px-3 text-center bg-ib-one bg-opacity-75 hover:text-ib-three outline-none focus:outline-none"
-                            @click="is_modal_open = true">
-                            <p class="truncate text-sm">Sistem Antrian Kaca PT Glassmart Semarang</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="flex justify-center mt-6">
-                    <button class="py-2 px-6 bg-ib-three text-ib-two shadow-md outline-none focus:outline-none">
-                        More Projects
-                    </button>
-                </div>
+                @livewire('front-end.project', [ 'page' => 1, 'perPage' => 8 ])
             </section>
 
             <section id="skills-section" class="pt-24 mb-32 xl:w-3/4 xl:mx-auto">
@@ -286,39 +225,6 @@
         Copyright 2020 @if (date('Y') != 2020) {{ ' - ' . date('Y') }} @endif  | All Right Reserved
     </footer>
 
-
-    <div class="w-full h-full fixed inset-0 bg-gray-900 bg-opacity-75 z-50"
-        x-show.transition.opacity="is_modal_open === true" x-cloak>
-        <div class="w-11/12 md:w-3/5 px-8 py-6 bg-ib-four mt-20 mx-auto"
-            x-show.transition.5000ms="is_modal_open === true" x-cloak>
-            <div class="mb-10 text-center">
-                <h4 class="text-lg text-ib-one">Project Details</h4>
-            </div>
-            <div class="xl:px-6">
-                <div class="mb-6 text-ib-one text-sm flex flex-col xl:flex-row justify-between">
-                    <div class="w-full xl:w-2/5 h-32 xl:h-56 bg-gray-500 mb-6"></div>
-                    <div class="xl:w-3/5 xl:ml-8">
-                        <h4 class="font-bold">Name</h4>
-                        <p class="mb-4">Koperasi Pengadilan Tinggi</p>
-                        <h4 class="font-bold">Description</h4>
-                        <p class="mb-4">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt consectetur voluptatem vitae id repellendus. Nihil quo, nulla ea, aliquam laborum aspernatur laudantium laboriosam ad ab iure repellat enim, reiciendis suscipit?
-                        </p>
-                        <h4 class="font-bold">Link</h4>
-                        <p class="mb-4">
-                            <a href="#" class="text-ib-three hover:underline" target="_blank">https://link.to/project</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <button class="py-2 px-6 bg-ib-three text-ib-two shadow-md outline-none focus:outline-none" @click="is_modal_open = false">
-                        Close
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script>
         $('.menu-item, .btn-next-section').click(function(e) {
@@ -335,6 +241,8 @@
             }
         });
     </script>
+    @livewireScripts
+
 </body>
 
 </html>
