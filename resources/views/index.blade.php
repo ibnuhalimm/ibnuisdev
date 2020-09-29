@@ -133,44 +133,11 @@
                     </h3>
                 </div>
                 <div class="grid grid-cols-2 xl:grid-cols-4 gap-0">
-                    <div class="w-full h-16 xl:h-12 bg-ib-two text-ib-four flex items-center justify-center">
-                        HTML & CSS
-                    </div>
-                    <div class="w-full h-16 xl:h-12 bg-ib-two text-ib-four flex items-center justify-center">
-                        Javascript
-                    </div>
-                    <div class="w-full h-16 xl:h-12 bg-ib-two text-ib-four flex items-center justify-center">
-                        PHP
-                    </div>
-                    <div class="w-full h-16 xl:h-12 bg-ib-two text-ib-four flex items-center justify-center">
-                        MySQL/MariaDB
-                    </div>
-
-                    <div class="w-full h-16 xl:h-12 bg-ib-two text-ib-four flex items-center justify-center">
-                        Bootstrap
-                    </div>
-                    <div class="w-full h-16 xl:h-12 bg-ib-two text-ib-four flex items-center justify-center">
-                        TailwindCSS
-                    </div>
-                    <div class="w-full h-16 xl:h-12 bg-ib-two text-ib-four flex items-center justify-center">
-                        jQuery
-                    </div>
-                    <div class="w-full h-16 xl:h-12 bg-ib-two text-ib-four flex items-center justify-center">
-                        Laravel
-                    </div>
-
-                    <div class="w-full h-16 xl:h-12 bg-ib-two text-ib-four flex items-center justify-center">
-                        Codeigniter
-                    </div>
-                    <div class="w-full h-16 xl:h-12 bg-ib-two text-ib-four flex items-center justify-center">
-                        Linux Env.
-                    </div>
-                    <div class="w-full h-16 xl:h-12 bg-ib-two text-ib-four flex items-center justify-center">
-                        Mikrotik Router
-                    </div>
-                    <div class="w-full h-16 xl:h-12 bg-ib-two text-ib-four flex items-center justify-center">
-                        ...
-                    </div>
+                    @foreach ($skill_list as $skill)
+                        <div class="w-full h-16 xl:h-12 bg-ib-two text-ib-four flex items-center justify-center">
+                            {{ $skill->name }}
+                        </div>
+                    @endforeach
                 </div>
                 <div class="flex justify-center mt-6">
                     <a href="#contact-section" class="btn-next-section py-2 px-6 bg-ib-three text-ib-two shadow-md outline-none focus:outline-none">

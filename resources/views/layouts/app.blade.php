@@ -52,7 +52,7 @@
                                     </a>
                                 </li>
                                 <li class="mb-3 xl:mb-0 xl:inline-block">
-                                    <a href="#" class="block px-6 text-white hover:text-gray-300">
+                                    <a href="{{ route('dashboard.skills.index') }}" class="block px-6 text-white hover:text-gray-300 @if (Request::is('home/skills*')) font-bold @endif">
                                         Skills
                                     </a>
                                 </li>

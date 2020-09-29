@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Section;
+use App\Skill;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -19,11 +20,14 @@ class PageController extends Controller
         $skills = Section::where('section', Section::SECTION_SKILLS)->first();
         $contact = Section::where('section', Section::SECTION_CONTACT)->first();
 
+        $skill_list = Skill::orderBy('order_number', 'asc')->orderBy('name', 'asc')->get();
+
         $data = [
             'top' => $top,
             'portfolio' => $portfolio,
             'skills' => $skills,
-            'contact' => $contact
+            'contact' => $contact,
+            'skill_list' => $skill_list
         ];
 
         return view('index', $data);
