@@ -22,6 +22,18 @@
     @livewireStyles
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+
+    @if (config('app.env') == 'production')
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177527651-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-177527651-2');
+    </script>
+    @endif
 </head>
 
 <body class="bg-ib-one text-ib-four flex flex-col min-h-screen justify-between text-base"
