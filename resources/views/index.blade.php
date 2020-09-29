@@ -155,35 +155,7 @@
                         {{ $contact->description ?? '' }}
                     </h3>
                 </div>
-                <div>
-                    <div class="mb-5">
-                        <label for="__nameContact">
-                            Name
-                        </label>
-                        <input type="text" name="name" id="__nameContact"
-                            class="w-full mt-1 py-2 px-3 bg-ib-two outline-none focus:outline-none" autocomplete="off">
-                    </div>
-                    <div class="mb-5">
-                        <label for="__emailContact">
-                            Email Address
-                        </label>
-                        <input type="email" name="email" id="__emailContact"
-                            class="w-full mt-1 py-2 px-3 bg-ib-two outline-none focus:outline-none" autocomplete="off">
-                    </div>
-                    <div class="mb-5">
-                        <label for="__messageContact">
-                            Message
-                        </label>
-                        <textarea name="message" id="__messageContact"
-                            class="w-full mt-1 py-2 px-3 bg-ib-two outline-none focus:outline-none resize-none"
-                            rows="6" autocomplete="off"></textarea>
-                    </div>
-                    <div class="flex justify-center">
-                        <button class="py-2 px-6 bg-ib-three text-ib-two shadow-md outline-none focus:outline-none">
-                            Send Message
-                        </button>
-                    </div>
-                </div>
+                @livewire('front-end.message-form')
             </section>
 
         </div>

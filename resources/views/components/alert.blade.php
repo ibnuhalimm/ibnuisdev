@@ -7,7 +7,7 @@
                 {{ $title }}
             </h6>
         @endif
-        <button type="button" class="p-2 float-right -mt-2 text-{{ $color }}-700 hover:text-{{ $color }}-500" @click="is_open =! is_open">
+        <button type="button" class="p-2 float-right -mt-2 text-{{ $color }}-700 hover:text-{{ $color }}-500 outline-none focus:outline-none" @click="is_open =! is_open">
             &times;
         </button>
     </div>

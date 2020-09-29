@@ -21,4 +21,5 @@ Route::name('dashboard.')
     Route::get('project/edit/{id}', 'ProjectController@edit')->name('project.edit');
 
     Route::get('skills', 'SkillsController@index')->name('skills.index');
+    Route::get('message', 'MessageController@index')->name('message.index');
 });
