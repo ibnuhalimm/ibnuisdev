@@ -33,7 +33,7 @@
                             @if (empty($link))
                                 -
                             @else
-                                <a href="{{ $link }}" class="text-ib-three hover:underline" target="_blank">
+                                <a href="{{ $link }}" class="text-ib-three hover:underline" target="_blank" rel="noreferrer">
                                     {{ $link }}
                                 </a>
                             @endif
