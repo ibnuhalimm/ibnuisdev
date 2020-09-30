@@ -18,7 +18,9 @@
             </div>
             <div class="xl:px-6">
                 <div class="mb-6 text-ib-one text-sm flex flex-col xl:flex-row justify-between">
-                    <div class="w-full xl:w-2/5 h-32 xl:h-56 bg-gray-500 mb-6 bg-no-repeat bg-cover bg-center" style="background-image: url('{{ $image_url }}')"></div>
+                    <div class="w-full xl:w-2/5 mb-6">
+                        <img src="{{ $image_url }}" alt="{{ $name }}" class="w-full h-auto">
+                    </div>
                     <div class="xl:w-3/5 xl:ml-8">
                         <h4 class="font-bold">Name</h4>
                         <p class="mb-4">
