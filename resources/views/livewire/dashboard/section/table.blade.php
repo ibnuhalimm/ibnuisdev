@@ -22,14 +22,14 @@
             @if ($sections->isEmpty())
                 <x-tr-body>
                     <x-td class="px-6" colspan="4">
-                        Not data available
+                        No data available
                     </x-td>
                 </x-tr-body>
             @else
                 @php
                     $no = 1;
                 @endphp
-                @foreach ($sections as $section)
+                @foreach ($sections as $idx => $section)
                     <x-tr-body>
                         <x-td class="pl-6">
                             {{ $no++ }}
@@ -75,7 +75,7 @@
                     @error('edit_description') <x-form-error> {{ $message }} </x-form-error> @enderror
                 </x-form-label-inline>
                 <div class="text-center">
-                    <x-button type="button" color="gray-500" wire:click="cancelEditSection" wire:loading.attr="disabled" wire:loading.class="bg-opacity-50" wire:target="cancelEditSection, submitEditSection">
+                    <x-button type="button" color="gray" wire:click="cancelEditSection" wire:loading.attr="disabled" wire:loading.class="bg-opacity-50" wire:target="cancelEditSection, submitEditSection">
                         Cancel
                     </x-button>
                     <x-button type="button" color="ib-three" wire:click="submitEditSection" wire:loading.attr="disabled" wire:loading.class="bg-opacity-50" wire:target="cancelEditSection, submitEditSection">

@@ -70,14 +70,14 @@
     </x-form-label-inline>
 
     <div class="w-full px-6 text-center">
-        <x-button-link-primary href="{{ route('dashboard.project.index') }}" color="gray-500" wire:loading.class="bg-opacity-50" wire:target="submitUpdateProject">
+        <x-button-link-primary href="{{ route('dashboard.project.index') }}" color="gray" wire:loading.class="bg-opacity-50" wire:target="submitUpdateProject">
             Cancel
         </x-button-link-primary>
-        <x-button type="button" color="ib-three" wire:loading.attr="disabled" wire:loading.class="bg-opacity-50" wire:target="submitUpdateProject" wire:click="submitUpdateProject">
+        <x-button type="button" color="ib-three" wire:loading.attr="disabled" wire:loading.class="bg-opacity-50" wire:click="submitUpdateProject" wire:target="submitUpdateProject">
             <span wire:loading.remove wire:target="submitUpdateProject">
                 Update Data
             </span>
-            <span wire:loading>
+            <span wire:loading wire:target="submitUpdateProject">
                 Updating...
             </span>
         </x-button>

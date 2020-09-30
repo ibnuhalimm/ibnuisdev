@@ -57,6 +57,7 @@ class Table extends Component
      */
     public function createSkill()
     {
+        $this->is_edit_mode = false;
         $this->is_create_modal_open = 1;
     }
 

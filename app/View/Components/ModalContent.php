@@ -6,7 +6,7 @@ use Illuminate\View\Component;
 
 class ModalContent extends Component
 {
-    public $width;
+    public $size;
 
     /**
      * Create a new component instance.
@@ -15,23 +15,7 @@ class ModalContent extends Component
      */
     public function __construct($size = 'medium')
     {
-        switch ($size) {
-            case 'small':
-                $this->width = 'w-1/4';
-                break;
-
-            case 'medium':
-                $this->width = 'w-1/2';
-                break;
-
-            case 'large':
-                $this->width = 'w-3/4';
-                break;
-
-            default:
-                $this->width = 'w-1/3';
-                break;
-        }
+        $this->size = $size;
     }
 
     /**

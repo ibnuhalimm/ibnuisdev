@@ -25,17 +25,14 @@
             @if ($messages->isEmpty())
                 <x-tr-body>
                     <x-td class="px-6" colspan="4">
-                        Not data available
+                        No data available
                     </x-td>
                 </x-tr-body>
             @else
-                @php
-                    $no = 1;
-                @endphp
-                @foreach ($messages as $message)
+                @foreach ($messages as $idx => $message)
                     <x-tr-body>
                         <x-td class="pl-6">
-                            {{ $no++ }}
+                            {{ $idx + $messages->firstItem() }}
                         </x-td>
                         <x-td>
                             {{ $message->name }}

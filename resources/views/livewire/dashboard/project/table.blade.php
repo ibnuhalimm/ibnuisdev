@@ -11,7 +11,7 @@
         <div class="flex flex-col xl:flex-row items-start xl:items-center justify-between">
             <div>
                 <x-button-link-primary href="{{ route('dashboard.project.create') }}" color="ib-three">
-                    <svg class="w-5 h-5 -ml-1 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="currentColor">
+                    <svg class="w-4 h-4 -ml-1 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="currentColor">
                         <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
                     </svg>
                     NEW PROJECT
@@ -106,10 +106,10 @@
                 </p>
 
                 <div class="text-center">
-                    <x-button type="button" color="gray-500" wire:click="cancelDeleteProject" wire:loading.attr="disabled" wire:loading.class="bg-opacity-50" wire:target="cancelDeleteProject, submitDeleteProject">
+                    <x-button type="button" color="gray" wire:click="cancelDeleteProject" wire:loading.attr="disabled" wire:loading.class="bg-opacity-50" wire:target="cancelDeleteProject, submitDeleteProject">
                         No, Close
                     </x-button>
-                    <x-button type="button" color="red-500" wire:click="submitDeleteProject" wire:loading.attr="disabled" wire:loading.class="bg-opacity-50" wire:target="cancelDeleteProject, submitDeleteProject">
+                    <x-button type="button" color="red" wire:click="submitDeleteProject" wire:loading.attr="disabled" wire:loading.class="bg-opacity-50" wire:target="cancelDeleteProject, submitDeleteProject">
                         <span wire:loading.remove wire:target="submitDeleteProject">
                             Yes, Delete
                         </span>
