@@ -36,8 +36,7 @@
     @endif
 </head>
 
-<body class="bg-ib-one text-ib-four flex flex-col min-h-screen justify-between text-base"
-    :class="{'overflow-hidden': opendropdown, 'overflow-y-auto': !opendropdown}"
+<body class="bg-ib-one text-ib-four flex flex-col min-h-screen justify-between text-base overflow-y-scroll"
     x-data="{ opendropdown: false }">
     <nav class="w-full fixed bg-ib-one z-30 top-0 left-0 right-0 py-3 xl:py-5 leading-9 xl:leading-7">
         <div class="w-11/12 sm:w-3/5 xl:w-3/4 mx-auto xl:flex xl:flex-row xl:items-center xl:justify-center">
@@ -69,12 +68,12 @@
                     class="w-full h-full sm:h-64 xl:h-auto sm:overflow-y-auto xl:overflow-hidden text-center mt-8 xl:mt-0">
                     <ul>
                         <li class="mb-3 xl:mb-0 xl:inline-block">
-                            <a href="#home-section" class="menu-item block font-bold xl:font-normal xl:w-32 text-center hover:text-ib-three">
+                            <a href="#home-section" class="menu-item block font-bold xl:font-normal xl:w-32 text-center hover:text-ib-three" @click="opendropdown = !opendropdown;">
                                 Home
                             </a>
                         </li>
                         <li class="mb-3 xl:mb-0 xl:inline-block">
-                            <a href="#portfolio-section" class="menu-item block font-bold xl:font-normal xl:w-32 text-center hover:text-ib-three">
+                            <a href="#portfolio-section" class="menu-item block font-bold xl:font-normal xl:w-32 text-center hover:text-ib-three" @click="opendropdown = !opendropdown;">
                                 Portfolio
                             </a>
                         </li>
@@ -83,7 +82,7 @@
                                 style="top: .125rem">IBNU'S</a>
                         </li>
                         <li class="mb-3 xl:mb-0 xl:inline-block">
-                            <a href="#skills-section" class="menu-item block font-bold xl:font-normal xl:w-32 text-center hover:text-ib-three">
+                            <a href="#skills-section" class="menu-item block font-bold xl:font-normal xl:w-32 text-center hover:text-ib-three" @click="opendropdown = !opendropdown;">
                                 Skills
                             </a>
                         </li>
