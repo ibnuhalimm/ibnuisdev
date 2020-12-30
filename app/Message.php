@@ -2,12 +2,14 @@
 
 namespace App;
 
+use App\Notifications\ContactMeNotification;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
 
 class Message extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, Notifiable;
 
     /**
      * Mass fillable field
@@ -35,6 +37,18 @@ class Message extends Model
     protected $casts = [
         'is_replied' => 'boolean'
     ];
+
+    /**
+     * Model event
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::created(function($message) {
+            $message->notify(new ContactMeNotification($message));
+        });
+    }
 
     /**
      * ACcessor for `str_replied`
