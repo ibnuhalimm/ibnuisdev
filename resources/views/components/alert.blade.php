@@ -9,9 +9,9 @@
                         {{ $title }}
                     </h6>
                 @endif
-                <button type="button" class="p-2 float-right -mt-2 text-red-700 hover:text-red-500 outline-none focus:outline-none" @click="is_open =! is_open">
+                {{-- <button type="button" class="p-2 float-right -mt-2 text-red-700 hover:text-red-500 outline-none focus:outline-none" @click="is_open =! is_open">
                     &times;
-                </button>
+                </button> --}}
             </div>
             <div class="text-red-700">
                 {{ $slot }}
@@ -28,9 +28,9 @@
                         {{ $title }}
                     </h6>
                 @endif
-                <button type="button" class="p-2 float-right -mt-2 text-green-700 hover:text-green-500 outline-none focus:outline-none" @click="is_open =! is_open">
+                {{-- <button type="button" class="p-2 float-right -mt-2 text-green-700 hover:text-green-500 outline-none focus:outline-none" @click="is_open =! is_open">
                     &times;
-                </button>
+                </button> --}}
             </div>
             <div class="text-green-700">
                 {{ $slot }}
@@ -47,9 +47,9 @@
                         {{ $title }}
                     </h6>
                 @endif
-                <button type="button" class="p-2 float-right -mt-2 text-blue-700 hover:text-blue-500 outline-none focus:outline-none" @click="is_open =! is_open">
+                {{-- <button type="button" class="p-2 float-right -mt-2 text-blue-700 hover:text-blue-500 outline-none focus:outline-none" @click="is_open =! is_open">
                     &times;
-                </button>
+                </button> --}}
             </div>
             <div class="text-blue-700">
                 {{ $slot }}
@@ -66,9 +66,9 @@
                         {{ $title }}
                     </h6>
                 @endif
-                <button type="button" class="p-2 float-right -mt-2 text-gray-700 hover:text-gray-500 outline-none focus:outline-none" @click="is_open =! is_open">
+                {{-- <button type="button" class="p-2 float-right -mt-2 text-gray-700 hover:text-gray-500 outline-none focus:outline-none" @click="is_open =! is_open">
                     &times;
-                </button>
+                </button> --}}
             </div>
             <div class="text-gray-700">
                 {{ $slot }}
