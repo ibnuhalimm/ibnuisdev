@@ -99,7 +99,7 @@
     <main class="mb-auto pb-10">
         <div class="w-11/12 sm:w-3/5 xl:w-3/4 mx-auto">
 
-            <section id="home-section" class="pt-48 mb-48 xl:w-3/5 xl:mx-auto">
+            <section id="home-section" class="pt-32 mb-48 xl:w-3/5 xl:mx-auto">
                 <div class="text-center">
                     <h2 class="text-2xl xl:text-3xl font-bold">
                         Hi, my name is Ibnu
@@ -118,6 +118,15 @@
                 <div class="flex justify-center">
                     <a href="#portfolio-section" class="py-2 px-6 bg-ib-three text-ib-two shadow-md outline-none focus:outline-none">
                         Explore My Works
+                    </a>
+                </div>
+                <div class="mt-12 xl:mt-40 w-full xl:w-3/5 xl:mx-auto">
+                    <a class="twitter-timeline"
+                        href="https://twitter.com/IbnuHMustofa?ref_src=twsrc%5Etfw"
+                        data-tweet-limit="1"
+                        data-theme="dark"
+                        data-chrome="transparent noscrollbar noborders">
+                        Tweets by IbnuHMustofa
                     </a>
                 </div>
             </section>
@@ -191,6 +200,8 @@
             }
         });
     </script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
     @livewireScripts
 
 </body>
