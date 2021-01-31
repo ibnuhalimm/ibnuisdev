@@ -45,7 +45,9 @@ class Post extends Model
      * @var array
      */
     protected $appends = [
-        'str_status', 'gbr_url', 'post_url'
+        'str_status',
+        'gbr_url',
+        'post_url'
     ];
 
     /**
@@ -107,7 +109,7 @@ class Post extends Model
      */
     public function getPostUrlAttribute()
     {
-        return url($this->slug);
+        return route('blog.post.read', [ 'slug' => $this->slug ]);
     }
 
     /**

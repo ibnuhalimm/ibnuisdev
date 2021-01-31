@@ -60,7 +60,7 @@ class PageController extends Controller
         $data = [
             'post' => $post,
             'share_buttons' => ShareButton::orderBy('nomor_urut')->get(),
-            'related_posts' => Post::relatedPosts($post->tag)->take(3)->get()
+            'related_posts' => Post::published()->relatedPosts($post->tag)->take(3)->get()
         ];
 
         return view('blog.post.read', $data);

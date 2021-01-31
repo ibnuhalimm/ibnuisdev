@@ -18,30 +18,30 @@
 
 <div class="flex flex-col xl:flex-row">
     <div class="mb-10 xl:w-2/3 xl:mx-auto xl:order-2">
-        <h1 class="text-2xl font-bold">{{ $post->judul }}</h1>
-        <p class="mt-1 text-gray-600 text-xs">
+        <h1 class="text-2xl font-bold text-ib-four">{{ $post->judul }}</h1>
+        <p class="mt-1 text-gray-500 text-xs">
             {{ strftime('%e %B %Y', strtotime($post->created_at)) }}
         </p>
         <div class="w-full my-3">
             <img src="{{ $post->gbr_url }}" alt="{{ $post->judul }}" class="w-full h-auto">
         </div>
-        <div class="article-content formatted">
+        <div class="article-content formatted text-ib-four">
             {!! Str::of($post->isi)->replace('../../storage', url('/storage')) !!}
         </div>
     </div>
 
     <div class="mb-6 xl:mb-0 xl:mt-20 xl:order-1 xl:fixed">
-        <h4 class="text-base">Share</h4>
+        <h4 class="text-base text-ib-four">Share</h4>
         <ul class="mt-2">
             @foreach ($share_buttons as $share)
                 <li class="inline-flex xl:flex xl:mb-2 items-center mr-1">
-                    <a href="{{ $share->url . $post->post_url }}" target="_blank" class="w-10 h-10 xl:w-8 xl:h-8 text-center rounded-full border border-solid border-gray-600 hover:border-ib-three p-2 text-gray-600 hover:text-ib-three">
+                    <a href="{{ $share->url . $post->post_url }}" target="_blank" class="w-10 h-10 xl:w-8 xl:h-8 text-center rounded-full border border-solid border-ib-four hover:border-ib-three p-2 text-ib-four hover:text-ib-three">
                         <i class="flaticon-{{ $share->ikon }} text-xs"></i>
                     </a>
                 </li>
             @endforeach
             <li class="inline-flex xl:flex xl:mb-2 items-center mr-1">
-                <a href="javascript:;" id="__btnShareViaLink" data-url="{{ $post->post_url }}" class="w-10 h-10 xl:w-8 xl:h-8 text-center rounded-full border border-solid border-gray-600 hover:border-ib-three p-2 text-gray-600 hover:text-ib-three">
+                <a href="javascript:;" id="__btnShareViaLink" data-url="{{ $post->post_url }}" class="w-10 h-10 xl:w-8 xl:h-8 text-center rounded-full border border-solid border-ib-four hover:border-ib-three p-2 text-ib-four hover:text-ib-three">
                     <i class="flaticon-link text-xs"></i>
                 </a>
             </li>
@@ -50,12 +50,12 @@
 </div>
 
 
-<h2 class="mt-8 font-bold text-base xl:text-xl text-gray-800 mb-3">
+<h2 class="mt-8 font-bold text-base xl:text-xl text-ib-four mb-3">
     Related Posts
 </h2>
 <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
     @foreach ($related_posts as $post)
-        <a href="{{ $post->post_url }}" class="block w-full p-5 bg-white rounded-md outline-none hover:outline-none hover:text-ib-three">
+        <a href="{{ $post->post_url }}" class="block w-full p-5 bg-ib-two rounded-md outline-none hover:outline-none text-ib-four hover:text-ib-three">
             <div class="flex flex-row items-center justify-between">
                 <div class="w-2/5">
                     <div class="w-20 h-20 rounded-md bg-cover bg-no-repeat" style="background-image: url('{{ $post->gbr_url }}')"></div>

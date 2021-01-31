@@ -83,12 +83,12 @@
         </div>
     </div>
 
-    <h2 class="mt-8 font-bold text-base xl:text-xl text-gray-800 mb-3">
+    <h2 class="mt-8 font-bold text-base xl:text-xl text-ib-four mb-3">
         Top Posts
     </h2>
     <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
         @foreach ($top_posts as $top_post)
-            <a href="{{ route('blog.post.read', [ 'slug' => $top_post->slug ]) }}" class="block w-full p-5 bg-white rounded-md outline-none hover:outline-none hover:text-ib-three">
+            <a href="{{ route('blog.post.read', [ 'slug' => $top_post->slug ]) }}" class="block w-full p-5 bg-ib-two rounded-md outline-none hover:outline-none text-ib-four hover:text-ib-three">
                 <div class="flex flex-row items-center justify-between">
                     <div class="w-2/5">
                         <div class="w-20 h-20 rounded-md bg-cover bg-no-repeat" style="background-image: url('{{ $top_post->gbr_url }}')"></div>
@@ -106,7 +106,7 @@
         @endforeach
     </div>
 
-    <h2 class="mt-8 font-bold text-base xl:text-xl text-gray-800 mb-3">
+    <h2 class="mt-8 font-bold text-base xl:text-xl text-ib-four mb-3">
         Latest Posts
     </h2>
 
@@ -126,6 +126,7 @@
         $(document).ready(function() {
             $('#main_posts_wrapper').slick({
                 dots: true,
+                arrows: false,
                 autoPlay: true,
                 pauseOnHover: true
             })

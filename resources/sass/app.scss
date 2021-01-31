@@ -36,6 +36,11 @@ body {
     text-overflow: ellipsis;
 }
 
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before {
+    color: #EEEEEE;
+}
+
 @media (min-width: 1280px) {
     [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
     [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
