@@ -1,5 +1,7 @@
 <?php
 
+setlocale(LC_TIME, 'id_ID.UTF-8');
+
 return [
 
     /*
@@ -53,7 +55,6 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
-    'blog_url' => env('BLOG_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL', null),
 

@@ -25,7 +25,7 @@
     <nav class="">
         <div class="w-full fixed z-30 h-1 top-0 left-0 right-0 bg-ib-three"></div>
         <div class="w-full fixed z-30 top-0 left-0 right-0 bg-ib-one shadow-md xl:shadow-none py-3 xl:py-5 leading-9 xl:leading-6 mt-1">
-            <div class="w-11/12 sm:w-3/5 xl:w-4/5 mx-auto xl:flex xl:flex-row xl:items-center xl:justify-between">
+            <div class="w-11/12 sm:w-3/4 xl:w-11/12 mx-auto xl:flex xl:flex-row xl:items-center xl:justify-between">
                 <div class="flex flex-row items-center justify-between xl:w-1/6">
                     <a href="{{ route('home') }}" class="font-bold text-xl uppercase text-white">
                         Ibnu's
@@ -35,29 +35,55 @@
                     </button>
                 </div>
                 <div :class="{'block': opendropdown, 'hidden': !opendropdown}" class="xl:flex xl:flex-row xl:items-center xl:justify-between mt-6 xl:mt-0 sm:pb-10 xl:pb-0 w-full min-h-screen xl:min-h-0 z-40">
-                    <div class="flex flex-row items-center justify-center xl:justify-start text-center xl:text-left py-1 px-3 xl:py-1">
+                    <div class="flex flex-row items-center justify-start text-left py-1 px-3 xl:py-1">
                         @auth
                             <ul>
                                 <li class="mb-3 xl:mb-0 xl:inline-block">
-                                    <a href="{{ route('home') }}" class="block px-6 text-white hover:text-gray-300 @if (Request::is('home')) font-bold @endif">Dashboard</a>
+                                    <a href="{{ route('home') }}" class="block xl:px-6 text-white hover:text-gray-300 @if (Request::is('home')) font-bold @endif">Dashboard</a>
                                 </li>
-                                <li class="mb-3 xl:mb-0 xl:inline-block">
-                                    <a href="{{ route('dashboard.section.index') }}" class="block px-6 text-white hover:text-gray-300 @if (Request::is('home/section')) font-bold @endif">
-                                        Section
+                                <li class="mb-3 xl:mb-0 xl:inline-block menu-item">
+                                    <a href="{{ route('dashboard.section.index') }}" class="block xl:px-6 text-white hover:text-gray-300 menu-item--link @if (Request::is('home/section') OR Request::is('home/project*') OR Request::is('home/skills*')) font-bold @endif">
+                                        Homepage Content
                                     </a>
+
+                                    <ul class="xl:absolute px-0 bg-ib-one py-2 xl:pt-8 xl:pb-4 md:rounded-bl-md md:rounded-br-md md:shadow-md xl:text-left xl:hidden">
+                                        <li>
+                                            <a href="{{ route('dashboard.section.index') }}" class="block px-4 py-1 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm @if (Request::is('home/section*')) font-bold @endif">
+                                                Section
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('dashboard.project.index') }}" class="block px-4 py-1 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm @if (Request::is('home/project*')) font-bold @endif">
+                                                Portfolio
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('dashboard.skills.index') }}" class="block px-4 py-1 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm @if (Request::is('home/skills*')) font-bold @endif">
+                                                Skills
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="mb-3 xl:mb-0 xl:inline-block">
-                                    <a href="{{ route('dashboard.project.index') }}" class="block px-6 text-white hover:text-gray-300  @if (Request::is('home/project*')) font-bold @endif">
-                                        Projects
+                                <li class="mb-3 xl:mb-0 xl:inline-block menu-item">
+                                    <a href="{{ route('dashboard.post.index') }}" class="block xl:px-6 text-white hover:text-gray-300 menu-item--link @if (Request::is('home/post*') OR Request::is('home/share-button*')) font-bold @endif">
+                                        Blog
                                     </a>
+
+                                    <ul class="xl:absolute px-0 bg-ib-one py-2 xl:pt-8 xl:pb-4 md:rounded-bl-md md:rounded-br-md md:shadow-md xl:text-left xl:hidden">
+                                        <li>
+                                            <a href="{{ route('dashboard.post.index') }}" class="block px-4 py-1 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm @if (Request::is('home/post*')) font-bold @endif">
+                                                Posts
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('dashboard.share-button.index') }}" class="block px-4 py-1 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm @if (Request::is('home/share-button*')) font-bold @endif">
+                                                Share Button
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li class="mb-3 xl:mb-0 xl:inline-block">
-                                    <a href="{{ route('dashboard.skills.index') }}" class="block px-6 text-white hover:text-gray-300 @if (Request::is('home/skills*')) font-bold @endif">
-                                        Skills
-                                    </a>
-                                </li>
-                                <li class="mb-3 xl:mb-0 xl:inline-block">
-                                    <a href="{{ route('dashboard.message.index') }}" class="block px-6 text-white hover:text-gray-300  @if (Request::is('home/message*')) font-bold @endif">
+                                    <a href="{{ route('dashboard.message.index') }}" class="block xl:px-6 text-white hover:text-gray-300  @if (Request::is('home/message*')) font-bold @endif">
                                         Messages
                                     </a>
                                 </li>
@@ -65,7 +91,7 @@
                         @endauth
                     </div>
                     <hr class="w-full h-1 mt-2 border border-r-0 border-b-0 border-l-0 border-solid border-gray-600 block xl:hidden">
-                    <div class="h-full sm:h-64 xl:h-auto sm:overflow-y-auto xl:overflow-hidden text-center xl:text-right mt-1 xl:mt-0 py-5 xl:py-0">
+                    <div class="h-full sm:h-64 xl:h-auto sm:overflow-y-auto xl:overflow-hidden text-left xl:text-right mt-1 xl:mt-0 py-5 xl:py-0">
                         <ul>
                             <li class="mb-3 xl:mb-0 xl:inline-block menu-item">
                                 @guest
@@ -82,12 +108,12 @@
 
                                     <ul class="xl:absolute px-0 bg-ib-one py-2 xl:pt-8 xl:pb-4 md:rounded-bl-md md:rounded-br-md md:shadow-md menu-item--sub xl:text-left">
                                         <li>
-                                            <a href="#" class="block px-5 py-2 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm xl:text-base">
+                                            <a href="#" class="block px-8 py-1 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm xl:text-base">
                                                 Profil
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('auth.logout') }}" class="block px-5 py-2 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm xl:text-base">
+                                            <a href="{{ route('auth.logout') }}" class="block px-8 py-1 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm xl:text-base">
                                                 Logout
                                             </a>
                                         </li>
@@ -101,7 +127,7 @@
         </div>
     </nav>
     <main class="mt-16 xl:mt-20 mb-auto pt-6 pb-10">
-        <div class="w-11/12 sm:w-3/5 xl:w-4/5 mx-auto">
+        <div class="w-11/12 sm:w-3/4 xl:w-11/12 mx-auto">
 
             @yield('content')
 

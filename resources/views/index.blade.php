@@ -87,7 +87,7 @@
                             </a>
                         </li>
                         <li class="mb-3 xl:mb-0 xl:inline-block">
-                            <a href="{{ config('app.blog_url') }}" class="block font-bold xl:font-normal xl:w-32 text-center hover:text-ib-three">
+                            <a href="{{ route('blog.index') }}" class="block font-bold xl:font-normal xl:w-32 text-center hover:text-ib-three">
                                 Blog
                             </a>
                         </li>

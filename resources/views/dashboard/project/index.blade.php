@@ -1,12 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<x-card-content>
-    <x-card-title>
-        <h2 class="text-lg">Projects / Portfolio List</h2>
-    </x-card-title>
+<div class="w-full flex flex-col xl:flex-row items-start justify-between">
 
-    @livewire('dashboard.project.table')
+    @include('dashboard.__include.sidebar_homepage_content')
 
-</x-card-content>
+    <div class="w-full xl:w-5/6">
+        <x-card-content>
+            <x-card-title>
+                <h2 class="text-lg">Portfolio</h2>
+            </x-card-title>
+
+            @livewire('dashboard.project.table')
+        </x-card-content>
+    </div>
+</div>
 @endsection

@@ -18,6 +18,24 @@ body {
     display: none;
 }
 
+.article-content {
+    line-height: 2rem;
+}
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5 {
+    margin-top: 1.25rem;
+}
+
+.truncate-two-lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 @media (min-width: 1280px) {
     [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
     [class^="flaticon-"]:after, [class*=" flaticon-"]:after {

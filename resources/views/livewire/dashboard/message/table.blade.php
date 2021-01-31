@@ -85,7 +85,7 @@
     {!! $messages->links() !!}
 
     <x-modal-backdrop x-show.transition.opacity="is_view_modal_open === 1" x-cloak>
-        <x-modal-content size="small" x-show.transition.5000ms="is_view_modal_open === 1" x-cloak>
+        <x-modal-content size="large" x-show.transition.5000ms="is_view_modal_open === 1" x-cloak>
             <x-modal-title>
                 View Message
             </x-modal-title>

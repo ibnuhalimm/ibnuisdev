@@ -1,23 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+    @livewire('dashboard.blog.last-day-visitor')
+    @livewire('dashboard.blog.last-month-visitor')
+    <x-card-dashboard text="Total<br>Blog Posts" number="{{ str_thousand($total_post) }}" />
+    <x-card-dashboard text="Total<br>Administrator" number="{{ $total_admin }}" />
+</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="mt-8">
+    @livewire('dashboard.blog.most-visited-pages', ['days' => 7])
 </div>
 @endsection

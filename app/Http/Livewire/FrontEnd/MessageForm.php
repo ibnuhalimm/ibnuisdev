@@ -71,6 +71,11 @@ class MessageForm extends Component
                             $this->formValidatioAttributes());
     }
 
+    /**
+     * Send the message
+     *
+     * @return void
+     */
     public function sendMessage()
     {
         $this->validate($this->formValidatioRules(), $this->formValidatioMessages(), $this->formValidatioAttributes());
@@ -89,10 +94,11 @@ class MessageForm extends Component
             session()->flash('alert-body', 'Thank your for contacting me, I will reply your email soon. :)');
 
         } catch (\Throwable $th) {
+            report($th);
+
             session()->flash('alert-status', 'red');
             session()->flash('alert-title', 'Error');
-            session()->flash('alert-body', $th->getMessage() . ' on line ' . $th->getLine());
-            // session()->flash('alert-body', 'Oops, sorry something went wrong. :(');
+            session()->flash('alert-body', 'Oops, sorry something went wrong. :(');
 
         }
     }
