@@ -29,7 +29,14 @@ class Post extends Model
      * @var array
      */
     protected $fillable = [
-        'judul', 'slug', 'gbr', 'isi', 'status', 'tag', 'user_create', 'user_update'
+        'judul',
+        'slug',
+        'gbr',
+        'isi',
+        'status',
+        'tag',
+        'user_create',
+        'user_update'
     ];
 
     /**
@@ -104,6 +111,18 @@ class Post extends Model
     }
 
     /**
+     * Query to filter only published post
+     *
+     * @param \Illuminate\Database\Query\Builder $query
+     *
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public function scopePublished($query)
+    {
+        return $query->status(self::STATUS_PUBLISH);
+    }
+
+    /**
      * Query to filter by `status`
      *
      * @param \Illuminate\Database\Query\Builder $query
@@ -149,7 +168,7 @@ class Post extends Model
      */
     public static function mainPostOnHome()
     {
-        return collect(self::orderBy('created_at', 'desc')->status(self::STATUS_PUBLISH)->take(4)->get())->toArray();
+        return collect(self::orderBy('created_at', 'desc')->published()->take(4)->get())->toArray();
     }
 
     /**

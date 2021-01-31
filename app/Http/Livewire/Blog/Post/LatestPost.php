@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Blog\Post;
 
+use App\Models\Blog\Post;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -43,6 +44,13 @@ class LatestPost extends Component
      */
     public function render()
     {
-        return view('livewire.blog.post.latest-post');
+        $data = [
+            'posts' => Post::published()
+                            ->orderBy('created_at', 'desc')
+                            ->whereNotIn('id', $this->except_ids)
+                            ->paginate(9)
+        ];
+
+        return view('livewire.blog.post.latest-post', $data);
     }
 }

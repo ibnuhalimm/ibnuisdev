@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog\Post;
 use App\Models\Blog\PostVisitor;
 use App\Models\Blog\ShareButton;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -46,7 +48,7 @@ class PageController extends Controller
      */
     public function postRead($slug = null, $mode = null)
     {
-        $post = Post::where('slug', $slug)->status(Post::STATUS_PUBLISH)->first();
+        $post = Post::published()->where('slug', $slug)->first();
         if ($mode == 'preview') {
             $post = Post::where('slug', $slug)->first();
         }
@@ -78,17 +80,7 @@ class PageController extends Controller
             return redirect()->route('homepage');
         }
 
-        $posts = Post::search($search_text)->orderBy('created_at', 'desc')->take(12)->get();
-        if ($posts->isEmpty()) {
-            $start_date = Carbon::now()->subYear()->format('Y-m-d') . ' 00:00:00';
-            $end_date = Carbon::now()->format('Y-m-d') . ' 23:59:59';
-
-            $posts = Post::whereBetween('created_at', [$start_date, $end_date])
-                            ->inRandomOrder()
-                            ->status(Post::STATUS_PUBLISH)
-                            ->take(12)
-                            ->get();
-        }
+        $posts = Post::published()->search($search_text)->orderBy('created_at', 'desc')->take(12)->get();
 
         $except_ids = collect($posts)->map(function($post) {
             return $post->id;
