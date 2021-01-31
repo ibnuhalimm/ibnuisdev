@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog\Post;
 use App\Models\Blog\PostVisitor;
 use App\Models\Blog\ShareButton;
-use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
