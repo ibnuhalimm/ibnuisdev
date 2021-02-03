@@ -19,6 +19,9 @@ class ShareButton extends Model
      * @var array
      */
     protected $fillable = [
-        'nama', 'ikon', 'url', 'nomor_urut'
+        'nama',
+        'ikon',
+        'url',
+        'nomor_urut'
     ];
 }
