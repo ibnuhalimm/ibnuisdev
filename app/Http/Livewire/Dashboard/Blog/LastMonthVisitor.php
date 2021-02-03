@@ -7,6 +7,19 @@ use Livewire\Component;
 
 class LastMonthVisitor extends Component
 {
+    public $total_visitor_month = 0;
+
+    /**
+     * Initialize properties
+     *
+     * @return void
+     */
+    public function mount()
+    {
+        $visitor_month = Analytics::where('name', Analytics::LAST_MONTH_TOTAL_VISITOR)->first();
+        $this->total_visitor_month = isset($visitor_month->data) ? $visitor_month->data : 0;
+    }
+
     /**
      * Render to view
      *
@@ -14,12 +27,6 @@ class LastMonthVisitor extends Component
      */
     public function render()
     {
-        $total_visitor_month = Analytics::where('name', Analytics::LAST_MONTH_TOTAL_VISITOR)->first();
-
-        $data = [
-            'total_visitor_month' => isset($total_visitor_month->data) ? $total_visitor_month->data : 0
-        ];
-
-        return view('livewire.dashboard.blog.last-month-visitor', $data);
+        return view('livewire.dashboard.blog.last-month-visitor');
     }
 }

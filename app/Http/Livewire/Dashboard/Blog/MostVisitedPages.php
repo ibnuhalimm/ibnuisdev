@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Dashboard\Blog;
 
 use App\Models\Blog\Analytics;
+use Illuminate\Support\Collection;
 use Livewire\Component;
 
 class MostVisitedPages extends Component
@@ -13,6 +14,7 @@ class MostVisitedPages extends Component
      * @var mixed
      */
     public $days;
+    public $pages = [];
 
     /**
      * Initialize properties data
@@ -22,6 +24,9 @@ class MostVisitedPages extends Component
     public function mount($days)
     {
         $this->days = $days;
+
+        $analytics = Analytics::where('name', Analytics::MOST_VISITED_PAGES . '-' . $this->days . '-days')->first();
+        $this->pages = isset($analytics->data) ? collect(json_decode($analytics->data)) : new Collection();
     }
 
     /**
@@ -31,15 +36,6 @@ class MostVisitedPages extends Component
      */
     public function render()
     {
-        $analytics = Analytics::where('name', Analytics::MOST_VISITED_PAGES . '-' . $this->days . '-days')->first();
-        $pages = isset($analytics->data) ? $analytics->data : '';
-
-        $pages = collect(json_decode($pages));
-
-        $data  = [
-            'pages' => $pages
-        ];
-
-        return view('livewire.dashboard.blog.most-visited-pages', $data);
+        return view('livewire.dashboard.blog.most-visited-pages');
     }
 }

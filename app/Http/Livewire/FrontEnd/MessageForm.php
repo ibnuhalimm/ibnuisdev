@@ -25,7 +25,7 @@ class MessageForm extends Component
     {
         return [
             'name' => [ 'required', 'string', 'min:3', 'max:40' ],
-            'email' => [ 'required', 'email', 'max:30' ],
+            'email' => [ 'required', 'email', 'max:100' ],
             'body' => [ 'required', 'min:10' ]
         ];
     }
