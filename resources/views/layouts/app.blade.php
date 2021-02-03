@@ -21,7 +21,7 @@
     @stack('top_scripts')
 
 </head>
-<body class="bg-gray-200 flex flex-col min-h-screen justify-between text-sm" :class="{'overflow-hidden': opendropdown, 'overflow-y-auto': !opendropdown}" x-data="{ opendropdown: false }">
+<body class="bg-gray-200 flex flex-col min-h-screen justify-between text-sm overflow-y-scroll" x-data="{ opendropdown: false }">
     <nav class="">
         <div class="w-full fixed z-30 h-1 top-0 left-0 right-0 bg-ib-three"></div>
         <div class="w-full fixed z-30 top-0 left-0 right-0 bg-ib-one shadow-md xl:shadow-none py-3 xl:py-5 leading-9 xl:leading-6 mt-1">
