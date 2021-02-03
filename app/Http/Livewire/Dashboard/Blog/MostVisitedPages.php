@@ -14,7 +14,6 @@ class MostVisitedPages extends Component
      * @var mixed
      */
     public $days;
-    public $pages = [];
 
     /**
      * Initialize properties data
@@ -24,9 +23,6 @@ class MostVisitedPages extends Component
     public function mount($days)
     {
         $this->days = $days;
-
-        $analytics = Analytics::where('name', Analytics::MOST_VISITED_PAGES . '-' . $this->days . '-days')->first();
-        $this->pages = isset($analytics->data) ? collect(json_decode($analytics->data)) : new Collection();
     }
 
     /**
@@ -36,6 +32,12 @@ class MostVisitedPages extends Component
      */
     public function render()
     {
-        return view('livewire.dashboard.blog.most-visited-pages');
+        $analytics = Analytics::where('name', Analytics::MOST_VISITED_PAGES . '-' . $this->days . '-days')->first();
+
+        $data = [
+            'pages' => isset($analytics->data) ? collect(json_decode($analytics->data)) : new Collection()
+        ];
+
+        return view('livewire.dashboard.blog.most-visited-pages', $data);
     }
 }
