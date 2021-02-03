@@ -34,7 +34,7 @@ class MessageFormTest extends TestCase
     {
         Livewire::test(MessageForm::class)
             ->set('name', $this->faker->name())
-            ->set('email', $this->faker->email)
+            ->set('email', $this->faker->safeEmail)
             ->set('body', $this->faker->text())
             ->call('sendMessage')
             ->assertSeeHtml('Success');
@@ -68,7 +68,7 @@ class MessageFormTest extends TestCase
     {
         Livewire::test(MessageForm::class)
             ->set('name', null)
-            ->set('email', $this->faker->email)
+            ->set('email', $this->faker->safeEmail)
             ->set('body', $this->faker->text())
             ->call('sendMessage')
             ->assertHasErrors(['name' => 'required']);
@@ -83,7 +83,7 @@ class MessageFormTest extends TestCase
     {
         Livewire::test(MessageForm::class)
             ->set('name', substr($this->faker->name, 0, 2))
-            ->set('email', $this->faker->email)
+            ->set('email', $this->faker->safeEmail)
             ->set('body', $this->faker->text())
             ->call('sendMessage')
             ->assertHasErrors(['name' => 'min']);
@@ -98,7 +98,7 @@ class MessageFormTest extends TestCase
     {
         Livewire::test(MessageForm::class)
             ->set('name', substr($this->faker->text(), 0, 41))
-            ->set('email', $this->faker->email)
+            ->set('email', $this->faker->safeEmail)
             ->set('body', $this->faker->text())
             ->call('sendMessage')
             ->assertHasErrors(['name' => 'max']);
@@ -161,7 +161,7 @@ class MessageFormTest extends TestCase
     {
         Livewire::test(MessageForm::class)
             ->set('name', $this->faker->name)
-            ->set('email', $this->faker->email)
+            ->set('email', $this->faker->safeEmail)
             ->set('body', null)
             ->call('sendMessage')
             ->assertHasErrors(['body' => 'required']);
@@ -176,7 +176,7 @@ class MessageFormTest extends TestCase
     {
         Livewire::test(MessageForm::class)
             ->set('name', $this->faker->name)
-            ->set('email', $this->faker->email)
+            ->set('email', $this->faker->safeEmail)
             ->set('body', substr($this->faker->text, 0, 9))
             ->call('sendMessage')
             ->assertHasErrors(['body' => 'min']);
