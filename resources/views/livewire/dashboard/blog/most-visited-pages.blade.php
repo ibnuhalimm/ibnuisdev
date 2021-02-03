@@ -39,7 +39,7 @@
                                     {{ $no++ }}
                                 </x-td>
                                 <x-td>
-                                    {{ $page->pageTitle }}
+                                    {{ $page->pageTitle ?? null }}
                                 </x-td>
                                 <x-td>
                                     {{ $page->url }}
