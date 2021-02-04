@@ -4,23 +4,11 @@ namespace Tests\Unit\Dashboard\HomePage;
 
 use App\Http\Livewire\Dashboard\Section\Table;
 use App\Section;
-use App\User;
 use Livewire\Livewire;
 use Tests\TestCase;
 
 class SectionTableTest extends TestCase
 {
-    /**
-     * Set logged in user
-     *
-     * @return void
-     */
-    private function setLoggedInUser()
-    {
-        $user = factory(User::class)->create();
-        $this->actingAs($user);
-    }
-
     /**
      * A basic unit test example.
      *
@@ -28,8 +16,6 @@ class SectionTableTest extends TestCase
      */
     public function testShowEditSectionModal()
     {
-        $this->setLoggedInUser();
-
         $section = factory(Section::class)->create();
 
         Livewire::test(Table::class)
@@ -47,8 +33,6 @@ class SectionTableTest extends TestCase
      */
     public function testCancelEditCloseEditModal()
     {
-        $this->setLoggedInUser();
-
         Livewire::test(Table::class)
             ->call('cancelEditSection')
             ->assertSet('edit_section_id', null)
@@ -64,8 +48,6 @@ class SectionTableTest extends TestCase
      */
     public function testCanUpdateSectionDescription()
     {
-        $this->setLoggedInUser();
-
         $section = factory(Section::class)->create();
 
         Livewire::test(Table::class)
@@ -85,8 +67,6 @@ class SectionTableTest extends TestCase
      */
     public function testCanNotUpdateSectionIfSectionFieldIsBlank()
     {
-        $this->setLoggedInUser();
-
         $section = factory(Section::class)->create();
 
         Livewire::test(Table::class)
@@ -107,8 +87,6 @@ class SectionTableTest extends TestCase
      */
     public function testCanNotUpdateSectionIfSectionFieldIsInvalid()
     {
-        $this->setLoggedInUser();
-
         $section = factory(Section::class)->create();
 
         Livewire::test(Table::class)
@@ -129,8 +107,6 @@ class SectionTableTest extends TestCase
      */
     public function testCanNotUpdateSectionIfDescriptionFieldIsBlank()
     {
-        $this->setLoggedInUser();
-
         $section = factory(Section::class)->create();
 
         Livewire::test(Table::class)
@@ -150,8 +126,6 @@ class SectionTableTest extends TestCase
      */
     public function testCanNotUpdateSectionIfDescriptionLessThanTenChars()
     {
-        $this->setLoggedInUser();
-
         $section = factory(Section::class)->create();
 
         Livewire::test(Table::class)

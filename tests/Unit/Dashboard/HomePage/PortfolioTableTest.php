@@ -4,23 +4,11 @@ namespace Tests\Unit\Dashboard\HomePage;
 
 use App\Http\Livewire\Dashboard\Portfolio\Table;
 use App\Project;
-use App\User;
 use Livewire\Livewire;
 use Tests\TestCase;
 
 class PortfolioTableTest extends TestCase
 {
-    /**
-     * Set logged in user
-     *
-     * @return void
-     */
-    private function setLoggedInUser()
-    {
-        $user = factory(User::class)->create();
-        $this->actingAs($user);
-    }
-
     /**
      * Show delete confirmation modal
      *
@@ -28,8 +16,6 @@ class PortfolioTableTest extends TestCase
      */
     public function testShowDeleteConfirmationModal()
     {
-        $this->setLoggedInUser();
-
         $project = factory(Project::class)->create();
 
         Livewire::test(Table::class)
@@ -46,8 +32,6 @@ class PortfolioTableTest extends TestCase
      */
     public function testHideDeleteConfirmationModalIfCancel()
     {
-        $this->setLoggedInUser();
-
         Livewire::test(Table::class)
             ->assertSet('delete_project_id', null)
             ->assertSet('is_delete_modal_open', 0);
@@ -60,8 +44,6 @@ class PortfolioTableTest extends TestCase
      */
     public function testCanDeleteProject()
     {
-        $this->setLoggedInUser();
-
         $project = factory(Project::class)->create();
 
         Livewire::test(Table::class)

@@ -60,6 +60,7 @@ class Create extends Component
             'month' => [ 'required', 'between:01,12' ],
             'year' => [ 'required', 'digits:4' ],
             'name' => [ 'required', 'min:10', 'max:50' ],
+            'image' => [ 'required', 'image', 'mimes:jpg,jpeg,png' ],
             'description' => [ 'required', 'min:100', 'max:300' ],
             'link' => [ 'nullable', 'url' ],
             'status' => [ 'required', 'in:' . Project::STATUS_DRAFT . ',' . Project::STATUS_PUBLISH ]

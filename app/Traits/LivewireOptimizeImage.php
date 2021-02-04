@@ -2,6 +2,7 @@
 
 namespace App\Traits;
 
+use Illuminate\Support\Facades\Storage;
 use Image;
 
 trait LivewireOptimizeImage
@@ -27,7 +28,10 @@ trait LivewireOptimizeImage
         // $img->crop($width, $height);
         $img->encode('webp', 80);
 
-        unlink(storage_path($livewire_dir . $file_name));
+        if (Storage::exists(storage_path($livewire_dir . $file_name))) {
+            unlink(storage_path($livewire_dir . $file_name));
+        }
+
         $img->save();
         // $img->save(storage_path($livewire_dir . $file_name), 80, 'jpg');
 
