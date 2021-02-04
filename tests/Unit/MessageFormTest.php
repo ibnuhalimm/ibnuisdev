@@ -139,10 +139,9 @@ class MessageFormTest extends TestCase
      *
      * @return void
      */
-    public function testGetMaxErrorIfEmailMoreOneHundredChars()
+    public function testGetMaxErrorIfEmailMoreThanOneHundredChars()
     {
-        $long_fake_email = Str::of(substr($this->faker->text, 0, 101))->slug('.');
-        $long_fake_email .= '@' . $this->faker->freeEmailDomain;
+        $long_fake_email = Str::random(100) . '@' . $this->faker->freeEmailDomain;
 
         Livewire::test(MessageForm::class)
             ->set('name', $this->faker->name)

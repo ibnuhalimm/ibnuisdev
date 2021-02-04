@@ -3,44 +3,28 @@
 namespace Tests\Unit;
 
 use App\Http\Livewire\FrontEnd\Project;
-use App\Project as AppProject;
 use Livewire\Livewire;
 use Tests\TestCase;
-// use PHPUnit\Framework\TestCase;
 
 class PortfolioTest extends TestCase
 {
-    public $page = 1;
-    public $perPage = 8;
-
     /**
-     * Get project list
-     *
-     * @return mixed
-     */
-    private function getProjects()
-    {
-        return AppProject::status(AppProject::STATUS_PUBLISH)
-            ->orderBy('year', 'desc')
-            ->orderBy('month', 'desc')
-            ->paginate($this->perPage, ['*'], null, $this->page);
-    }
-
-    /**
-     * Portfolio list
+     * Test can initialize value of properties
+     * - page
+     * - perPage
      *
      * @return void
      */
-    public function testPortfolioList()
+    public function testCanSetInitialPageAndPerPage()
     {
-        factory(AppProject::class, 10)->create();
-
-        $projects = $this->getProjects();
+        $page = 1;
+        $perPage = 8;
 
         Livewire::test(Project::class, [
-                'page' => $this->page,
-                'perPage' => $this->perPage
+                'page' => $page,
+                'perPage' => $perPage
             ])
-            ->assertSee($projects);
+            ->assertSet('page', $page)
+            ->assertSet('perPage', $perPage);
     }
 }
