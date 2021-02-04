@@ -10,7 +10,7 @@
 
         <div class="flex flex-col xl:flex-row items-start xl:items-center justify-between">
             <div>
-                <x-button-link-primary href="{{ route('dashboard.project.create') }}" color="ib-three">
+                <x-button-link-primary href="{{ route('dashboard.portfolio.create') }}" color="ib-three">
                     <svg class="w-4 h-4 -ml-1 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="currentColor">
                         <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
                     </svg>
@@ -69,7 +69,7 @@
                             {{ ucfirst($project->status) }}
                         </x-td>
                         <x-td class="pr-6 inline-flex">
-                            <x-button-table href="{{ route('dashboard.project.edit', [ 'id' => $project->id ]) }}">
+                            <x-button-table href="{{ route('dashboard.portfolio.edit', [ 'id' => $project->id ]) }}">
                                 <svg class="h-5 w-5 mx-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                 </svg>

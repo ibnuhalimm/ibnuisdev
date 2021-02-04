@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Project;
 use Illuminate\Http\Request;
 
-class ProjectController extends Controller
+class PortfolioController extends Controller
 {
     /**
      * Show section page
@@ -15,7 +15,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view('dashboard.project.index');
+        return view('dashboard.portfolio.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('dashboard.project.create');
+        return view('dashboard.portfolio.create');
     }
 
     /**
@@ -42,6 +42,6 @@ class ProjectController extends Controller
             'project' => $project
         ];
 
-        return view('dashboard.project.edit', $data);
+        return view('dashboard.portfolio.edit', $data);
     }
 }

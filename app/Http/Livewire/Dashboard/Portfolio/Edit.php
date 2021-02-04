@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Dashboard\Project;
+namespace App\Http\Livewire\Dashboard\Portfolio;
 
 use App\Project;
 use App\Traits\LivewireOptimizeImage;
@@ -116,9 +116,9 @@ class Edit extends Component
 
             session()->flash('alert-create-status', 'green');
             session()->flash('alert-create-title', 'Success');
-            session()->flash('alert-create-body', 'Project updated!');
+            session()->flash('alert-create-body', 'Portfolio updated!');
 
-            return redirect()->route('dashboard.project.index');
+            return redirect()->route('dashboard.portfolio.index');
 
         } catch (\Throwable $th) {
             session()->flash('alert-create-status', 'red');
@@ -136,6 +136,6 @@ class Edit extends Component
      */
     public function render()
     {
-        return view('livewire.dashboard.project.edit');
+        return view('livewire.dashboard.portfolio.edit');
     }
 }

@@ -11,7 +11,7 @@
                 <h2 class="text-lg">Portfolio</h2>
             </x-card-title>
 
-            @livewire('dashboard.project.table')
+            @livewire('dashboard.portfolio.table')
         </x-card-content>
     </div>
 </div>
