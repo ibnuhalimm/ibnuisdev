@@ -108,7 +108,7 @@
 
                                     <ul class="xl:absolute px-0 bg-ib-one py-2 xl:pt-8 xl:pb-4 md:rounded-bl-md md:rounded-br-md md:shadow-md menu-item--sub xl:text-left">
                                         <li>
-                                            <a href="#" class="block px-8 py-1 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm xl:text-base">
+                                            <a href="{{ route('dashboard.profile.index') }}" class="block px-8 py-1 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm xl:text-base">
                                                 Profil
                                             </a>
                                         </li>

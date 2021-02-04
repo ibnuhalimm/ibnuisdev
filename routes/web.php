@@ -39,4 +39,6 @@ Route::name('dashboard.')
         Route::get('share-button', 'ShareButtonController@index')->name('share-button.index');
         Route::get('share-button/create', 'ShareButtonController@create')->name('share-button.create');
         Route::get('share-button/edit/{id}', 'ShareButtonController@edit')->name('share-button.edit');
+
+        Route::get('profile', 'ProfileController@index')->name('profile.index');
     });
