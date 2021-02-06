@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Dashboard\Blog\Post;
 
 use App\Models\Blog\Post;
 use App\Traits\LivewireOptimizeImage;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -24,37 +25,12 @@ class Edit extends Component
     public $gbr_field;
     public $gbr_url;
     public $judul;
+    public $slug;
     public $isi;
     public $status;
     public $tag;
 
     public $is_delete_modal_open = 0;
-
-    /**
-     * Form validation rules
-     *
-     * @var array
-     */
-    protected $form_validation_rules = [
-        'gbr' => 'image|nullable',
-        'judul' => 'required|string|min:20|max:100',
-        'isi' => 'required|string|min:300',
-        'status' => 'required|numeric|in:' . Post::STATUS_DRAFT . ',' . Post::STATUS_PUBLISH,
-        'tag' => 'string|nullable'
-    ];
-
-    /**
-     * Form validation attributes
-     *
-     * @var array
-     */
-    protected $form_validation_attributes = [
-        'gbr' => 'Image',
-        'judul' => 'Title',
-        'isi' => 'Text',
-        'status' => 'Status',
-        'tag' => 'Tag'
-    ];
 
     /**
      * Initial properties value
@@ -65,11 +41,84 @@ class Edit extends Component
     {
         $this->post_id = $post->id;
         $this->judul = $post->judul;
+        $this->slug = $post->slug;
         $this->gbr_url = $post->gbr_url;
         $this->gbr_field = $post->gbr;
         $this->isi = $post->isi;
         $this->status = $post->status;
         $this->tag = $post->tag;
+    }
+
+    /**
+     * Form validation rules
+     *
+     * @return array
+     */
+    private function formValidationRules()
+    {
+        return [
+            'gbr' => [
+                'image',
+                'nullable'
+            ],
+            'judul' => [
+                'required',
+                'string',
+                'min:20',
+                'max:100'
+            ],
+            'slug' => [
+                'required',
+                'string',
+                'min:10',
+                'max:100',
+                'unique:' . Post::class . ',slug,' . $this->post_id
+            ],
+            'isi' => [
+                'required',
+                'string',
+                'min:300'
+            ],
+            'status' => [
+                'required',
+                'numeric',
+                'in:' . Post::STATUS_DRAFT . ',' . Post::STATUS_PUBLISH
+            ],
+            'tag' => [
+                'string',
+                'nullable'
+            ]
+        ];
+    }
+
+    /**
+     * Form validation attributes
+     *
+     * @return array
+     */
+    private function formValidationAttributes()
+    {
+        return [
+            'gbr' => 'Image',
+            'judul' => 'Title',
+            'isi' => 'Text',
+            'status' => 'Status',
+            'tag' => 'Tag'
+        ];
+    }
+
+    /**
+     * Generate slug if slug is being blank
+     *
+     * @param string $value
+     * @return void
+     */
+    public function updatedJudul($value)
+    {
+        if (!empty($value) && empty($this->slug)) {
+            $this->slug = SlugService::createSlug(Post::class, 'slug', $value);
+            $this->resetErrorBag('slug');
+        }
     }
 
     /**
@@ -91,7 +140,7 @@ class Edit extends Component
      */
     public function updated($field_name)
     {
-        $this->validateOnly($field_name, $this->form_validation_rules, [], $this->form_validation_attributes);
+        $this->validateOnly($field_name, $this->formValidationRules(), [], $this->formValidationAttributes());
     }
 
     /**
@@ -101,7 +150,7 @@ class Edit extends Component
      */
     public function updatePost()
     {
-        $this->validate($this->form_validation_rules, [], $this->form_validation_attributes);
+        $this->validate($this->formValidationRules(), [], $this->formValidationAttributes());
 
         if (!empty($this->gbr)) {
             if (Storage::disk('public')->exists($this->gbr_field)) {
@@ -115,6 +164,7 @@ class Edit extends Component
             ->update([
                     'gbr' => $this->gbr_field,
                     'judul' => $this->judul,
+                    'slug' => trim($this->slug),
                     'isi' => Str::of($this->isi)->replace('../../../', '../../'),
                     'status' => $this->status,
                     'tag' => $this->tag,
