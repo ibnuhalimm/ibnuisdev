@@ -52,10 +52,17 @@
                             <img src="{{ $post->gbr_url }}" alt="{{ $post->judul }}" class="w-10 h-auto">
                         </x-td>
                         <x-td>
-                            {{ Str::of($post->judul)->limit(100) }}
+                            {{ Str::of($post->judul) }}<br>
+                            <span class="text-xs">
+                                <a href="{{ $post->post_url }}" target="_blank" class="text-ib-three hover:underline">
+                                    {{ $post->post_url }}
+                                </a>
+                            </span>
                         </x-td>
                         <x-td>
-                            {{ $post->str_status }}
+                            <x-badge-label color="{{ $post->str_status_color }}">
+                                {{ $post->str_status }}
+                            </x-badge-label>
                         </x-td>
                         <x-td>
                             {{ date('d.m.Y H:i', strtotime($post->created_at)) }}

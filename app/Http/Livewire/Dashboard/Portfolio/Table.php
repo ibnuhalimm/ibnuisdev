@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Dashboard\Project;
+namespace App\Http\Livewire\Dashboard\Portfolio;
 
 use App\Project;
 use Livewire\Component;
@@ -59,7 +59,7 @@ class Table extends Component
 
             session()->flash('alert-delete-status', 'green');
             session()->flash('alert-delete-title', 'Success');
-            session()->flash('alert-delete-body', 'Section successfully updated!');
+            session()->flash('alert-delete-body', 'Portfolio deleted!');
 
         } catch (\Throwable $th) {
             session()->flash('alert-delete-status', 'red');
@@ -94,6 +94,6 @@ class Table extends Component
                                 ->paginate(10)
         ];
 
-        return view('livewire.dashboard.project.table', $data);
+        return view('livewire.dashboard.portfolio.table', $data);
     }
 }

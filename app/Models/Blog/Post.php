@@ -3,6 +3,7 @@
 namespace App\Models\Blog;
 
 use Carbon\Carbon;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Storage;
@@ -11,7 +12,7 @@ use Illuminate\Support\Str;
 
 class Post extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, Sluggable;
 
     CONST STATUS_DRAFT = 1;
     CONST STATUS_PUBLISH = 2;
@@ -46,6 +47,7 @@ class Post extends Model
      */
     protected $appends = [
         'str_status',
+        'str_status_color',
         'gbr_url',
         'post_url'
     ];
@@ -86,6 +88,24 @@ class Post extends Model
         }
 
         return 'Unknown';
+    }
+
+    /**
+     * Accessor for `str_status_color`
+     *
+     * @return string
+     */
+    public function getStrStatusColorAttribute()
+    {
+        if ($this->status == self::STATUS_DRAFT) {
+            return 'red';
+        }
+
+        if ($this->status == self::STATUS_PUBLISH) {
+            return 'green';
+        }
+
+        return 'gray';
     }
 
     /**
@@ -246,5 +266,19 @@ class Post extends Model
         }
 
         return;
+    }
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'judul'
+            ]
+        ];
     }
 }

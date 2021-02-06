@@ -21,7 +21,7 @@
     @stack('top_scripts')
 
 </head>
-<body class="bg-gray-200 flex flex-col min-h-screen justify-between text-sm" :class="{'overflow-hidden': opendropdown, 'overflow-y-auto': !opendropdown}" x-data="{ opendropdown: false }">
+<body class="bg-gray-200 flex flex-col min-h-screen justify-between text-sm overflow-y-scroll" x-data="{ opendropdown: false }">
     <nav class="">
         <div class="w-full fixed z-30 h-1 top-0 left-0 right-0 bg-ib-three"></div>
         <div class="w-full fixed z-30 top-0 left-0 right-0 bg-ib-one shadow-md xl:shadow-none py-3 xl:py-5 leading-9 xl:leading-6 mt-1">
@@ -42,7 +42,7 @@
                                     <a href="{{ route('home') }}" class="block xl:px-6 text-white hover:text-gray-300 @if (Request::is('home')) font-bold @endif">Dashboard</a>
                                 </li>
                                 <li class="mb-3 xl:mb-0 xl:inline-block menu-item">
-                                    <a href="{{ route('dashboard.section.index') }}" class="block xl:px-6 text-white hover:text-gray-300 menu-item--link @if (Request::is('home/section') OR Request::is('home/project*') OR Request::is('home/skills*')) font-bold @endif">
+                                    <a href="{{ route('dashboard.section.index') }}" class="block xl:px-6 text-white hover:text-gray-300 menu-item--link @if (Request::is('home/section') OR Request::is('home/portfolio*') OR Request::is('home/skills*')) font-bold @endif">
                                         Homepage Content
                                     </a>
 
@@ -53,7 +53,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('dashboard.project.index') }}" class="block px-4 py-1 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm @if (Request::is('home/project*')) font-bold @endif">
+                                            <a href="{{ route('dashboard.portfolio.index') }}" class="block px-4 py-1 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm @if (Request::is('home/portfolio*')) font-bold @endif">
                                                 Portfolio
                                             </a>
                                         </li>
@@ -108,7 +108,7 @@
 
                                     <ul class="xl:absolute px-0 bg-ib-one py-2 xl:pt-8 xl:pb-4 md:rounded-bl-md md:rounded-br-md md:shadow-md menu-item--sub xl:text-left">
                                         <li>
-                                            <a href="#" class="block px-8 py-1 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm xl:text-base">
+                                            <a href="{{ route('dashboard.profile.index') }}" class="block px-8 py-1 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm xl:text-base">
                                                 Profil
                                             </a>
                                         </li>

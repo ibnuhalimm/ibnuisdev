@@ -17,7 +17,7 @@
                 </x-alert>
             @endif
 
-            @livewire('dashboard.project.create')
+            @livewire('dashboard.portfolio.create')
         </x-card-content>
     </div>
 </div>

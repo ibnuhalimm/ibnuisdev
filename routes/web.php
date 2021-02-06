@@ -24,9 +24,9 @@ Route::name('dashboard.')
     ->group( function() {
         Route::get('section', 'SectionController@index')->name('section.index');
 
-        Route::get('project', 'ProjectController@index')->name('project.index');
-        Route::get('project/create', 'ProjectController@create')->name('project.create');
-        Route::get('project/edit/{id}', 'ProjectController@edit')->name('project.edit');
+        Route::get('portfolio', 'PortfolioController@index')->name('portfolio.index');
+        Route::get('portfolio/create', 'PortfolioController@create')->name('portfolio.create');
+        Route::get('portfolio/edit/{id}', 'PortfolioController@edit')->name('portfolio.edit');
 
         Route::get('skills', 'SkillsController@index')->name('skills.index');
         Route::get('message', 'MessageController@index')->name('message.index');
@@ -39,4 +39,6 @@ Route::name('dashboard.')
         Route::get('share-button', 'ShareButtonController@index')->name('share-button.index');
         Route::get('share-button/create', 'ShareButtonController@create')->name('share-button.create');
         Route::get('share-button/edit/{id}', 'ShareButtonController@edit')->name('share-button.edit');
+
+        Route::get('profile', 'ProfileController@index')->name('profile.index');
     });

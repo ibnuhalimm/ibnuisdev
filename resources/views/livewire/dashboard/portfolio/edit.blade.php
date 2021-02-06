@@ -70,7 +70,7 @@
     </x-form-label-inline>
 
     <div class="w-full px-6 text-center">
-        <x-button-link-primary href="{{ route('dashboard.project.index') }}" color="gray" wire:loading.class="bg-opacity-50" wire:target="submitUpdateProject">
+        <x-button-link-primary href="{{ route('dashboard.portfolio.index') }}" color="gray" wire:loading.class="bg-opacity-50" wire:target="submitUpdateProject">
             Cancel
         </x-button-link-primary>
         <x-button type="button" color="ib-three" wire:loading.attr="disabled" wire:loading.class="bg-opacity-50" wire:click="submitUpdateProject" wire:target="submitUpdateProject">

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Dashboard\Project;
+namespace App\Http\Livewire\Dashboard\Portfolio;
 
 use App\Project;
 use App\Traits\LivewireOptimizeImage;
@@ -60,6 +60,7 @@ class Create extends Component
             'month' => [ 'required', 'between:01,12' ],
             'year' => [ 'required', 'digits:4' ],
             'name' => [ 'required', 'min:10', 'max:50' ],
+            'image' => [ 'required', 'image', 'mimes:jpg,jpeg,png' ],
             'description' => [ 'required', 'min:100', 'max:300' ],
             'link' => [ 'nullable', 'url' ],
             'status' => [ 'required', 'in:' . Project::STATUS_DRAFT . ',' . Project::STATUS_PUBLISH ]
@@ -99,9 +100,9 @@ class Create extends Component
 
             session()->flash('alert-create-status', 'green');
             session()->flash('alert-create-title', 'Success');
-            session()->flash('alert-create-body', 'Project saved!');
+            session()->flash('alert-create-body', 'Portfolio saved!');
 
-            return redirect()->route('dashboard.project.index');
+            return redirect()->route('dashboard.portfolio.index');
 
         } catch (\Throwable $th) {
             session()->flash('alert-create-status', 'red');
@@ -119,6 +120,6 @@ class Create extends Component
      */
     public function render()
     {
-        return view('livewire.dashboard.project.create');
+        return view('livewire.dashboard.portfolio.create');
     }
 }

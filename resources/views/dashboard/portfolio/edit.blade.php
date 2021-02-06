@@ -17,7 +17,7 @@
                 </x-alert>
             @endif
 
-            @livewire('dashboard.project.edit', [ 'project' => $project ])
+            @livewire('dashboard.portfolio.edit', [ 'project' => $project ])
         </x-card-content>
     </div>
 </div>

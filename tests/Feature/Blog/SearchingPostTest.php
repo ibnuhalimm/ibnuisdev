@@ -8,11 +8,11 @@ use Tests\TestCase;
 class SearchingPostTest extends TestCase
 {
     /**
-     * Should return success code
+     * User can view search result page
      *
      * @return void
      */
-    public function testStatusPageShouldOk()
+    public function testUserCanViewSearchResultPage()
     {
         $post_title = 'Test';
 
@@ -22,18 +22,8 @@ class SearchingPostTest extends TestCase
         ]);
 
         $response = $this->get(route('blog.post.search', [ 'q' => $post_title ]));
-        $response->assertStatus(200);
-    }
-
-    /**
-     * Use right views file
-     *
-     * @return void
-     */
-    public function testUseRightViewsFile()
-    {
-        $response = $this->get(route('blog.post.search', [ 'q' => 'test' ]));
-        $response->assertViewIs('blog.post.search');
+        $response->assertStatus(200)
+            ->assertViewIs('blog.post.search');
     }
 
     /**
@@ -44,25 +34,18 @@ class SearchingPostTest extends TestCase
     public function testCanHandleEmptyResult()
     {
         $response = $this->get(route('blog.post.search', [ 'q' => 'Test again' ]));
-        $response->assertStatus(200);
+        $response->assertStatus(200)
+            ->assertViewIs('blog.post.search');
     }
 
     /**
-     * Has `posts` searching result
+     * Contains `blog.post.latest-post` livewire component
      *
      * @return void
      */
-    public function testHasPostsData()
+    public function testContainsLatestPostLivewire()
     {
-        $search_text = 'test';
-
-        factory(Post::class)->create([
-            'judul' => $search_text
-        ]);
-
-        $posts = Post::published()->search($search_text)->orderBy('created_at', 'desc')->take(12)->get();
-
-        $response = $this->get(route('blog.post.search', [ 'q' => $search_text ]));
-        $response->assertViewHas('posts', $posts);
+        $response = $this->get(route('blog.post.search', [ 'q' => 'Test again' ]));
+        $response->assertSeeLivewire('blog.post.latest-post');
     }
 }

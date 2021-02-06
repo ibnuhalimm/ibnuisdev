@@ -14,10 +14,10 @@ class LastMonthVisitor extends Component
      */
     public function render()
     {
-        $total_visitor_month = Analytics::where('name', Analytics::LAST_MONTH_TOTAL_VISITOR)->first();
+        $visitor_month = Analytics::where('name', Analytics::LAST_MONTH_TOTAL_VISITOR)->first();
 
         $data = [
-            'total_visitor_month' => isset($total_visitor_month->data) ? $total_visitor_month->data : 0
+            'total_visitor_month' => isset($visitor_month->data) ? $visitor_month->data : 0
         ];
 
         return view('livewire.dashboard.blog.last-month-visitor', $data);

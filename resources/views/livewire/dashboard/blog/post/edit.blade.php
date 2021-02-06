@@ -19,6 +19,17 @@
                 <x-input-text type="text" wire:model.lazy="judul" />
                 @error('judul') <x-form-error> {{ $message }} </x-form-error> @enderror
             </x-form-label-inline>
+            <x-form-label-inline text="Slug" required="true" size="large">
+                <div class="flex items-center justify-between">
+                    <div class="hidden xl:block xl:w-2/5 mr-2">
+                        <x-input-text type="text" value="{{ route('blog.post.read', [ 'slug' => '' ]) . '/' }}" class="bg-gray-100" readonly />
+                    </div>
+                    <div class="w-full xl:w-3/5 xl:ml-2">
+                        <x-input-text type="text" wire:model.lazy="slug" />
+                    </div>
+                </div>
+                @error('slug') <x-form-error> {{ $message }} </x-form-error> @enderror
+            </x-form-label-inline>
             <x-form-label-inline text="Isi Postingan" required="true" size="large">
                 <div wire:ignore>
                     <x-textarea id="__isiCreatePost">{!! Str::of($isi)->replace(' src="../..', ' src="' . url('/') . '') !!}</x-textarea>
