@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\Blog\Post;
 use Illuminate\Console\Command;
 use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\SitemapGenerator;
 use Spatie\Sitemap\Tags\Url;
 
 class GenerateSiteMap extends Command
@@ -40,15 +41,7 @@ class GenerateSiteMap extends Command
      */
     public function handle()
     {
-        $sitemap = Sitemap::create();
-
-        $posts = Post::status(Post::STATUS_PUBLISH)->get();
-
-        foreach ($posts as $post) {
-            $sitemap->add(Url::create("{$post->slug}"));
-        }
-
-        $sitemap->writeToFile(public_path('sitemap.xml'));
+        SitemapGenerator::create(config('app.url'))->writeToFile(public_path('sitemap.xml'));
 
         return 0;
     }
