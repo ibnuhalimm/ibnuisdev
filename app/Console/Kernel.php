@@ -26,6 +26,11 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
 
+        $schedule->command('sitemap:generate')->daily();
+        $schedule->command('analytics:last-day-total-visitor')->everyFiveMinutes();
+        $schedule->command('analytics:last-month-total-visitor')->everyFiveMinutes();
+        $schedule->command('analytics:most-visited-pages 7')->everyFiveMinutes();
+
         $schedule->command('snapshot:create')->everyFourHours();
         $schedule->command('snapshot:cleanup --keep=3')->everyFourHours();
     }
