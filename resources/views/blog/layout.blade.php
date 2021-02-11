@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
+        @if (config('app.env') == 'local') [LOCAL] @endif
         @hasSection ('title')
             @yield('title') - {{ config('app.name') }}
         @else

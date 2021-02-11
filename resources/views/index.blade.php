@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
+        @if (config('app.env') == 'local') [LOCAL] @endif
         {{ config('app.name') }}
     </title>
     <meta name="title" content="{{ config('app.name') }}">
