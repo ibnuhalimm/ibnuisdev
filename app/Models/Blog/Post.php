@@ -141,7 +141,7 @@ class Post extends Model
      */
     public function scopePublished($query)
     {
-        return $query->status(self::STATUS_PUBLISH);
+        return $query->where('status', self::STATUS_PUBLISH);
     }
 
     /**
@@ -211,7 +211,7 @@ class Post extends Model
                         ->whereBetween('created_at', [$start_day, $end_day])
                         ->groupBy('post_id')
                 , 'desc')
-                ->status(self::STATUS_PUBLISH)
+                ->published()
                 ->whereNotIn('id', $main_post_ids)
                 ->take(3)
                 ->get();
@@ -224,27 +224,22 @@ class Post extends Model
      * @param string|null $tags
      * @return \Illuminate\Database\Query\Builder
      */
-    public function scopeRelatedPosts($query, $tags = null)
+    public function scopeRelatedPosts($query, $current_post_id, $tags = null)
     {
-        $start_date = Carbon::now()->subYear()->format('Y-m-d') . ' 00:00:00';
-        $end_date = Carbon::now()->format('Y-m-d') . ' 23:59.59';
-
         if (!empty($tags)) {
             $arr_tags = Str::of($tags)->explode(',');
 
-            return $query->whereBetween('created_at', [$start_date, $end_date])
+            return $query->whereNotIn('id', [ $current_post_id ])
                         ->where(function($post) use ($arr_tags) {
                             foreach ($arr_tags as $tag) {
                                 $post->orWhere('tag', 'like', '%' . trim($tag) . '%');
                             }
                         })
-                        ->status(self::STATUS_PUBLISH)
+                        ->published()
                         ->inRandomOrder();
         }
 
-        return $query->whereBetween('created_at', [$start_date, $end_date])
-                    ->status(self::STATUS_PUBLISH)
-                    ->inRandomOrder();
+        return $query->whereNotIn('id', [ $current_post_id ])->published()->inRandomOrder();
     }
 
     /**
