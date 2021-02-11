@@ -94,12 +94,6 @@
 @push('bottom_css')
     <link rel="stylesheet" href="{{ URL::asset('css/ckeditor-content.css?_=' . rand()) }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/themes/prism.min.css">
-    <style>
-        .slick-dots li.slick-active button:before,
-        .slick-dots li button:before {
-            color: #fff !important;
-        }
-    </style>
 @endpush
 
 @push('bottom_js')

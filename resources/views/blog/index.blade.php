@@ -117,6 +117,12 @@
 @push('top_css')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
+    <style>
+        .slick-dots li.slick-active button:before,
+        .slick-dots li button:before {
+            color: #fff !important;
+        }
+    </style>
 @endpush
 
 @push('bottom_js')
