@@ -20,7 +20,7 @@
         @foreach ($main_posts as $main_post)
             <a href="{{ route('blog.post.read', [ 'slug' => $main_post['slug'] ]) }}" class="block outline-none focus:outline-none">
                 <div class="w-full h-48 rounded-md bg-cover bg-no-repeat" style="background-image: url('{{ $main_post['gbr_url'] }}')">
-                    <div class="w-full h-full p-5 py-6 flex flex-col items-start justify-end bg-black bg-opacity-25 rounded-md">
+                    <div class="w-full h-full p-5 py-6 flex flex-col items-start justify-end bg-black bg-opacity-50 rounded-md">
                         <p class="font-bold text-white">
                             {{ $main_post['judul'] }}
                         </p>
@@ -35,7 +35,7 @@
 
         @isset($main_posts[0])
             <a href="{{ route('blog.post.read', [ 'slug' => $main_posts[0]['slug'] ]) }}" class="block w-full h-64 rounded-md hover:shadow-xl bg-cover bg-no-repeat" style="background-image: url('{{ $main_posts[0]['gbr_url'] }}')">
-                <div class="w-full h-full p-5 py-6 flex flex-col items-start justify-end bg-black bg-opacity-25 rounded-md">
+                <div class="w-full h-full p-5 py-6 flex flex-col items-start justify-end bg-black bg-opacity-50 rounded-md">
                     <p class="font-bold text-white">
                         {{ $main_posts[0]['judul'] }}
                     </p>
@@ -48,7 +48,7 @@
 
             @isset($main_posts[1])
                 <a href="{{ route('blog.post.read', [ 'slug' => $main_posts[1]['slug'] ]) }}" class="block w-full h-24 rounded-md hover:shadow-xl bg-cover bg-no-repeat" style="background-image: url('{{ $main_posts[1]['gbr_url'] }}')">
-                    <div class="w-full h-full p-5 py-6 flex flex-col items-start justify-end bg-black bg-opacity-25 rounded-md">
+                    <div class="w-full h-full p-5 py-6 flex flex-col items-start justify-end bg-black bg-opacity-50 rounded-md">
                         <p class="font-bold text-white">
                             {{ $main_posts[1]['judul'] }}
                         </p>
@@ -60,7 +60,7 @@
             <div class="grid grid-cols-2 gap-8">
                 @isset($main_posts[2])
                     <a href="{{ route('blog.post.read', [ 'slug' => $main_posts[2]['slug'] ]) }}" class="block w-full h-32 rounded-md hover:shadow-xl bg-cover bg-no-repeat" style="background-image: url('{{ $main_posts[2]['gbr_url'] }}')">
-                        <div class="w-full h-full p-5 py-6 flex flex-col items-start justify-end bg-black bg-opacity-25 rounded-md">
+                        <div class="w-full h-full p-5 py-6 flex flex-col items-start justify-end bg-black bg-opacity-50 rounded-md">
                             <p class="font-bold text-white">
                                 {{ $main_posts[2]['judul'] }}
                             </p>
@@ -71,7 +71,7 @@
 
                 @isset($main_posts[3])
                     <a href="{{ route('blog.post.read', [ 'slug' => $main_posts[3]['slug'] ]) }}" class="block w-full h-32 rounded-md hover:shadow-xl bg-cover bg-no-repeat" style="background-image: url('{{ $main_posts[3]['gbr_url'] }}')">
-                        <div class="w-full h-full p-5 py-6 flex flex-col items-start justify-end bg-black bg-opacity-25 rounded-md">
+                        <div class="w-full h-full p-5 py-6 flex flex-col items-start justify-end bg-black bg-opacity-50 rounded-md">
                             <p class="font-bold text-white">
                                 {{ $main_posts[3]['judul'] }}
                             </p>
