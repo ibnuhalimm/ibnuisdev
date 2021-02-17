@@ -11,7 +11,7 @@
                             <h3 class="h-auto font-bold truncate-two-lines">
                                 {{ $post->judul }}
                             </h3>
-                            <p class="text-xs mt-3">{{ strftime('%e %B %Y', strtotime($post->created_at)) }}</p>
+                            <p class="text-xs mt-3">{{ strftime('%b, %e %Y', strtotime($post->created_at)) }}</p>
                         </div>
                     </div>
                 </div>

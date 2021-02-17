@@ -24,7 +24,7 @@
                         <p class="font-bold text-white">
                             {{ $main_post['judul'] }}
                         </p>
-                        <p class="text-xs text-gray-200">{{ strftime('%e %B %Y', strtotime($main_post['created_at'])) }}</p>
+                        <p class="text-xs text-gray-200">{{ strftime('%b, %e %Y', strtotime($main_post['created_at'])) }}</p>
                     </div>
                 </div>
             </a>
@@ -39,7 +39,7 @@
                     <p class="font-bold text-white">
                         {{ $main_posts[0]['judul'] }}
                     </p>
-                    <p class="text-xs text-gray-200">{{ strftime('%e %B %Y', strtotime($main_posts[0]['created_at'])) }}</p>
+                    <p class="text-xs text-gray-200">{{ strftime('%b, %e %Y', strtotime($main_posts[0]['created_at'])) }}</p>
                 </div>
             </a>
         @endisset
@@ -52,7 +52,7 @@
                         <p class="font-bold text-white">
                             {{ $main_posts[1]['judul'] }}
                         </p>
-                        <p class="text-xs text-gray-200">{{ strftime('%e %B %Y', strtotime($main_posts[1]['created_at'])) }}</p>
+                        <p class="text-xs text-gray-200">{{ strftime('%b, %e %Y', strtotime($main_posts[1]['created_at'])) }}</p>
                     </div>
                 </a>
             @endisset
@@ -64,7 +64,7 @@
                             <p class="font-bold text-white">
                                 {{ $main_posts[2]['judul'] }}
                             </p>
-                            <p class="text-xs text-gray-200">{{ strftime('%e %B %Y', strtotime($main_posts[2]['created_at'])) }}</p>
+                            <p class="text-xs text-gray-200">{{ strftime('%b, %e %Y', strtotime($main_posts[2]['created_at'])) }}</p>
                         </div>
                     </a>
                 @endisset
@@ -75,7 +75,7 @@
                             <p class="font-bold text-white">
                                 {{ $main_posts[3]['judul'] }}
                             </p>
-                            <p class="text-xs text-gray-200">{{ strftime('%e %B %Y', strtotime($main_posts[3]['created_at'])) }}</p>
+                            <p class="text-xs text-gray-200">{{ strftime('%b, %e %Y', strtotime($main_posts[3]['created_at'])) }}</p>
                         </div>
                     </a>
                 @endisset
@@ -98,7 +98,7 @@
                             <h3 class="h-auto font-bold truncate-two-lines">
                                 {{ $top_post->judul }}
                             </h3>
-                            <p class="text-xs mt-3">{{ strftime('%e %B %Y', strtotime($top_post->created_at)) }}</p>
+                            <p class="text-xs mt-3">{{ strftime('%b, %e %Y', strtotime($top_post->created_at)) }}</p>
                         </div>
                     </div>
                 </div>
