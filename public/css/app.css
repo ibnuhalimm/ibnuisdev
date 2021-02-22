@@ -671,14 +671,6 @@ body {
   }
 }
 
-<<<<<<< HEAD
-=======
-.slick-dots li.slick-active button:before,
-.slick-dots li button:before {
-  color: #fff !important;
-}
-
->>>>>>> 78823027e6292f9268ec69cf438e4583a6a33644
 .space-y-0 > :not(template) ~ :not(template) {
   --space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--space-y-reverse)));
