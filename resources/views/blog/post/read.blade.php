@@ -20,7 +20,7 @@
     <div class="mb-10 xl:w-2/3 xl:mx-auto xl:order-2">
         <h1 class="text-2xl font-bold text-ib-one">{{ $post->judul }}</h1>
         <p class="mt-1 text-gray-800 text-xs">
-            {{ strftime('%e %B %Y', strtotime($post->created_at)) }}
+            {{ strftime('%b, %e %Y', strtotime($post->created_at)) }}
         </p>
         <div class="w-full my-3">
             <img src="{{ $post->gbr_url }}" alt="{{ $post->judul }}" class="w-full h-auto">
