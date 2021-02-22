@@ -18,15 +18,9 @@
 
 <div class="flex flex-col xl:flex-row">
     <div class="mb-10 xl:w-2/3 xl:mx-auto xl:order-2">
-<<<<<<< HEAD
-        <h1 class="text-2xl font-bold text-ib-four">{{ $post->judul }}</h1>
-        <p class="mt-1 text-gray-500 text-xs">
-            {{ strftime('%b, %e %Y', strtotime($post->created_at)) }}
-=======
         <h1 class="text-2xl font-bold text-ib-one">{{ $post->judul }}</h1>
         <p class="mt-1 text-gray-800 text-xs">
             {{ strftime('%e %B %Y', strtotime($post->created_at)) }}
->>>>>>> make blog light again
         </p>
         <div class="w-full my-3">
             <img src="{{ $post->gbr_url }}" alt="{{ $post->judul }}" class="w-full h-auto">
