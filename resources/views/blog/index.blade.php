@@ -83,12 +83,12 @@
         </div>
     </div>
 
-    <h2 class="mt-8 font-bold text-base xl:text-xl text-ib-four mb-3">
-        Top Posts
+    <h2 class="mt-8 font-bold text-base xl:text-xl text-ib-one mb-3">
+        Top Post
     </h2>
     <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
         @foreach ($top_posts as $top_post)
-            <a href="{{ route('blog.post.read', [ 'slug' => $top_post->slug ]) }}" class="block w-full p-5 bg-ib-two rounded-md outline-none hover:outline-none text-ib-four hover:text-ib-three">
+            <a href="{{ route('blog.post.read', [ 'slug' => $top_post->slug ]) }}" class="block w-full p-5 rounded-md outline-none hover:outline-none text-ib-one hover:text-ib-three">
                 <div class="flex flex-row items-center justify-between">
                     <div class="w-2/5">
                         <div class="w-20 h-20 rounded-md bg-cover bg-no-repeat" style="background-image: url('{{ $top_post->gbr_url }}')"></div>
@@ -106,8 +106,8 @@
         @endforeach
     </div>
 
-    <h2 class="mt-8 font-bold text-base xl:text-xl text-ib-four mb-3">
-        Latest Posts
+    <h2 class="mt-8 font-bold text-base xl:text-xl text-ib-one mb-3">
+        Postingan Terbaru
     </h2>
 
     @livewire('blog.post.latest-post', ['except_ids' => $except_ids])
