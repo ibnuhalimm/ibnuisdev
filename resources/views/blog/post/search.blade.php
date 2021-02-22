@@ -16,7 +16,7 @@
 
 @section('content')
 
-    <h2 class=" font-bold text-base xl:text-xl text-gray-800 mb-3 truncate">
+    <h2 class=" font-bold text-base xl:text-xl text-ib-one mb-3 truncate">
         Hasil Pencarian "{{ $search_text }}"
     </h2>
 
@@ -25,7 +25,7 @@
     @else
         <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
             @foreach ($posts as $post)
-                <a href="{{ route('blog.post.read', [ 'slug' => $post->slug ]) }}" class="block w-full p-5 bg-white rounded-md outline-none hover:outline-none hover:text-ib-three">
+                <a href="{{ route('blog.post.read', [ 'slug' => $post->slug ]) }}" class="block w-full p-5 rounded-md outline-none hover:outline-none text-ib-one hover:text-ib-three">
                     <div class="flex flex-row items-center justify-between">
                         <div class="w-2/5">
                             <div class="w-20 h-20 rounded-md bg-cover bg-no-repeat" style="background-image: url('{{ $post->gbr_url }}')"></div>
