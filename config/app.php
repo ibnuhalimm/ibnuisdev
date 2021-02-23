@@ -1,7 +1,5 @@
 <?php
 
-setlocale(LC_TIME, 'id_ID.UTF-8');
-
 return [
 
     /*

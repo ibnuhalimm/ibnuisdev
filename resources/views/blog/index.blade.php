@@ -24,14 +24,14 @@
                         <p class="font-bold text-white">
                             {{ $main_post['judul'] }}
                         </p>
-                        <p class="text-xs text-gray-200">{{ strftime('%b, %e %Y', strtotime($main_post['created_at'])) }}</p>
+                        <p class="text-xs text-gray-200">{{ strftime('%b %e, %Y', strtotime($main_post['created_at'])) }}</p>
                     </div>
                 </div>
             </a>
         @endforeach
     </div>
 
-    <div class="hidden xl:grid grid-cols-2 gap-6">
+    <div class="hidden xl:grid grid-cols-2 gap-4">
 
         @isset($main_posts[0])
             <a href="{{ route('blog.post.read', [ 'slug' => $main_posts[0]['slug'] ]) }}" class="block w-full h-64 rounded-md hover:shadow-xl bg-cover bg-no-repeat" style="background-image: url('{{ $main_posts[0]['gbr_url'] }}')">
@@ -39,7 +39,7 @@
                     <p class="font-bold text-white">
                         {{ $main_posts[0]['judul'] }}
                     </p>
-                    <p class="text-xs text-gray-200">{{ strftime('%b, %e %Y', strtotime($main_posts[0]['created_at'])) }}</p>
+                    <p class="text-xs text-gray-200">{{ strftime('%b %e, %Y', strtotime($main_posts[0]['created_at'])) }}</p>
                 </div>
             </a>
         @endisset
@@ -47,24 +47,24 @@
         <div class="grid grid-rows-2 gap-0">
 
             @isset($main_posts[1])
-                <a href="{{ route('blog.post.read', [ 'slug' => $main_posts[1]['slug'] ]) }}" class="block w-full h-24 rounded-md hover:shadow-xl bg-cover bg-no-repeat" style="background-image: url('{{ $main_posts[1]['gbr_url'] }}')">
+                <a href="{{ route('blog.post.read', [ 'slug' => $main_posts[1]['slug'] ]) }}" class="block w-full h-28 rounded-md hover:shadow-xl bg-cover bg-no-repeat" style="background-image: url('{{ $main_posts[1]['gbr_url'] }}')">
                     <div class="w-full h-full p-5 py-6 flex flex-col items-start justify-end bg-black bg-opacity-50 rounded-md">
                         <p class="font-bold text-white">
                             {{ $main_posts[1]['judul'] }}
                         </p>
-                        <p class="text-xs text-gray-200">{{ strftime('%b, %e %Y', strtotime($main_posts[1]['created_at'])) }}</p>
+                        <p class="text-xs text-gray-200">{{ strftime('%b %e, %Y', strtotime($main_posts[1]['created_at'])) }}</p>
                     </div>
                 </a>
             @endisset
 
-            <div class="grid grid-cols-2 gap-8">
+            <div class="grid grid-cols-2 gap-4">
                 @isset($main_posts[2])
                     <a href="{{ route('blog.post.read', [ 'slug' => $main_posts[2]['slug'] ]) }}" class="block w-full h-32 rounded-md hover:shadow-xl bg-cover bg-no-repeat" style="background-image: url('{{ $main_posts[2]['gbr_url'] }}')">
                         <div class="w-full h-full p-5 py-6 flex flex-col items-start justify-end bg-black bg-opacity-50 rounded-md">
                             <p class="font-bold text-white">
                                 {{ $main_posts[2]['judul'] }}
                             </p>
-                            <p class="text-xs text-gray-200">{{ strftime('%b, %e %Y', strtotime($main_posts[2]['created_at'])) }}</p>
+                            <p class="text-xs text-gray-200">{{ strftime('%b %e, %Y', strtotime($main_posts[2]['created_at'])) }}</p>
                         </div>
                     </a>
                 @endisset
@@ -75,7 +75,7 @@
                             <p class="font-bold text-white">
                                 {{ $main_posts[3]['judul'] }}
                             </p>
-                            <p class="text-xs text-gray-200">{{ strftime('%b, %e %Y', strtotime($main_posts[3]['created_at'])) }}</p>
+                            <p class="text-xs text-gray-200">{{ strftime('%b %e, %Y', strtotime($main_posts[3]['created_at'])) }}</p>
                         </div>
                     </a>
                 @endisset
@@ -86,23 +86,9 @@
     <h2 class="mt-8 font-bold text-base xl:text-xl text-ib-one mb-3">
         Top Post
     </h2>
-    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-0 md:gap-6">
         @foreach ($top_posts as $top_post)
-            <a href="{{ route('blog.post.read', [ 'slug' => $top_post->slug ]) }}" class="block w-full p-5 rounded-md outline-none hover:outline-none text-ib-one hover:text-ib-three">
-                <div class="flex flex-row items-center justify-between">
-                    <div class="w-2/5">
-                        <div class="w-20 h-20 rounded-md bg-cover bg-no-repeat" style="background-image: url('{{ $top_post->gbr_url }}')"></div>
-                    </div>
-                    <div class="w-3/5 flex flex-col items-center justify-between">
-                        <div class="-ml-3">
-                            <h3 class="h-auto font-bold truncate-two-lines">
-                                {{ $top_post->judul }}
-                            </h3>
-                            <p class="text-xs mt-3">{{ strftime('%b, %e %Y', strtotime($top_post->created_at)) }}</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
+            <x-blog-post-card slug="{{ $top_post->slug }}" image="{{ $top_post->gbr_url }}" title="{{ $top_post->judul }}" date="{{ $top_post->created_at }}" />
         @endforeach
     </div>
 

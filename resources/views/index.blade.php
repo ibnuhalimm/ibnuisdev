@@ -37,8 +37,7 @@
     @endif
 </head>
 
-<body class="bg-ib-one text-ib-four flex flex-col min-h-screen justify-between text-base overflow-y-scroll"
-    x-data="{ opendropdown: false }">
+<body class="bg-ib-one text-ib-four flex flex-col min-h-screen justify-between text-sm overflow-y-scroll" x-data="{ opendropdown: false }">
     <nav class="w-full fixed bg-ib-one z-30 top-0 left-0 right-0 py-3 xl:py-5 leading-9 xl:leading-7">
         <div class="w-11/12 sm:w-3/5 xl:w-3/4 mx-auto xl:flex xl:flex-row xl:items-center xl:justify-center">
             <div class="flex flex-row items-center justify-between xl:hidden">
@@ -137,7 +136,7 @@
                     <h2 class="text-2xl xl:text-3xl font-bold">
                         Portfolio
                     </h2>
-                    <h3 class="xl:text-lg">
+                    <h3>
                         {{ $portfolio->description ?? '' }}
                     </h3>
                 </div>
@@ -149,7 +148,7 @@
                     <h2 class="text-2xl xl:text-3xl font-bold">
                         Skills
                     </h2>
-                    <h3 class="text-lg">
+                    <h3>
                         {{ $skills->description ?? '' }}
                     </h3>
                 </div>
@@ -172,7 +171,7 @@
                     <h2 class="text-2xl xl:text-3xl font-bold">
                         Contact
                     </h2>
-                    <h3 class="text-lg">
+                    <h3>
                         {{ $contact->description ?? '' }}
                     </h3>
                 </div>

@@ -20,7 +20,7 @@
     <div class="mb-10 xl:w-2/3 xl:mx-auto xl:order-2">
         <h1 class="text-2xl font-bold text-ib-one">{{ $post->judul }}</h1>
         <p class="mt-1 text-gray-800 text-xs">
-            {{ strftime('%b, %e %Y', strtotime($post->created_at)) }}
+            {{ strftime('%b %e, %Y', strtotime($post->created_at)) }}
         </p>
         <div class="w-full my-3">
             <img src="{{ $post->gbr_url }}" alt="{{ $post->judul }}" class="w-full h-auto">
@@ -30,18 +30,18 @@
         </div>
     </div>
 
-    <div class="mb-6 xl:mb-0 xl:mt-20 xl:order-1 xl:fixed">
-        <h4 class="text-base text-ib-one">Share</h4>
+    <div class="mb-6 xl:mb-0 xl:mt-0 xl:order-1 xl:fixed">
+        <h4 class="text-base text-ib-one">Bagikan</h4>
         <ul class="mt-2">
             @foreach ($share_buttons as $share)
                 <li class="inline-flex xl:flex xl:mb-2 items-center mr-1">
-                    <a href="{{ $share->url . $post->post_url }}" target="_blank" class="w-10 h-10 xl:w-8 xl:h-8 text-center rounded-full border border-solid border-ib-one hover:border-ib-three p-2 text-ib-one hover:text-ib-three">
+                    <a href="{{ $share->url . $post->post_url }}" target="_blank" class="w-10 h-10 xl:w-8 xl:h-8 text-center rounded-full border border-solid border-ib-one hover:border-ib-three p-2 text-ib-one hover:text-ib-three transition delay-100">
                         <i class="flaticon-{{ $share->ikon }} text-xs"></i>
                     </a>
                 </li>
             @endforeach
             <li class="inline-flex xl:flex xl:mb-2 items-center mr-1">
-                <a href="javascript:;" id="__btnShareViaLink" data-url="{{ $post->post_url }}" class="w-10 h-10 xl:w-8 xl:h-8 text-center rounded-full border border-solid border-ib-one hover:border-ib-three p-2 text-ib-one hover:text-ib-three">
+                <a href="javascript:;" id="__btnShareViaLink" data-url="{{ $post->post_url }}" class="w-10 h-10 xl:w-8 xl:h-8 text-center rounded-full border border-solid border-ib-one hover:border-ib-three p-2 text-ib-one hover:text-ib-three transition delay-100">
                     <i class="flaticon-link text-xs"></i>
                 </a>
             </li>
@@ -53,23 +53,9 @@
 <h2 class="mt-8 font-bold text-base xl:text-xl text-ib-one mb-3">
     Postingan Terkait
 </h2>
-<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2">
     @foreach ($related_posts as $post)
-        <a href="{{ $post->post_url }}" class="block w-full p-5 rounded-md outline-none hover:outline-none text-ib-one hover:text-ib-three">
-            <div class="flex flex-row items-center justify-between">
-                <div class="w-2/5">
-                    <div class="w-20 h-20 rounded-md bg-cover bg-no-repeat" style="background-image: url('{{ $post->gbr_url }}')"></div>
-                </div>
-                <div class="w-3/5 flex flex-col items-center justify-between">
-                    <div class="-ml-3">
-                        <h3 class="h-auto font-bold truncate-two-lines">
-                            {{ $post->judul }}
-                        </h3>
-                        <p class="text-xs mt-3">{{ strftime('%b, %e %Y', strtotime($post->created_at)) }}</p>
-                    </div>
-                </div>
-            </div>
-        </a>
+        <x-blog-post-card slug="{{ $post->slug }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" />
     @endforeach
 </div>
 @endsection
