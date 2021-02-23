@@ -26,6 +26,11 @@
             <x-form-label-inline text="Password" required="true">
                 <x-input-text type="password" name="password" placeholder="Your password" required />
             </x-form-label-inline>
+            <x-form-label-inline>
+                <label for="__remember_me" class="flex items-center">
+                    <input type="checkbox" name="remember" id="__remember_me" class="shadow mr-2" /> Remember me
+                </label>
+            </x-form-label-inline>
         </div>
         <div class="w-full px-6 text-center pb-10">
             <x-button type="submit" color="ib-three">
