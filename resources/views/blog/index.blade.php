@@ -120,23 +120,3 @@
     </section>
 
 @endsection
-
-@push('top_css')
-    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"> --}}
-    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css"> --}}
-@endpush
-
-@push('bottom_js')
-    {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.1.0/dist/jquery.min.js"></script> --}}
-    {{-- <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> --}}
-    {{-- <script>
-        $(document).ready(function() {
-            $('#main_posts_wrapper').slick({
-                dots: true,
-                arrows: false,
-                autoPlay: true,
-                pauseOnHover: true
-            })
-        });
-    </script> --}}
-@endpush
