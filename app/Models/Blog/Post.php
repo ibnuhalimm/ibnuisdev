@@ -202,15 +202,12 @@ class Post extends Model
      */
     public static function getTopPostNotInMain($main_post_ids = [])
     {
-        $start_day = Carbon::now()->subDays(14)->format('Y-m-d') . ' 00:00:00';
-        $end_day = Carbon::now()->format('Y-m-d') . ' 23:59:59';
-
         return self::orderBy(
                     PostVisitor::selectRaw('COUNT(*)')
                         ->whereColumn('post_id', 'post.id')
-                        ->whereBetween('created_at', [$start_day, $end_day])
                         ->groupBy('post_id')
                 , 'desc')
+                ->latest()
                 ->published()
                 ->whereNotIn('id', $main_post_ids)
                 ->take(3)
@@ -236,10 +233,10 @@ class Post extends Model
                             }
                         })
                         ->published()
-                        ->inRandomOrder();
+                        ->latest();
         }
 
-        return $query->whereNotIn('id', [ $current_post_id ])->published()->inRandomOrder();
+        return $query->whereNotIn('id', [ $current_post_id ])->published()->latest();
     }
 
     /**

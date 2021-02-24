@@ -17,40 +17,50 @@
 @section('content')
 
     <section>
-        <x-frontend-container>
+        <div class="lg:w-3/4 mx-auto">
             <div class="flex flex-col xl:flex-row">
                 <div class="mb-10 xl:w-2/3 xl:mx-auto xl:order-2">
-                    <h1 class="text-2xl font-bold text-ib-one">{{ $post->judul }}</h1>
-                    <p class="mt-1 text-gray-800 text-xs">
-                        {{ strftime('%b %e, %Y', strtotime($post->created_at)) }}
-                    </p>
-                    <div class="w-full my-3">
-                        <img src="{{ $post->gbr_url }}" alt="{{ $post->judul }}" class="w-full h-auto">
+                    <x-post-read-container>
+                        <h1 class="text-2xl font-bold text-ib-one">{{ $post->judul }}</h1>
+                        <p class="mt-1 text-gray-800 text-xs">
+                            {{ strftime('%b %e, %Y', strtotime($post->created_at)) }}
+                        </p>
+                    </x-post-read-container>
+
+                    <div class="lg:w-3/4 xl:w-full mx-auto">
+                        <div class="w-full my-3">
+                            <img src="{{ $post->gbr_url }}" alt="{{ $post->judul }}" class="w-full h-auto">
+                        </div>
                     </div>
-                    <div class="article-content formatted text-ib-one">
-                        {!! Str::of($post->isi)->replace('../../storage', url('/storage')) !!}
-                    </div>
+
+                    <x-post-read-container>
+                        <div class="article-content formatted text-ib-one">
+                            {!! Str::of($post->isi)->replace('../../storage', url('/storage')) !!}
+                        </div>
+                    </x-post-read-container>
                 </div>
 
                 <div class="mb-6 xl:mb-0 xl:mt-0 xl:order-1 xl:fixed">
-                    <h4 class="text-base text-ib-one">Bagikan</h4>
-                    <ul class="mt-2">
-                        @foreach ($share_buttons as $share)
+                    <x-frontend-container>
+                        <h4 class="text-base text-ib-one">Bagikan</h4>
+                        <ul class="mt-2">
+                            @foreach ($share_buttons as $share)
+                                <li class="inline-flex xl:flex xl:mb-2 items-center mr-1">
+                                    <a href="{{ $share->url . $post->post_url }}" target="_blank" class="w-10 h-10 xl:w-8 xl:h-8 text-center rounded-full border border-solid border-ib-one hover:border-ib-three p-2 text-ib-one hover:text-ib-three transition delay-100">
+                                        <i class="flaticon-{{ $share->ikon }} text-xs"></i>
+                                    </a>
+                                </li>
+                            @endforeach
                             <li class="inline-flex xl:flex xl:mb-2 items-center mr-1">
-                                <a href="{{ $share->url . $post->post_url }}" target="_blank" class="w-10 h-10 xl:w-8 xl:h-8 text-center rounded-full border border-solid border-ib-one hover:border-ib-three p-2 text-ib-one hover:text-ib-three transition delay-100">
-                                    <i class="flaticon-{{ $share->ikon }} text-xs"></i>
+                                <a href="javascript:;" id="__btnShareViaLink" data-url="{{ $post->post_url }}" class="w-10 h-10 xl:w-8 xl:h-8 text-center rounded-full border border-solid border-ib-one hover:border-ib-three p-2 text-ib-one hover:text-ib-three transition delay-100">
+                                    <i class="flaticon-link text-xs"></i>
                                 </a>
                             </li>
-                        @endforeach
-                        <li class="inline-flex xl:flex xl:mb-2 items-center mr-1">
-                            <a href="javascript:;" id="__btnShareViaLink" data-url="{{ $post->post_url }}" class="w-10 h-10 xl:w-8 xl:h-8 text-center rounded-full border border-solid border-ib-one hover:border-ib-three p-2 text-ib-one hover:text-ib-three transition delay-100">
-                                <i class="flaticon-link text-xs"></i>
-                            </a>
-                        </li>
-                    </ul>
+                        </ul>
+                    </x-frontend-container>
                 </div>
             </div>
-        </x-frontend-container>
+        </div>
     </section>
 
     <section class="mt-8 bg-ib-four py-5">
