@@ -6,7 +6,7 @@ module.exports = {
                 'ib-one': '#222831',
                 'ib-two': '#393E46',
                 'ib-three': '#00ADB5',
-                'ib-four': '#EEEEEE'
+                'ib-four': '#F4F4F4'
             }
         },
     },

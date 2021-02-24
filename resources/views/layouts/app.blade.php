@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     @stack('top_css')
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/sosmed_icons/flaticon.css') }}">
     @livewireStyles
     @stack('bottom_css')
 

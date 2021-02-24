@@ -16,25 +16,34 @@
 
 @section('content')
 
-    <h2 class=" font-bold text-base xl:text-xl text-ib-one mb-3 truncate">
-        Hasil Pencarian "{{ $search_text }}"
-    </h2>
+    <section>
+        <x-frontend-container>
+            <h1 class=" font-bold text-base xl:text-xl text-ib-one mb-3 truncate">
+                Hasil Pencarian "{{ $search_text }}"
+            </h1>
 
-    @if ($posts->isEmpty())
-        <h3>Maaf, kami tidak menemukan artikel yang Anda maksudkan.</h3>
-    @else
-        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2">
-            @foreach ($posts as $post)
-                <x-blog-post-card slug="{{ $post->slug }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" />
-            @endforeach
-        </div>
-    @endif
+            @if ($posts->isEmpty())
+                <h1>Maaf, kami tidak menemukan artikel yang Anda maksudkan.</h1>
+            @else
+                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2">
+                    @foreach ($posts as $post)
+                        <x-blog-post-card slug="{{ $post->slug }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" />
+                    @endforeach
+                </div>
+            @endif
+        </x-frontend-container>
+    </section>
 
-    <h2 class="mt-8 font-bold text-base xl:text-xl text-ib-one mb-3">
-        Artikel Menarik Lainnya...
-    </h2>
 
-    @livewire('blog.post.latest-post', ['except_ids' => $except_ids])
+    <section class="mt-8 bg-ib-four py-5">
+        <x-frontend-container>
+            <h2 class="font-bold text-base xl:text-xl text-ib-one mb-3">
+                Artikel Menarik Lainnya...
+            </h2>
+
+            @livewire('blog.post.latest-post', ['except_ids' => $except_ids])
+        </x-frontend-container>
+    </section>
 
 @endsection
 
