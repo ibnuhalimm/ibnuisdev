@@ -4,7 +4,7 @@
             <div class="w-24 h-20 md:w-24 md:h-24 xl:w-4/5 xl:h-24 rounded-md bg-cover bg-no-repeat border border-solid border-gray-200" style="background-image: url('{{ $image }}')"></div>
         </div>
         <div class="w-2/3 lg:w-3/5 xl:w-7/12 flex flex-col items-start justify-between py-1">
-            <div class="sm:-ml-4 xl:ml-0">
+            <div class="sm:-ml-4">
                 <h3 class="h-auto font-bold truncate-two-lines">
                     {{ $title }}
                 </h3>
