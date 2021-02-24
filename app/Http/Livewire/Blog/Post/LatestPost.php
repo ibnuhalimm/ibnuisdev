@@ -48,7 +48,7 @@ class LatestPost extends Component
             'posts' => Post::published()
                             ->orderBy('created_at', 'desc')
                             ->whereNotIn('id', $this->except_ids)
-                            ->paginate(9)
+                            ->paginate(10)
         ];
 
         return view('livewire.blog.post.latest-post', $data);

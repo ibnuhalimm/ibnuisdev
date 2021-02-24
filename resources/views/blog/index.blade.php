@@ -101,7 +101,7 @@
             <h2 class="font-bold text-base xl:text-xl text-ib-one mb-3">
                 Top Post
             </h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-0 lg:gap-2">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-2">
                 @foreach ($top_posts as $top_post)
                     <x-blog-post-card slug="{{ $top_post->slug }}" image="{{ $top_post->gbr_url }}" title="{{ $top_post->judul }}" date="{{ $top_post->created_at }}" />
                 @endforeach
