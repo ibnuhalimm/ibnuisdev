@@ -69,7 +69,7 @@
                                     </ul>
                                 </li>
                                 <li class="mb-3 xl:mb-0 xl:inline-block menu-item">
-                                    <a href="{{ route('dashboard.post.index') }}" class="block xl:px-6 text-white hover:text-gray-300 menu-item--link @if (Request::is('home/post*') OR Request::is('home/share-button*')) font-bold @endif">
+                                    <a href="{{ route('dashboard.post.index') }}" class="block xl:px-6 text-white hover:text-gray-300 menu-item--link @if (Request::is('home/post*') OR Request::is('home/share-button*') OR Request::is('home/old-page*')) font-bold @endif">
                                         Blog
                                     </a>
 

@@ -40,5 +40,10 @@ Route::name('dashboard.')
         Route::get('share-button/create', 'ShareButtonController@create')->name('share-button.create');
         Route::get('share-button/edit/{id}', 'ShareButtonController@edit')->name('share-button.edit');
 
+        Route::get('old-page', 'OldPageController@index')->name('old-page.index');
+
         Route::get('profile', 'ProfileController@index')->name('profile.index');
     });
+
+
+Route::get('{old_slug?}', 'RedirectOldPageController@index')->where('old_slug', '.*')->name('redirect-old-page');
