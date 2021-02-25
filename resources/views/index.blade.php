@@ -101,12 +101,14 @@
 
             <section id="home-section" class="pt-32 mb-48 xl:w-3/5 xl:mx-auto">
                 <div class="text-center">
-                    <h2 class="text-2xl xl:text-3xl font-bold">
-                        Hi, my name is Ibnu
-                    </h2>
-                    <p class="mt-2 leading-6 xl:text-lg">
-                        {{ $top->description ?? '' }}
-                    </p>
+                    <h1>
+                        <span class="block text-2xl xl:text-3xl font-bold">
+                            Hi, my name is Ibnu
+                        </span>
+                        <span class="block mt-3 leading-6 xl:text-lg">
+                            {{ $top->description ?? '' }}
+                        </span>
+                    </h1>
                 </div>
                 <div class="flex justify-center my-6">
                     <svg class="h-10 w-auto animate-bounce" xmlns="http://www.w3.org/2000/svg" fill="none"
