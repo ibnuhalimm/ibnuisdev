@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         @if (config('app.env') == 'local') [LOCAL] @endif
-        {{ config('app.name') }}
+        {{ config('app.name') }} - Fullstack Web Developer
     </title>
     <meta name="title" content="{{ config('app.name') }}">
     <meta name="description" content="I'm Fullstack Web Developer with robust problem-solving skills and proven experience in creating and designing high quality software.">
