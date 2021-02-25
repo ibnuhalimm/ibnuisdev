@@ -1,7 +1,7 @@
 @extends('blog.layout')
 
 @section('title')
-    Blog
+    Blog - {{ config('app.name') }}
 @endsection
 
 @section('meta_seo')

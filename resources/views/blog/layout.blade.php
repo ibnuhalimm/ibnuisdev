@@ -6,7 +6,7 @@
     <title>
         @if (config('app.env') == 'local') [LOCAL] @endif
         @hasSection ('title')
-            @yield('title') - {{ config('app.name') }}
+            @yield('title')
         @else
             {{ config('app.name') }}
         @endif

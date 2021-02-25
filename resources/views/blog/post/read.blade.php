@@ -62,24 +62,6 @@
                 </div>
             </x-post-read-container>
         </div>
-
-        {{-- <x-frontend-container>
-            <h4 class="text-base text-ib-one">Bagikan</h4>
-            <ul class="mt-2">
-                @foreach ($share_buttons as $share)
-                    <li class="inline-flex xl:flex xl:mb-2 items-center mr-1">
-                        <a href="{{ $share->url . $post->post_url }}" target="_blank" class="w-10 h-10 xl:w-8 xl:h-8 text-center rounded-full border xl:border-none border-solid border-ib-one hover:border-ib-three p-2 text-ib-one hover:text-ib-three transition delay-100">
-                            <i class="flaticon-{{ $share->ikon }} text-xs"></i>
-                        </a>
-                    </li>
-                @endforeach
-                <li class="inline-flex xl:flex xl:mb-2 items-center mr-1">
-                    <a href="javascript:;" id="__btnShareViaLink" data-url="{{ $post->post_url }}" class="w-10 h-10 xl:w-8 xl:h-8 text-center rounded-full border xl:border-none border-solid border-ib-one hover:border-ib-three p-2 text-ib-one hover:text-ib-three transition delay-100">
-                        <i class="flaticon-link text-xs"></i>
-                    </a>
-                </li>
-            </ul>
-        </x-frontend-container> --}}
     </section>
 
     <section class="mt-8 bg-ib-four py-5">
@@ -87,7 +69,7 @@
             <h2 class="font-bold text-base xl:text-xl text-ib-one mb-3">
                 Postingan Terkait
             </h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-2">
                 @foreach ($related_posts as $post)
                     <x-blog-post-card slug="{{ $post->slug }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" />
                 @endforeach
