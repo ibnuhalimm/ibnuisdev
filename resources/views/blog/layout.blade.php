@@ -17,8 +17,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ URL::asset('favicon.ico') }}">
 
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="{{ URL::asset('css/sosmed_icons/flaticon.css?_=' . rand()) }}">
     @stack('top_css')
     <link rel="stylesheet" href="{{ URL::asset('css/app.css?_=' . rand()) }}">
