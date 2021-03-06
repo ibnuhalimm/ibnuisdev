@@ -1,4 +1,4 @@
-@extends('blog.layout')
+@extends('layouts.frontend')
 
 @section('meta_seo')
     <meta name="title" content="Hasil Pencarian {{ $search_text }}">
@@ -18,14 +18,14 @@
 
     <section>
         <x-frontend-container>
-            <h1 class=" font-bold text-base xl:text-xl text-ib-one mb-3 truncate">
+            <h1 class=" font-bold text-base xl:text-2xl text-ib-one mb-6 truncate">
                 Hasil Pencarian "{{ $search_text }}"
             </h1>
 
             @if ($posts->isEmpty())
                 <h1>Maaf, kami tidak menemukan artikel yang Anda maksudkan.</h1>
             @else
-                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-4 xl:gap-8">
                     @foreach ($posts as $post)
                         <x-blog-post-card slug="{{ $post->slug }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" />
                     @endforeach
@@ -35,9 +35,9 @@
     </section>
 
 
-    <section class="mt-8 bg-ib-four py-5">
+    <section class="mt-8 py-10 bg-ib-four">
         <x-frontend-container>
-            <h2 class="font-bold text-base xl:text-xl text-ib-one mb-3">
+            <h2 class="font-bold text-base xl:text-2xl text-ib-one mb-6">
                 Artikel Menarik Lainnya...
             </h2>
 

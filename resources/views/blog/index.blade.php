@@ -1,4 +1,4 @@
-@extends('blog.layout')
+@extends('layouts.frontend')
 
 @section('title')
     Blog
@@ -96,12 +96,12 @@
         </x-frontend-container>
     </section>
 
-    <section class="bg-ib-four py-5 mt-8">
+    <section class="bg-ib-four py-10 mt-8">
         <x-frontend-container>
-            <h2 class="font-bold text-base xl:text-xl text-ib-one mb-3">
+            <h2 class="font-bold text-base xl:text-2xl text-ib-one mb-6">
                 Top Post
             </h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-2">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-4 xl:gap-8">
                 @foreach ($top_posts as $top_post)
                     <x-blog-post-card slug="{{ $top_post->slug }}" image="{{ $top_post->gbr_url }}" title="{{ $top_post->judul }}" date="{{ $top_post->created_at }}" />
                 @endforeach
@@ -109,9 +109,9 @@
         </x-frontend-container>
     </section>
 
-    <section class="mt-8">
+    <section class="mt-8 py-10">
         <x-frontend-container>
-            <h2 class="font-bold text-base xl:text-xl text-ib-one mb-3">
+            <h2 class="font-bold text-base xl:text-2xl text-ib-one mb-6">
                 Postingan Terbaru
             </h2>
 

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PageController@index')->name('index');
+Route::get('portfolio', 'PageController@portfolio')->name('portfolio');
+
 Route::name('blog.')
     ->prefix('blog')
     ->namespace('Blog')
