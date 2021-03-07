@@ -32,4 +32,14 @@ class PageController extends Controller
 
         return view('index', $data);
     }
+
+    /**
+     * Show portfolio page
+     *
+     * @return \Illuminate\View\View
+     */
+    public function portfolio()
+    {
+        return view('portfolio');
+    }
 }

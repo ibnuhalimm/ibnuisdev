@@ -139,7 +139,7 @@
         </x-frontend-container>
     </section>
 
-    <section class="mb-8 py-10 bg-ib-four">
+    <section class="py-10 bg-ib-four">
         <x-frontend-container>
             <h2 class="mb-3">
                 <span class="font-bold text-4xl block mb-1">
