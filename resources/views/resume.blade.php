@@ -197,7 +197,7 @@
                     <div class="timeline-gray--container left">
                         <div class="timeline-gray--content">
                             <h2 class="font-bold">2018 - Saat ini</h2>
-                            <p>Teknik Informatika<br>Universitas Stikubank Semarang</p>
+                            <p>S1 - Teknik Informatika<br>Universitas Stikubank Semarang</p>
                         </div>
                     </div>
                     <div class="timeline-gray--container right">
