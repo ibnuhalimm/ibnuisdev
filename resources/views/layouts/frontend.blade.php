@@ -94,7 +94,7 @@
                             </a>
                         </li>
                         <li class="mb-3 xl:mb-0 xl:inline-block">
-                            <a href="{{ __('#') }}" class="text-lg xl:text-base block py-2 xl:py-0 px-3 text-ib-one hover:underline">
+                            <a href="{{ route('contact') }}" class="text-lg xl:text-base block py-2 xl:py-0 px-3 text-ib-one hover:underline @if (request()->is('contact') or request()->is('contact*')) underline @endif">
                                 Hubungi Saya
                             </a>
                         </li>

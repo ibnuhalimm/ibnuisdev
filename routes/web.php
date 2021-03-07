@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PageController@index')->name('index');
 Route::get('portfolio', 'PageController@portfolio')->name('portfolio');
 Route::get('resume', 'PageController@resume')->name('resume');
+Route::get('contact', 'PageController@contact')->name('contact');
 
 Route::name('blog.')
     ->prefix('blog')

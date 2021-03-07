@@ -52,4 +52,14 @@ class PageController extends Controller
     {
         return view('resume');
     }
+
+    /**
+     * Show contact-me page
+     *
+     * @return \Illuminate\View\View
+     */
+    public function contact()
+    {
+        return view('contact');
+    }
 }
