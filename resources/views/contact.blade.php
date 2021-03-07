@@ -28,33 +28,7 @@
             </h1>
             <div class="mt-14">
                 <div class="flex flex-col lg:flex-row justify-between">
-                    <div class="w-full lg:w-3/4">
-                        <h2 class="font-bold text-xl mb-2">Kirim email</h2>
-                        <div class="mt-3">
-                            <div class="mb-6">
-                                <label for="" class="block mb-2">
-                                    Nama <span class="text-red-500">*</span>
-                                </label>
-                                <input type="text" name="name" class="w-3/4 px-3 py-2 border border-solid border-ib-one bg-white outline-none">
-                            </div>
-                            <div class="mb-6">
-                                <label for="" class="block mb-2">
-                                    Email <span class="text-red-500">*</span>
-                                </label>
-                                <input type="text" name="email" class="w-3/4 px-3 py-2 border border-solid border-ib-one bg-white outline-none">
-                            </div>
-                            <div class="mb-6">
-                                <label for="" class="block mb-2">
-                                    Pesan <span class="text-red-500">*</span>
-                                </label>
-                                <textarea name="body" class="w-3/4 px-3 py-2 border border-solid border-ib-one bg-white outline-none resize-none h-60"></textarea>
-                            </div>
-                            <button type="button" class="py-2 px-6 bg-ib-three border border-solid border-ib-three text-ib-four shadow-lg outline-none focus:outline-none">
-                                Lihat Portofolio
-                            </button>
-                        </div>
-                    </div>
-                    <div class="lg:w-1/4">
+                    <div class="mb-10 lg:mb-0 lg:w-1/4 lg:order-last">
                         <h2 class="font-bold text-xl mb-2">Sosial media</h2>
                         <div class="mt-3 flex flex-row justify-start mb-4">
                             <a href="#" target="_blank" title="Github" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-white mx-1 border border-solid border-ib-one hover:border-ib-three text-ib-one hover:text-ib-three rounded-full">
@@ -72,6 +46,32 @@
                                     <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
                                 </svg>
                             </a>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-3/4">
+                        <h2 class="font-bold text-xl mb-2">Kirim email</h2>
+                        <div class="mt-3">
+                            <div class="mb-6">
+                                <label for="" class="block mb-2">
+                                    Nama <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" name="name" class="w-full lg:w-3/4 px-3 py-2 border border-solid border-ib-one bg-white outline-none">
+                            </div>
+                            <div class="mb-6">
+                                <label for="" class="block mb-2">
+                                    Email <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" name="email" class="w-full lg:w-3/4 px-3 py-2 border border-solid border-ib-one bg-white outline-none">
+                            </div>
+                            <div class="mb-6">
+                                <label for="" class="block mb-2">
+                                    Pesan <span class="text-red-500">*</span>
+                                </label>
+                                <textarea name="body" class="w-full lg:w-3/4 px-3 py-2 border border-solid border-ib-one bg-white outline-none resize-none h-60"></textarea>
+                            </div>
+                            <button type="button" class="py-2 px-6 bg-ib-three border border-solid border-ib-three text-ib-four shadow-lg outline-none focus:outline-none">
+                                Lihat Portofolio
+                            </button>
                         </div>
                     </div>
                 </div>
