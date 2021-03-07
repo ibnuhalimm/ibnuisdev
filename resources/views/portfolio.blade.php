@@ -18,13 +18,17 @@
 
     <section class="mb-8 py-10">
         <x-frontend-container>
-            <h2 class="mb-3">
+            <h1 class="mb-3">
                 <span class="font-bold text-4xl block mb-1">
                     Portofolio
                 </span>
-                <span class="block mt-6">Daftar project yang pernah saya kerjakan.</span>
-            </h2>
-            <p>Kualitas aplikasi dan kepuasan pelanggan adalah prioritas utama.</p>
+                <span class="block mt-3">
+                    Daftar project yang pernah saya kerjakan.
+                </span>
+            </h1>
+            <p class="-mt-2">
+                Kualitas aplikasi dan kepuasan pelanggan adalah prioritas utama.
+            </p>
             <div class="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-6">
                 <div class="w-full h-56 xl:h-80 bg-no-repeat bg-center mb-6 lg:mb-0" style="background-image: url('http://ibnuisdev.test/storage/post/52d49f867823145b230db2fafd7b8018.jpg')">
                     <div class="w-full h-full left-0 top-0 bg-ib-one bg-opacity-90 flex items-center justify-center">

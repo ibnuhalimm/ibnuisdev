@@ -42,4 +42,14 @@ class PageController extends Controller
     {
         return view('portfolio');
     }
+
+    /**
+     * Show resume page
+     *
+     * @return \Illuminate\View\View
+     */
+    public function resume()
+    {
+        return view('resume');
+    }
 }

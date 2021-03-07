@@ -45,7 +45,7 @@
             <div class="flex flex-row items-center justify-between xl:w-auto xl:mr-10">
                 <a href="{{ route('index') }}" class="ml-2 xl:ml-0 font-bold text-ib-three xl:mt-1 text-xl">
                     <span :class="opendropdown ? 'hidden' : 'block'">
-                        IHM
+                        IBNU's
                     </span>
                 </a>
                 <button class="p-1 outline-none hover:outline-none focus:outline-none xl:hidden" @click="opendropdown = !opendropdown;">
@@ -84,7 +84,7 @@
                             </a>
                         </li>
                         <li class="mb-3 xl:mb-0 xl:inline-block">
-                            <a href="{{ __('#') }}" class="text-lg xl:text-base block py-2 xl:py-0 px-3 text-ib-one hover:underline">
+                            <a href="{{ route('resume') }}" class="text-lg xl:text-base block py-2 xl:py-0 px-3 text-ib-one hover:underline  @if (request()->is('resume') or request()->is('resume*')) underline @endif">
                                 Resume
                             </a>
                         </li>
