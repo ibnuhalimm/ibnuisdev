@@ -47,22 +47,3 @@
     </section>
 
 @endsection
-
-@push('top_css')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-@endpush
-
-@push('bottom_js')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#main_posts_wrapper').slick({
-                dots: true,
-                autoPlay: true,
-                pauseOnHover: true
-            })
-        });
-    </script>
-@endpush
