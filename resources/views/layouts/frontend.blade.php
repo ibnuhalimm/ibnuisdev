@@ -119,7 +119,7 @@
                     "Izinkan saya membuat aplikasi web yang Anda butuhkan"
                 </h2>
                 <div class="mt-6 flex items-center justify-center">
-                    <a href="{{ __('#') }}" class="px-6 py-2 bg-transparent hover:bg-white border border-solid border-ib-three text-ib-three shadow-lg outline-none focus:outline-none">
+                    <a href="{{ route('contact') }}" class="px-6 py-2 bg-transparent hover:bg-white border border-solid border-ib-three text-ib-three shadow-lg outline-none focus:outline-none">
                         Mari kita diskusikan
                     </a>
                 </div>
