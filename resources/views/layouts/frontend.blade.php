@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="{{ App::getLocale() }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,6 @@
     @yield('meta_seo')
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ URL::asset('favicon.ico') }}">
-
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="stylesheet" href="{{ URL::asset('css/sosmed_icons/flaticon.css?_=' . rand()) }}">
     @stack('top_css')
@@ -36,6 +35,9 @@
         gtag('config', 'UA-177527651-2');
     </script>
     @endif
+    <script>
+        const BASE_URL = '{{ url('/') }}';
+    </script>
 </head>
 <body class="flex flex-col min-h-screen justify-between text-sm xl:text-base text-ib-one"
     :class="opendropdown ? 'overflow-hidden' : 'overflow-y-auto'"
@@ -62,47 +64,47 @@
                     IHM
                 </div>
                 <div class="flex flex-col xl:flex-row justify-end w-full xl:w-2/3 xl:mx-auto xl:ml-6 xl:order-last">
-                    <select class="lang-changer hidden xl:block w-10 mr-4 bg-white outline-none">
-                        <option value="id">ID</option>
-                        <option value="en">EN</option>
+                    <select class="hidden xl:block px-1 mr-4 bg-white outline-none" onchange="changeLang(this)">
+                        <option value="id" @if (App::isLocale('id')) selected @endif>ID</option>
+                        <option value="en" @if (App::isLocale('en')) selected @endif>EN</option>
                     </select>
                     <form action="{{ route('blog.post.search') }}" method="get" class="flex flex-row items-center justify-center py-1 px-3 shadow-md xl:shadow-none border border-solid border-gray-400">
                         <svg viewBox="0 0 20 20" fill="currentColor" class="search w-6 h-6 xl:w-5 xl:h-5 text-ib-one"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
-                        <input type="search" name="q" class="w-full ml-2 py-1 xl:py-0 px-2 outline-none hover:outline-none bg-transparent text-ib-one text-lg xl:text-base" placeholder="Pencarian">
+                        <input type="search" name="q" class="w-full ml-2 py-1 xl:py-0 px-2 outline-none hover:outline-none bg-transparent text-ib-one text-lg xl:text-base" placeholder="{{ __('nav.search') }}">
                     </form>
                 </div>
                 <div class="w-full h-full sm:h-32 md:h-full xl:h-auto sm:overflow-y-scroll xl:overflow-hidden text-center xl:text-left mt-8 xl:mt-0">
                     <ul class="list-none">
                         <li class="mb-3 xl:mb-0 xl:inline-block">
                             <a href="{{ route('index') }}" class="text-lg xl:text-base block py-2 xl:py-0 px-3 text-ib-one hover:underline @if (request()->is('/')) underline @endif">
-                                Home
+                                {{ __('nav.home') }}
                             </a>
                         </li>
                         <li class="mb-3 xl:mb-0 xl:inline-block">
                             <a href="{{ route('portfolio') }}" class="text-lg xl:text-base block py-2 xl:py-0 px-3 text-ib-one hover:underline @if (request()->is('portfolio') or request()->is('portfolio*')) underline @endif">
-                                Portofolio
+                                {{ __('nav.portfolio') }}
                             </a>
                         </li>
                         <li class="mb-3 xl:mb-0 xl:inline-block">
                             <a href="{{ route('resume') }}" class="text-lg xl:text-base block py-2 xl:py-0 px-3 text-ib-one hover:underline  @if (request()->is('resume') or request()->is('resume*')) underline @endif">
-                                Resume
+                                {{ __('nav.resume') }}
                             </a>
                         </li>
                         <li class="mb-3 xl:mb-0 xl:inline-block">
                             <a href="{{ route('blog.index') }}" class="text-lg xl:text-base block py-2 xl:py-0 px-3 text-ib-one hover:underline @if (request()->is('blog') OR request()->is('blog*')) underline @endif">
-                                Blog
+                                {{ __('nav.blog') }}
                             </a>
                         </li>
                         <li class="mb-3 xl:mb-0 xl:inline-block">
                             <a href="{{ route('contact') }}" class="text-lg xl:text-base block py-2 xl:py-0 px-3 text-ib-one hover:underline @if (request()->is('contact') or request()->is('contact*')) underline @endif">
-                                Hubungi Saya
+                                {{ __('nav.contact') }}
                             </a>
                         </li>
                     </ul>
                     <div class="text-center block xl:hidden">
-                        <select class="lang-changer w-10 bg-white outline-none text-lg py-2">
-                            <option value="id">ID</option>
-                            <option value="en">EN</option>
+                        <select class="px-1 py-2 bg-white outline-none text-lg" onchange="changeLang(this)">
+                            <option value="id" @if (App::isLocale('id')) selected @endif>ID</option>
+                            <option value="en" @if (App::isLocale('en')) selected @endif>EN</option>
                         </select>
                     </div>
                 </div>
@@ -116,11 +118,11 @@
         <x-frontend-container>
             <div class="mb-10">
                 <h2 class="font-bold text-xl xl:text-3xl text-center">
-                    "Izinkan saya membuat aplikasi web yang Anda butuhkan"
+                    "{{ __('global.footer_cta') }}"
                 </h2>
                 <div class="mt-6 flex items-center justify-center">
                     <a href="{{ route('contact') }}" class="px-6 py-2 bg-transparent hover:bg-white border border-solid border-ib-three text-ib-three shadow-lg outline-none focus:outline-none">
-                        Mari kita diskusikan
+                        {{ __('global.lets_discuss') }}
                     </a>
                 </div>
             </div>
@@ -151,6 +153,12 @@
 
     @livewireScripts
     @stack('bottom_js')
+
+    <script>
+        const changeLang = (e) => {
+            window.location.href = BASE_URL + '/' + e.value;
+        }
+    </script>
 
 </body>
 </html>

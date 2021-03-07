@@ -6,11 +6,11 @@
 
 @section('meta_seo')
     <meta name="title" content="{{ config('app.name') }}">
-    <meta name="description" content="Portfolio, daftar project yang pernah saya kerjakan. Kualitas aplikasi dan kepuasan pelanggan adalah prioritas utama.">
+    <meta name="description" content="{{ ucfirst(__('global.portfolio')) }}, __('section.portfolio.sub_title_one') {{ __('section.portfolio.sub_title_two') }}">
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ config('app.name') }}" />
-    <meta property="og:description" content="Portfolio, daftar project yang pernah saya kerjakan. Kualitas aplikasi dan kepuasan pelanggan adalah prioritas utama." />
+    <meta property="og:description" content="{{ ucfirst(__('global.portfolio')) }}, __('section.portfolio.sub_title_one') {{ __('section.portfolio.sub_title_two') }}" />
     <meta property="og:image" content="{{ asset('favicon.ico') }}" />
 @endsection
 
@@ -20,14 +20,14 @@
         <x-frontend-container>
             <h1 class="mb-3">
                 <span class="font-bold text-4xl block mb-1">
-                    Portofolio
+                    {{ __('global.portfolio') }}
                 </span>
                 <span class="block mt-3">
-                    Daftar project yang pernah saya kerjakan.
+                    {{ __('section.portfolio.sub_title_one') }}
                 </span>
             </h1>
             <p class="-mt-2">
-                Kualitas aplikasi dan kepuasan pelanggan adalah prioritas utama.
+                {{ __('section.portfolio.sub_title_two') }}
             </p>
             <div class="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-6">
                 <div class="w-full h-56 xl:h-80 bg-no-repeat bg-center mb-6 lg:mb-0" style="background-image: url('http://ibnuisdev.test/storage/post/52d49f867823145b230db2fafd7b8018.jpg')">
@@ -37,7 +37,7 @@
                                 Landing Page Event Konser
                             </h3>
                             <button class="px-5 py-2 border border-solid border-ib-four bg-transparent hover:bg-ib-four text-ib-four hover:text-ib-one outline-none focus:outline-none" @click="is_modal_open = true">
-                                Lihat Project
+                                {{ __('global.view_project') }}
                             </button>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                                 Semarang Great Sale 2019 (Semargres)
                             </h3>
                             <button class="px-5 py-2 border border-solid border-ib-four bg-transparent hover:bg-ib-four text-ib-four hover:text-ib-one outline-none focus:outline-none" @click="is_modal_open = true">
-                                Lihat Project
+                                {{ __('global.view_project') }}
                             </button>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                                 PMWasap - Whatsapp Lead Form
                             </h3>
                             <button class="px-5 py-2 border border-solid border-ib-four bg-transparent hover:bg-ib-four text-ib-four hover:text-ib-one outline-none focus:outline-none" @click="is_modal_open = true">
-                                Lihat Project
+                                {{ __('global.view_project') }}
                             </button>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                                 Point of Sale Application
                             </h3>
                             <button class="px-5 py-2 border border-solid border-ib-four bg-transparent hover:bg-ib-four text-ib-four hover:text-ib-one outline-none focus:outline-none" @click="is_modal_open = true">
-                                Lihat Project
+                                {{ __('global.view_project') }}
                             </button>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
             </div>
             <div class="mt-6 xl:mt-12 flex justify-center">
                 <button type="button" class="py-2 px-6 bg-ib-three border border-solid border-ib-three text-ib-four shadow-lg outline-none focus:outline-none">
-                    Project lainnya
+                    {{ __('global.more_portfolio') }}
                 </button>
             </div>
         </x-frontend-container>
@@ -92,7 +92,9 @@
         <div class="w-11/12 md:w-3/5 px-8 py-6 bg-ib-four mt-20 mx-auto"
             x-show.transition.5000ms="is_modal_open === true" x-cloak>
             <div class="mb-10 text-center">
-                <h4 class="text-lg text-ib-one">Project Details</h4>
+                <h4 class="text-lg text-ib-one">
+                    {{ __('global.project_detail') }}
+                </h4>
             </div>
             <div class="xl:px-6">
                 <div class="mb-6 text-ib-one text-sm flex flex-col xl:flex-row justify-between">
@@ -100,15 +102,21 @@
                         <img src="{{ __('http://ibnuisdev.test/storage/post/b235908decdce0235b3e61506851f03b.jpg') }}" alt="{{ __('Project Name') }}" class="w-full h-auto">
                     </div>
                     <div class="xl:w-3/5 xl:ml-8">
-                        <h4 class="font-bold">Name</h4>
+                        <h4 class="font-bold">
+                            {{ __('global.name') }}
+                        </h4>
                         <p class="mb-4">
                             {{ __('Project Name') }}
                         </p>
-                        <h4 class="font-bold">Description</h4>
+                        <h4 class="font-bold">
+                            {{ __('global.description') }}
+                        </h4>
                         <p class="mb-4">
                             {!! __('Description should here') !!}
                         </p>
-                        <h4 class="font-bold">Link / Demo URL</h4>
+                        <h4 class="font-bold">
+                            {{ __('global.link_demo_url') }}
+                        </h4>
                         <p class="mb-4">
                             @if (empty($link))
                                 -
@@ -122,7 +130,7 @@
                 </div>
                 <div class="text-center">
                     <button class="py-2 px-6 bg-ib-three text-ib-four shadow-lg outline-none focus:outline-none" @click="is_modal_open = false">
-                        Close
+                        {{ __('global.close') }}
                     </button>
                 </div>
             </div>

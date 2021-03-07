@@ -1,16 +1,16 @@
 @extends('layouts.frontend')
 
 @section('title')
-    Hubungi Saya
+    {{ __('section.contact.title') }}
 @endsection
 
 @section('meta_seo')
     <meta name="title" content="{{ config('app.name') }}">
-    <meta name="description" content="Terhubung dengan saya hari ini. Silahkan hubungi saya via email atau DM sosial media.">
+    <meta name="description" content="{{ __('section.contact.connect_with_me_today') }}. {{ __('section.contact.sub_title') }}">
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ config('app.name') }}" />
-    <meta property="og:description" content="Terhubung dengan saya hari ini. Silahkan hubungi saya via email atau DM sosial media." />
+    <meta property="og:description" content="{{ __('section.contact.connect_with_me_today') }}. {{ __('section.contact.sub_title') }}" />
     <meta property="og:image" content="{{ asset('favicon.ico') }}" />
 @endsection
 
@@ -20,16 +20,18 @@
         <x-frontend-container>
             <h1 class="mb-3">
                 <span class="font-bold text-4xl block mb-1">
-                    Terhubung dengan saya
+                    {{ __('section.contact.connect_with_me') }}
                 </span>
                 <span class="block mt-3">
-                    Silahkan hubungi saya via email atau DM sosial media.
+                    {{ __('section.contact.sub_title') }}
                 </span>
             </h1>
             <div class="mt-14">
                 <div class="flex flex-col lg:flex-row justify-between">
                     <div class="mb-10 lg:mb-0 lg:w-1/4 lg:order-last">
-                        <h2 class="font-bold text-xl mb-2">Sosial media</h2>
+                        <h2 class="font-bold text-xl mb-2">
+                            {{ __('global.social_media') }}
+                        </h2>
                         <div class="mt-3 flex flex-row justify-start mb-4">
                             <a href="#" target="_blank" title="Github" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-white mx-1 border border-solid border-ib-one hover:border-ib-three text-ib-one hover:text-ib-three rounded-full">
                                 <svg class="w-6 h-auto" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
@@ -49,28 +51,30 @@
                         </div>
                     </div>
                     <div class="w-full lg:w-3/4">
-                        <h2 class="font-bold text-xl mb-2">Kirim email</h2>
+                        <h2 class="font-bold text-xl mb-2">
+                            {{ __('global.send_message') }}
+                        </h2>
                         <div class="mt-3">
                             <div class="mb-6">
                                 <label for="" class="block mb-2">
-                                    Nama <span class="text-red-500">*</span>
+                                    {{ __('global.your_name') }} <span class="text-red-500">*</span>
                                 </label>
                                 <input type="text" name="name" class="w-full lg:w-3/4 px-3 py-2 border border-solid border-ib-one bg-white outline-none">
                             </div>
                             <div class="mb-6">
                                 <label for="" class="block mb-2">
-                                    Email <span class="text-red-500">*</span>
+                                    {{ __('global.your_email') }} <span class="text-red-500">*</span>
                                 </label>
                                 <input type="text" name="email" class="w-full lg:w-3/4 px-3 py-2 border border-solid border-ib-one bg-white outline-none">
                             </div>
                             <div class="mb-6">
                                 <label for="" class="block mb-2">
-                                    Pesan <span class="text-red-500">*</span>
+                                    {{ __('global.message') }} <span class="text-red-500">*</span>
                                 </label>
                                 <textarea name="body" class="w-full lg:w-3/4 px-3 py-2 border border-solid border-ib-one bg-white outline-none resize-none h-60"></textarea>
                             </div>
                             <button type="button" class="py-2 px-6 bg-ib-three border border-solid border-ib-three text-ib-four shadow-lg outline-none focus:outline-none">
-                                Lihat Portofolio
+                                {{ __('global.send_message') }}
                             </button>
                         </div>
                     </div>

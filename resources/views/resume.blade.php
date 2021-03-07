@@ -6,11 +6,11 @@
 
 @section('meta_seo')
     <meta name="title" content="{{ config('app.name') }}">
-    <meta name="description" content="Saya berasal dari Rembang, Jawa Tengah, Indonesia. Selalu tertarik dengan hal-hal baru di dunia sains dan IT.">
+    <meta name="description" content="{{ __('section.resume.sub_title_one') }} {{ __('section.resume.sub_title_two') }}">
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ config('app.name') }}" />
-    <meta property="og:description" content="Saya berasal dari Rembang, Jawa Tengah, Indonesia. Selalu tertarik dengan hal-hal baru di dunia sains dan IT." />
+    <meta property="og:description" content="{{ __('section.resume.sub_title_one') }} {{ __('section.resume.sub_title_two') }}" />
     <meta property="og:image" content="{{ asset('favicon.ico') }}" />
 @endsection
 
@@ -23,17 +23,21 @@
                     Resume
                 </span>
                 <span class="block mt-3">
-                    Saya berasal dari Rembang, Jawa Tengah, Indonesia.
+                    {{ __('section.resume.sub_title_one') }}
                 </span>
             </h1>
             <p class="-mt-2">
-                Selalu tertarik dengan hal-hal baru di dunia sains dan teknologi.
+                {{ __('section.resume.sub_title_two') }}
             </p>
             <div class="mt-14">
-                <h2 class="font-bold text-xl mb-2">Teknologi</h2>
+                <h2 class="font-bold text-xl mb-2">
+                    {{ __('section.resume.technology') }}
+                </h2>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <div>
-                        <h3 class="font-bold mb-1">Keseharian</h3>
+                        <h3 class="font-bold mb-1">
+                            {{ __('section.resume.day_to_day') }}
+                        </h3>
                         <p>
                             <ul class="list-none">
                                 <li class="flex items-center mb-1">
@@ -88,7 +92,9 @@
                         </p>
                     </div>
                     <div>
-                        <h3 class="font-bold mb-1">Pengalaman menggunakan</h3>
+                        <h3 class="font-bold mb-1">
+                            {{ __('section.resume.experience_with') }}
+                        </h3>
                         <p>
                             <ul class="list-none">
                                 <li class="flex items-center mb-1">
@@ -135,7 +141,7 @@
         <x-frontend-container>
             <h2 class="mb-3 text-center">
                 <span class="font-bold text-4xl block">
-                    Riwayat Karir
+                    {{ __('section.resume.career_history') }}
                 </span>
                 <span>
                     @php
@@ -143,33 +149,33 @@
                         $last_month = date_create('now');
                         $longtime_work = date_diff($start_work, $last_month)
                     @endphp
-                    Pengalaman kerja lebih dari {{ $longtime_work->format('%y') }} tahun.
+                    {{ __('section.resume.career_sub_title', [ 'year' => $longtime_work->format('%y') ]) }}
                 </span>
             </h2>
             <div class="mt-6">
                 <div class="timeline">
                     <div class="timeline--container left">
                         <div class="timeline--content">
-                            <h2 class="font-bold">April 2020 - Saat ini</h2>
+                            <h2 class="font-bold">{{ __('month.apr') }} 2020 - {{ __('global.present') }}</h2>
                             <p>Web Developer<br>Self-employee (Freelancer)</p>
                         </div>
                     </div>
                     <div class="timeline--container right">
                         <div class="timeline--content">
-                            <h2 class="font-bold">Nov 2018 - April 2020</h2>
+                            <h2 class="font-bold">{{ __('month.nov') }} 2018 - {{ __('month.apr') }} 2020</h2>
                             <p>Web Developer<br>PT Media Sarana Data (Gmedia)</p>
                         </div>
                     </div>
                     <div class="timeline--container left">
                         <div class="timeline--content">
-                            <h2 class="font-bold">May 2016 - Nov 2018</h2>
+                            <h2 class="font-bold">{{ __('month.may') }} 2016 - {{ __('month.nov') }} 2018</h2>
                             <p>IT Helpdesk<br>PT Media Sarana Data (Gmedia)</p>
                         </div>
                     </div>
                     <div class="timeline--container right">
                         <div class="timeline--content">
-                            <h2 class="font-bold">Okt 2015 - Apr 2016</h2>
-                            <p>Teknisi Lab Komputer Jaringan<br>SMK N 1 Rembang</p>
+                            <h2 class="font-bold">{{ __('month.oct') }} 2015 - {{ __('month.mar') }} 2016</h2>
+                            <p>{{ __('global.lab_technician') }}<br>SMK N 1 Rembang</p>
                         </div>
                     </div>
                 </div>
@@ -181,29 +187,24 @@
         <x-frontend-container>
             <h2 class="mb-3 text-center">
                 <span class="font-bold text-4xl block">
-                    Riwayat Pendidikan
+                    {{ __('section.resume.education_history') }}
                 </span>
                 <span>
-                    @php
-                        $start_work = date_create('2015-11-01');
-                        $last_month = date_create('now');
-                        $longtime_work = date_diff($start_work, $last_month)
-                    @endphp
-                    Riwayat pendidikan formal.
+                    {{ __('section.resume.education_sub_title') }}
                 </span>
             </h2>
             <div class="mt-6">
                 <div class="timeline-gray">
                     <div class="timeline-gray--container left">
                         <div class="timeline-gray--content">
-                            <h2 class="font-bold">2018 - Saat ini</h2>
-                            <p>S1 - Teknik Informatika<br>Universitas Stikubank Semarang</p>
+                            <h2 class="font-bold">2018 - {{ __('global.present') }}</h2>
+                            <p>{{ __('global.computer_science_degree') }}<br>Universitas Stikubank Semarang</p>
                         </div>
                     </div>
                     <div class="timeline-gray--container right">
                         <div class="timeline-gray--content">
                             <h2 class="font-bold">2012 - 2015</h2>
-                            <p>Teknik Komputer dan Jaringan<br>SMK N 1 Rembang</p>
+                            <p>{{ __('global.network_engineer') }}<br>SMK N 1 Rembang</p>
                         </div>
                     </div>
                 </div>

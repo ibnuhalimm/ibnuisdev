@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="mt-6 py-4 flex flex-row items-center justify-center border border-solid border-r-0 border-b-0 border-l-0 border-ib-three">
-                    <span class="text-ib-two text-sm mr-2">Bagikan : </span>
+                    <span class="text-ib-two text-sm mr-2">{{ __('global.share') }} : </span>
                     @foreach ($share_buttons as $share)
                         <a href="{{ $share->url . $post->post_url }}" target="_blank" class="w-10 h-10 ml-1 xl:w-8 xl:h-8 inline-flex justify-center p-2 border border-solid border-gray-600 hover:border-ib-three rounded-full text-gray-600 hover:text-ib-three transition delay-100">
                             <i class="flaticon-{{ $share->ikon }} text-sm"></i>
@@ -67,7 +67,7 @@
     <section class="mt-8 py-10 bg-ib-four">
         <x-frontend-container>
             <h2 class="font-bold text-base xl:text-2xl text-ib-one mb-6">
-                Postingan Terkait
+                {{ __('global.related_post') }}
             </h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-4 xl:gap-8">
                 @foreach ($related_posts as $post)

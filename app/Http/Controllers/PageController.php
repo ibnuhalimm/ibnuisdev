@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Section;
 use App\Skill;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class PageController extends Controller
 {
@@ -61,5 +62,43 @@ class PageController extends Controller
     public function contact()
     {
         return view('contact');
+    }
+
+    /**
+     * Change lang to id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function changeLangeToId()
+    {
+        $this->langChanger('id');
+
+        return redirect()->back();
+    }
+
+    /**
+     * Change lang to en
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function changeLangeToEn()
+    {
+        $this->langChanger('en');
+
+        return redirect()->back();
+    }
+
+    /**
+     * Change the language / locale
+     *
+     * @param string $locale
+     * @return void
+     */
+    private function langChanger($locale)
+    {
+        $available_langs = ['en', 'id'];
+        if (in_array($locale, $available_langs)) {
+            Session::put('app_locale', $locale);
+        }
     }
 }

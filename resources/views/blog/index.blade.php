@@ -6,11 +6,11 @@
 
 @section('meta_seo')
     <meta name="title" content="{{ config('app.name') }}">
-    <meta name="description" content="Catatanku sebagai Pecinta Teknologi">
+    <meta name="description" content="{{ __('global.note_as_geeks') }}">
     <meta property="og:url" content="{{ url('/') }}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ config('app.name') }}" />
-    <meta property="og:description" content="Catatanku sebagai Pecinta Teknologi" />
+    <meta property="og:description" content="{{ __('global.note_as_geeks') }}" />
     <meta property="og:image" content="{{ url('favicon.ico') }}" />
 @endsection
 
@@ -99,7 +99,7 @@
     <section class="bg-ib-four py-10 mt-8">
         <x-frontend-container>
             <h2 class="font-bold text-base xl:text-2xl text-ib-one mb-6">
-                Top Post
+                {{ __('global.top_post') }}
             </h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-4 xl:gap-8">
                 @foreach ($top_posts as $top_post)
@@ -112,7 +112,7 @@
     <section class="mt-8 py-10">
         <x-frontend-container>
             <h2 class="font-bold text-base xl:text-2xl text-ib-one mb-6">
-                Postingan Terbaru
+                {{ __('global.latest_post') }}
             </h2>
 
             @livewire('blog.post.latest-post', ['except_ids' => $except_ids])
