@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Section;
-use App\Skill;
+use App\Project;
+use App\Models\Blog\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -16,19 +16,9 @@ class PageController extends Controller
      */
     public function index()
     {
-        $top = Section::where('section', Section::SECTION_TOP)->first();
-        $portfolio = Section::where('section', Section::SECTION_PORTFOLIO)->first();
-        $skills = Section::where('section', Section::SECTION_SKILLS)->first();
-        $contact = Section::where('section', Section::SECTION_CONTACT)->first();
-
-        $skill_list = Skill::orderBy('order_number', 'asc')->orderBy('name', 'asc')->get();
-
         $data = [
-            'top' => $top,
-            'portfolio' => $portfolio,
-            'skills' => $skills,
-            'contact' => $contact,
-            'skill_list' => $skill_list
+            'latest_posts' => Post::published()->latest()->take(6)->get(),
+            'projects' => Project::orderBy('year', 'desc')->orderBy('month', 'desc')->published()->take(6)->get()
         ];
 
         return view('index', $data);

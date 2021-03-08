@@ -41,7 +41,7 @@
 </head>
 <body class="flex flex-col min-h-screen justify-between text-sm xl:text-base text-ib-one"
     :class="opendropdown ? 'overflow-hidden' : 'overflow-y-auto'"
-    x-data="{ opendropdown: false, is_modal_open: false }">
+    x-data="{ opendropdown: false }">
     <nav class="w-full fixed xl:relative z-30 top-0 left-0 right-0 bg-white shadow-md xl:shadow-sm py-4 xl:py-5 leading-9 xl:leading-7">
         <div class="w-11/12 sm:w-3/5 lg:w-3/4 mx-auto xl:flex xl:flex-row xl:items-center xl:justify-between">
             <div class="flex flex-row items-center justify-between xl:w-auto xl:mr-10">

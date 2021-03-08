@@ -93,4 +93,15 @@ class Project extends Model
 
         return;
     }
+
+    /**
+     * Query to filter by published status
+     *
+     * @param \Illuminate\Database\Query\Builder $query
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public function scopePublished($query)
+    {
+        return $query->where('status', self::STATUS_PUBLISH);
+    }
 }
