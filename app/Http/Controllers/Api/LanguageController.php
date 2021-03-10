@@ -28,7 +28,8 @@ class LanguageController extends Controller
             'name' => __('global.name'),
             'description' => __('global.description'),
             'link_demo' => __('global.link_demo_url'),
-            'close' => __('global.close')
+            'close' => __('global.close'),
+            'more_post' => __('global.more_post')
         ];
 
         return $this->apiResponse($status, $message, $data);

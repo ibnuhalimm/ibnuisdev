@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/js/pages/blog/latest-post.js": "/js/pages/blog/latest-post.js",
     "/js/pages/homepage/portfolio.js": "/js/pages/homepage/portfolio.js",
     "/js/pages/portfolio.js": "/js/pages/portfolio.js"
 }

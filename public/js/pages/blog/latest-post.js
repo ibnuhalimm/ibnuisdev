@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -28601,10 +28601,10 @@ if (false) {} else {
 
 /***/ }),
 
-/***/ "./resources/js/components/ButtonLinkRounded.js":
-/*!******************************************************!*\
-  !*** ./resources/js/components/ButtonLinkRounded.js ***!
-  \******************************************************/
+/***/ "./resources/js/components/BlogPostCard.js":
+/*!*************************************************!*\
+  !*** ./resources/js/components/BlogPostCard.js ***!
+  \*************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28614,31 +28614,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
-function ButtonLinkRounded(props) {
-  var variant = props.variant,
-      href = props.href;
-  var buttonClass = '';
-
-  switch (variant) {
-    case 'primary':
-      buttonClass = 'border-ib-three bg-ib-three hover:bg-opacity-70 text-ib-four';
-      break;
-
-    case 'outline-white':
-      buttonClass = 'border-ib-four bg-transparent hover:bg-ib-four text-ib-four hover:text-ib-one';
-      break;
-
-    default:
-      break;
-  }
-
+function BlogPostCard(props) {
+  var postUrl = props.postUrl,
+      image = props.image,
+      title = props.title,
+      date = props.date;
+  var monthList = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+  var postImage = {
+    backgroundImage: 'url(' + image + ')'
+  };
+  var jsDate = new Date(date);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: href ? href : '#',
-    className: 'px-5 py-2 border border-solid outline-none focus:outline-none rounded-full transition-all duration-500 ' + buttonClass
-  }, props.children);
+    href: postUrl,
+    className: "block w-full py-3 xl:py-0 rounded-md outline-none hover:outline-none text-ib-one hover:text-ib-three transition-all duration-500"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-row items-start justify-between"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-1/3 lg:w-2/5 xl:w-5/12"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-24 h-20 md:w-24 md:h-24 xl:w-4/5 xl:h-24 rounded-md bg-cover bg-no-repeat border border-solid border-gray-200",
+    style: postImage
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-2/3 lg:w-3/5 xl:w-7/12 flex flex-col items-start justify-between py-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "-ml-2 sm:-ml-4 md:-ml-8"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "h-auto font-bold truncate-two-lines"
+  }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-xs text-gray-600 mt-1"
+  }, monthList[jsDate.getMonth()] + ' ' + jsDate.getDay() + ', ' + jsDate.getFullYear())))));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (ButtonLinkRounded);
+/* harmony default export */ __webpack_exports__["default"] = (BlogPostCard);
 
 /***/ }),
 
@@ -28688,174 +28695,6 @@ function ButtonRounded(props) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Modal.js":
-/*!******************************************!*\
-  !*** ./resources/js/components/Modal.js ***!
-  \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function Modal(props) {
-  var isOpen = props.isOpen;
-  var bodyTag = document.querySelector('body');
-  var modalToggleClass = 'opacity-0 pointer-events-none';
-  bodyTag.classList.remove('modal-active');
-
-  if (isOpen) {
-    modalToggleClass = '';
-    bodyTag.classList.add('modal-active');
-  }
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: 'w-full h-full fixed inset-0 z-40 transition-opacity duration-500 ' + modalToggleClass
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "absolute w-full h-full bg-gray-900 bg-opacity-80 z-40"
-  }), props.children);
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (Modal);
-
-/***/ }),
-
-/***/ "./resources/js/components/ModalBody.js":
-/*!**********************************************!*\
-  !*** ./resources/js/components/ModalBody.js ***!
-  \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function ModalBody(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "xl:px-6"
-  }, props.children);
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (ModalBody);
-
-/***/ }),
-
-/***/ "./resources/js/components/ModalContent.js":
-/*!*************************************************!*\
-  !*** ./resources/js/components/ModalContent.js ***!
-  \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function ModalContent(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "relative w-11/12 md:w-3/5 mx-auto px-8 py-6 bg-white mt-20 sm:mt-10 md:mt-20 h-4/5 md:h-auto lg:h-3/4 xl:h-auto overflow-y-auto z-50 rounded-lg"
-  }, props.children);
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (ModalContent);
-
-/***/ }),
-
-/***/ "./resources/js/components/ModalHeader.js":
-/*!************************************************!*\
-  !*** ./resources/js/components/ModalHeader.js ***!
-  \************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function ModalHeader(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "mb-10 text-center"
-  }, props.children);
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (ModalHeader);
-
-/***/ }),
-
-/***/ "./resources/js/components/ModalTitle.js":
-/*!***********************************************!*\
-  !*** ./resources/js/components/ModalTitle.js ***!
-  \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function ModalTitle(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
-    className: "font-bold text-lg text-ib-one"
-  }, props.text);
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (ModalTitle);
-
-/***/ }),
-
-/***/ "./resources/js/components/PortfolioItem.js":
-/*!**************************************************!*\
-  !*** ./resources/js/components/PortfolioItem.js ***!
-  \**************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ButtonRounded__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ButtonRounded */ "./resources/js/components/ButtonRounded.js");
-
-
-
-function PortfolioItem(props) {
-  var name = props.name,
-      image = props.image,
-      actViewProject = props.actViewProject;
-  var wrapperStyle = {
-    backgroundImage: 'url(' + image + ')'
-  };
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full h-56 xl:h-80 bg-no-repeat bg-center mb-6 lg:mb-0 rounded-lg",
-    style: wrapperStyle
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full h-full left-0 top-0 bg-ib-one bg-opacity-70 flex items-center justify-center rounded-lg"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-3/4 mx-auto text-center"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    className: "font-bold text-ib-four mb-3 text-lg"
-  }, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ButtonRounded__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    variant: "outline-white",
-    onClick: props.viewProjectHandler
-  }, actViewProject))));
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (PortfolioItem);
-
-/***/ }),
-
 /***/ "./resources/js/constant/API.js":
 /*!**************************************!*\
   !*** ./resources/js/constant/API.js ***!
@@ -28879,10 +28718,10 @@ var API = {
 
 /***/ }),
 
-/***/ "./resources/js/views/frontend/homepage/Portfolio.js":
-/*!***********************************************************!*\
-  !*** ./resources/js/views/frontend/homepage/Portfolio.js ***!
-  \***********************************************************/
+/***/ "./resources/js/views/frontend/blog/LatestPost.js":
+/*!********************************************************!*\
+  !*** ./resources/js/views/frontend/blog/LatestPost.js ***!
+  \********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28892,15 +28731,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Modal */ "./resources/js/components/Modal.js");
-/* harmony import */ var _components_ModalContent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/ModalContent */ "./resources/js/components/ModalContent.js");
-/* harmony import */ var _components_ModalHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/ModalHeader */ "./resources/js/components/ModalHeader.js");
-/* harmony import */ var _components_ModalTitle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/ModalTitle */ "./resources/js/components/ModalTitle.js");
-/* harmony import */ var _components_ModalBody__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/ModalBody */ "./resources/js/components/ModalBody.js");
-/* harmony import */ var _components_PortfolioItem__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../components/PortfolioItem */ "./resources/js/components/PortfolioItem.js");
-/* harmony import */ var _constant_API__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../constant/API */ "./resources/js/constant/API.js");
-/* harmony import */ var _components_ButtonRounded__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../components/ButtonRounded */ "./resources/js/components/ButtonRounded.js");
-/* harmony import */ var _components_ButtonLinkRounded__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../components/ButtonLinkRounded */ "./resources/js/components/ButtonLinkRounded.js");
+/* harmony import */ var _components_BlogPostCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/BlogPostCard */ "./resources/js/components/BlogPostCard.js");
+/* harmony import */ var _constant_API__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../constant/API */ "./resources/js/constant/API.js");
+/* harmony import */ var _MorePost__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./MorePost */ "./resources/js/views/frontend/blog/MorePost.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -28927,32 +28760,26 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-
-
-
-
-
-function Portfolio() {
+function LatestPost() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
-      isLoaded = _useState2[0],
-      setIsLoaded = _useState2[1];
+      initialLoaded = _useState2[0],
+      setInitialLoaded = _useState2[1];
 
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      isModalOpen = _useState4[0],
-      setIsModalOpen = _useState4[1];
+      isLoaded = _useState4[0],
+      setIsLoaded = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
       _useState6 = _slicedToArray(_useState5, 2),
-      projects = _useState6[0],
-      setProjects = _useState6[1];
+      lastId = _useState6[0],
+      setLastId = _useState6[1];
 
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
       _useState8 = _slicedToArray(_useState7, 2),
-      project = _useState8[0],
-      setProject = _useState8[1];
+      posts = _useState8[0],
+      setPosts = _useState8[1];
 
   var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
       _useState10 = _slicedToArray(_useState9, 2),
@@ -28962,125 +28789,110 @@ function Portfolio() {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     _getLangPack();
 
-    _getPortfolio(1);
+    _getPosts();
   }, []);
 
   var _getLangPack = function _getLangPack() {
-    axios.get(_constant_API__WEBPACK_IMPORTED_MODULE_8__["default"].lang_pack).then(function (response) {
+    axios.get(_constant_API__WEBPACK_IMPORTED_MODULE_3__["default"].lang_pack).then(function (response) {
       var responseBody = response.data;
       var language = responseBody.data;
-      setLang({
-        view_project: language.view_project,
-        more_portfolio: language.more_portfolio,
-        loading: language.loading,
-        project_detail: language.project_detail,
-        name: language.name,
-        description: language.description,
-        link_demo: language.link_demo,
-        close: language.close
-      });
+      setLang(language);
     });
   };
 
-  var _getPortfolio = function _getPortfolio(page) {
-    axios.get(_constant_API__WEBPACK_IMPORTED_MODULE_8__["default"].portfolio + '?page=' + page + '&limit=6').then(function (response) {
+  var _getPosts = function _getPosts() {
+    setIsLoaded(false);
+    axios.post(_constant_API__WEBPACK_IMPORTED_MODULE_3__["default"].latest_posts, {
+      lastId: lastId,
+      exceptIds: blog_except_ids
+    }).then(function (response) {
       var responseBody = response.data;
-      var allProjects = [].concat(_toConsumableArray(projects), _toConsumableArray(responseBody.data.projects));
-      setProjects(allProjects);
+      var allPosts = [].concat(_toConsumableArray(posts), _toConsumableArray(responseBody.data.posts));
       setIsLoaded(true);
+      setInitialLoaded(true);
+      setLastId(responseBody.data.lastId);
+      setPosts(allPosts);
     });
   };
 
-  var _getSinglePortfolio = function _getSinglePortfolio(id) {
-    axios.get(_constant_API__WEBPACK_IMPORTED_MODULE_8__["default"].portfolio + '/' + id).then(function (response) {
-      var responseBody = response.data;
-      setProject(responseBody.data.project);
-      setIsModalOpen(true);
-    });
+  var loadMorePostHandler = function loadMorePostHandler() {
+    _getPosts();
   };
 
-  var _viewProjectHandler = function viewProjectHandler(id, event) {
-    event.preventDefault();
+  var morePostButton = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MorePost__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    isLoaded: isLoaded,
+    lang: lang,
+    loadMorePost: loadMorePostHandler
+  });
 
-    _getSinglePortfolio(id);
-  };
-
-  var closeModalHandler = function closeModalHandler() {
-    setIsModalOpen(false);
-  };
+  if (lastId == -1 || initialLoaded === false) {
+    morePostButton = null;
+  }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "mt-14 grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-6"
-  }, projects.map(function (data, key) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PortfolioItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    className: "grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-4 xl:gap-8"
+  }, posts.map(function (post, key) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_BlogPostCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
       key: key,
-      name: data.name,
-      image: data.image_url,
-      actViewProject: lang.view_project,
-      viewProjectHandler: function viewProjectHandler(e) {
-        return _viewProjectHandler(data.id, e);
-      }
+      postUrl: post.post_url,
+      title: post.title,
+      image: post.image_url,
+      date: post.created_at
     });
-  })), isLoaded ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "mt-6 xl:mt-12 flex justify-center"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ButtonLinkRounded__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    href: _constant_API__WEBPACK_IMPORTED_MODULE_8__["default"].base_url + '/portfolio',
-    variant: "primary"
-  }, lang.more_portfolio)) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    isOpen: isModalOpen
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ModalContent__WEBPACK_IMPORTED_MODULE_3__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ModalHeader__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ModalTitle__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    text: lang.project_detail
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ModalBody__WEBPACK_IMPORTED_MODULE_6__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "mb-6 text-ib-one text-sm flex flex-col xl:flex-row justify-between"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full xl:w-2/5 mb-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: project.image_url,
-    alt: project.name,
-    className: "w-full h-auto"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "xl:w-3/5 xl:ml-8"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
-    className: "font-bold"
-  }, lang.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "mb-4"
-  }, project.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
-    className: "font-bold"
-  }, lang.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "mb-4"
-  }, project.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
-    className: "font-bold"
-  }, lang.link_demo), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "mb-4"
-  }, project.link ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: project.link,
-    className: "text-ib-three hover:underline",
-    target: "_blank",
-    rel: "noreferrer"
-  }, project.link) : '-'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "text-center"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ButtonRounded__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    variant: "primary",
-    onClick: closeModalHandler
-  }, lang.close))))));
+  })), morePostButton);
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Portfolio);
+/* harmony default export */ __webpack_exports__["default"] = (LatestPost);
 
-if (document.getElementById('portfolio-ui-content')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Portfolio, null), document.getElementById('portfolio-ui-content'));
+if (document.getElementById('latest-post-ui-content')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LatestPost, null), document.getElementById('latest-post-ui-content'));
 }
 
 /***/ }),
 
-/***/ 2:
-/*!*****************************************************************!*\
-  !*** multi ./resources/js/views/frontend/homepage/Portfolio.js ***!
-  \*****************************************************************/
+/***/ "./resources/js/views/frontend/blog/MorePost.js":
+/*!******************************************************!*\
+  !*** ./resources/js/views/frontend/blog/MorePost.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_ButtonRounded__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/ButtonRounded */ "./resources/js/components/ButtonRounded.js");
+
+
+
+function MorePost(props) {
+  var isLoaded = props.isLoaded,
+      lang = props.lang,
+      loadMorePost = props.loadMorePost;
+  return isLoaded ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mt-10 text-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ButtonRounded__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    variant: "primary",
+    onClick: loadMorePost
+  }, lang.more_post)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mt-10 text-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ButtonRounded__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    variant: "primary-loading"
+  }, lang.loading, "..."));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (MorePost);
+
+/***/ }),
+
+/***/ 3:
+/*!**************************************************************!*\
+  !*** multi ./resources/js/views/frontend/blog/LatestPost.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/dev/Developer/Laravel/ibnuisdev/resources/js/views/frontend/homepage/Portfolio.js */"./resources/js/views/frontend/homepage/Portfolio.js");
+module.exports = __webpack_require__(/*! /home/dev/Developer/Laravel/ibnuisdev/resources/js/views/frontend/blog/LatestPost.js */"./resources/js/views/frontend/blog/LatestPost.js");
 
 
 /***/ })

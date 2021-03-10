@@ -30,6 +30,6 @@ Route::namespace('Api')
     Route::post('messages', 'MessageController@store');
     Route::post('messages/cta', 'MessageController@storeFromCta');
 
-    Route::get('posts/latest', 'PostController@getLatestPosts');
+    Route::post('posts/latest', 'PostController@getLatestPosts');
 
 });
