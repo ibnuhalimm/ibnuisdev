@@ -27,4 +27,9 @@ Route::namespace('Api')
     Route::get('portfolios', 'PortfolioController@index');
     Route::get('portfolios/{id}', 'PortfolioController@show');
 
+    Route::post('messages', 'MessageController@store');
+    Route::post('messages/cta', 'MessageController@storeFromCta');
+
+    Route::get('posts/latest', 'PostController@getLatestPosts');
+
 });

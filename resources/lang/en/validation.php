@@ -133,6 +133,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'message' => [
+            'min' => 'The :attribute is too short.',
+        ]
     ],
 
     /*
@@ -146,6 +149,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'email' => 'E-mail Address'
+    ],
 
 ];

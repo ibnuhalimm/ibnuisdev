@@ -133,6 +133,12 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'email' => [
+            'email' => ':attribute harus berupa email yang valid.',
+        ],
+        'message' => [
+            'min' => ':attribute terlalu pendek.',
+        ]
     ],
 
     /*
@@ -147,5 +153,7 @@ return [
     */
 
     'attributes' => [
+        'message' => 'Pesan',
+        'email' => 'Alamat Email'
     ],
 ];
