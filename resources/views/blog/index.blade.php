@@ -116,12 +116,6 @@
     <section class="mt-8 py-10">
         <x-frontend-container>
             <div id="latest-post-ui-content"></div>
-
-            {{-- <h2 class="font-bold text-base xl:text-2xl text-ib-one mb-6">
-                {{ __('global.latest_post') }}
-            </h2>
-
-            @livewire('blog.post.latest-post', ['except_ids' => $except_ids]) --}}
         </x-frontend-container>
     </section>
 
