@@ -59,21 +59,21 @@
                                 <label for="" class="block mb-2">
                                     {{ __('global.your_name') }} <span class="text-red-500">*</span>
                                 </label>
-                                <input type="text" name="name" class="w-full lg:w-3/4 px-3 py-2 border border-solid border-ib-one bg-white outline-none">
+                                <input type="text" name="name" class="w-full lg:w-3/4 px-3 py-2 border border-solid border-gray-400 bg-white outline-none rounded-md">
                             </div>
                             <div class="mb-6">
                                 <label for="" class="block mb-2">
                                     {{ __('global.your_email') }} <span class="text-red-500">*</span>
                                 </label>
-                                <input type="text" name="email" class="w-full lg:w-3/4 px-3 py-2 border border-solid border-ib-one bg-white outline-none">
+                                <input type="text" name="email" class="w-full lg:w-3/4 px-3 py-2 border border-solid border-gray-400 bg-white outline-none rounded-md">
                             </div>
                             <div class="mb-6">
                                 <label for="" class="block mb-2">
                                     {{ __('global.message') }} <span class="text-red-500">*</span>
                                 </label>
-                                <textarea name="body" class="w-full lg:w-3/4 px-3 py-2 border border-solid border-ib-one bg-white outline-none resize-none h-60"></textarea>
+                                <textarea name="body" class="w-full lg:w-3/4 px-3 py-2 border border-solid border-gray-400 bg-white outline-none resize-none h-60 rounded-md"></textarea>
                             </div>
-                            <button type="button" class="py-2 px-6 bg-ib-three border border-solid border-ib-three text-ib-four shadow-lg outline-none focus:outline-none">
+                            <button type="button" class="py-2 px-6 bg-ib-three border border-solid border-ib-three text-ib-four outline-none focus:outline-none rounded-md hover:bg-opacity-80 transition-all duration-500">
                                 {{ __('global.send_message') }}
                             </button>
                         </div>

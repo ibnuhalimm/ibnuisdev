@@ -4,7 +4,7 @@ return [
     'home' => [
         'i_am_ibnu' => 'Hai, Aku Ibnu',
         'intro' => 'Fullstack Web Developer dengan keterampilan pemecahan masalah yang kuat dan berpengalaman dalam membuat dan merancang perangkat lunak berkualitas tinggi.',
-        'view_portfolio' => 'Lihat Portfolio',
+        'view_portfolio' => 'Lihat Portfolio Saya',
         'web_development' => 'Web Development',
         'web_development_description' => 'Membangun blog, company profile website, toko online, point-of-sales, dll.',
         'bug_fix' => 'Bug dan Error Fix',

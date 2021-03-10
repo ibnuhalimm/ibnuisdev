@@ -1,11 +1,11 @@
 <div x-data="{ is_modal_open: false }">
-    <div class="w-full h-56 xl:h-80 bg-no-repeat bg-center mb-6 lg:mb-0" style="background-image: url('{{ $image }}')">
-        <div class="w-full h-full left-0 top-0 bg-ib-one bg-opacity-70 flex items-center justify-center">
+    <div class="w-full h-56 xl:h-80 bg-no-repeat bg-center mb-6 lg:mb-0 rounded-lg" style="background-image: url('{{ $image }}')">
+        <div class="w-full h-full left-0 top-0 bg-ib-one bg-opacity-70 flex items-center justify-center rounded-lg">
             <div class="w-3/4 mx-auto text-center">
                 <h3 class="font-bold text-ib-four mb-3 text-lg">
                     {{ $name }}
                 </h3>
-                <button class="px-5 py-2 border border-solid border-ib-four bg-transparent hover:bg-ib-four text-ib-four hover:text-ib-one outline-none focus:outline-none" @click="is_modal_open = true">
+                <button class="px-5 py-2 border border-solid border-ib-four bg-transparent hover:bg-ib-four text-ib-four hover:text-ib-one outline-none focus:outline-none rounded-full transition-all duration-500" @click="is_modal_open = true">
                     {{ __('global.view_project') }}
                 </button>
             </div>
@@ -14,7 +14,7 @@
 
     <div class="w-full h-full fixed inset-0 bg-gray-900 bg-opacity-80 z-50"
         x-show.transition.opacity="is_modal_open === true" x-cloak>
-        <div class="w-11/12 md:w-3/5 mx-auto px-8 py-6 bg-ib-four mt-20 sm:mt-10 md:mt-20 mx-auto h-4/5 md:h-auto lg:h-3/4 xl:h-auto overflow-y-auto"
+        <div class="w-11/12 md:w-3/5 mx-auto px-8 py-6 bg-white mt-20 sm:mt-10 md:mt-20 mx-auto h-4/5 md:h-auto lg:h-3/4 xl:h-auto overflow-y-auto rounded-lg"
             x-show.transition.5000ms="is_modal_open === true" x-cloak>
             <div class="mb-10 text-center">
                 <h4 class="text-lg text-ib-one">
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <button class="py-2 px-6 bg-ib-three text-ib-four shadow-lg outline-none focus:outline-none" @click="is_modal_open = false">
+                    <button class="py-2 px-6 bg-ib-three text-ib-four rounded-full outline-none focus:outline-none" @click="is_modal_open = false">
                         {{ __('global.close') }}
                     </button>
                 </div>

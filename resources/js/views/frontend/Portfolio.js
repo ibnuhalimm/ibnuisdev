@@ -7,6 +7,7 @@ import ModalTitle from '../../components/ModalTitle';
 import ModalBody from '../../components/ModalBody';
 import PortfolioItem from '../../components/PortfolioItem';
 import API from '../../constant/API';
+import ButtonRounded from '../../components/ButtonRounded';
 
 function Portfolio() {
     let [ isLoaded, setIsLoaded ] = useState(false);
@@ -159,11 +160,11 @@ function Portfolio() {
                             </div>
                         </div>
                         <div className="text-center">
-                            <button
-                                className="py-2 px-6 bg-ib-three text-ib-four shadow-lg outline-none focus:outline-none"
+                            <ButtonRounded
+                                variant="primary"
                                 onClick={closeModalHandler}>
-                                {lang.close}
-                            </button>
+                                    {lang.close}
+                            </ButtonRounded>
                         </div>
                     </ModalBody>
                 </ModalContent>

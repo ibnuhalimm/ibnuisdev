@@ -28601,6 +28601,46 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./resources/js/components/ButtonRounded.js":
+/*!**************************************************!*\
+  !*** ./resources/js/components/ButtonRounded.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function ButtonRounded(props) {
+  var variant = props.variant;
+  var buttonClass = '';
+
+  switch (variant) {
+    case 'primary':
+      buttonClass = 'border-ib-three bg-ib-three hover:bg-opacity-80 text-ib-four';
+      break;
+
+    case 'outline-white':
+      buttonClass = 'border-ib-four bg-transparent hover:bg-ib-four text-ib-four hover:text-ib-one';
+      break;
+
+    default:
+      break;
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: 'px-5 py-2 border border-solid outline-none focus:outline-none rounded-full transition-all duration-500 ' + buttonClass,
+    onClick: props.onClick
+  }, props.children);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (ButtonRounded);
+
+/***/ }),
+
 /***/ "./resources/js/components/Modal.js":
 /*!******************************************!*\
   !*** ./resources/js/components/Modal.js ***!
@@ -28674,7 +28714,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function ModalContent(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "relative w-11/12 md:w-3/5 mx-auto px-8 py-6 bg-ib-four mt-20 sm:mt-10 md:mt-20 h-4/5 md:h-auto lg:h-3/4 xl:h-auto overflow-y-auto z-50"
+    className: "relative w-11/12 md:w-3/5 mx-auto px-8 py-6 bg-white mt-20 sm:mt-10 md:mt-20 h-4/5 md:h-auto lg:h-3/4 xl:h-auto overflow-y-auto z-50 rounded-lg"
   }, props.children);
 }
 
@@ -28739,6 +28779,8 @@ function ModalTitle(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ButtonRounded__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ButtonRounded */ "./resources/js/components/ButtonRounded.js");
+
 
 
 function PortfolioItem(props) {
@@ -28749,16 +28791,16 @@ function PortfolioItem(props) {
     backgroundImage: 'url(' + image + ')'
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full h-56 xl:h-80 bg-no-repeat bg-center mb-6 lg:mb-0",
+    className: "w-full h-56 xl:h-80 bg-no-repeat bg-center mb-6 lg:mb-0 rounded-lg",
     style: wrapperStyle
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full h-full left-0 top-0 bg-ib-one bg-opacity-70 flex items-center justify-center"
+    className: "w-full h-full left-0 top-0 bg-ib-one bg-opacity-70 flex items-center justify-center rounded-lg"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-3/4 mx-auto text-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     className: "font-bold text-ib-four mb-3 text-lg"
-  }, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "px-5 py-2 border border-solid border-ib-four bg-transparent hover:bg-ib-four text-ib-four hover:text-ib-one outline-none focus:outline-none",
+  }, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ButtonRounded__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    variant: "outline-white",
     onClick: props.viewProjectHandler
   }, actViewProject))));
 }
@@ -28808,6 +28850,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ModalBody__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/ModalBody */ "./resources/js/components/ModalBody.js");
 /* harmony import */ var _components_PortfolioItem__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/PortfolioItem */ "./resources/js/components/PortfolioItem.js");
 /* harmony import */ var _constant_API__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../constant/API */ "./resources/js/constant/API.js");
+/* harmony import */ var _components_ButtonRounded__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/ButtonRounded */ "./resources/js/components/ButtonRounded.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -28827,6 +28870,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -28990,8 +29034,8 @@ function Portfolio() {
     rel: "noreferrer"
   }, project.link) : '-'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "text-center"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "py-2 px-6 bg-ib-three text-ib-four shadow-lg outline-none focus:outline-none",
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ButtonRounded__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    variant: "primary",
     onClick: closeModalHandler
   }, lang.close))))));
 }

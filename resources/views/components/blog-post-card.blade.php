@@ -1,4 +1,4 @@
-<a href="{{ route('blog.post.read', [ 'slug' => $slug ]) }}" class="block w-full py-3 xl:py-0 rounded-md outline-none hover:outline-none text-ib-one hover:text-ib-three transition delay-100">
+<a href="{{ route('blog.post.read', [ 'slug' => $slug ]) }}" class="block w-full py-3 xl:py-0 rounded-md outline-none hover:outline-none text-ib-one hover:text-ib-three transition-all duration-500">
     <div class="flex flex-row items-start justify-between">
         <div class="w-1/3 lg:w-2/5 xl:w-5/12">
             <div class="w-24 h-20 md:w-24 md:h-24 xl:w-4/5 xl:h-24 rounded-md bg-cover bg-no-repeat border border-solid border-gray-200" style="background-image: url('{{ $image }}')"></div>
