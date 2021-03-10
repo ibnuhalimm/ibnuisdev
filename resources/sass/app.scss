@@ -18,6 +18,11 @@ body {
     display: none;
 }
 
+body.modal-active {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}
+
 .article-content {
     line-height: 2rem;
 }

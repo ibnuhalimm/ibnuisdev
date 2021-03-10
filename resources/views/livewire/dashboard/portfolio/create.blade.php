@@ -5,6 +5,17 @@
         </x-alert>
     @endif
 
+    <x-form-label-inline text="Language" required="true" size="large">
+        <div class="w-full lg:w-1/2 flex items-center justify-between">
+            <div class="w-2/3 mr-2">
+                <x-select wire:model.lazy="lang">
+                    <option value="id">Indonesia</option>
+                    <option value="en">English</option>
+                </x-select>
+            </div>
+            @error('lang') <x-form-error> {{ $message }} </x-form-error> @enderror
+        </div>
+    </x-form-label-inline>
     <x-form-label-inline text="Month / Year" required="true" size="large">
         <div class="w-full lg:w-1/2 flex items-center justify-between">
             <div class="w-2/3 mr-2">
@@ -35,7 +46,7 @@
         </div>
     </x-form-label-inline>
     <x-form-label-inline text="Image" required="true" size="large">
-        <div class="w-1/2">
+        <div class="w-full lg:w-1/2">
             <img src="{{ $image_url }}" alt="Image" class="w-full h-56 border border-solid border-gray-400 rounded-md">
             <div class="mt-1">
                 <small class="text-blue-500">Recommended : 600 x 400px</small>

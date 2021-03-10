@@ -32,5 +32,6 @@ return [
     'note_as_geeks' => 'Catatanku sebagai Pecinta Teknologi',
     'your_name' => 'Nama Anda',
     'your_email' => 'Email Anda',
-    'message' => 'Isi Pesan'
+    'message' => 'Isi Pesan',
+    'loading' => 'Memuat'
 ];

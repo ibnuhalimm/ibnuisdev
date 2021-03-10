@@ -1,6 +1,6 @@
 <div x-data="{ is_modal_open: false }">
     <div class="w-full h-56 xl:h-80 bg-no-repeat bg-center mb-6 lg:mb-0" style="background-image: url('{{ $image }}')">
-        <div class="w-full h-full left-0 top-0 bg-ib-one bg-opacity-90 flex items-center justify-center">
+        <div class="w-full h-full left-0 top-0 bg-ib-one bg-opacity-70 flex items-center justify-center">
             <div class="w-3/4 mx-auto text-center">
                 <h3 class="font-bold text-ib-four mb-3 text-lg">
                     {{ $name }}
@@ -12,9 +12,9 @@
         </div>
     </div>
 
-    <div class="w-full h-full fixed inset-0 bg-gray-900 bg-opacity-75 z-50"
+    <div class="w-full h-full fixed inset-0 bg-gray-900 bg-opacity-80 z-50"
         x-show.transition.opacity="is_modal_open === true" x-cloak>
-        <div class="w-11/12 md:w-3/5 px-8 py-6 bg-ib-four mt-20 mx-auto"
+        <div class="w-11/12 md:w-3/5 mx-auto px-8 py-6 bg-ib-four mt-20 sm:mt-10 md:mt-20 mx-auto h-4/5 md:h-auto lg:h-3/4 xl:h-auto overflow-y-auto"
             x-show.transition.5000ms="is_modal_open === true" x-cloak>
             <div class="mb-10 text-center">
                 <h4 class="text-lg text-ib-one">

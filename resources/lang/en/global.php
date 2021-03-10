@@ -32,5 +32,6 @@ return [
     'note_as_geeks' => 'My note as Techno Geeks',
     'your_name' => 'Your Name',
     'your_email' => 'Your Email',
-    'message' => 'Message'
+    'message' => 'Message',
+    'loading' => 'Loading'
 ];

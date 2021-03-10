@@ -16,6 +16,7 @@ class Create extends Component
      *
      * @var mixed
      */
+    public $lang;
     public $month;
     public $year;
     public $name;
@@ -32,6 +33,7 @@ class Create extends Component
      */
     public function mount()
     {
+        $this->lang = 'id';
         $this->month = date('m');
         $this->year = date('Y');
         $this->image_url = asset('img/no_image.jpg');
@@ -57,6 +59,7 @@ class Create extends Component
     private function formValidationRules()
     {
         return [
+            'lang' => [ 'required', 'in:id,en' ],
             'month' => [ 'required', 'between:01,12' ],
             'year' => [ 'required', 'digits:4' ],
             'name' => [ 'required', 'min:10', 'max:50' ],
@@ -89,6 +92,7 @@ class Create extends Component
 
         try {
             Project::create([
+                'lang' => $this->lang,
                 'month' => $this->month,
                 'year' => $this->year,
                 'name' => $this->name,

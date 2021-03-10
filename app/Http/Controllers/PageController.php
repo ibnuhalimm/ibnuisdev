@@ -18,7 +18,7 @@ class PageController extends Controller
     {
         $data = [
             'latest_posts' => Post::published()->latest()->take(6)->get(),
-            'projects' => Project::orderBy('year', 'desc')->orderBy('month', 'desc')->published()->take(6)->get()
+            'projects' => Project::latestProject()->published()->take(6)->lang(session('app_locale'))->get()
         ];
 
         return view('index', $data);

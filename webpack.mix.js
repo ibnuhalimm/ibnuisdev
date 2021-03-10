@@ -13,7 +13,8 @@ require('laravel-mix-purgecss');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.react('resources/js/app.js', 'public/js')
+    .react('resources/js/views/frontend/Portfolio.js', 'public/js/pages/portfolio.js')
     .sass('resources/sass/app.scss', 'public/css')
     .options({
         processCssUrls: false,
@@ -21,7 +22,7 @@ mix.js('resources/js/app.js', 'public/js')
     })
     .purgeCss({
         enabled: mix.inProduction(),
-        folders: ['src', 'templates', 'resources/views'],
+        folders: ['src', 'templates', 'resources/views', 'resources/js'],
         extensions: ['html', 'js', 'php', 'vue', 'blade.php'],
         // whitelistPatternsChildren: [/^bg/, /^text/]
     });
