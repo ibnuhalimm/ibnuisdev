@@ -12,6 +12,10 @@
     <meta property="og:title" content="{{ config('app.name') }}" />
     <meta property="og:description" content="{{ __('section.resume.sub_title_one') }} {{ __('section.resume.sub_title_two') }}" />
     <meta property="og:image" content="{{ asset('favicon.ico') }}" />
+    <meta name="twitter:site" content="@IbnuHMustofa" />
+    <meta name="twitter:title" content="{{ config('app.name') }} - {{ __('Resume') }}" />
+    <meta name="twitter:description" content="{{ __('section.resume.sub_title_one') }} {{ __('section.resume.sub_title_two') }}" />
+    <meta name="twitter:image" content="{{ asset('favicon.ico') }}" />
 @endsection
 
 @section('content')

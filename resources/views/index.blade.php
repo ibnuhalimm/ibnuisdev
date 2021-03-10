@@ -12,6 +12,10 @@
     <meta property="og:title" content="{{ config('app.name') }}" />
     <meta property="og:description" content="{{ __('section.home.intro') }}" />
     <meta property="og:image" content="{{ asset('favicon.ico') }}" />
+    <meta name="twitter:site" content="@IbnuHMustofa" />
+    <meta name="twitter:title" content="{{ config('app.name') }}" />
+    <meta name="twitter:description" content="{{ __('section.home.intro') }}" />
+    <meta name="twitter:image" content="{{ asset('favicon.ico') }}" />
 @endsection
 
 @section('content')

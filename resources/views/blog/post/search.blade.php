@@ -2,12 +2,16 @@
 
 @section('meta_seo')
     <meta name="title" content="{{ __('global.search_result') }} {{ $search_text }}">
-    <meta name="description" content="{{ __('global.search_result') }} {{ $search_text }}">
+    <meta name="description" content="{{ __('global.search_result') }} {{ $search_text }} di {{ config('app.name') }} website.">
     <meta property="og:url" content="{{ url('/') }}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ __('global.search_result') }} {{ $search_text }}" />
-    <meta property="og:description" content="{{ __('global.search_result') }} {{ $search_text }}" />
-    <meta property="og:image" content="{{ url('favicon.ico') }}" />
+    <meta property="og:description" content="{{ __('global.search_result') }} {{ $search_text }} di {{ config('app.name') }} website." />
+    <meta property="og:image" content="{{ asset('favicon.ico') }}" />
+    <meta name="twitter:site" content="@IbnuHMustofa" />
+    <meta name="twitter:title" content="{{ __('global.search_result') }} {{ $search_text }}" />
+    <meta name="twitter:description" content="{{ __('global.search_result') }} {{ $search_text }} di {{ config('app.name') }} website." />
+    <meta name="twitter:image" content="{{ asset('favicon.ico') }}" />
 @endsection
 
 @section('title')

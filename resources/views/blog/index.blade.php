@@ -5,13 +5,17 @@
 @endsection
 
 @section('meta_seo')
-    <meta name="title" content="{{ config('app.name') }}">
+    <meta name="title" content="{{ config('app.name') }} - {{ __('Blog') }}">
     <meta name="description" content="{{ __('global.note_as_geeks') }}">
     <meta property="og:url" content="{{ url('/') }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ config('app.name') }}" />
+    <meta property="og:title" content="{{ config('app.name') }} - {{ __('Blog') }}" />
     <meta property="og:description" content="{{ __('global.note_as_geeks') }}" />
-    <meta property="og:image" content="{{ url('favicon.ico') }}" />
+    <meta property="og:image" content="{{ asset('favicon.ico') }}" />
+    <meta name="twitter:site" content="@IbnuHMustofa" />
+    <meta name="twitter:title" content="{{ config('app.name') }} - {{ __('Blog') }}" />
+    <meta name="twitter:description" content="{{ __('global.note_as_geeks') }}" />
+    <meta name="twitter:image" content="{{ asset('favicon.ico') }}" />
 @endsection
 
 @section('content')
