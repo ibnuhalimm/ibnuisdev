@@ -115,7 +115,7 @@
             </h2>
             <div class="flex row items-center justify-between lg:px-20 xl:px-0 xl:w-3/4 xl:mx-auto">
                 <input type="email" name="email_cta" id="email_cta" class="w-full px-6 py-4 bg-white border border-solid border-ib-three rounded-md focus:outline-none md:text-lg" placeholder="{{ __('global.your_email') }}">
-                <button type="button" class="w-3/5 lg:w-1/2 ml-4 py-4 px-6 bg-ib-three hover:bg-opacity-80 transition-all duration-500 border border-solid border-ib-three text-ib-four rounded-md focus:outline-none md:text-lg">
+                <button type="button" class="w-3/5 lg:w-1/2 ml-4 py-4 px-6 bg-ib-three hover:bg-opacity-70 transition-all duration-500 border border-solid border-ib-three text-ib-four rounded-md focus:outline-none md:text-lg">
                     {{ __('global.send_message') }}
                 </button>
             </div>
@@ -138,7 +138,7 @@
                 @endforeach
             </div>
             <div class="mt-6 xl:mt-12 flex justify-center">
-                <a href="{{ route('blog.index') }}" class="py-2 px-6 bg-ib-three border border-solid border-ib-three text-ib-four rounded-full outline-none focus:outline-none hover:bg-opacity-80 transition-all duration-500">
+                <a href="{{ route('blog.index') }}" class="py-2 px-6 bg-ib-three border border-solid border-ib-three text-ib-four rounded-full outline-none focus:outline-none hover:bg-opacity-70 transition-all duration-500">
                     {{ __('global.more_post') }}
                 </a>
             </div>
@@ -155,17 +155,12 @@
                     {{ __('section.portfolio.sub_title_one') }}
                 </span>
             </h2>
-            <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-6">
-                @foreach ($projects as $project)
-                    <x-portfolio-item name="{{ $project->name }}" image="{{ $project->image_url }}" description="{!! $project->description !!}" link="{{ $project->link }}" />
-                @endforeach
-            </div>
-            <div class="mt-6 xl:mt-12 flex justify-center">
-                <a href="{{ route('portfolio') }}" class="py-2 px-6 bg-ib-three border border-solid border-ib-three text-ib-four rounded-full outline-none focus:outline-none hover:bg-opacity-80 transition-all duration-500">
-                    {{ __('global.more_portfolio') }}
-                </a>
-            </div>
+            <div id="portfolio-ui-content"></div>
         </x-frontend-container>
     </section>
 
 @endsection
+
+@push('bottom_js')
+    <script src="{{ URL::asset('js/pages/homepage/portfolio.js?_=' . rand()) }}"></script>
+@endpush

@@ -17,8 +17,7 @@ class PageController extends Controller
     public function index()
     {
         $data = [
-            'latest_posts' => Post::published()->latest()->take(6)->get(),
-            'projects' => Project::latestProject()->published()->take(6)->lang(session('app_locale'))->get()
+            'latest_posts' => Post::published()->latest()->take(6)->get()
         ];
 
         return view('index', $data);

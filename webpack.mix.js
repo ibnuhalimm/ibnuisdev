@@ -15,6 +15,7 @@ require('laravel-mix-purgecss');
 
 mix.react('resources/js/app.js', 'public/js')
     .react('resources/js/views/frontend/Portfolio.js', 'public/js/pages/portfolio.js')
+    .react('resources/js/views/frontend/homepage/Portfolio.js', 'public/js/pages/homepage/portfolio.js')
     .sass('resources/sass/app.scss', 'public/css')
     .options({
         processCssUrls: false,

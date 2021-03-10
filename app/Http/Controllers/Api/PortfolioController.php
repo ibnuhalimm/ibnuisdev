@@ -23,7 +23,15 @@ class PortfolioController extends Controller
             $page = 1;
         }
 
-        $take = 10;
+        $take = $request->get('limit', 10);
+        if ($take < 1) {
+            $take = 1;
+        }
+
+        if ($take > 10) {
+            $take = 10;
+        }
+
         $skip = ($page - 1) * $take;
 
         $projects = Project::latestProject()->published()->take($take)->skip($skip)->lang($request->header('X-LANG'))->get();

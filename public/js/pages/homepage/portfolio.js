@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -28601,6 +28601,47 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./resources/js/components/ButtonLinkRounded.js":
+/*!******************************************************!*\
+  !*** ./resources/js/components/ButtonLinkRounded.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function ButtonLinkRounded(props) {
+  var variant = props.variant,
+      href = props.href;
+  var buttonClass = '';
+
+  switch (variant) {
+    case 'primary':
+      buttonClass = 'border-ib-three bg-ib-three hover:bg-opacity-70 text-ib-four';
+      break;
+
+    case 'outline-white':
+      buttonClass = 'border-ib-four bg-transparent hover:bg-ib-four text-ib-four hover:text-ib-one';
+      break;
+
+    default:
+      break;
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: href ? href : '#',
+    className: 'px-5 py-2 border border-solid outline-none focus:outline-none rounded-full transition-all duration-500 ' + buttonClass
+  }, props.children);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (ButtonLinkRounded);
+
+/***/ }),
+
 /***/ "./resources/js/components/ButtonRounded.js":
 /*!**************************************************!*\
   !*** ./resources/js/components/ButtonRounded.js ***!
@@ -28837,10 +28878,10 @@ var API = {
 
 /***/ }),
 
-/***/ "./resources/js/views/frontend/Portfolio.js":
-/*!**************************************************!*\
-  !*** ./resources/js/views/frontend/Portfolio.js ***!
-  \**************************************************/
+/***/ "./resources/js/views/frontend/homepage/Portfolio.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/views/frontend/homepage/Portfolio.js ***!
+  \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28850,14 +28891,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Modal */ "./resources/js/components/Modal.js");
-/* harmony import */ var _components_ModalContent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/ModalContent */ "./resources/js/components/ModalContent.js");
-/* harmony import */ var _components_ModalHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/ModalHeader */ "./resources/js/components/ModalHeader.js");
-/* harmony import */ var _components_ModalTitle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/ModalTitle */ "./resources/js/components/ModalTitle.js");
-/* harmony import */ var _components_ModalBody__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/ModalBody */ "./resources/js/components/ModalBody.js");
-/* harmony import */ var _components_PortfolioItem__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/PortfolioItem */ "./resources/js/components/PortfolioItem.js");
-/* harmony import */ var _constant_API__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../constant/API */ "./resources/js/constant/API.js");
-/* harmony import */ var _components_ButtonRounded__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/ButtonRounded */ "./resources/js/components/ButtonRounded.js");
+/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Modal */ "./resources/js/components/Modal.js");
+/* harmony import */ var _components_ModalContent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/ModalContent */ "./resources/js/components/ModalContent.js");
+/* harmony import */ var _components_ModalHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/ModalHeader */ "./resources/js/components/ModalHeader.js");
+/* harmony import */ var _components_ModalTitle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/ModalTitle */ "./resources/js/components/ModalTitle.js");
+/* harmony import */ var _components_ModalBody__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/ModalBody */ "./resources/js/components/ModalBody.js");
+/* harmony import */ var _components_PortfolioItem__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../components/PortfolioItem */ "./resources/js/components/PortfolioItem.js");
+/* harmony import */ var _constant_API__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../constant/API */ "./resources/js/constant/API.js");
+/* harmony import */ var _components_ButtonRounded__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../components/ButtonRounded */ "./resources/js/components/ButtonRounded.js");
+/* harmony import */ var _components_ButtonLinkRounded__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../components/ButtonLinkRounded */ "./resources/js/components/ButtonLinkRounded.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -28889,6 +28931,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Portfolio() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -28897,38 +28940,28 @@ function Portfolio() {
 
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      isMore = _useState4[0],
-      setIsMore = _useState4[1];
+      isModalOpen = _useState4[0],
+      setIsModalOpen = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
       _useState6 = _slicedToArray(_useState5, 2),
-      isModalOpen = _useState6[0],
-      setIsModalOpen = _useState6[1];
+      projects = _useState6[0],
+      setProjects = _useState6[1];
 
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
       _useState8 = _slicedToArray(_useState7, 2),
-      nextPage = _useState8[0],
-      setNextPage = _useState8[1];
+      project = _useState8[0],
+      setProject = _useState8[1];
 
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
       _useState10 = _slicedToArray(_useState9, 2),
-      projects = _useState10[0],
-      setProjects = _useState10[1];
-
-  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
-      _useState12 = _slicedToArray(_useState11, 2),
-      project = _useState12[0],
-      setProject = _useState12[1];
-
-  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
-      _useState14 = _slicedToArray(_useState13, 2),
-      lang = _useState14[0],
-      setLang = _useState14[1];
+      lang = _useState10[0],
+      setLang = _useState10[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     _getLangPack();
 
-    _getPortfolio(nextPage);
+    _getPortfolio(1);
   }, []);
 
   var _getLangPack = function _getLangPack() {
@@ -28949,15 +28982,9 @@ function Portfolio() {
   };
 
   var _getPortfolio = function _getPortfolio(page) {
-    axios.get(_constant_API__WEBPACK_IMPORTED_MODULE_8__["default"].portfolio + '?page=' + page).then(function (response) {
+    axios.get(_constant_API__WEBPACK_IMPORTED_MODULE_8__["default"].portfolio + '?page=' + page + '&limit=6').then(function (response) {
       var responseBody = response.data;
       var allProjects = [].concat(_toConsumableArray(projects), _toConsumableArray(responseBody.data.projects));
-      setIsMore(responseBody.data.is_more);
-
-      if (isMore === true) {
-        setNextPage(nextPage += 1);
-      }
-
       setProjects(allProjects);
       setIsLoaded(true);
     });
@@ -28969,12 +28996,6 @@ function Portfolio() {
       setProject(responseBody.data.project);
       setIsModalOpen(true);
     });
-  };
-
-  var loadMoreHandler = function loadMoreHandler() {
-    setIsLoaded(false);
-
-    _getPortfolio(nextPage + 1);
   };
 
   var _viewProjectHandler = function viewProjectHandler(id, event) {
@@ -28999,14 +29020,12 @@ function Portfolio() {
         return _viewProjectHandler(data.id, e);
       }
     });
-  })), isMore ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  })), isLoaded ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mt-6 xl:mt-12 flex justify-center"
-  }, isLoaded ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ButtonRounded__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    variant: "primary",
-    onClick: loadMoreHandler
-  }, lang.more_portfolio) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ButtonRounded__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    variant: "primary-loading"
-  }, lang.loading, "...")) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ButtonLinkRounded__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    href: _constant_API__WEBPACK_IMPORTED_MODULE_8__["default"].base_url + '/portfolio',
+    variant: "primary"
+  }, lang.more_portfolio)) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
     isOpen: isModalOpen
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ModalContent__WEBPACK_IMPORTED_MODULE_3__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ModalHeader__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ModalTitle__WEBPACK_IMPORTED_MODULE_5__["default"], {
     text: lang.project_detail
@@ -29047,20 +29066,20 @@ function Portfolio() {
 
 /* harmony default export */ __webpack_exports__["default"] = (Portfolio);
 
-if (document.getElementById('ui-content')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Portfolio, null), document.getElementById('ui-content'));
+if (document.getElementById('portfolio-ui-content')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Portfolio, null), document.getElementById('portfolio-ui-content'));
 }
 
 /***/ }),
 
-/***/ 1:
-/*!********************************************************!*\
-  !*** multi ./resources/js/views/frontend/Portfolio.js ***!
-  \********************************************************/
+/***/ 2:
+/*!*****************************************************************!*\
+  !*** multi ./resources/js/views/frontend/homepage/Portfolio.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/dev/Developer/Laravel/ibnuisdev/resources/js/views/frontend/Portfolio.js */"./resources/js/views/frontend/Portfolio.js");
+module.exports = __webpack_require__(/*! /home/dev/Developer/Laravel/ibnuisdev/resources/js/views/frontend/homepage/Portfolio.js */"./resources/js/views/frontend/homepage/Portfolio.js");
 
 
 /***/ })

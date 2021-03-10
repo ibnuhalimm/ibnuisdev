@@ -73,7 +73,7 @@
                                 </label>
                                 <textarea name="body" class="w-full lg:w-3/4 px-3 py-2 border border-solid border-gray-400 bg-white outline-none resize-none h-60 rounded-md"></textarea>
                             </div>
-                            <button type="button" class="py-2 px-6 bg-ib-three border border-solid border-ib-three text-ib-four outline-none focus:outline-none rounded-md hover:bg-opacity-80 transition-all duration-500">
+                            <button type="button" class="py-2 px-6 bg-ib-three border border-solid border-ib-three text-ib-four outline-none focus:outline-none rounded-md hover:bg-opacity-70 transition-all duration-500">
                                 {{ __('global.send_message') }}
                             </button>
                         </div>

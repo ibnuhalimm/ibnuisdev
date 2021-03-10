@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import Modal from '../../components/Modal';
-import ModalContent from '../../components/ModalContent';
-import ModalHeader from '../../components/ModalHeader';
-import ModalTitle from '../../components/ModalTitle';
-import ModalBody from '../../components/ModalBody';
-import PortfolioItem from '../../components/PortfolioItem';
-import API from '../../constant/API';
-import ButtonRounded from '../../components/ButtonRounded';
+import Modal from '../../../components/Modal';
+import ModalContent from '../../../components/ModalContent';
+import ModalHeader from '../../../components/ModalHeader';
+import ModalTitle from '../../../components/ModalTitle';
+import ModalBody from '../../../components/ModalBody';
+import PortfolioItem from '../../../components/PortfolioItem';
+import API from '../../../constant/API';
+import ButtonRounded from '../../../components/ButtonRounded';
+import ButtonLinkRounded from '../../../components/ButtonLinkRounded';
 
 function Portfolio() {
     let [ isLoaded, setIsLoaded ] = useState(false);
-    let [ isMore, setIsMore ] = useState(false);
     let [ isModalOpen, setIsModalOpen ] = useState(false);
 
-    let [ nextPage, setNextPage ] = useState(1);
     let [ projects, setProjects ] = useState([]);
     let [ project, setProject ] = useState({});
 
@@ -23,7 +22,7 @@ function Portfolio() {
 
     useEffect(() => {
         _getLangPack();
-        _getPortfolio(nextPage);
+        _getPortfolio(1);
     }, []);
 
 
@@ -48,15 +47,10 @@ function Portfolio() {
 
 
     const _getPortfolio = (page) => {
-        axios.get(API.portfolio + '?page=' + page)
+        axios.get(API.portfolio + '?page=' + page + '&limit=6')
             .then(response => {
                 let responseBody = response.data;
                 let allProjects = [ ...projects, ...responseBody.data.projects ];
-
-                setIsMore(responseBody.data.is_more);
-                if (isMore === true) {
-                    setNextPage(nextPage += 1);
-                }
 
                 setProjects(allProjects);
                 setIsLoaded(true);
@@ -72,12 +66,6 @@ function Portfolio() {
                 setIsModalOpen(true);
             });
     }
-
-
-    const loadMoreHandler = () => {
-        setIsLoaded(false);
-        _getPortfolio(nextPage + 1);
-    };
 
 
     const viewProjectHandler = (id, event) => {
@@ -103,19 +91,13 @@ function Portfolio() {
                         viewProjectHandler={(e) => viewProjectHandler(data.id, e)} />
                 })}
             </div>
-            {isMore
+            {isLoaded
                 ?   <div className="mt-6 xl:mt-12 flex justify-center">
-                        {isLoaded
-                            ?   <ButtonRounded
-                                    variant="primary"
-                                    onClick={loadMoreHandler}>
-                                    {lang.more_portfolio}
-                                </ButtonRounded>
-                            :   <ButtonRounded
-                                    variant="primary-loading">
-                                    {lang.loading}...
-                                </ButtonRounded>
-                        }
+                        <ButtonLinkRounded
+                            href={API.base_url + '/portfolio'}
+                            variant="primary">
+                            {lang.more_portfolio}
+                        </ButtonLinkRounded>
                     </div>
                 : null
             }
@@ -174,6 +156,6 @@ function Portfolio() {
 
 export default Portfolio;
 
-if (document.getElementById('ui-content')) {
-    ReactDOM.render(<Portfolio />, document.getElementById('ui-content'));
+if (document.getElementById('portfolio-ui-content')) {
+    ReactDOM.render(<Portfolio/>, document.getElementById('portfolio-ui-content'));
 }
