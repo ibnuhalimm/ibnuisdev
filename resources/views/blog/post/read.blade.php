@@ -20,7 +20,7 @@
 
 @section('content')
 
-    <section class="text-base">
+    <section>
         <div class="mb-10 xl:w-2/3 xl:mx-auto xl:order-2">
             <x-post-read-container>
                 <h1 class="text-2xl font-bold text-ib-one">{{ $post->judul }}</h1>
