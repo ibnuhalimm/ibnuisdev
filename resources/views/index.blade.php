@@ -1,9 +1,5 @@
 @extends('layouts.frontend')
 
-@section('title')
-    Blog
-@endsection
-
 @section('meta_seo')
     <meta name="title" content="{{ config('app.name') }}">
     <meta name="description" content="{{ __('section.home.intro') }}">
