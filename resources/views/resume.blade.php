@@ -147,7 +147,7 @@
                 <span class="font-bold text-4xl block">
                     {{ __('section.resume.career_history') }}
                 </span>
-                <span>
+                <span class="block mt-2">
                     @php
                         $start_work = date_create('2015-11-01');
                         $last_month = date_create('now');
@@ -156,7 +156,7 @@
                     {{ __('section.resume.career_sub_title', [ 'year' => $longtime_work->format('%y') ]) }}
                 </span>
             </h2>
-            <div class="mt-6">
+            <div class="mt-8">
                 <div class="timeline">
                     <div class="timeline--container left">
                         <div class="timeline--content">
@@ -193,11 +193,11 @@
                 <span class="font-bold text-4xl block">
                     {{ __('section.resume.education_history') }}
                 </span>
-                <span>
+                <span class="block mt-2">
                     {{ __('section.resume.education_sub_title') }}
                 </span>
             </h2>
-            <div class="mt-6">
+            <div class="mt-8">
                 <div class="timeline-gray">
                     <div class="timeline-gray--container left">
                         <div class="timeline-gray--content">
