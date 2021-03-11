@@ -115,6 +115,9 @@
 
     <section class="mt-8 py-10">
         <x-frontend-container>
+            <h2 class="font-bold text-base xl:text-2xl text-ib-one mb-6">
+                {{ __('global.latest_post') }}
+            </h2>
             <div id="latest-post-ui-content"></div>
         </x-frontend-container>
     </section>
