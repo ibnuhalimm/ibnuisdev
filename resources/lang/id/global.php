@@ -33,5 +33,6 @@ return [
     'your_name' => 'Nama Anda',
     'your_email' => 'Email Anda',
     'message' => 'Isi Pesan',
-    'loading' => 'Memuat'
+    'loading' => 'Memuat',
+    'something_went_wrong' => 'Terjadi kesalahan'
 ];

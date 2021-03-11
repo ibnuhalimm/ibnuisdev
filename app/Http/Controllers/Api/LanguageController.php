@@ -29,7 +29,11 @@ class LanguageController extends Controller
             'description' => __('global.description'),
             'link_demo' => __('global.link_demo_url'),
             'close' => __('global.close'),
-            'more_post' => __('global.more_post')
+            'more_post' => __('global.more_post'),
+            'send_message' => __('global.send_message'),
+            'your_email' => __('global.your_email'),
+            'email_required' => __('validation.required', [ 'Attribute' => 'Email' ]),
+            'something_went_wrong' => __('global.something_went_wrong')
         ];
 
         return $this->apiResponse($status, $message, $data);

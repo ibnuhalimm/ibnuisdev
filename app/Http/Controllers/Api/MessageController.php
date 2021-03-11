@@ -49,8 +49,10 @@ class MessageController extends Controller
     {
         try {
             $message = 'Hi bro, I am visitor on your website. I just want to talk to you.';
+            $response_message = 'Thank you, I will mail you soon.';
             if ($request->header('X-LANG') == 'id') {
                 $message = 'Halo bro, Saya pengunjung websitemu. Ada yang ingin saya bicarakan.';
+                $response_message = 'Terima kasih, saya akan mengirimkan email kepada Anda segera.';
             }
 
             Message::create([
@@ -60,12 +62,13 @@ class MessageController extends Controller
             ]);
 
             $status = 200;
-            $message = 'Success';
+            $message = $response_message;
+
         } catch (\Throwable $th) {
             report($th);
 
             $status = 500;
-            $message = 'Something went wrong';
+            $message = __('global.something_went_wrong');
         }
 
         return $this->apiResponse($status, $message);

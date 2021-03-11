@@ -28873,7 +28873,9 @@ var API = {
   base_url: _BASE_URL,
   lang_pack: _BASE_URL + '/api/lang',
   portfolio: _BASE_URL + '/api/portfolios',
-  latest_posts: _BASE_URL + '/api/posts/latest'
+  latest_posts: _BASE_URL + '/api/posts/latest',
+  message: _BASE_URL + '/api/messages',
+  message_cta: _BASE_URL + '/api/messages/cta'
 };
 /* harmony default export */ __webpack_exports__["default"] = (API);
 

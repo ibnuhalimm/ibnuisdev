@@ -33,5 +33,6 @@ return [
     'your_name' => 'Your Name',
     'your_email' => 'Your Email',
     'message' => 'Message',
-    'loading' => 'Loading'
+    'loading' => 'Loading',
+    'something_went_wrong' => 'Something went wrong'
 ];
