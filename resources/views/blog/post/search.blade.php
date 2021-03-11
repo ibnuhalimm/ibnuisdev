@@ -46,8 +46,16 @@
                 {{ __('global.another_interested_post') }}
             </h2>
 
-            @livewire('blog.post.latest-post', ['except_ids' => $except_ids])
+            <div id="latest-post-ui-content"></div>
         </x-frontend-container>
     </section>
 
 @endsection
+
+
+@push('bottom_js')
+    <script>
+        const blog_except_ids = [{{ implode(',', $except_ids) }}];
+    </script>
+    <script src="{{ URL::asset('js/pages/blog/latest-post.js?_=' . rand()) }}"></script>
+@endpush
