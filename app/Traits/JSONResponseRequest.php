@@ -10,7 +10,7 @@ trait JSONResponseRequest
     public function failedValidation(Validator $validator) {
         $response = [
             'status' => 400,
-            'message' => implode('<br>', $validator->messages()->all()),
+            'message' => $validator->messages(),
             'data' => null
         ];
 

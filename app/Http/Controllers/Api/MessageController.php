@@ -21,6 +21,11 @@ class MessageController extends Controller
     public function store(MessageStoreRequest $request)
     {
         try {
+            $response_message = 'Thank you, I will reply your mail you soon.';
+            if ($request->header('X-LANG') == 'id') {
+                $response_message = 'Terima kasih, saya akan membalas email Anda segera.';
+            }
+
             Message::create([
                 'name' => trim($request->name),
                 'email' => trim($request->email),
@@ -28,7 +33,7 @@ class MessageController extends Controller
             ]);
 
             $status = 200;
-            $message = 'Success';
+            $message = $response_message;
         } catch (\Throwable $th) {
             report($th);
 

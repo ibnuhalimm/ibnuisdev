@@ -31,9 +31,14 @@ class LanguageController extends Controller
             'close' => __('global.close'),
             'more_post' => __('global.more_post'),
             'send_message' => __('global.send_message'),
+            'your_name' => __('global.your_name'),
             'your_email' => __('global.your_email'),
+            'message' => __('global.message'),
+            'something_went_wrong' => __('global.something_went_wrong'),
             'email_required' => __('validation.required', [ 'Attribute' => 'Email' ]),
-            'something_went_wrong' => __('global.something_went_wrong')
+            'name_required' => __('validation.required', [ 'Attribute' => __('global.name') ]),
+            'message_required' => __('validation.required', [ 'Attribute' => __('global.message') ]),
+            'validation' => __('validation')
         ];
 
         return $this->apiResponse($status, $message, $data);

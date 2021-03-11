@@ -18,6 +18,7 @@ mix.react('resources/js/app.js', 'public/js')
     .react('resources/js/views/frontend/homepage/Portfolio.js', 'public/js/pages/homepage/portfolio.js')
     .react('resources/js/views/frontend/homepage/CallToAction.js', 'public/js/pages/homepage/call-to-action.js')
     .react('resources/js/views/frontend/blog/LatestPost.js', 'public/js/pages/blog/latest-post.js')
+    .react('resources/js/views/frontend/contact/Contact.js', 'public/js/pages/contact/contact.js')
     .sass('resources/sass/app.scss', 'public/css')
     .options({
         processCssUrls: false,

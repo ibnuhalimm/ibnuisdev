@@ -59,27 +59,7 @@
                             {{ __('global.send_message') }}
                         </h2>
                         <div class="mt-3">
-                            <div class="mb-6">
-                                <label for="" class="block mb-2">
-                                    {{ __('global.your_name') }} <span class="text-red-500">*</span>
-                                </label>
-                                <input type="text" name="name" class="w-full lg:w-3/4 px-3 py-2 border border-solid border-gray-400 bg-white outline-none rounded-md">
-                            </div>
-                            <div class="mb-6">
-                                <label for="" class="block mb-2">
-                                    {{ __('global.your_email') }} <span class="text-red-500">*</span>
-                                </label>
-                                <input type="text" name="email" class="w-full lg:w-3/4 px-3 py-2 border border-solid border-gray-400 bg-white outline-none rounded-md">
-                            </div>
-                            <div class="mb-6">
-                                <label for="" class="block mb-2">
-                                    {{ __('global.message') }} <span class="text-red-500">*</span>
-                                </label>
-                                <textarea name="body" class="w-full lg:w-3/4 px-3 py-2 border border-solid border-gray-400 bg-white outline-none resize-none h-60 rounded-md"></textarea>
-                            </div>
-                            <button type="button" class="py-2 px-6 bg-ib-three border border-solid border-ib-three text-ib-four outline-none focus:outline-none rounded-md hover:bg-opacity-70 transition-all duration-500">
-                                {{ __('global.send_message') }}
-                            </button>
+                            <div id="contact-ui-content"></div>
                         </div>
                     </div>
                 </div>
@@ -88,3 +68,8 @@
     </section>
 
 @endsection
+
+
+@push('bottom_js')
+    <script src="{{ URL::asset('js/pages/contact/contact.js?_=' . rand()) }}"></script>
+@endpush
