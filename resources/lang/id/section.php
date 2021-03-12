@@ -36,5 +36,10 @@ return [
         'sub_title' => 'Silahkan hubungi saya via email atau DM sosial media.',
         'connect_with_me_today' => 'Terhubung dengan saya hari ini',
         'connect_with_me' => 'Terhubung dengan saya',
+    ],
+    'not_found' => [
+        'title' => 'Halaman tidak ditemukan',
+        'sub_title' => 'Halaman yang Anda maksud tidak ditemukan',
+        'back_to_home' => 'Kembali ke Home'
     ]
 ];

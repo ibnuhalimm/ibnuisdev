@@ -36,5 +36,10 @@ return [
         'sub_title' => 'Feel free to contact me via email or social media direct message.',
         'connect_with_me_today' => 'Connect with me today',
         'connect_with_me' => 'Connect with me',
+    ],
+    'not_found' => [
+        'title' => 'Page Not Found',
+        'sub_title' => 'The page you\'re looking for can\'t be found',
+        'back_to_home' => 'Back to Home'
     ]
 ];
