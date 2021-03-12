@@ -7,12 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 class Skill extends Model
 {
     /**
+     * Define flag type field
+     *
+     * @var mixed
+     */
+    CONST FLAG_TYPE_DAY_TO_DAY = 'D';
+    CONST FLAG_TYPE_EXPERIENCE = 'E';
+
+    /**
      * Mass fillable field
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'order_number'
+        'flag_type',
+        'name',
+        'order_number'
     ];
 
     /**
@@ -35,5 +45,17 @@ class Skill extends Model
         }
 
         return;
+    }
+
+    /**
+     * Query to filter by flag_type
+     *
+     * @param \Illuminate\Database\Query\Builder $query
+     * @param string $flag_type
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public function scopeFlagType($query, $flag_type)
+    {
+        $query->where('flag_type', $flag_type);
     }
 }

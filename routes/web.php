@@ -2,10 +2,22 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'PageController@index')->name('index');
+Route::group([
+    'middleware' => 'lang'
+], function() {
+    Route::get('/', 'PageController@index')->name('index');
+    Route::get('portfolio', 'PageController@portfolio')->name('portfolio');
+    Route::get('resume', 'PageController@resume')->name('resume');
+    Route::get('contact', 'PageController@contact')->name('contact');
+});
+
+Route::get('id', 'PageController@changeLangeToId');
+Route::get('en', 'PageController@changeLangeToEn');
+
 Route::name('blog.')
     ->prefix('blog')
     ->namespace('Blog')
+    ->middleware('lang')
     ->group( function() {
         Route::get('/', 'PageController@index')->name('index');
         Route::get('/search', 'PageController@searchPost')->name('post.search');

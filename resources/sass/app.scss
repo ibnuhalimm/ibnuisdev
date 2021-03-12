@@ -18,6 +18,16 @@ body {
     display: none;
 }
 
+body.modal-active {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}
+
+.bg-blur {
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+
 .article-content {
     line-height: 2rem;
 }
@@ -50,6 +60,110 @@ body {
     .menu-item:focus .menu-item--sub {
         display: block;
     }
+}
+
+
+.timeline,
+.timeline-gray {
+    @apply w-full relative;
+}
+@media (min-width: 1024px) {
+    .timeline,
+    .timeline-gray {
+        @apply w-3/4 mx-auto;
+    }
+}
+
+.timeline::after,
+.timeline-gray::after {
+    content: ' ';
+    @apply absolute w-2 top-0 bottom-0 left-1/2 -ml-1;
+}
+@media (min-width: 1024px) {
+    .timeline::after {
+        @apply bg-white;
+    }
+    .timeline-gray::after {
+        @apply bg-ib-four;
+    }
+}
+
+.timeline--container,
+.timeline-gray--container {
+    @apply w-11/12 px-6 py-2 relative;
+}
+
+@media (min-width: 1024px) {
+    .timeline--container,
+    .timeline-gray--container {
+        @apply w-1/2;
+    }
+}
+
+.timeline--container::after,
+.timeline-gray--container::after {
+    content: ' ';
+    @apply absolute w-4 h-4 rounded-full shadow-md;
+    @apply -right-2 top-5;
+    @apply bg-ib-three;
+    @apply z-10;
+}
+.timeline--container.left,
+.timeline-gray--container.left {
+    @apply left-0 text-right;
+}
+.timeline--container.right,
+.timeline-gray--container.right {
+    left: 8.333333%;
+}
+
+@media (min-width: 1024px) {
+    .timeline--container.right,
+    .timeline-gray--container.right {
+        @apply left-1/2;
+    }
+}
+
+.timeline--container.right::after,
+.timeline-gray--container.right::after {
+    @apply -left-2;
+}
+.timeline--container.left::before {
+    content: ' ';
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+    @apply absolute w-0 h-0 top-4 right-4;
+}
+.timeline-gray--container.left::before {
+    content: ' ';
+    border: medium solid #F4F4F4;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #F4F4F4;
+    @apply absolute w-0 h-0 top-4 right-4;
+}
+
+.timeline--container.right::before {
+    content: ' ';
+    border: medium solid white;
+    border-width: 10px 10px 10px 0px;
+    border-color: transparent white transparent transparent;
+    @apply absolute w-0 h-0 top-4 left-4;
+}
+.timeline-gray--container.right::before {
+    content: ' ';
+    border: medium solid #F4F4F4;
+    border-width: 10px 10px 10px 0px;
+    border-color: transparent #F4F4F4 transparent transparent;
+    @apply absolute w-0 h-0 top-4 left-4;
+}
+
+.timeline--content {
+    @apply p-6 bg-white rounded-lg shadow-md;
+}
+.timeline-gray--content {
+    @apply p-6 bg-ib-four rounded-lg shadow-md;
+
 }
 
 @tailwind utilities;

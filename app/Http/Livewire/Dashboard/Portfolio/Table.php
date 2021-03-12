@@ -69,6 +69,29 @@ class Table extends Component
         }
     }
 
+
+    /**
+     * Copy data
+     *
+     * @param int $project_id
+     * @return void
+     */
+    public function copyItem($project_id)
+    {
+        $project = Project::where('id', $project_id)->first();
+        Project::create([
+            'lang' => $project->lang,
+            'month' => $project->month,
+            'year' => $project->year,
+            'name' => $project->name,
+            'image' => $project->image,
+            'description' => $project->description,
+            'link' => $project->link,
+            'status' => $project->status
+        ]);
+    }
+
+
     /**
      * Override pagination view to custom view
      *

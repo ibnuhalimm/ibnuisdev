@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.frontend')
 
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,91 +8,69 @@
         @if (config('app.env') == 'local') [LOCAL] @endif
         {{ config('app.name') }} - Fullstack Web Developer
     </title>
+=======
+@section('meta_seo')
+>>>>>>> develop
     <meta name="title" content="{{ config('app.name') }}">
-    <meta name="description" content="I'm Fullstack Web Developer with robust problem-solving skills and proven experience in creating and designing high quality software.">
+    <meta name="description" content="{{ __('section.home.intro') }}">
     <meta property="og:url" content="{{ url('/') }}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ config('app.name') }}" />
-    <meta property="og:description" content="I'm Fullstack Web Developer with robust problem-solving skills and proven experience in creating and designing high quality software." />
+    <meta property="og:description" content="{{ __('section.home.intro') }}" />
     <meta property="og:image" content="{{ asset('favicon.ico') }}" />
+    <meta name="twitter:site" content="@IbnuHMustofa" />
+    <meta name="twitter:title" content="{{ config('app.name') }}" />
+    <meta name="twitter:description" content="{{ __('section.home.intro') }}" />
+    <meta name="twitter:image" content="{{ asset('favicon.ico') }}" />
+@endsection
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link rel="stylesheet" href="{{ asset('css/app.css?_=' . rand()) }}">
-    @livewireStyles
+@section('content')
 
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
-
-    @if (config('app.env') == 'production')
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177527651-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-177527651-2');
-    </script>
-    @endif
-</head>
-
-<body class="bg-ib-one text-ib-four flex flex-col min-h-screen justify-between text-sm overflow-y-scroll" x-data="{ opendropdown: false }">
-    <nav class="w-full fixed bg-ib-one z-30 top-0 left-0 right-0 py-3 xl:py-5 leading-9 xl:leading-7">
-        <div class="w-11/12 sm:w-3/5 xl:w-3/4 mx-auto xl:flex xl:flex-row xl:items-center xl:justify-center">
-            <div class="flex flex-row items-center justify-between xl:hidden">
-                <a href="#" class="">
-                    <span class="font-bold text-ib-three xl:mt-1 uppercase text-lg">IBNU'S</span>
-                </a>
-                <button class="p-1 outline-none hover:outline-none focus:outline-none xl:hidden"
-                    @click="opendropdown = !opendropdown;">
-                    <span :class="{'block': !opendropdown, 'hidden': opendropdown}">
-                        <svg viewBox="0 0 20 20" fill="currentColor" class="menu-alt3 w-6 h-6">
-                            <path fill-rule="evenodd"
-                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </span>
-                    <span :class="{'block': opendropdown, 'hidden': !opendropdown}">
-                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </span>
-                </button>
-            </div>
-            <div :class="{'block': opendropdown, 'hidden': !opendropdown}"
-                class="w-full min-h-screen xl:min-h-0 sm:pb-10 xl:pb-0 z-40 xl:block">
-                <div
-                    class="w-full h-full sm:h-64 xl:h-auto sm:overflow-y-auto xl:overflow-hidden text-center mt-8 xl:mt-0">
-                    <ul>
-                        <li class="mb-3 xl:mb-0 xl:inline-block">
-                            <a href="#home-section" class="menu-item block font-bold xl:font-normal xl:w-32 text-center hover:text-ib-three" @click="opendropdown = !opendropdown;">
-                                Home
-                            </a>
-                        </li>
-                        <li class="mb-3 xl:mb-0 xl:inline-block">
-                            <a href="#portfolio-section" class="menu-item block font-bold xl:font-normal xl:w-32 text-center hover:text-ib-three" @click="opendropdown = !opendropdown;">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li class="mb-3 xl:mb-0 hidden xl:inline-block">
-                            <a href="{{ route('index') }}" class="block font-extrabold px-8 text-xl xl:w-32 text-center text-ib-three relative"
-                                style="top: .125rem">IBNU'S</a>
-                        </li>
-                        <li class="mb-3 xl:mb-0 xl:inline-block">
-                            <a href="#skills-section" class="menu-item block font-bold xl:font-normal xl:w-32 text-center hover:text-ib-three" @click="opendropdown = !opendropdown;">
-                                Skills
-                            </a>
-                        </li>
-                        <li class="mb-3 xl:mb-0 xl:inline-block">
-                            <a href="{{ route('blog.index') }}" class="block font-bold xl:font-normal xl:w-32 text-center hover:text-ib-three">
-                                Blog
-                            </a>
-                        </li>
-                    </ul>
+    <section class="mb-8 py-10">
+        <x-frontend-container>
+            <div class="flex flex-col lg:flex-row lg:justify-between">
+                <div class="flex flex-col items-center justify-center mb-10 lg:mt-4 xl:mt-0 lg:order-last">
+                    <div class="w-36 h-36 lg:w-24 lg:h-24 xl:w-32 xl:h-32 rounded-full bg-gray-300 bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('img/me.jpeg') }}')"></div>
+                    <div class="mt-6 lg:mt-4 flex flex-row items-center justify-center">
+                        <a href="{{ $user->github }}" target="_blank" title="Github" rel="noopener noreferrer" class="w-10 h-10 lg:w-8 lg:h-8 flex items-center justify-center bg-white mx-1 border border-solid border-ib-one hover:border-ib-three hover:text-ib-three transition-all duration-500 rounded-full">
+                            <svg class="w-6 lg:w-5 h-auto" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                            </svg>
+                        </a>
+                        <a href="{{ $user->twitter }}" target="_blank" title="Twitter" rel="noopener noreferrer" class="w-10 h-10 lg:w-8 lg:h-8 flex items-center justify-center bg-white mx-1 border border-solid border-ib-one hover:border-ib-three hover:text-ib-three transition-all duration-500 rounded-full">
+                            <svg class="w-5 lg:w-4 h-auto" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                            </svg>
+                        </a>
+                        <a href="{{ $user->linkedin }}" target="_blank" title="Linkedin" rel="noopener noreferrer" class="w-10 h-10 lg:w-8 lg:h-8 flex items-center justify-center bg-white mx-1 border border-solid border-ib-one hover:border-ib-three hover:text-ib-three transition-all duration-500 rounded-full">
+                            <svg class="w-5 lg:w-4 h-auto" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-3/5">
+                    <div>
+                        <h1>
+                            <span class="font-bold text-4xl block mb-1 lg:mb-3">
+                                {{ __('section.home.i_am_ibnu') }}
+                            </span>
+                            <span class="leading-6">
+                                {{ __('section.home.intro') }}
+                            </span>
+                        </h1>
+                    </div>
+                    <div class="mt-6">
+                        <a href="{{ route('portfolio') }}" class="py-2 text-ib-three font-semibold hover:underline inline-flex items-center">
+                            {{ __('section.home.view_portfolio') }}
+                            <svg class="ml-2 w-4 h-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
+<<<<<<< HEAD
         </div>
     </nav>
     <main class="mb-auto pb-10">
@@ -108,103 +86,105 @@
                             {{ $top->description ?? '' }}
                         </span>
                     </h1>
-                </div>
-                <div class="flex justify-center my-6">
-                    <svg class="h-10 w-auto animate-bounce" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M16 17l-4 4m0 0l-4-4m4 4V3" />
+=======
+        </x-frontend-container>
+    </section>
+
+    <section class="mb-4 py-10 bg-ib-four">
+        <x-frontend-container>
+            <div class="flex flex-col lg:flex-row lg:justify-between">
+                <div class="lg:w-1/3 lg:px-4 xl:px-10 flex flex-col items-center justify-start mb-10 lg:mb-0">
+                    <svg class="w-20 lg:w-16 xl:w-24 h-auto text-ib-three" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                     </svg>
-                </div>
-                <div class="flex justify-center">
-                    <a href="#portfolio-section" class="py-2 px-6 bg-ib-three text-ib-two shadow-md outline-none focus:outline-none">
-                        Explore My Works
-                    </a>
-                </div>
-                <div class="mt-12 xl:mt-40 w-full xl:w-3/5 xl:mx-auto">
-                    <a class="twitter-timeline"
-                        href="https://twitter.com/IbnuHMustofa?ref_src=twsrc%5Etfw"
-                        data-tweet-limit="1"
-                        data-theme="dark"
-                        data-chrome="transparent noscrollbar noborders">
-                        Tweets by IbnuHMustofa
-                    </a>
-                </div>
-            </section>
-
-            <section id="portfolio-section" class="pt-24 mb-32 xl:w-3/4 xl:mx-auto">
-                <div class="text-center mb-5">
-                    <h2 class="text-2xl xl:text-3xl font-bold">
-                        Portfolio
+                    <h2 class="font-bold text-center text-ib-three mb-1 text-lg">
+                        {{ __('section.home.web_development') }}
                     </h2>
-                    <h3>
-                        {{ $portfolio->description ?? '' }}
-                    </h3>
+                    <p class="text-center">
+                        {{ __('section.home.web_development_description') }}
+                    </p>
+>>>>>>> develop
                 </div>
-                @livewire('front-end.project', [ 'page' => 1, 'perPage' => 8 ])
-            </section>
-
-            <section id="skills-section" class="pt-24 mb-32 xl:w-3/4 xl:mx-auto">
-                <div class="text-center mb-5">
-                    <h2 class="text-2xl xl:text-3xl font-bold">
-                        Skills
+                <div class="lg:w-1/3 lg:px-4 xl:px-10 flex flex-col items-center justify-start mb-10 lg:mb-0">
+                    <svg class="w-20 lg:w-16 xl:w-24 h-auto text-ib-three" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <h2 class="font-bold text-center text-ib-three mb-1 text-lg">
+                        {{ __('section.home.bug_fix') }}
                     </h2>
-                    <h3>
-                        {{ $skills->description ?? '' }}
-                    </h3>
+                    <p class="text-center">
+                        {{ __('section.home.bug_fix_description') }}
+                    </p>
                 </div>
-                <div class="grid grid-cols-2 xl:grid-cols-4 gap-0">
-                    @foreach ($skill_list as $skill)
-                        <div class="w-full h-16 xl:h-12 bg-ib-two text-ib-four flex items-center justify-center">
-                            {{ $skill->name }}
-                        </div>
-                    @endforeach
-                </div>
-                <div class="flex justify-center mt-6">
-                    <a href="#contact-section" class="btn-next-section py-2 px-6 bg-ib-three text-ib-two shadow-md outline-none focus:outline-none">
-                        Hire Me
-                    </a>
-                </div>
-            </section>
-
-            <section id="contact-section" class="pt-24 mb-32 xl:w-3/5 xl:mx-auto">
-                <div class="text-center mb-5">
-                    <h2 class="text-2xl xl:text-3xl font-bold">
-                        Contact
+                <div class="lg:w-1/3 lg:px-4 xl:px-10 flex flex-col items-center justify-start">
+                    <svg class="w-20 lg:w-16 xl:w-24 h-auto text-ib-three" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <h2 class="font-bold text-center text-ib-three mb-1 text-lg">
+                        {{ __('section.home.linux_expert') }}
                     </h2>
-                    <h3>
-                        {{ $contact->description ?? '' }}
-                    </h3>
+                    <p class="text-center">
+                        {{ __('section.home.linux_expert_description') }}
+                    </p>
                 </div>
-                @livewire('front-end.message-form')
-            </section>
+            </div>
+        </x-frontend-container>
+    </section>
 
-        </div>
-    </main>
-    <footer class="w-full text-center py-4 bg-ib-one text-ib-four text-xs">
-        Copyright 2020 @if (date('Y') != 2020) {{ ' - ' . date('Y') }} @endif  | All Right Reserved
-    </footer>
+    <section class="mb-8 py-10">
+        <x-frontend-container>
+            <h2 class="mb-6 text-center">
+                <span class="font-bold text-2xl px-5 block mb-3">
+                    {{ __('section.home.cta_title') }}
+                </span>
+                <span>
+                    {{ __('section.home.cta_description') }}
+                </span>
+            </h2>
+            <div id="cta-ui-content"></div>
+        </x-frontend-container>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-    <script>
-        $('.menu-item, .btn-next-section').click(function(e) {
-            if (this.hash !== '') {
-                e.preventDefault();
+    <section class="mb-8 py-10">
+        <x-frontend-container>
+            <h2 class="mb-6">
+                <span class="font-bold text-4xl block mb-1">
+                    Blog
+                </span>
+                <span>
+                    {{ __('global.my_latest_post') }}
+                </span>
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-4 xl:gap-8">
+                @foreach ($latest_posts as $post)
+                    <x-blog-post-card slug="{{ $post->post_url }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" />
+                @endforeach
+            </div>
+            <div class="mt-6 xl:mt-12 flex justify-center">
+                <a href="{{ route('blog.index') }}" class="py-2 px-6 bg-ib-three border border-solid border-ib-three text-ib-four rounded-full outline-none focus:outline-none hover:bg-opacity-70 transition-all duration-500">
+                    {{ __('global.more_post') }}
+                </a>
+            </div>
+        </x-frontend-container>
+    </section>
 
-                let hash = this.hash;
+    <section class="pt-10 pb-28 bg-ib-four">
+        <x-frontend-container>
+            <h2 class="mb-3">
+                <span class="font-bold text-4xl block mb-1">
+                    {{ __('global.portfolio') }}
+                </span>
+                <span>
+                    {{ __('section.portfolio.sub_title_one') }}
+                </span>
+            </h2>
+            <div id="portfolio-ui-content"></div>
+        </x-frontend-container>
+    </section>
 
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 0, function() {
-                    window.location.hash = hash;
-                });
-            }
-        });
-    </script>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+@endsection
 
-    @livewireScripts
-
-</body>
-
-</html>
+@push('bottom_js')
+    <script src="{{ URL::asset('js/pages/homepage/portfolio.js?_=' . rand()) }}"></script>
+    <script src="{{ URL::asset('js/pages/homepage/call-to-action.js?_=' . rand()) }}"></script>
+@endpush

@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\User;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -36,6 +38,11 @@ class AppServiceProvider extends ServiceProvider
          */
         if (env('APP_SECURE', false) === true) {
             URL::forceScheme('https');
+        }
+
+
+        if (Schema::hasTable((new User)->getTable())) {
+            View::share('user', User::first());
         }
     }
 }

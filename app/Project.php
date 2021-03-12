@@ -25,6 +25,7 @@ class Project extends Model
      * @var array
      */
     protected $fillable = [
+        'lang',
         'month',
         'year',
         'name',
@@ -92,5 +93,39 @@ class Project extends Model
         }
 
         return;
+    }
+
+    /**
+     * Query to filter by published status
+     *
+     * @param \Illuminate\Database\Query\Builder $query
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public function scopePublished($query)
+    {
+        return $query->where('status', self::STATUS_PUBLISH);
+    }
+
+    /**
+     * Query to order my month and year
+     *
+     * @param \Illuminate\Database\Query\Builder $query
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public function scopeLatestProject($query)
+    {
+        return $query->orderBy('year', 'desc')->orderBy('month', 'desc');
+    }
+
+    /**
+     * Query to get data by lang
+     *
+     * @param \Illuminate\Database\Query\Builder $query
+     * @param string $lang
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public function scopeLang($query, $lang)
+    {
+        return $query->where('lang', strtolower($lang));
     }
 }

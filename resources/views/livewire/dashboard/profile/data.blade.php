@@ -27,6 +27,18 @@
                     <x-input-text type="text" wire:model.lazy="email" />
                     @error('email') <x-form-error>{{ $message }}</x-form-error> @enderror
                 </x-form-label-inline>
+                <x-form-label-inline text="Github" required="true">
+                    <x-input-text type="text" wire:model.lazy="github" />
+                    @error('github') <x-form-error>{{ $message }}</x-form-error> @enderror
+                </x-form-label-inline>
+                <x-form-label-inline text="Twitter" required="true">
+                    <x-input-text type="text" wire:model.lazy="twitter" />
+                    @error('twitter') <x-form-error>{{ $message }}</x-form-error> @enderror
+                </x-form-label-inline>
+                <x-form-label-inline text="LinkedIn" required="true">
+                    <x-input-text type="text" wire:model.lazy="linkedin" />
+                    @error('linkedin') <x-form-error>{{ $message }}</x-form-error> @enderror
+                </x-form-label-inline>
         </div>
         <div class="w-full px-6 text-center pb-10">
                 <x-button-link-primary href="{{ route('home') }}" color="gray" wire:loading.attr="disabled" wire:loading.class="bg-opacity-75 cursor-not-allowed" wire:target="updateProfil">

@@ -18,6 +18,7 @@ class Edit extends Component
      * @var mixed
      */
     public $project_id;
+    public $lang;
     public $month;
     public $year;
     public $name;
@@ -36,6 +37,7 @@ class Edit extends Component
     public function mount($project)
     {
         $this->project_id = $project->id;
+        $this->lang = $project->lang;
         $this->month = ($project->month < 10) ? '0' . $project->month : $project->month;
         $this->year = $project->year;
         $this->image = $project->image;
@@ -65,6 +67,7 @@ class Edit extends Component
     private function formValidationRules()
     {
         return [
+            'lang' => [ 'required', 'in:id,en' ],
             'month' => [ 'required', 'between:01,12' ],
             'year' => [ 'required', 'digits:4' ],
             'name' => [ 'required', 'min:10', 'max:50' ],
@@ -105,6 +108,7 @@ class Edit extends Component
 
             Project::where('id', $this->project_id)
                 ->update([
+                    'lang' => $this->lang,
                     'month' => $this->month,
                     'year' => $this->year,
                     'name' => $this->name,
