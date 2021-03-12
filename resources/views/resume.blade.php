@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('title')
-    Resume
+    Resume - {{ config('app.name') }}
 @endsection
 
 @section('meta_seo')

@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('title')
-    {{ __('section.contact.title') }}
+    {{ __('section.contact.title') }} - {{ config('app.name') }}
 @endsection
 
 @section('meta_seo')

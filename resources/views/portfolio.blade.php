@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('title')
-    {{ ucfirst(__('global.portfolio')) }}
+    {{ ucfirst(__('global.portfolio')) }} - {{ config('app.name') }}
 @endsection
 
 @section('meta_seo')
