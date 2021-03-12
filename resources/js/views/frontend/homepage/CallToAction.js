@@ -66,7 +66,7 @@ function CallToAction() {
                 setFormError('');
 
                 if (responseBody.status == 400) {
-                    setAlertText(responseBody.message);
+                    setAlertText(responseBody.message.email[0]);
                 }
                 else {
                     setAlertText(lang.something_went_wrong);
