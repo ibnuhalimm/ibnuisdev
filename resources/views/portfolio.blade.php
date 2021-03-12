@@ -5,7 +5,7 @@
 @endsection
 
 @section('meta_seo')
-    <meta name="title" content="{{ config('app.name') }} - {{ ucfirst(__('global.portfolio')) }}">
+    <meta name="title" content="{{ ucfirst(__('global.portfolio')) }} - {{ config('app.name') }}">
     <meta name="description" content="{{ ucfirst(__('global.portfolio')) }}. {{ __('section.portfolio.sub_title_one') }} {{ __('section.portfolio.sub_title_two') }}">
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:type" content="website" />

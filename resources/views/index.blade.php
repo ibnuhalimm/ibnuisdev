@@ -5,7 +5,7 @@
 @endsection
 
 @section('meta_seo')
-    <meta name="title" content="{{ config('app.name') }}">
+    <meta name="title" content="{{ config('app.name') }} - Fullstack Web Developer">
     <meta name="description" content="{{ __('section.home.intro') }}">
     <meta property="og:url" content="{{ url('/') }}" />
     <meta property="og:type" content="website" />

@@ -5,7 +5,7 @@
 @endsection
 
 @section('meta_seo')
-    <meta name="title" content="{{ config('app.name') }} - {{ __('section.contact.title') }}">
+    <meta name="title" content="{{ __('section.contact.title') }} - {{ config('app.name') }}">
     <meta name="description" content="{{ __('section.contact.connect_with_me_today') }}. {{ __('section.contact.sub_title') }}">
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:type" content="website" />

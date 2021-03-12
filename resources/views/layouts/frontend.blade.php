@@ -13,6 +13,7 @@
         @endif
     </title>
 
+    <meta name="robots" content="index, follow">
     @yield('meta_seo')
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ URL::asset('favicon.ico') }}">

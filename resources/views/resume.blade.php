@@ -5,7 +5,7 @@
 @endsection
 
 @section('meta_seo')
-    <meta name="title" content="{{ config('app.name') }}">
+    <meta name="title" content="Resume - {{ config('app.name') }}">
     <meta name="description" content="{{ __('section.resume.sub_title_one') }} {{ __('section.resume.sub_title_two') }}">
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:type" content="website" />
