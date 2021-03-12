@@ -44,54 +44,16 @@
                         </h3>
                         <p>
                             <ul class="list-none">
-                                <li class="flex items-center mb-1">
-                                    <span class="mr-2">
-                                        <svg class="w-6 h-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </span>
-                                    HTML, CSS, Javascript
-                                </li>
-                                <li class="flex items-center mb-1">
-                                    <span class="mr-2">
-                                        <svg class="w-6 h-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </span>
-                                    PHP (Laravel framework)
-                                </li>
-                                <li class="flex items-center mb-1">
-                                    <span class="mr-2">
-                                        <svg class="w-6 h-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </span>
-                                    Git version control
-                                </li>
-                                <li class="flex items-center mb-1">
-                                    <span class="mr-2">
-                                        <svg class="w-6 h-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </span>
-                                    Linux environment
-                                </li>
-                                <li class="flex items-center mb-1">
-                                    <span class="mr-2">
-                                        <svg class="w-6 h-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </span>
-                                    MySQL / MariaDB
-                                </li>
-                                <li class="flex items-center mb-1">
-                                    <span class="mr-2">
-                                        <svg class="w-6 h-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </span>
-                                    ReactJs
-                                </li>
+                                @foreach ($day_to_day as $item)
+                                    <li class="flex items-center mb-1">
+                                        <span class="mr-2">
+                                            <svg class="w-6 h-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                            </svg>
+                                        </span>
+                                        {{ $item->name }}
+                                    </li>
+                                @endforeach
                             </ul>
                         </p>
                     </div>
@@ -101,38 +63,16 @@
                         </h3>
                         <p>
                             <ul class="list-none">
-                                <li class="flex items-center mb-1">
-                                    <span class="mr-2">
-                                        <svg class="w-6 h-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </span>
-                                    Codeigniter Framework
-                                </li>
-                                <li class="flex items-center mb-1">
-                                    <span class="mr-2">
-                                        <svg class="w-6 h-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </span>
-                                    SCSS / SaSS
-                                </li>
-                                <li class="flex items-center mb-1">
-                                    <span class="mr-2">
-                                        <svg class="w-6 h-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </span>
-                                    React Native
-                                </li>
-                                <li class="flex items-center mb-1">
-                                    <span class="mr-2">
-                                        <svg class="w-6 h-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </span>
-                                    Oracle Database
-                                </li>
+                                @foreach ($experience_with as $item)
+                                    <li class="flex items-center mb-1">
+                                        <span class="mr-2">
+                                            <svg class="w-6 h-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                            </svg>
+                                        </span>
+                                        {{ $item->name }}
+                                    </li>
+                                @endforeach
                             </ul>
                         </p>
                     </div>
@@ -160,7 +100,7 @@
                 <div class="timeline">
                     <div class="timeline--container left">
                         <div class="timeline--content">
-                            <h2 class="font-bold">{{ __('month.apr') }} 2020 - {{ __('global.present') }}</h2>
+                            <h2 class="font-bold">{{ __('month.may') }} 2020 - {{ __('global.present') }}</h2>
                             <p>Web Developer<br>Self-employee (Freelancer)</p>
                         </div>
                     </div>

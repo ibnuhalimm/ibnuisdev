@@ -19,8 +19,18 @@
                     NEW skill
                 </x-button-link-primary>
             </div>
-            <div class="w-full mt-4 xl:mt-0 xl:w-1/3 flex flex-row items-start xl:items-center justify-end">
-                <div class="w-2/3 ml-2">
+            <div class="w-full mt-4 xl:mt-0 xl:w-2/5 flex flex-col xl:flex-row items-start xl:items-center justify-end">
+                <div class="w-full xl:w-1/2 mr-2">
+                    <x-select wire:model.lazy="flag_type">
+                        <option value="{{ \App\Skill::FLAG_TYPE_DAY_TO_DAY }}">
+                            Day-to-day Comfort
+                        </option>
+                        <option value="{{ \App\Skill::FLAG_TYPE_EXPERIENCE }}">
+                            Experienced-with
+                        </option>
+                    </x-select>
+                </div>
+                <div class="w-full xl:w-1/2 ml-2">
                     <x-input-text type="text" placeholder="Search" wire:model.debounce.500ms="search" />
                 </div>
             </div>
@@ -100,6 +110,19 @@
                     </div>
                     @error('order_number') <x-form-error> {{ $message }} </x-form-error> @enderror
                 </x-form-label-inline>
+                <x-form-label-inline text="Type" required="true" size="medium">
+                    <div class="w-full">
+                        <x-select wire:model.lazy="flag_type_form">
+                            <option value="{{ \App\Skill::FLAG_TYPE_DAY_TO_DAY }}">
+                                Day-to-day Comfort
+                            </option>
+                            <option value="{{ \App\Skill::FLAG_TYPE_EXPERIENCE }}">
+                                Experienced-with
+                            </option>
+                        </x-select>
+                    </div>
+                    @error('flag_type') <x-form-error> {{ $message }} </x-form-error> @enderror
+                </x-form-label-inline>
 
                 <div class="text-center">
                     <x-button type="button" color="gray" wire:click="cancelCreateSkill" wire:loading.attr="disabled" wire:loading.class="bg-opacity-50" wire:target="cancelCreateSkill, submitCreateSkill">
@@ -143,6 +166,19 @@
                     </div>
                     @error('order_number') <x-form-error> {{ $message }} </x-form-error> @enderror
                 </x-form-label-inline>
+                <x-form-label-inline text="Type" required="true" size="medium">
+                    <div class="w-full">
+                        <x-select wire:model.lazy="flag_type_form">
+                            <option value="{{ \App\Skill::FLAG_TYPE_DAY_TO_DAY }}">
+                                Day-to-day Comfort
+                            </option>
+                            <option value="{{ \App\Skill::FLAG_TYPE_EXPERIENCE }}">
+                                Experienced-with
+                            </option>
+                        </x-select>
+                    </div>
+                    @error('flag_type') <x-form-error> {{ $message }} </x-form-error> @enderror
+                </x-form-label-inline>
 
                 <div class="text-center">
                     <x-button type="button" color="gray" wire:click="cancelEditSkill" wire:loading.attr="disabled" wire:loading.class="bg-opacity-50" wire:target="cancelEditSkill, submitEditSkill">
@@ -164,7 +200,7 @@
 
 
     <x-modal-backdrop x-show.transition.opacity="is_delete_modal_open === 1" x-cloak>
-        <x-modal-content size="small" x-show.transition.5000ms="is_delete_modal_open === 1" x-cloak>
+        <x-modal-content size="medium" x-show.transition.5000ms="is_delete_modal_open === 1" x-cloak>
             <x-modal-title>
                 Delete
             </x-modal-title>

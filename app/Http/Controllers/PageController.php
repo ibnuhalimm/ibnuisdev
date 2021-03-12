@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use App\Models\Blog\Post;
+use App\Skill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -40,7 +41,12 @@ class PageController extends Controller
      */
     public function resume()
     {
-        return view('resume');
+        $data = [
+            'day_to_day' => Skill::orderBy('order_number')->flagType(Skill::FLAG_TYPE_DAY_TO_DAY)->get(),
+            'experience_with' => Skill::orderBy('order_number')->flagType(Skill::FLAG_TYPE_EXPERIENCE)->get()
+        ];
+
+        return view('resume', $data);
     }
 
     /**

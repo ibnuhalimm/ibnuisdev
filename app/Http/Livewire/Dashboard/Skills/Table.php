@@ -15,16 +15,29 @@ class Table extends Component
      *
      * @var mixed
      */
+    public $flag_type;
     public $search;
 
     public $skill_id;
     public $name;
     public $order_number;
+    public $flag_type_form;
 
     public $is_edit_mode;
     public $is_create_modal_open = 0;
     public $is_edit_modal_open = 0;
     public $is_delete_modal_open = 0;
+
+    /**
+     * Initial properties value
+     *
+     * @return void
+     */
+    public function mount()
+    {
+        $this->flag_type = Skill::FLAG_TYPE_DAY_TO_DAY;
+        $this->flag_type_form = Skill::FLAG_TYPE_DAY_TO_DAY;
+    }
 
     /**
      * Form validation rules
@@ -34,8 +47,9 @@ class Table extends Component
     private function formValidationRules()
     {
         return [
-            'name' => [ 'required', 'string', 'min:3', 'max:20' ],
-            'order_number' => [ 'required', 'numeric' ]
+            'name' => [ 'required', 'string', 'min:3', 'max:40' ],
+            'order_number' => [ 'required', 'numeric' ],
+            'flag_type' => [ 'required', 'in:' . Skill::FLAG_TYPE_DAY_TO_DAY . ',' . Skill::FLAG_TYPE_EXPERIENCE ]
         ];
     }
 
@@ -84,15 +98,19 @@ class Table extends Component
 
         try {
             Skill::updateOrCreate(
-                [ 'name' => $this->name ],
                 [
                     'name' => $this->name,
-                    'order_number' => $this->order_number
+                    'flag_type' => $this->flag_type_form
+                ],
+                [
+                    'name' => $this->name,
+                    'order_number' => $this->order_number,
+                    'flag_type' => $this->flag_type_form
                 ]
             );
 
             $this->is_create_modal_open = 0;
-            $this->reset('name', 'order_number');
+            $this->reset('name', 'order_number', 'flag_type_form');
 
             session()->flash('alert-status', 'green');
             session()->flash('alert-title', 'Success');
@@ -121,6 +139,7 @@ class Table extends Component
         $this->skill_id = $skill_id;
         $this->name = $skill->name;
         $this->order_number = $skill->order_number;
+        $this->flag_type_form = $skill->flag_type;
         $this->is_edit_modal_open = 1;
     }
 
@@ -149,11 +168,12 @@ class Table extends Component
             Skill::where('id', $this->skill_id)
                     ->update([
                         'name' => $this->name,
-                        'order_number' => $this->order_number
+                        'order_number' => $this->order_number,
+                        'flag_type' => $this->flag_type_form
                     ]);
 
             $this->is_edit_modal_open = 0;
-            $this->reset('skill_id', 'name', 'order_number');
+            $this->reset('skill_id', 'name', 'order_number', 'flag_type_form');
 
             session()->flash('alert-status', 'green');
             session()->flash('alert-title', 'Success');
@@ -234,7 +254,10 @@ class Table extends Component
     public function render()
     {
         $data = [
-            'skills' => Skill::orderBy('order_number', 'asc')->searchTable($this->search)->paginate(20)
+            'skills' => Skill::orderBy('order_number', 'asc')
+                ->flagType($this->flag_type)
+                ->searchTable($this->search)
+                ->paginate(20)
         ];
 
         return view('livewire.dashboard.skills.table', $data);
