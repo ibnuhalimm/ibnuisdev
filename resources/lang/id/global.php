@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'your_email' => 'Email Anda',
+    'email' => 'Alamat Email',
     'send_message' => 'Kirim Pesan',
     'my_latest_post' => 'Postingan terbaru saya',
     'more_post' => 'Postingan lainnya',

@@ -13,6 +13,7 @@ function CallToAction() {
     const [ lang, setLang ] = useState({});
     const [ email, setEmail ] = useState('');
     const [ formError, setFormError ] = useState('');
+    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 
     useEffect(() => {
@@ -32,12 +33,29 @@ function CallToAction() {
 
 
     const emailChangeHandler = (e) => {
+        let value = e.target.value;
+
         setFormError('');
-        if (e.target.value.trim() == '') {
-            setFormError(lang.email_required);
+        let validationText = '';
+
+        if (value.trim() == '') {
+            validationText = lang.validation.required;
+            setFormError(validationText.replace(':attribute', lang.email));
         }
 
-        setEmail(e.target.value);
+        if (value.trim() != '' && emailRegex.test(String(value).toLowerCase()) === false) {
+            validationText = lang.validation.custom.email.email;
+            setFormError(validationText.replace(':attribute', lang.email));
+        }
+
+        if (value.trim() != ''
+            && emailRegex.test(String(value).toLowerCase()) === true
+            && String(value.trim()).length > 100) {
+            validationText = lang.validation.custom.email.max;
+            setFormError(validationText.replace(':attribute', lang.email));
+        }
+
+        setEmail(value);
     }
 
 
@@ -60,15 +78,14 @@ function CallToAction() {
                 let responseBody = error.response.data;
 
                 setIsLoaded(true);
-
-                setShowAlert(true);
-                setAlertVariant('danger');
                 setFormError('');
 
                 if (responseBody.status == 400) {
-                    setAlertText(responseBody.message.email[0]);
+                    setFormError(responseBody.message.email[0]);
                 }
                 else {
+                    setShowAlert(true);
+                    setAlertVariant('danger');
                     setAlertText(lang.something_went_wrong);
                 }
             });

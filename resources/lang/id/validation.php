@@ -139,7 +139,7 @@ return [
         ],
         'email' => [
             'email' => ':attribute harus berupa email yang valid.',
-            'max' => ':attribute terlalu panjang',
+            'max' => ':attribute terlalu panjang.',
         ],
         'message' => [
             'min' => ':attribute terlalu pendek.',

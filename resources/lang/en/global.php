@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'your_email' => 'Your Email',
+    'email' => 'Email',
     'send_message' => 'Send Message',
     'my_latest_post' => 'My Latest Posts',
     'more_post' => 'More post',

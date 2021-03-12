@@ -34,6 +34,7 @@ class LanguageController extends Controller
             'your_name' => __('global.your_name'),
             'your_email' => __('global.your_email'),
             'message' => __('global.message'),
+            'email' => __('global.email'),
             'something_went_wrong' => __('global.something_went_wrong'),
             'email_required' => __('validation.required', [ 'Attribute' => 'Email' ]),
             'name_required' => __('validation.required', [ 'Attribute' => __('global.name') ]),
