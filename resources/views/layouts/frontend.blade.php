@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/app.css?_=' . rand()) }}">
     @stack('bottom_css')
 
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js"></script>
     @livewireStyles
 
     @if (config('app.env') == 'production')
