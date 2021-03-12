@@ -28,6 +28,17 @@ body.modal-active {
     backdrop-filter: saturate(180%) blur(20px);
 }
 
+
+/* purgecss start ignore */
+body.nav-open {
+    overflow-y: hidden !important;
+}
+.nav-open {
+    display: block;
+}
+/* purgecss end ignore */
+
+
 .article-content {
     line-height: 2rem;
 }

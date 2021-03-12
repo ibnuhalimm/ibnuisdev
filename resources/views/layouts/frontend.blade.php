@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="{{ URL::asset('css/app.css?_=' . rand()) }}">
     @stack('bottom_css')
 
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js"></script>
     @livewireStyles
 
     @if (config('app.env') == 'production')
@@ -40,29 +39,27 @@
         const BASE_URL = '{{ url('/') }}';
     </script>
 </head>
-<body class="flex flex-col min-h-screen justify-between text-sm text-ib-one"
-    :class="opendropdown ? 'overflow-hidden' : 'overflow-y-auto'"
-    x-data="{ opendropdown: false }">
+<body class="flex flex-col min-h-screen justify-between text-sm text-ib-one">
     <nav class="w-full fixed z-30 top-0 left-0 right-0 bg-white bg-blur bg-opacity-70 border border-t-0 border-r-0 border-l-0 border-solid border-gray-200 py-4 leading-9 xl:leading-7">
         <div class="w-11/12 sm:w-3/5 lg:w-3/4 mx-auto xl:flex xl:flex-row xl:items-center xl:justify-between">
             <div class="flex flex-row items-center justify-between xl:w-1/4 xl:mr-5">
-                <button class="p-1 outline-none hover:outline-none focus:outline-none xl:hidden" @click="opendropdown = !opendropdown;">
-                    <svg class="w-6 h-auto text-ib-one" :class="opendropdown ? 'hidden' : 'block'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <button class="p-1 outline-none hover:outline-none focus:outline-none xl:hidden" id="nav-button">
+                    <svg class="w-6 h-auto text-ib-one" id="nav-burger" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
                     </svg>
-                    <svg class="w-6 h-6 text-ib-one" :class="opendropdown ? 'block' : 'hidden'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg class="w-6 h-6 text-ib-one hidden" id="nav-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
                 <div class="w-full text-center">
                     <a href="{{ route('index') }}" class="-ml-5 font-bold text-ib-three xl:mt-1 text-xl relative top-1 xl:top-0">
-                        <span :class="opendropdown ? 'hidden' : ''">
+                        <span id="brand-name">
                             Ibnu Halim Mustofa
                         </span>
                     </a>
                 </div>
             </div>
-            <div :class="opendropdown ? 'block' : 'hidden'" class="w-4/5 md:w-3/5 lg:w-2/5 xl:w-full mx-auto xl:flex xl:flex-row xl:items-center xl:justify-end mt-6 xl:mt-0 sm:pb-10 xl:pb-0 min-h-screen xl:min-h-0 z-40">
+            <div class="hidden w-4/5 md:w-3/5 lg:w-2/5 xl:w-full mx-auto xl:flex xl:flex-row xl:items-center xl:justify-end mt-6 xl:mt-0 sm:pb-10 xl:pb-0 min-h-screen xl:min-h-0 z-40" id="nav-container">
                 <div class="text-center font-bold text-ib-three xl:mt-1 text-4xl mb-10 xl:hidden">
                     IHM
                 </div>
@@ -156,6 +153,7 @@
 
     @livewireScripts
 
+    <script src="{{ URL::asset('js/navigation.js?_=' . rand()) }}"></script>
     <script src="{{ URL::asset('js/app.js?_=' . rand()) }}"></script>
     @stack('bottom_js')
 
