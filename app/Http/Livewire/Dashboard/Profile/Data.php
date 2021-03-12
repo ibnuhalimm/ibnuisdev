@@ -17,6 +17,9 @@ class Data extends Component
     public $name;
     public $username;
     public $email;
+    public $github;
+    public $twitter;
+    public $linkedin;
 
     /**
      * Form validation rules
@@ -26,8 +29,11 @@ class Data extends Component
     protected function formValidationRules()
     {
         return [
-            'name' => 'required|string|min:3|max:40',
-            'email' => 'required|email|max:100|unique:users,email,' . Auth::user()->id
+            'name' => [ 'required', 'string', 'min:3', 'max:40' ],
+            'email' => [ 'required', 'email', 'max:100', 'unique:users,email,' . Auth::user()->id ],
+            'github' => [ 'required', 'url', 'max:100' ],
+            'twitter' => [ 'required', 'url', 'max:100' ],
+            'linkedin' => [ 'required', 'url', 'max:100' ]
         ];
     }
 
@@ -43,6 +49,9 @@ class Data extends Component
         $this->name = $user->name;
         $this->username = $user->username;
         $this->email = $user->email;
+        $this->github = $user->github;
+        $this->twitter = $user->twitter;
+        $this->linkedin = $user->linkedin;
     }
 
     /**
@@ -68,7 +77,10 @@ class Data extends Component
             User::where('id', Auth::user()->id)
                 ->update([
                     'name' => Str::of($this->name)->trim(),
-                    'email' => Str::of($this->email)->trim()->lower()
+                    'email' => Str::of($this->email)->trim()->lower(),
+                    'github' => $this->github,
+                    'twitter' => $this->twitter,
+                    'linkedin' => $this->linkedin
                 ]);
 
             session()->flash('status_color', 'green');

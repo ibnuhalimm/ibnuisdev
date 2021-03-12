@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Project;
 use App\Models\Blog\Post;
 use App\Skill;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
