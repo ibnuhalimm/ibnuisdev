@@ -1,16 +1,6 @@
 @extends('layouts.frontend')
 
-<<<<<<< HEAD
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        @if (config('app.env') == 'local') [LOCAL] @endif
-        {{ config('app.name') }} - Fullstack Web Developer
-    </title>
-=======
 @section('meta_seo')
->>>>>>> develop
     <meta name="title" content="{{ config('app.name') }}">
     <meta name="description" content="{{ __('section.home.intro') }}">
     <meta property="og:url" content="{{ url('/') }}" />
@@ -70,23 +60,6 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-        </div>
-    </nav>
-    <main class="mb-auto pb-10">
-        <div class="w-11/12 sm:w-3/5 xl:w-3/4 mx-auto">
-
-            <section id="home-section" class="pt-32 mb-48 xl:w-3/5 xl:mx-auto">
-                <div class="text-center">
-                    <h1>
-                        <span class="block text-2xl xl:text-3xl font-bold">
-                            Hi, my name is Ibnu
-                        </span>
-                        <span class="block mt-3 leading-6 xl:text-lg">
-                            {{ $top->description ?? '' }}
-                        </span>
-                    </h1>
-=======
         </x-frontend-container>
     </section>
 
@@ -103,7 +76,6 @@
                     <p class="text-center">
                         {{ __('section.home.web_development_description') }}
                     </p>
->>>>>>> develop
                 </div>
                 <div class="lg:w-1/3 lg:px-4 xl:px-10 flex flex-col items-center justify-start mb-10 lg:mb-0">
                     <svg class="w-20 lg:w-16 xl:w-24 h-auto text-ib-three" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

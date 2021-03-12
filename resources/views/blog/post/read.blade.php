@@ -73,11 +73,7 @@
             <h2 class="font-bold text-base xl:text-2xl text-ib-one mb-6">
                 {{ __('global.related_post') }}
             </h2>
-<<<<<<< HEAD
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-2">
-=======
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-4 xl:gap-8">
->>>>>>> develop
                 @foreach ($related_posts as $post)
                     <x-blog-post-card slug="{{ $post->slug }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" />
                 @endforeach
