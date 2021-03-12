@@ -129,7 +129,7 @@
             </h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-4 xl:gap-8">
                 @foreach ($latest_posts as $post)
-                    <x-blog-post-card slug="{{ $post->post_url }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" />
+                    <x-blog-post-card slug="{{ $post->slug }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" />
                 @endforeach
             </div>
             <div class="mt-6 xl:mt-12 flex justify-center">
