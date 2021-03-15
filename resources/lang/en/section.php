@@ -15,11 +15,13 @@ return [
         'cta_description' => 'Let\'s talk about what you\'re needed'
     ],
     'portfolio' => [
+        'page_title' => 'Portfolio. High-quality Software by',
         'title' => 'Portofolio',
         'sub_title_one' => 'List of projects I\'ve worked on.',
         'sub_title_two' => 'Software quality and customer satisfaction are my first priority.'
     ],
     'resume' => [
+        'page_title' => 'Resume. Keep Learning and Growing Up with Technology',
         'title' => 'Resume',
         'sub_title_one' => 'I am from Rembang, Central Java, Indonesia.',
         'sub_title_two' => 'Very interested in new things of science and technology.',
@@ -32,6 +34,7 @@ return [
         'education_sub_title' => 'Formal education history'
     ],
     'contact' => [
+        'page_title' => 'Connect with me Today',
         'title' => 'Contact Me',
         'sub_title' => 'Feel free to contact me via email or social media direct message.',
         'connect_with_me_today' => 'Connect with me today',

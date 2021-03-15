@@ -1,19 +1,19 @@
 @extends('layouts.frontend')
 
 @section('title')
-    {{ ucfirst(__('global.portfolio')) }} - {{ config('app.name') }}
+    {{ __('section.portfolio.page_title') }} {{ config('app.name') }}
 @endsection
 
 @section('meta_seo')
-    <meta name="title" content="{{ ucfirst(__('global.portfolio')) }} - {{ config('app.name') }}">
+    <meta name="title" content="{{ __('section.portfolio.page_title') }} {{ config('app.name') }}">
     <meta name="description" content="{{ ucfirst(__('global.portfolio')) }}. {{ __('section.portfolio.sub_title_one') }} {{ __('section.portfolio.sub_title_two') }}">
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ config('app.name') }} - {{ ucfirst(__('global.portfolio')) }}" />
+    <meta property="og:title" content="{{ __('section.portfolio.page_title') }} {{ config('app.name') }}" />
     <meta property="og:description" content="{{ ucfirst(__('global.portfolio')) }}. {{ __('section.portfolio.sub_title_one') }} {{ __('section.portfolio.sub_title_two') }}" />
     <meta property="og:image" content="{{ asset('favicon.ico') }}" />
     <meta name="twitter:site" content="@IbnuHMustofa" />
-    <meta name="twitter:title" content="{{ config('app.name') }} - {{ ucfirst(__('global.portfolio')) }}" />
+    <meta name="twitter:title" content="{{ __('section.portfolio.page_title') }} {{ config('app.name') }}" />
     <meta name="twitter:description" content="{{ ucfirst(__('global.portfolio')) }}. {{ __('section.portfolio.sub_title_one') }} {{ __('section.portfolio.sub_title_two') }}" />
     <meta name="twitter:image" content="{{ asset('favicon.ico') }}" />
 @endsection

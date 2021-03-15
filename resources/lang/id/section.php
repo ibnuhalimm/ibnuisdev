@@ -15,11 +15,13 @@ return [
         'cta_description' => 'Mari kita diskusikan sekarang'
     ],
     'portfolio' => [
+        'page_title' => 'Portofolio. Aplikasi yang Berkualitas dari',
         'title' => 'Portofolio',
         'sub_title_one' => 'Daftar project yang pernah saya kerjakan.',
         'sub_title_two' => 'Kualitas aplikasi dan kepuasan pelanggan adalah prioritas utama.'
     ],
     'resume' => [
+        'page_title' => 'Resume. Selalu Belajar dan Tumbuh dengan Teknologi',
         'title' => 'Resume',
         'sub_title_one' => 'Saya berasal dari Rembang, Jawa Tengah, Indonesia.',
         'sub_title_two' => 'Sangat tertarik dengan hal-hal baru di dunia sains dan teknologi.',
@@ -32,6 +34,7 @@ return [
         'education_sub_title' => 'Riwayat pendidikan formal'
     ],
     'contact' => [
+        'page_title' => 'Terhubung dengan Saya Hari ini',
         'title' => 'Hubungi Saya',
         'sub_title' => 'Silahkan hubungi saya via email atau DM sosial media.',
         'connect_with_me_today' => 'Terhubung dengan saya hari ini',
