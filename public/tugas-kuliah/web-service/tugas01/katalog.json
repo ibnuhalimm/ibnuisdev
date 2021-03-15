@@ -1,0 +1,650 @@
+[
+    {
+        "id_kategori": "c001",
+        "nama_kategori": "kabel data",
+        "data_produk": [
+            {
+                "id_produk": "c001br001",
+                "kategori_produk": "kabel data",
+                "nama_produk": "ACOME Kabel Data/Charger Type-C 100cm Fast Charging 3A - ASC010 - Type-C 1m",
+                "deskripsi": "Kondisi: Baru, Berat: 100 Gram, Kategori: Kabel Data, Etalase: Cable Type-C Fast Charging. Hadir dengan konsep kabel rajut perpaduan dua warna. Dilengkapi strap untuk memudahkan penyimpanan. Arus maksimal 3A. Dapat digunakan sebagai kabel charge atau kabel data. Kompatibel dengan berbagai perangkat yang sudah menggunakan antarmuka Type-C",
+                "berat": {
+                    "nominal": 100,
+                    "satuan": "gram"
+                },
+                "harga": 19900,
+                "stok_tersedia": 326,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "ukuran": {
+                        "panjang": 1,
+                        "satuan": "meter"
+                    },
+                    "warna": "biru",
+                    "tipe": "ASC010"
+                }
+            },
+            {
+                "id_produk": "c001br002",
+                "kategori_produk": "kabel data",
+                "nama_produk": "ACMIC Flexy Line Kabel Data Charger 100cm Fast Charging Cable - iPhone FL100",
+                "deskripsi": "GARANSI 18 BULAN RUSAK GANTI BARU\nUNLIMITED CLAIM\n\n\nTANPA PERLU SIMPAN BOX\nSelama bisa klik BELI, berarti Stok Ready yah :)\n\nPROMO WAKTU INDONESIA BELANJA\nHarga Awal = Rp 79.000\nHARGA KHUSUS WIB = Rp 19.000\nVarian :\n\nMicro USB FM100 = Kabel Micro USB untuk Android (Lihat produk di gambar Varian)\nType-C USB FC100 = Kabel USB Type C untuk Android (Lihat produk di gambar Varian)\niPhone FL100 = Kabel USB Lightning untuk iPhone (Lihat produk di gambar Varian)",
+                "berat": {
+                    "nominal": 150,
+                    "satuan": "gram"
+                },
+                "harga": 19000,
+                "stok_tersedia": 490,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "ukuran": {
+                        "panjang": 1,
+                        "satuan": "meter"
+                    },
+                    "warna": "hitam",
+                    "tipe": "iPhone FL100"
+                }
+            },
+            {
+                "id_produk": "c001br003",
+                "kategori_produk": "kabel data",
+                "nama_produk": "JOYSEUS Kabel data 3A USB Micro Cable 100CM Fast Charging - KB0070-M",
+                "deskripsi": "Data line Release notes\n3A fast charge version (green connector)\n- Upgrade pure copper core and match 3A super fast charge\n- Ergonomic 90 degree elbow design\n- New model made of one-piece pvc & durable\n- Multi-threaded chip, stable fast charging technology, more efficient while playing & charging\n- Smart core & safety, smart adaptive battery prevents overcharge and prolongs battery life\n- Material : PVC\n- Function : charging + transmission\n- Connector : USB, Micro USB\n- Core : tinned copper\n- Output : Max 3A\n- Colour : Black",
+                "berat": {
+                    "nominal": 200,
+                    "satuan": "gram"
+                },
+                "harga": 25000,
+                "stok_tersedia": 1000,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "ukuran": {
+                        "panjang": 1,
+                        "satuan": "meter"
+                    },
+                    "warna": "hitam",
+                    "tipe": "KB0070-M"
+                }
+            },
+            {
+                "id_produk": "c001br004",
+                "kategori_produk": "kabel data",
+                "nama_produk": "KABEL DATA TYPE-C BASEUS AUTOMATIC POWER-OFF FAST CHARGE 3A - Hitam",
+                "deskripsi": "BS-CA-TCOFF-BK\nBS-CA-TCOFF-RD\n\nFitur:\n-Kabel Tipe-C Power-off Light-off\nUntuk perangkat elektronik dengan konektor Tipe-C yang mendukung transmisi data dan pengisian sekaligus.\n\n- Chip cerdas Power-off\nDirancang dengan chip cerdas yang secara otomatis berhenti mengisi daya saat baterai terisi penuh.\n\n-3.0A Quick Charge\nKabel Type-C pintar ini mengeluarkan daya output maksimum 3A untuk pengisian cepat\n\n- Lampu cerdas berbentuk C\nLampu berbentuk C menunjukkan status pengisian dalam tiga warna: merah (normal charging), biru(fast charging), dan hijau(full Charged)\n\nSpesifikasi:\nMerek: BASEUS\nModel: Baseus C-shaped Light Intelligent power-off Cable USB For Type-C 3A 1M\nBahan: Zinc Alloy + Polyester Woven Fabric\nOutput: 5V/3A Max\nKecepatan transmisi: 480Mbps\nCocok dengan: perangkat port Type-C\nWarna: Black\nFitur: 1 Pengisian daya akan otomatis berhenti dan lampu hijau akan padam 5 menit setelah baterai penuh.\n2. disarankan untuk mengunakan charger bawaan dari perangkat ponsel anda\n3. Fitur fast charging hanya berlaku ketika menggunakan kepala charger yang mendukung fast charging QC3.0\n\n\nBerat Paket: 71 gram\nDimensi Paket: 17.3*9*2.5 cm\n\nIsi Kemasan:\n1 x KABEL DATA TYPE-C BASEUS AUTOMATIC POWER-OFF FAST CHARGE 3A\n\nGaransi: 6 Bulan (Cacat pabrik, langsung ganti baru. kerusakan akibat pengguna——》garansi void)",
+                "berat": {
+                    "nominal": 71,
+                    "satuan": "gram"
+                },
+                "harga": 89000,
+                "stok_tersedia": 79,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "ukuran": {
+                        "panjang": 1,
+                        "satuan": "meter"
+                    },
+                    "warna": "hitam",
+                    "tipe": ""
+                }
+            },
+            {
+                "id_produk": "c001br005",
+                "kategori_produk": "kabel data",
+                "nama_produk": "Kabel Data Micro USB JOYSEUS 100CM Nylon Black / Red - KB0005-AA",
+                "deskripsi": "Kabel Data Cable Data Micro USB JOYSEUS 100 CM Nylon Braided Black / Red - KB0005/KB0005-AA\nJOYSEUS Micro USB Cable 1M Nylon Braided Data Sync 2A Cable for Samsung Xiaomi Redmi Android Mobile Phone Cable Black\n\n-Universal compatibility (Support all Micro Devices for charging and data sync)\n-Support Charging and transferring data\n-High Quality Material ( 22 AWG Pure Copper Core Charge Speed Up to 30%)\n-Superior Durability (Premium Leather Protect Wire Cores and Resists Kinks and Tangles)\n-1 Meter",
+                "berat": {
+                    "nominal": 100,
+                    "satuan": "gram"
+                },
+                "harga": 12000,
+                "stok_tersedia": 428,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "ukuran": {
+                        "panjang": 1,
+                        "satuan": "meter"
+                    },
+                    "warna": "nylon black / red",
+                    "tipe": ""
+                }
+            },
+            {
+                "id_produk": "c001br006",
+                "kategori_produk": "kabel data",
+                "nama_produk": "ACMIC Braided Line Kabel Data Charger 100cm Fast Charging Cable - Micro USB GM100",
+                "deskripsi": "GARANSI 18 BULAN RUSAK GANTI BARU\nUNLIMITED CLAIM\nTANPA PERLU SIMPAN BOX\n\nSelama bisa klik BELI, berarti Stok Ready yah :)\n\n\nPROMO BRAND DEALS MARET\n\nHarga Awal = Rp 99.000\n\nHARGA KHUSUS = Rp 19.000\n\nVarian :\n• Micro USB GM100 = Kabel Micro USB untuk Android (Lihat produk di gambar Varian)\n• Type-C USB GC100 = Kabel USB Type C untuk Android (Lihat produk di gambar Varian)\n• iPhone GL100 = Kabel USB Lightning untuk iPhone (Lihat produk di gambar Varian)",
+                "berat": {
+                    "nominal": 150,
+                    "satuan": "gram"
+                },
+                "harga": 19000,
+                "stok_tersedia": 386,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "ukuran": {
+                        "panjang": 1,
+                        "satuan": "meter"
+                    },
+                    "warna": "hitam",
+                    "tipe": "GM100"
+                }
+            },
+            {
+                "id_produk": "c001br007",
+                "kategori_produk": "kabel data",
+                "nama_produk": "ACMIC PDC200e Cable 2M USB Type C to USB Type C Power Delivery PD 100W - Hitam",
+                "deskripsi": "GARANSI 18 BULAN RUSAK GANTI BARU\nUNLIMITED CLAIM\nTANPA PERLU SIMPAN BOX\n\nSelama bisa klik BELI, berarti Stok Ready yah :)\n\n\nPROMO BRAND DEALS MARET\n\nHarga Awal = Rp 599.000\n\nHARGA KHUSUS = Rp 99.000\n\n\nINFO PENGIRIMAN : https://www.tokopedia.com/acmic/info-pengiriman-dan-garansi\n\nCatatan:\nMohon videokan proses unboxing saat membuka paket demi mencegah hal-hal yang tidak diinginkan. Terima kasih :)",
+                "berat": {
+                    "nominal": 150,
+                    "satuan": "gram"
+                },
+                "harga": 99000,
+                "stok_tersedia": 230,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "ukuran": {
+                        "panjang": 1,
+                        "satuan": "meter"
+                    },
+                    "warna": "hitam",
+                    "tipe": "GM100"
+                }
+            },
+            {
+                "id_produk": "c001br008",
+                "kategori_produk": "kabel data",
+                "nama_produk": "UGREEN Kabel USB-A to Lightning (MFI) Nylon Braided - US199 - White, 1.5 Meter",
+                "deskripsi": "MFi Certified Lightning Cable - Nylon Braided White [30584]\nMFi Certified Lightning Cable - Nylon Braided Black [40985]\n\nUGREEN USB 2.0 A to Lightning Cable Nickel Plating Aluminum Braid 1m (White) - US199 [60161]\nUGREEN USB 2.0 A to Lightning Cable Nickel Plating Aluminum Braid 1.5m (White) - US199 [60162]\nUGREEN USB 2.0 A to Lightning Cable Nickel Plating Aluminum Braid 2m (White) - US199 [60163]\n\nUGREEN USB 2.0 A to Lightning Cable Nickel Plating Aluminum Braid 1m (Black) - US199 [60156]\nUGREEN USB 2.0 A to Lightning Cable Nickel Plating Aluminum Braid 2m (Black) - US199 [60158]\n\n\nLightning To USB 2.0 A Male Cable 1M\n\n- 2.4A\n- 480Mbps Data Transfer\n- Enhanced Durability\n- Connector A : USB A\n- Connector B : Lightning\n- Cable Length : 1M\n- Material : Nylon Braided\n\nSyarat & Ketentuan Klaim Garansi\n• Isi Form Registration https://astrindo-starvision.com/warranty-registration\n• Upload Invoice Pembelian di dalam form registration\n• Barang Tidak Cacat Fisik (putus, pecah, sobek, kena air, terbakar, retak, dll)\n• Untuk Garansi Tergantung Model/Type (12 & 18 Bulan)\n• Wajib membawa Box unit dan Invoice pembelian\n• Hanya untuk unit yang di distribusi oleh ASTRINDO (sticker ASTRINDO)\n• Email Support : service@astrindo-starvision.com",
+                "berat": {
+                    "nominal": 150,
+                    "satuan": "gram"
+                },
+                "harga": 92000,
+                "stok_tersedia": 46,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "ukuran": {
+                        "panjang": 1.5,
+                        "satuan": "meter"
+                    },
+                    "warna": "putih",
+                    "tipe": "US199"
+                }
+            },
+            {
+                "id_produk": "c001br009",
+                "kategori_produk": "kabel data",
+                "nama_produk": "Kabel Charger Anker PowerLine 3ft USB-C to USB 3.0 Black - A8163 - Putih",
+                "deskripsi": "PowerLine USB-C ke USB 3.0\nKabel data yang sangat tahan lama di dunia\n\nDari ANKER, America's Cutting-Edge USB Charging Brand\nPengisian cepat dan lebih cepat dengan teknologi canggih kami\n10 juta + pengguna dan penghitungan yang bahagia\n\nPengisian Cadangan\nGunakan charger telepon, charger portabel atau charger USB multi port untuk mengisi daya baterai MacBook, ChromeBook Pixel atau perangkat USB-C lainnya melalui kabel ini.\n\nSinkronisasi Ultra-High-Speed\nTransfer data ke dan dari semua perangkat USB-C Anda dengan kecepatan hingga 5 Gbps.\n\nMeningkatkan Daya Tahan\nPowerLine diperkuat dengan serat aramid untuk memberi kekuatan luar biasa. Ini memiliki umur belokan lebih dari 5X lebih tinggi dari kabel USB lainnya.\n\nPerangkat Kompatibel Termasuk:\nApple MacBook (12 inci, 2015)\nGoogle ChromeBook Pixel (2015)\nTablet Nokia N1\nOnePlus 2\nNexus 5X\nNexus 6P\nXiaomi 5\nLG G5\nSamsung Galaxy TabPro S\nHTC 10\n\nCatatan:\nKabel ini tidak akan mengenakan biaya Nintendo Switch, Nexus 5X atau 6P, Moto Z, Huawei Mate 9, atau OnePlus 3 dengan kecepatan penuh.\n\nKabel ini tidak sesuai dengan Google Pixel XL / Sony Xperia XZ dengan baik.\nKonektor USB-C mungkin tidak sesuai dengan Sony XZ atau LG V20.\n\nNote garansi :\n1. Untuk Retur, setelah barang diterima lebih dari 7 hari tidak bisa dikembalikan\n2. Tidak menerima pengembalian produk\n3. Untuk garansi 18 Bulan Resmi Anker Indonesia, Klaim hanya bisa untuk 1x klaim\n(Disarankan ketika mengajukan retur atau klaim produk, diwajibkan membuat ticketing terlebih dahulu, di link : http://support.ankerindonesia.com/ )\n\nNote Pengiriman:\nUntuk Produk mengandung baterai dan pengirimannya ke luar pulau Jawa mohon untuk membaca terlebih dahulu note pengiriman yang ada di catatan toko, untuk menghindari kesalah pahaman, terimakasih.",
+                "berat": {
+                    "nominal": 200,
+                    "satuan": "gram"
+                },
+                "harga": 79000,
+                "stok_tersedia": 8,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "ukuran": {
+                        "panjang": 1,
+                        "satuan": "meter"
+                    },
+                    "warna": "putih",
+                    "tipe": "A8163"
+                }
+            },
+            {
+                "id_produk": "c001br010",
+                "kategori_produk": "kabel data",
+                "nama_produk": "Kabel Charger Anker PowerLine 3ft USB-C to USB 3.0 Black - A8163 - Putih",
+                "deskripsi": "PowerLine USB-C ke USB 3.0\nKabel data yang sangat tahan lama di dunia\n\nDari ANKER, America's Cutting-Edge USB Charging Brand\nPengisian cepat dan lebih cepat dengan teknologi canggih kami\n10 juta + pengguna dan penghitungan yang bahagia\n\nPengisian Cadangan\nGunakan charger telepon, charger portabel atau charger USB multi port untuk mengisi daya baterai MacBook, ChromeBook Pixel atau perangkat USB-C lainnya melalui kabel ini.\n\nSinkronisasi Ultra-High-Speed\nTransfer data ke dan dari semua perangkat USB-C Anda dengan kecepatan hingga 5 Gbps.\n\nMeningkatkan Daya Tahan\nPowerLine diperkuat dengan serat aramid untuk memberi kekuatan luar biasa. Ini memiliki umur belokan lebih dari 5X lebih tinggi dari kabel USB lainnya.\n\nPerangkat Kompatibel Termasuk:\nApple MacBook (12 inci, 2015)\nGoogle ChromeBook Pixel (2015)\nTablet Nokia N1\nOnePlus 2\nNexus 5X\nNexus 6P\nXiaomi 5\nLG G5\nSamsung Galaxy TabPro S\nHTC 10\n\nCatatan:\nKabel ini tidak akan mengenakan biaya Nintendo Switch, Nexus 5X atau 6P, Moto Z, Huawei Mate 9, atau OnePlus 3 dengan kecepatan penuh.\n\nKabel ini tidak sesuai dengan Google Pixel XL / Sony Xperia XZ dengan baik.\nKonektor USB-C mungkin tidak sesuai dengan Sony XZ atau LG V20.\n\nNote garansi :\n1. Untuk Retur, setelah barang diterima lebih dari 7 hari tidak bisa dikembalikan\n2. Tidak menerima pengembalian produk\n3. Untuk garansi 18 Bulan Resmi Anker Indonesia, Klaim hanya bisa untuk 1x klaim\n(Disarankan ketika mengajukan retur atau klaim produk, diwajibkan membuat ticketing terlebih dahulu, di link : http://support.ankerindonesia.com/ )\n\nNote Pengiriman:\nUntuk Produk mengandung baterai dan pengirimannya ke luar pulau Jawa mohon untuk membaca terlebih dahulu note pengiriman yang ada di catatan toko, untuk menghindari kesalah pahaman, terimakasih.",
+                "berat": {
+                    "nominal": 200,
+                    "satuan": "gram"
+                },
+                "harga": 79000,
+                "stok_tersedia": 8,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "ukuran": {
+                        "panjang": 1,
+                        "satuan": "meter"
+                    },
+                    "warna": "putih",
+                    "tipe": "A8163"
+                }
+            },
+            {
+                "id_produk": "c001br011",
+                "kategori_produk": "kabel data",
+                "nama_produk": "ACMIC Flexy Line Kabel Data Charger 100cm Fast Charging Cable - Type-C FC100",
+                "deskripsi": "GARANSI 18 BULAN RUSAK GANTI BARU\nUNLIMITED CLAIM\nTANPA PERLU SIMPAN BOX\n\nSelama bisa klik BELI, berarti Stok Ready yah :)\n\nPROMO WAKTU INDONESIA BELANJA\n\nHarga Awal = Rp 79.000\n\nHARGA KHUSUS WIB = Rp 19.000\n\nVarian :\n• Micro USB FM100 = Kabel Micro USB untuk Android (Lihat produk di gambar Varian)\n• Type-C USB FC100 = Kabel USB Type C untuk Android (Lihat produk di gambar Varian)\n• iPhone FL100 = Kabel USB Lightning untuk iPhone (Lihat produk di gambar Varian)\n\nUntuk pembelian Grosir Klik :\nhttps://www.tokopedia.com/acmicgrosir\n\n\nINFO PENGIRIMAN :\nhttps://www.tokopedia.com/acmic/info-pengiriman-dan-garansi\n\n\nCatatan:\nMohon videokan proses unboxing saat membuka paket demi mencegah hal-hal yang tidak diinginkan. Terima kasih :)\n▁▁▁▁▁▁▁▁▁\nInfo Produk:\n\nACMIC Flexy Line Kabel Data Charger 100cm Fast Charging Cable\nPanjang : 100cm\n\n⦿ Flexible High Grade Synthetic Rubber\n⦿ 2A Fast Charging\n⦿ Compatible with Quick Charge 3.0 (untuk varian Micro USB FM100 dan Type-C FC100)\n⦿ High Speed Data Transmision\nup to 480Mbps rapid data transfer\n⦿ Smart Over Current Protection\nEffectively Protect Battery from Over Current\n\nGaransi 18 Bulan\n\nRusak Ganti Baru",
+                "berat": {
+                    "nominal": 150,
+                    "satuan": "gram"
+                },
+                "harga": 19000,
+                "stok_tersedia": 656,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "ukuran": {
+                        "panjang": 1,
+                        "satuan": "meter"
+                    },
+                    "warna": "hitam",
+                    "tipe": "Type-C FC100"
+                }
+            },
+            {
+                "id_produk": "c001br012",
+                "kategori_produk": "kabel data",
+                "nama_produk": "Kabel Charger Anker PowerLine MFI Lightning Cable 3ft Black - A7101 - Putih",
+                "deskripsi": "Anker Premium MFI Lightning Cable 0.9m Black A7101H12\n\nDari ANKER, Merek Pengisian USB Amerika Terkemuka\nPengisian lebih cepat dan lebih aman dengan teknologi canggih kami 10 juta +\nPengguna senang dan terus bertambah\n\nSertifikasi Apple MFi\nSetiap kabel berisi nomor seri unik dan terverifikasi serta chip otorisasi yang dikeluarkan oleh Apple untuk memastikan kompatibilitas 100% dengan perangkat Lightning apa pun.\n\nKabel Yang Dapat Anda Andalkan\nKami membengkokkan ujung kabel ini lebih dari 4000 kali dan tidak melihat kerusakan atau perubahan kinerja. Konektor tahan panas memastikan keamanan dan keandalan lengkap.\n\nKabel ekstra\nGanti kabel 3ft asli Anda atau tambahkan yang lain untuk rumah, tempat kerja atau koper Anda.\n\nKompatibilitas Kasus\nKepala konektor Lightning yang super tipis masuk ke dalam hampir semua lubang case. Jangan ditolak kasus pilihan Anda dengan kabel besar.\n\nNote garansi :\n1. Untuk Retur, setelah barang diterima lebih dari 7 hari tidak bisa dikembalikan\n2. Tidak menerima pengembalian produk\n3. Untuk garansi 18 Bulan Resmi Anker Indonesia, Klaim hanya bisa untuk 1x klaim\n(Disarankan ketika mengajukan retur atau klaim produk, diwajibkan membuat ticketing terlebih dahulu, di link : http://support.ankerindonesia.com/ )\n\nNote Pengiriman:\nUntuk Produk mengandung baterai dan pengirimannya ke luar pulau Jawa mohon untuk membaca terlebih dahulu note pengiriman yang ada di catatan toko, untuk menghindari kesalah pahaman, terimakasih.",
+                "berat": {
+                    "nominal": 200,
+                    "satuan": "gram"
+                },
+                "harga": 125000,
+                "stok_tersedia": 32,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "ukuran": {
+                        "panjang": 1,
+                        "satuan": "meter"
+                    },
+                    "warna": "putih",
+                    "tipe": "A7101"
+                }
+            },
+            {
+                "id_produk": "c001br013",
+                "kategori_produk": "kabel data",
+                "nama_produk": "PROMO Ultimate Premium Glory Series Kabel Data Cable Fast Charging - Type C",
+                "deskripsi": "Ready 3 type, silahkan dipilih di varian\n\nUltimate Power Premium Glory Series Kabel Data Cable 120CM ini adalah salah satu kabel data keluaran terbaru dari Ultimate Power. Terbuat dari bahan premium, kuat dan tahan lama. Didesign dengan bahan luar braided nylon dan bahan port metal yang terlihat mewah dan elegant. Support fast charging charger dan fast data transmission.\n\nSpesifikasi\n- Brand : Ultimate Power\n- Model : UC120 / UM120 / UL120\n- Current : 2.4A\n- Fast Data Transmission\n- Length : 120CM\n- Interface : USB Type-C / Micro USB / Lightning\n- Support Fast Charging QC 3.0",
+                "berat": {
+                    "nominal": 180,
+                    "satuan": "gram"
+                },
+                "harga": 59000,
+                "stok_tersedia": 999,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "ukuran": {
+                        "panjang": 1,
+                        "satuan": "meter"
+                    },
+                    "warna": "hitam",
+                    "tipe": "Type C"
+                }
+            }
+        ]
+    },
+    {
+        "id_kategori": "c002",
+        "nama_kategori": "power bank",
+        "data_produk": [
+            {
+                "id_produk": "c002br001",
+                "kategori_produk": "power bank",
+                "nama_produk": "Inone Power Bank P15 10000mAh Palm Size Portable for Smartphones",
+                "deskripsi": "MOHON MAAF TIDAK TERMASUK KABEL DATA\nPowerbank Only\n\n\nFeatures:\n\n【Unique Design】palm size design,smooth corner transition,small body but large capacity.\n\n\n\n【10000mAh Capacity】 high capacity,it is powerful enough to charge the xiaomi redmi note7 about 2 times,Oppo f9 about 2.4 times,iphone x about 3 times,and iphone 7 about 4 times.Pokemon Go drains your battery,imagining,you almost catch the elf and it suddenly out of power,how distressed it is,but Inone P15 Powerbank can provide an extra hours to play.\n\n\n\n【Universal Compatibility】it is universal fits for  Vivo/Oppo/Xiaomi/iPhone 6/ 6s plus 5s/ 5/ 4s/ 4, iPad, iPod, Samsung devices Galaxy s7/ s6/ s5/ note 5/ note 4/ Edge, HTC phones, tablet PCs, digital cameras, game consoles and MP3/MP4 players, kindle, etc.\n\n\n\n【Lightweight】it is power but lighter than others,it adopts the Polymer Battery,perfect for long flights,road trips or just any time you're away from your home.\n\n\n\nParameter:\n\nInput: 5V 1A (Micro)\n\nOutput: 5V 1A\n\nUSB:5V 1A\n\nCell Capacity: 10000Mah/37wh\n\nSize:145*63*20mm\n\nWeight: 215g\n\nPackage size: 170*100*25mm\n\nPackage weight:\n\nPackage included: 1 x power bank, 1 x instruction manual",
+                "berat": {
+                    "nominal": 500,
+                    "satuan": "gram"
+                },
+                "harga": 59900,
+                "stok_tersedia": 8367,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "hitam",
+                    "tipe": "P15"
+                }
+            },
+            {
+                "id_produk": "c002br002",
+                "kategori_produk": "power bank",
+                "nama_produk": "Powerbank Sniper 10000 mAh Powershoot S412201 V2.0",
+                "deskripsi": "✔ LUAR PULAU JAWA MOHON GUNAKAN POS INDONESIA\n\n✔ (Stok READY, Selama bisa klik BELI, Segera Diorder Stok Promo terbatas Lhoo..!! 😊)\n\n✔ GARANSI 18 BULAN RUSAK GANTI BARU\n\n✔ Compatible untuk iPhone dan Android.\n\n✔ Flight Friendly ✈ 37Wh - AMAN DI BAWA KE KABIN PESAWAT\n\n▁▁▁▁▁▁▁▁\n\nPowerbank 10000mAh Flight Friendly ✈ 37Wh - Compatible untuk iPhone dan Android.\n\n\n\nBELUM FAST CHARGING\n\nKamu Butuh yang Fast Charging ?",
+                "berat": {
+                    "nominal": 200,
+                    "satuan": "gram"
+                },
+                "harga": 95000,
+                "stok_tersedia": 560,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "hitam",
+                    "tipe": "S412201"
+                }
+            },
+            {
+                "id_produk": "c002br003",
+                "kategori_produk": "power bank",
+                "nama_produk": "PowerBank 10000mAh Baterai Hp Universal Power bank Digital 2USB Port G - Hitam, 10000 mah",
+                "deskripsi": "PERHATIAN!!! UNTUK PEMBELI YANG BERALAMAT DI LUAR PULAU JAWA, HARAP UNTUK MENGGUNAKAN JASA POS KILAT\n\nNOTE : JIKA WARNA YG DIPESAN HABIS MAKA AKAN KAMI GANTI WARNA LAIN DENGAN PRODUK DAN KUALITAS YG SAMA YAA (TULIS DI CATATAN, PENGGANTI BARANG JIKA WARNA YG DIPESAN HABIS)\n\nsmartpower bank terbarunya dengan desain yang sangat cute, cocok digunakan bagi para kaum wanita maupun pria. Meskipun bentuknya yang cute namun tetap memiliki kapasitas besar 10000 mAh dan memiliki 1 USB port untuk mengisi.\n\ndeskripsi produk :\n*memiliki design yang unik dan lucu\n*cocok untuk anak perempuan dan laki-laki\n*ukurannya yang kecil sehingga mudah dibawa kemanapun\n*tidak makan tempat\n\n*memiliki 4 varian model dan warna :\n1. Merah\n2. Biru\n3. Hitam\n\nspesifikasi produk :\n*capacity : 10000mAh\n*input : SV/2A\n*output 1 : DC5V/2A\n*output 2 : DC5V/1A\n*ukuran :80x80x23mm\n\nNB: UNTUK BARANG YANG MEMILIKI VARIASI, HARAP DICANTUMKAN DENGAN JELAS PADA KOLOM CATATAN SAAT MELAKUKAN PEMESANAN, JIKA VARIASI YANG DI PILIH TIDAK ADA MAKA KAMI AKAN MENGIRIMKAN BARANG SECARA RANDOM.\n\n~~~~~~~ HAPPY SHOPPING ~~~~~~~\n\n#POWERBANK#DIGITAL#2PORT#USB#UNIVERSAL#POWERHP#BATERAIHP#BATERAI#\n\nKenapa harus pesan di JKToko ?\n1. karena karyawan toko JKToko selalu melakukan protokol kesehatan seperti memakai masker, menjaga jarak, melakukan semprot disenfektan saat masuk kantor, barang keluar/masuk selalu di semprot disenfektan, sehingga barang aman dari virus.\n2. karena semua pengemasan menggunakan bubble warp dan itu GRATIS!\n3. karena toko JKtoko slalu diprioritaskan oleh ekspedisi sehingga pengiriman dijamin cepat!\n4. karena Customer Servicenya Ramah dan slalu melayani keluhan Customer sampai TUNTAS!! jadi tidak perlu khawatir jika ada keluhan pasti akan di bantu 100%",
+                "berat": {
+                    "nominal": 400,
+                    "satuan": "gram"
+                },
+                "harga": 60000,
+                "stok_tersedia": 69,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "hitam",
+                    "tipe": "2USB Port G"
+                }
+            },
+            {
+                "id_produk": "c002br004",
+                "kategori_produk": "power bank",
+                "nama_produk": "PowerBank 99000mAh 3 USB SAMSUNG XIAOMI OPPO VIVO BEST QUALITY",
+                "deskripsi": "Deskripsi Power Bank 99000mAh | 3 USB | BEST QUALITY\nNEW Product 198000mAh, dengan tambahan fitur model Indikator LED terbaru yang elegant dibalut lapisan model kulit dilengkapi dengan Tripple USB Output dapat mencharger 2 smartphone secara bersamaan.\n\nREADY\nOPPO\nVIVO\nSAMSUNG\nXIAOMI\n\nSpesification :\n- Capacity : 99000mAh (not real kapasitas)\n- Input : 5V/1A\n- Output :\nOutput 1 : 1A / 5V\nOutput 2 : 2A / 5V\nOutput 3 : 2A / 5V\n* Indicator LED Lights\n* Conector Cable USB\n\nCOLOUR : Black / White / Brown\n\n** 1 MONTHS WARRANTY **\n\n** QC TESTED CHARGE 1 - 3x Times **\n\nSetelah barang sampai harap di charger terlebih dahulu kurang lebih 3 jam !!!\nkarna tidak semua barang sudah terisi penuh....\n\nJIKA SALAH SATU TIPE KOSONG MAKA KAMI KIRIMKAN GAMBAR NOMOR 2",
+                "berat": {
+                    "nominal": 243,
+                    "satuan": "gram"
+                },
+                "harga": 60000,
+                "stok_tersedia": 98900,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "putih",
+                    "tipe": ""
+                }
+            },
+            {
+                "id_produk": "c002br005",
+                "kategori_produk": "power bank",
+                "nama_produk": "GROTIC Powerbank 24000mAh 6 Output 3 Input 2.1A Power Bank GY60 - Hitam",
+                "deskripsi": "【PERHATIAN】\n\nUntuk pengiriman Produk Power Bank keluar pulau jawa disarankan memakai jasa kirim\nJ&T Economy\nKarena VIA expedisi lain sering tidak lolos cek X-Ray di Bandara.\nThanks\n\n【GARANSI】\n1 tahun setelah barang diterima, syarat dan ketentuan garansi berlaku, 1 Minggu rusak akan diganti baru dengan melihat kondisi barang, lewat dari itu akan di servis, ongkos kirim dll ditanggung pembeli. (kerusakan bukan human error, seperti jatuh, kena air/ api, atau dibongkar sendiri)\nMembeli berarti SETUJU!!\n\nFitur:\n* Brand & kualitas internasional\n* Kapasitas sangat besar 24000 mAh sehingga dapat mengisi daya 4 sampai 6x lebih banyak\n* Material ABS+PC yang tahan lama, sehingga cocok untuk dibawa kemana saja.\n* 2A Fast Charge (2 x lebih cepat dibanding Power Bank 1A).\n* 6 Output(built-in android,type-c & iphone cable,USB1,USB2,USB3).Praktis, powerbank dapat dihubungkan hingga ke 6 smartphone dan dapat digunakan untuk berbagai model smartphone.\n* 3 Input(Micro & Type-C). Fleksibel, powerbank dapat direcharge menggunakan dua jenis port.\n* Indikator LED akurat yang mengindikasi sisa baterai powerbank.\n* Senter Dual LED berfungsi sempurna dalam kegelapan, terutama untuk keadaan darurat.\n* multi proteksi(Proteksi dari Overheat, Overcharge, Overdischarge, Overvoltage, Overcurrent, Short Circuit dan Resistensi Temperatur etc.)\n\nSpesifikasi:\nMerek: GROTIC\nNama Produk: Powerbank\nModel: GY60\nKapasitas: 24000 mAh\nJenis baterai: Baterai polimer\nInput: DC1 5V/2.1A;DC2 5V/2.1A\nOutput: DC5V/2.1A\nUkuran: 164*82*26mm\nWarna: Hitam,Biru\n\nKelengkapan paket:\n1x Power bank",
+                "berat": {
+                    "nominal": 500,
+                    "satuan": "gram"
+                },
+                "harga": 208000,
+                "stok_tersedia": 1920,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "hitam",
+                    "tipe": "GY60"
+                }
+            },
+            {
+                "id_produk": "c002br006",
+                "kategori_produk": "power bank",
+                "nama_produk": "Hippo PowerBank Snow White 3 10000mAh Smart Detect Charging SimplePack - Putih",
+                "deskripsi": "Snow White 3 10000 mAh\n* Smart Detect Charging (SDC)\n* Dual Output\n* LED Indicator\n\nSnow White 3 10000 mAh\n\nPowerBank HIPPO Snow White 3 10000 mAh ini memilik type baterai Li-Polymer. Powerbank ini memiliki bentuk yang compact dan nyaman dalam genggaman, maupun disimpan di dalam tas, powerbank ini akan sangat menjadi teman yang tepat menemani keseharian anda.\n\nWarna\nPowerBank HIPPO Snow White 3 ini mempunyai 2 varian warna yaitu Hitam dan Putih. Jadi kalian bisa menentukan warna apa yang anda minati.\n\nLED Indicator\nPowerbank Snow White 3 memiliki lampu LED indicator guna untuk mengetahui kapasitas pada powerbank.\n\nDimensi\nDengan ukuran : 96x62x22.5mm dan berat 191g.\n\nFitur\nHippo Snow White 3 memiliki feature SDC, LED indicator, Dual Output.\n\nPower\nPowerbank HIPPO Snow White 3 ini memiliki input dengan spesifikasi DC5V/2.1A. Output DC5V/2.1A (Max)\n\nSpesifikasi\nKapasitas 10000 mAh\nBaterai Li – Polymer\nWarna Hitam & Putih\nDimensi (mm) 96x62x22.5mm\nBerat 191 g\nInput DC5V / 2.1A\nOutput DC5V / 2.1A (Max)\nGaransi 1 Tahun\n\nPaket Pembelian\nSimple Pack\n* 1 Unit Hippo Powerbank Snow White 3 10000 mAh\n* 1pc Kabel Micro\n* Warranty Card + Manual",
+                "berat": {
+                    "nominal": 260,
+                    "satuan": "gram"
+                },
+                "harga": 129000,
+                "stok_tersedia": 908,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "putih",
+                    "tipe": ""
+                }
+            },
+            {
+                "id_produk": "c002br007",
+                "kategori_produk": "power bank",
+                "nama_produk": "Basike Power bank 20000mAh Real Capacity Fast Charging PT507 - PT507 white",
+                "deskripsi": "PowerBank BASIKE 20000mAh Real Capacity Fast Charging Dual USB for Iphone Android Xiaomi Vivo Oppo samsung\n\nBASIKE BSK-PT507 Power Bank dengan kapasitas yang besar 20000 mAh untuk mengisi daya handphone kapapun dan dimanapun dengan kapasitas yang besar tidak perlu khawatir untuk kehabisan baterai handphone dilengkapi dengan port output USB ganda mendukung pengisian cepat dan efisien.\n\n☆☆☆☆☆☆Keunggulan☆☆☆☆☆☆\n*Kapasitas real 20000mAh\n*Garansi Resmi 1 Tahun Tukar Baru\n*2 USB output\n* Lampu indikator LED menunjukkan status daya\n*Desain lengkung ergonomis, nyaman digenggam\n*Baterai Polymer\n* Perlindungan multi built-in\n*Dapat dibawa masuk ke dalam pesawat\n\nKEAMANAN TERJAMIN\nTelah dibekali Teknologi Smart Protection\nTidak akan over voltage\nMengisi daya lebih aman\n\n❤9 Perlindungan Cerdas❤\n⚡️ Suhu\n⚡️ Over-Charge\n⚡️ Over-Discharge\n⚡️ Hubungan arus pendek\n⚡️ Tegangan Lebih (Input)\n⚡️ Over-Voltage (Output)\n⚡️ Over-Current (Output)\n⚡️ Perlindungan Pemulihan\n⚡️ Perlindungan Sel PTC\n\n👊CATATAN: POWERBANK lain adalah 3 atau 6 perlindungan cerdas di pasar.\nBank daya kami adalah 9 perlindungan cerdas yang lebih aman daripada yang lain.\nAgar aman, bank daya kami adalah pilihan yang lebih baik!\n\n☆☆☆☆☆ Spesifikasi ☆☆☆☆☆\n* Merek : BASIKE\n* Model : BSK-PT507\n* Kapasitas : 20000mAh\n* Input : Micro-USB 5V / 2A\n* Dual Output : Output1 5V / 2.1A; Output2 5V / 2.1A\n\nKelengkapan :\n1 pcs PowerBank BASIKE BSK-PT507\n1 pcs Kabe Data Micro USB\n\n【PERHATIAN】\n\"Untuk pemesanan luar Pulau Jawa mohon menggunakan jasa kirim SICEPAT, JNE REG atau JNE OK karena Ekpedisi lainnya tidak bisa kirim!\"Terima kasih telah mendukung kami.",
+                "berat": {
+                    "nominal": 450,
+                    "satuan": "gram"
+                },
+                "harga": 149000,
+                "stok_tersedia": 20,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "putih",
+                    "tipe": ""
+                }
+            },
+            {
+                "id_produk": "c002br008",
+                "kategori_produk": "power bank",
+                "nama_produk": "Powerbank Anker Powercore Select 10000mAh Black - A1223 - Merah",
+                "deskripsi": "Juga dapat dibeli di Toko Cabang kami:\n-Makassar: https://tokopedia.com/ankerofficialmks/powerbank-anker-powercore-select-10000mah-black-a1223\n\n\n\n*Anker PowerCore Select 10000mah Portable Powerbank With Dual 12W Output Ports*\n\nPowerbank Portabel 10000mah Dengan Dual Port Output 12W\nDengan kapasitas pengisian 10.000 mAh, Power Bank dari Anker ini dapat mengisi daya hingga 2 perangkat sekaligus! PowerCore menyertakan Power IQ untuk waktu pengisian lebih cepat.\n\n● Ukuran Kecil, Tenaga Besar: Pengisi daya portabel yang sangat bagus dan menyediakan 2,5 biaya untuk Galaxy S10, atau 2,4 untuk iPhone XS. Isi ulang dalam 5,5 jam dengan pengisi daya 5V / 2A.\n● Safe Bersertifikat: Sistem keselamatan MultiProtect Anker memberikan perlindungan superior bagi Anda dan perangkat Anda.\n● Tugas Ganda: Dual output 12W port memungkinkan pengisian perangkat Anda secara simultan - tanpa mengorbankan kecepatan pengisian.\n● Apa yang Anda Dapatkan: PowerCore Select 10.000, kabel USB-A ke Micro-USB, panduan selamat datang, garansi 18 bulan bebas khawatir, dan layanan pelanggan yang ramah\n\n\nGaransi: 18 Bulan (Cacat pabrik, langsung ganti baru; kerusakan akibat pengguna——》garansi void)\n(Disarankan ketika mengajukan retur atau klaim produk, diwajibkan membuat ticketing terlebih dahulu, di link : http://support•ankerindonesia•com/ )\n\nNote:\n*Dimohon untuk menyertakan bukti video unboxing paket untuk menanggapi komplain karena kekurangan produk dsb. Tanpa bukti video kami tidak akan melayani.\n*Mohon ditanyakan produk kami yang sesuai dengan gadget/hp yang anda miliki. Penukaran barang karena salah membeli tidak bisa ditukarkan!! Terimakasih :)",
+                "berat": {
+                    "nominal": 200,
+                    "satuan": "gram"
+                },
+                "harga": 175000,
+                "stok_tersedia": 15,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "merah",
+                    "tipe": ""
+                }
+            },
+            {
+                "id_produk": "c002br009",
+                "kategori_produk": "power bank",
+                "nama_produk": "Mini Powerbank 10000mAh LED Digital",
+                "deskripsi": "Mini Powerbank 10000 mAH LED Digital\nGARANSI 6 BULAN\n\nKelebihan:\n- Memiliki Desain yg Unik dan Lucu\n- Ukuran kecil tapi kapasitas besar\n- Tidak makan tempat\n- Ukuran : 75mm x 75mm x 18mm\n\nSpesifikasi :\n- Kapasitas : 10.000 mAh\n- input :SV/2A\n- Output : DC5V/2A\n\nWarna tersedia\n-Hitam\n-Merah\n-Biru\n\nPenting !!!!!\n1. SEBELUM DI PAKAI HARAP DI CAS 10 JAM TERLEBIH DAHULU (SEKALI PAS PERTAMA AJA)\n2. UNTUK KLAIM GARANSI SILAHKAN LANGSUNG CHAT, AKAN DI GANTI BARANG BARU\n3. BINTANG DI BAWAH 5 GARANSI HILANG",
+                "berat": {
+                    "nominal": 300,
+                    "satuan": "gram"
+                },
+                "harga": 99000,
+                "stok_tersedia": 231,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "hitam",
+                    "tipe": ""
+                }
+            },
+            {
+                "id_produk": "c002br010",
+                "kategori_produk": "power bank",
+                "nama_produk": "PowerBank Anker PowerCore II Slim 10000 mAh Black - A1261",
+                "deskripsi": "Note:\n*Dimohon untuk menyertakan bukti video unboxing paket untuk menanggapi komplain karena kekurangan produk dsb. Tanpa bukti video kami tidak akan melayani.\n\n*Mohon ditanyakan produk kami yang sesuai dengan gadget/hp yang anda miliki. Penukaran barang karena salah membeli tidak bisa ditukarkan!!\n\nTerimakasih :)\n\nPower Packed\nPengisi daya portabel standar membutuhkan beberapa chip untuk memastikan kompatibilitas pengisian daya yang luas, tetapi perangkat keras Anker yang dirancang sendiri meremas semua itu ke dalam satu rangkaian kecil. Lebih sedikit ruang untuk silikon berarti lebih banyak ruang untuk daya.\n\nKecepatan Universal\nTidak hanya PowerCore II Slim 10000 yang menyediakan biaya tercepat mungkin untuk hampir semua ponsel cerdas atau tablet, itu dapat diisi ulang sepenuhnya hanya dalam 4 jam. Itu berarti lebih sedikit waktu pengisian, lebih banyak waktu hidup.\n\nWaktu Isi Ulang\nMenggunakan Pengisi Daya 5V / 1A: 10 Jam\nMenggunakan Pengisi Daya 5V / 2A: 5 Jam 40 Menit\nMenggunakan Pengisi Daya Cepat: 4 Jam\n\nSpesifikasi:\n\nKapasitas: 10.000mAh\nPort output: 1xUSB\nPort input: Micro USB\nOutput: 5-6V=3A, 6-9V=2A, 9-12V=1.5A\nInput: 5V=2A, 9V=2A\n\nDimensi Produk: 3.6 x 2.3 x 0.9in\nBerat Produk: 180 gram\nBerat Paket: 250 gram\n\nApa yang ada di dalam kotak:\n1 Anker Powercore II Slim 10000mah Black\n1 Kabel Micro USB 3ft\n1 Travel Pouch\n\nGaransi: 18 bulan (Cacat pabrik, langsung ganti baru; kerusakan akibat pengguna——》garansi void)",
+                "berat": {
+                    "nominal": 300,
+                    "satuan": "gram"
+                },
+                "harga": 275000,
+                "stok_tersedia": 7,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "hitam",
+                    "tipe": ""
+                }
+            },
+            {
+                "id_produk": "c002br011",
+                "kategori_produk": "power bank",
+                "nama_produk": "ACMIC F20PRO 20000mAh AiCharge Digital Power Bank (QC4 + PD + VOOC) - F20Pro No Kabel",
+                "deskripsi": "Selama bisa klik BELI, berarti Stok Ready yah :)\n\nGratis\n- Pouch Jaring Premium\n- Kabel Kai100 (Pilih +kabel di varian)\n\nCatatan:\nMohon videokan saat membuka paket demi mencegah hal-hal yang tidak diinginkan\n\nInfo Produk:\n\nACMIC F20PRO\n- Real 20000mAh\n- ABS + PC + SYNTHETIC FIBER CARBON CASE (Tangguh, tahan panas & api)\n- LED Digital Display\n- Fast Charging input output\n- Safe ✈ 37Wh\n\nDengan AiCharge (ACMIC intelligent Charging System) :\n- Huawei Super Charge 22,5 Watt\n- VOOC / Dash Charge 20 Watt\n- Qualcomm Quick Charge up to 20 Watt\n- Power Delivery 20 Watt\n- Motorola Turbo Power 18 Watt\n- Samsung Adaptive Fast Charging 15 Watt\n\nUSB-C Power Output (20 Watt PD3.0 ) :\n• iPhone Fast Charging 50% dalam 30 menit\n(iPhone 12 Series,iPhone SE, 11 Series, X Series, 8 Series)\ndengan kabel ACMIC PDL100 / PDL100e (dijual terpisah)\n• Fast Charging ke hampir semua pengguna Android 10\ndengan kabel ACMIC PDC30 / PDC100 / PDC100e / PDC200 (dijual terpisah)\n• MagSafe iPhone 12 Full Speed Support\n\nHingga 4,5x lebih cepat dibandingkan charger 1A\n\nMODE PENGISIAN DAYA RENDAH (LOW-CURRENT)\nAman untuk perangkat kecil (headset bluetooth, gelang fitness, smart watch,dll)\nTahan tombol power selama 2 detik untuk mengaktifkan\n\nTRIPLE OUTPUT CHARGING MODE*\nDapat mengisi tiga gadget secara bersamaan\n\nPASS THROUGH CHARGING MODE**\nDapat mengisi powerbank & hp bersamaan\n\n*Kecepatan Maximal 5V/3A (15 Watt)\n**Kecepatan Maximal 5V/1A (5 Watt)\n\nDengan 9 Smart Protection\n1. Temperature\n2. Over-Charge\n3. Over-Discharge\n4. Short-Circuit\n5. Over-Voltage\n6. Over-Voltage\n7. Over-Current\n8. Recovery Protection\n9. PTC Cell Protection\n\nSPESIFIKASI :\nKapasitas = 20.000mAh / 74Wh\nSize = 149.2 x 69.1 x 27.6mm\nBerat = 412gr\nInput Micro USB QC3.0 / Type-C PD = 5V;2A / 9V;2A\nType C PD Output = 5V;3.0A / 9V;2.2A / 12V;1.5A (Maks 20W)\nUSB Ai Output = 4.5V;5.0A / 5V;4.5A / 9V;2.0A / 12V;1.5A (Maks 22.5W)\n\nPaket Penjualan:\n- ACMIC F20PRO 20000mAh Power Bank\n- Kartu Garansi\n- Kertas Panduan Bahasa Indonesia",
+                "berat": {
+                    "nominal": 700,
+                    "satuan": "gram"
+                },
+                "harga": 299000,
+                "stok_tersedia": 103,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "hitam",
+                    "tipe": "F20Pro"
+                }
+            }
+        ]
+    },
+    {
+        "id_kategori": "c003",
+        "nama_kategori": "laptop",
+        "data_produk": [
+            {
+                "id_produk": "c003br001",
+                "kategori_produk": "laptop",
+                "nama_produk": "HP ENVY x360 13 - ay0006AU - AMD Ryzen7 4700U - 16GB -512GB SSD - W10",
+                "deskripsi": "Processor : AMD Ryzen™ 7 4700U (2.0 GHz base clock, up to 4.2 GHz max boost clock, 4 MB L2 cache, 8 cores)\nMemory : 16 GB DDR4-3200 SDRAM (onboard)\nStorage : 512 GB PCIe® NVMe™ M.2 SSD\nDisplay : 13.3\" diagonal FHD, IPS, BrightView, micro-edge, WLED-backlit, multitouch-enabled, edge-to-edge glass with Corning® Gorilla® Glass NBT™, 400 nits, 100% sRGB (1920 x 1080)\nGraphic : AMD Radeon™ Graphics\nProduct color : Nightfall Black\nWeight : Starting at 1.32 kg\nBattery : 3-cell, 51 Wh Li-ion\nWarranty : 2 year limited parts and labour",
+                "berat": {
+                    "nominal": 5000,
+                    "satuan": "gram"
+                },
+                "harga": 18299000,
+                "stok_tersedia": 15,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "hitam",
+                    "tipe": "ENVY x360"
+                }
+            },
+            {
+                "id_produk": "c003br002",
+                "kategori_produk": "laptop",
+                "nama_produk": "ACER SPIN 1 SP111 DUALCORE N4020 4GB 192GB 11,6\" TOUCH W10 FREE OFFICE - Hitam",
+                "deskripsi": "FREE OFFICE 365\n\nSpesifikasi :\n- Processor Intel® Celeron® N4020 (2C / 2T, 1.1 / 2.8GHz, 4MB)\n- Windows 10 Home Original + OFFICE 365 ORIGINAL\n- Layar 11.6\" inch HD 1366 x 768 resolution LED-backlit TFT LCD with integrated 10-point touchscreen\n- RAM 4GB DDR4\n- Storage 192GB (64GB+128GB)\n- Intel® UHD Graphics 600\n- Bluetooth® 5.0\n- HDMI® 2.0 port with HDCP support\n- • 802.11a/b/g/n/ac wireless\n- • Operates at 2.4 GHz and 5 GHz\n- • 2x2 MU-MIMO technology\n\nKELENGKAPAN:\nUNIT,CHARGER,DUS,NOTA PEMBELIAN, MOUSE KABEL\n\nGARANSI 1 TAHUN DISTRIBUTOR\nGARANSI TOKO 3 HARI TUKAR UNIT, JIKA ADA KESALAHAN PABRIK",
+                "berat": {
+                    "nominal": 3000,
+                    "satuan": "gram"
+                },
+                "harga": 4749000,
+                "stok_tersedia": 29,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "hitam",
+                    "tipe": "SP111"
+                }
+            },
+            {
+                "id_produk": "c003br003",
+                "kategori_produk": "laptop",
+                "nama_produk": "HP ENVY 13 x360 TOUCH 2020 11TH i7-1165G7 Intel Iris Xe 8GB 512GB - MINERAL GOLD",
+                "deskripsi": "2020 HP Envy x360 2-in-1 13.3\" FHD IPS Touchscreen Laptop Intel Evo Platform 11th Gen Core i7-1165G7 8GB Memory 512GB SSD Pale Gold - Backlit Keyboard -Fingerprint Reader -Thunderbolt - WiFi 6\n\nSPESIFIKASI:\nIntel® Core™ i7-1165G7 (up to 4.7 GHz with Intel® Turbo Boost Technology, 12 MB L3 cache, 4 cores)\nIntel® Iris® Xᵉ Graphics\nWindows 10 Home 64\nDisplay 13.3\" diagonal, FHD (1920 x 1080), IPS BrightView, Corning® Gorilla® Glass NBT™, 1000 nits, 72% NTSC\nMemory 8GB DDR4-3200 SDRAM (onboard)\nHard drive 512 GB PCIe® NVMe™ M.2 SSD\nWireless connectivity:\nIntel® Wi-Fi 6 AX201 (2x2) and Bluetooth® 5 combo (Supporting Gigabit file transfer speeds)\nExpansion slots:\n1 microSD media card reader\nExternal ports:\n1 Thunderbolt™ 4 with USB4™ Type-C® 40Gbps signaling rate (USB Power Delivery, DisplayPort™ 1.4, HP Sleep and Charge); 1 SuperSpeed USB Type-C® 5Gbps signaling rate; 1 SuperSpeed USB Type-A 5Gbps signaling rate (HP Sleep and Charge); 1 AC smart pin; 1 headphone/microphone combo\nWeight 1.32 kg\nWebcam HP Wide Vision 720p HD camera with camera shutter and integrated dual array digital microphone\n\nGARANSI 1 TAHUN DISTRIBUTOR\nGARANSI TOKO 3 HARI TUKAR UNIT, JIKA ADA KESALAHAN PABRIK",
+                "berat": {
+                    "nominal": 4000,
+                    "satuan": "gram"
+                },
+                "harga": 15699000,
+                "stok_tersedia": 28,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "mineral gold",
+                    "tipe": "ENVY 13 x360"
+                }
+            },
+            {
+                "id_produk": "c003br004",
+                "kategori_produk": "laptop",
+                "nama_produk": "Laptop HP 14s-dk1122AU (1X9Y7PA) / Silver -AMD Athlon Gold 3150U",
+                "deskripsi": "Merek\nHP\nOperating System\nWindows\nProcessor\nAmd Athlon Silver\nMemory RAM\n4 GB\nPenyimpanan\n512 GB SSD\nUkuran Layar\n14\"\nResolusi\n1366x768\nBerat Produk\n1,46Kg\nTipe Garansi\nGaransi Resmi\nGraphic Card\nAMD\nPeriode Garansi\n2 Tahun",
+                "berat": {
+                    "nominal": 5000,
+                    "satuan": "gram"
+                },
+                "harga": 5890000,
+                "stok_tersedia": 10,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "gold",
+                    "tipe": "dk1122AU"
+                }
+            },
+            {
+                "id_produk": "c003br005",
+                "kategori_produk": "laptop",
+                "nama_produk": "HP 14s-fq0020AU Ryzen3-3250U/8GB/512GB SSD/Win10+OHS/14\" FHD",
+                "deskripsi": "Untuk kenyamanan dalam pembelian, silahkan melakukan konfirmasi terlebih dahulu terkait ketersediaan produk dan harga sebelum melakukan order\n\nHP 14s-fq0020AU Ryzen3-3250U/8GB/512GB SSD/Win10+OHS/14\" FHD\n\nProsesor : AMD Ryzen™ 3 3250U (2.6 GHz base clock, up to 3.5 GHz max boost clock, 4 MB L3 cache, 2 cores)\nRam: : 8 GB DDR4-2400 SDRAM (2 x 4 GB)\nHdd : 512 GB PCIe® NVMe™ M.2 SSD\nOperating system : Windows 10 Home 64 + Microsoft Office Home and Student 2019\nVga : AMD Radeon™ Graphics\nDisplay: 14\" diagonal, FHD (1920 x 1080), IPS, micro-edge, BrightView, 250 nits, 45% NTSC\nWarna : silver\ndimensions (W x D x H): 6.9 x 48.3 x 30.5 cm\n\nTerima kasih banyak telah mengunjungi toko kami\n\nHormat kami,\nGrosiria Official Store\n\n- IG: @grosiria.official\n- Telp & WA: 0895395064217\n- Email: online@amtech.co.id\n- Jam Kerja: 08.30-17.30\n- More Products: https://www.tokopedia.com/amtechgrosiria",
+                "berat": {
+                    "nominal": 5000,
+                    "satuan": "gram"
+                },
+                "harga": 7099000,
+                "stok_tersedia": 7,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "putih",
+                    "tipe": "fq0020AU"
+                }
+            },
+            {
+                "id_produk": "c003br006",
+                "kategori_produk": "laptop",
+                "nama_produk": "LAPTOP ASUS X441BA - AMD A4 9125 4GB 1TB VGA AMD R3 14\" WIN10 RESMI",
+                "deskripsi": "Ready Asus X441BA (BLACK, SILVER, ROSEGOLD, PEACOCK BLUE) Speksifikasi:\n- AMD A4-9125\n- DDR4 4GB\n- HDD 1 TB\n- VGA AMD RADEON R3\n- DVDRW, Wifi, CardReader\n- Layar 14\"\n- WINDOWS 10, FREE BAG\nGARANSI RESMI 2 Tahun ASUS INDONESIA\n\nSilahkan Cek Tersedia Juga Mouse Dan Sofware Kelengkapan Untuk Laptop Agan Dan Sis\n1. Laminating Laptop https://www.tokopedia.com/protechcom/antigores-layar-laminating-cover-laptop\n2. Aksesoris (Mouse / RAM / SSD / Headset) https://www.tokopedia.com/protechcom/etalase/aksesoris\n3. Sofware Office Home Student https://www.tokopedia.com/protechcom/office-2016-home-student-2016-1-user-32bit64bit",
+                "berat": {
+                    "nominal": 3500,
+                    "satuan": "gram"
+                },
+                "harga": 5499000,
+                "stok_tersedia": 99,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "abu-abu",
+                    "tipe": "X441BA"
+                }
+            },
+            {
+                "id_produk": "c003br007",
+                "kategori_produk": "laptop",
+                "nama_produk": "Acer Aspire 3 Slim A314-22 AMD RYZEN 3-3250U 4GB 256GB 14\" FHD W10 OHS",
+                "deskripsi": "Kirimkan pesan Whatsapp ke 0896-3616-5267 atau dapat langsung klik link berikut https://wa.me/6289636165267, dengan teks awal Klaim Voucher OVO Pembelian Laptop AMD 2021 atau Klaim Voucher GOPAY Pembelian Laptop AMD 2021\n\n\nACER ASPIRE 3 A314-22 (RYZEN 3)\nACER A314-22-R5E2 (BLACK)\nACER A314-22-R7U9 (SILVER)\n\n- Processor : AMD Ryzen™ 3-3250U (1MB L2 Cache, 4MB L3 Cache, 2.6GHz up to 3.5GHz)\n- Graphics : AMD Radeon Graphics\n- Display Screen : 14 inch Full HD IPS (1920 x 1080) Acer ComfyView\n- Main Memory : 4GB DDR4 Onboard\n- Storage : 256GB PCIe NVMe M.2 SSD\n- Web Camera : Acer webcam 640 x 480 resolution\n- Audio Jack : 1 x 3.5mm headphone/speaker jack\n- Network : 10/100/1000 LAN\n- Wireless : Wireless 802.11ac\n- Bluetooth : Bluetooth 4.2\n\n- Port :\n2 x USB 3.2 Gen 1 ports\n1 x USB 2.0 Port\n1 x HDMI port with HDCP support\n\n- Battery : 2-cell\n- OS : Windows 10 Home (64-bit)\n\nFREE OFFICE HOME AND STUDENT 2019\n\nGARANSI RESMI ACER INDONESIA 3 TAHUN",
+                "berat": {
+                    "nominal": 3500,
+                    "satuan": "gram"
+                },
+                "harga": 6699000,
+                "stok_tersedia": 16,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "abu-abu",
+                    "tipe": "A314-22"
+                }
+            },
+            {
+                "id_produk": "c003br008",
+                "kategori_produk": "laptop",
+                "nama_produk": "LAPTOP ASUS VIVOBOOK 14 K413FA - i3 10110U 8GB SSD 512GB 14\" FHD WIN10",
+                "deskripsi": "K413EA-AM351TS - INDIE BLACK\n\nBerikut link baru k413ea\n\nhttps://www.tokopedia.com/collinsofficial/asus-vivobook-14-k413ea-i3-1115g4-8gb-ssd-512gb-14-fhd-ips-w10-ohs?whid=0\n\nSpeksifikasi:\n- Intel® Core™ i3 1115G4 Processor, (3.0GHz Up to 4.1GHz / 2 Cores) 6 MB Intel® Smart Cache\n- 8GB RAM DDR4\n- 512GB PCIe® Gen3 x2 SSD M.2\n- Integrated Intel UHD Graphics\n- Windows 10 Home 64bit\n14.0\" (16:9) LED-backlit FHD IPS (1920x1080) 60Hz Anti-Glare Panel with 45% NTSC with wide 178° viewing angles\n- Supports Windows 10 Cortana with Voice, Harman Kardon\n- Keyboard with 1.4mm key travel\n- Integrated Wi-Fi 6 (802.11 ax (2x2))\n- Bluetooth® 5.0\n- HD Webcam, Card Reader, HDMI x 1\n\n- Interface :\n1 x COMBO audio jack\n1 x Type-A USB 3.1 (Gen 1)\n1 x Type-C USB 3.0 (USB 3.1 Gen 1)\n2 x USB 2.0 port(s)\n1 x HDMI\n1 x micro SD card\n- Weight: 1.45kg included 3 -Cell 42 Wh Battery\n\nFree Office Home and Student 2019\n\nGARANSI RESMI ASUS INDONESIA 2 TAHUN",
+                "berat": {
+                    "nominal": 3000,
+                    "satuan": "gram"
+                },
+                "harga": 8659000,
+                "stok_tersedia": 95,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "hitam",
+                    "tipe": "K413FA"
+                }
+            },
+            {
+                "id_produk": "c003br009",
+                "kategori_produk": "laptop",
+                "nama_produk": "HP 14s-dk1122AU/14s-dk1123AU Athlon-3150U 4GB 512SSD Win10+OHS 14 inch",
+                "deskripsi": "Deskripsi HP 14s-dk1122AU/14s-dk1123AU Athlon Gold 3150U 4GB 512SSD W10+OHS 14\" HD\n\n\nGARANSI RESMI HP INDONESIA 2 TAHUN\n\nSKU (WARNA):\ndk1122au = SILVER\ndk1123au = GOLD\n\nDisplay : 14\" diagonal HD SVA BrightView micro-edge WLED-backlit (1366 x 768)\nProcessor : AMD Athlon™ Gold 3150U 2.4GHz Up to 3.3GHz\nMemory : 4GB DDR4\nHard Drive : 512GB SSD\nGraphics : INTEGRATED Graphics\nOptical Drive : -\nOperating System : Windows 10 HOME+OHS 2019\nNetworking : Integrated 10/100/1000 GbE LAN\nAudio : Dual speakers, HP Audio Boost\nBattery :\n65 W AC power adapter\n3-cell, 41 Wh Li-ion\nCamera : HD Camera\nSlots/Interface :\n1 SuperSpeed USB Type-C® 5Gbps signaling rate;\n2 SuperSpeed USB TypeA 5Gbps signaling rate;\n1 HDMI 1.4b;\n1 RJ-45;\n1 AC smart pin;\n1 headphone/microphone combo\nSystem Dimensions :32.4 x 22.59 x 1.99 cm\nWeight : 1.47 Kg",
+                "berat": {
+                    "nominal": 4000,
+                    "satuan": "gram"
+                },
+                "harga": 5999000,
+                "stok_tersedia": 19,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "putih",
+                    "tipe": "dk1122AU"
+                }
+            },
+            {
+                "id_produk": "c003br010",
+                "kategori_produk": "laptop",
+                "nama_produk": "Macbook Air 2020 13\" inch 1.1GHz i3 256GB Touch ID Grey Silver Gold - MWTK2 Silver, RESMI INTER",
+                "deskripsi": "Setiap pembelian unit di \"STUDIO PONSEL\" Official Store\nCASHBACK HINGGA 300RB\nGRATIS BIAYA ASURANSI\n\nTersedia Varian :\nRESMI INDO, Garansi resmi indonesia, bisa klaim seluruh ibox indonesia\nRESMI INTER, Garansi resmi internasional, bisa klaim diindo slain ibox, bantu klaim lewat seller free\n\nWarna :\nGrey\nSilver\nGold\n\nKami hanya proses pesanan sesuai data invoice order, bukan yg dichat.\n\nFREE SOFTWARE MICROSOFT OFFICE LENGKAP TERAKTIFASI*\nWajib Tulis *INSTAL OFFICE* Di Catatan\n( Original Versi Crack ; UNIT AKAN DI INBOXING DAHULU )\n\nUNTUK Paket Instalasi Software yang lebih lengkap bisa Order di link ini\nhttps://tokopedia.link/IEcrzcf3Odb\n\nTersedia Juga Aksesoris untuk MacBook Kamu Dijamin Ori 100% , Cek Disini\nMagic Mouse : https://tokopedia.link/Ug6eWEh3Odb\n\nType Lainya\nMacBook Air 2020 intel : https://tokopedia.link/xcglJ4o3Odb\nMacBook Air 2020 M1 : https://tokopedia.link/l45rdSq3Odb\nMacBook Air 2017 intel : https://tokopedia.link/vA1HVDs3Odb\nMacBook Pro 2020 intel gen 8 : https://tokopedia.link/7LN1dhw3Odb\nMacBook Pro 2020 intel gen 10 : https://tokopedia.link/MCSf1Wx3Odb\nMacBook Pro 2020 M1 : https://tokopedia.link/FafZX9y3Odb\n\n\n#PRODUK#\n* Barang BNIB ( Brand New In Box ) NEW ORIGINAL DAN SEGEL\n* Garansi 1 Tahun All Product [ Garansi kita bantu claim ]\n* Garansi Personal 7x24 Jam [ Jika saat barang di terima ada cacat produksi, unit kita ganti baru ]\n\n\n#STUDIO PONSEL#\n- Official Store Tokopedia ( Toko terpercaya, berkerjasama dengan tokopedia)\n- Menerima Split Pembayaran\n- Cashback up to 300rb\n- Free Ongkir up to 30rb\n- Good Service, Great After Sales\n* Next Order : Diskon Harga\n* Pembelian Qty : Harga Khusus\n\n\n#SPESIFIKASI :\n- Retina display 13.3-inch LED-backlit display with IPS technology\n- Touch ID sensor\n- 1.1GHz to 3.2 GHz quad-core Intel Core i3 GEN 10,\n- 256GB PCIe-based SSD\n- Memory 8GB of 3733MHz LPDDR4X onboard memory\n- 30W USB-C Power Adapter; USB-C power port\n- Intel Iris Plus Graphics\n- Two Thunderbolt 3 (USB-4)",
+                "berat": {
+                    "nominal": 2900,
+                    "satuan": "gram"
+                },
+                "harga": 13540000,
+                "stok_tersedia": 44,
+                "lain_lain": {
+                    "kondisi": "baru",
+                    "warna": "gold",
+                    "tipe": "MWTK2"
+                }
+            }
+        ]
+    }
+]
