@@ -1,19 +1,19 @@
 @extends('layouts.frontend')
 
 @section('title')
-    Resume - {{ config('app.name') }}
+    {{ __('section.resume.page_title') }} - {{ config('app.name') }}
 @endsection
 
 @section('meta_seo')
-    <meta name="title" content="Resume - {{ config('app.name') }}">
+    <meta name="title" content="{{ __('section.resume.page_title') }} - {{ config('app.name') }}">
     <meta name="description" content="{{ __('section.resume.sub_title_one') }} {{ __('section.resume.sub_title_two') }}">
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ config('app.name') }}" />
+    <meta property="og:title" content="{{ __('section.resume.page_title') }} - {{ config('app.name') }}" />
     <meta property="og:description" content="{{ __('section.resume.sub_title_one') }} {{ __('section.resume.sub_title_two') }}" />
     <meta property="og:image" content="{{ asset('favicon.ico') }}" />
     <meta name="twitter:site" content="@IbnuHMustofa" />
-    <meta name="twitter:title" content="{{ config('app.name') }} - {{ __('Resume') }}" />
+    <meta name="twitter:title" content="{{ __('section.resume.page_title') }} - {{ config('app.name') }}" />
     <meta name="twitter:description" content="{{ __('section.resume.sub_title_one') }} {{ __('section.resume.sub_title_two') }}" />
     <meta name="twitter:image" content="{{ asset('favicon.ico') }}" />
 @endsection

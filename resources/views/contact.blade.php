@@ -1,19 +1,19 @@
 @extends('layouts.frontend')
 
 @section('title')
-    {{ __('section.contact.title') }} - {{ config('app.name') }}
+    {{ __('section.contact.page_title') }} - {{ config('app.name') }}
 @endsection
 
 @section('meta_seo')
-    <meta name="title" content="{{ __('section.contact.title') }} - {{ config('app.name') }}">
+    <meta name="title" content="{{ __('section.contact.page_title') }} - {{ config('app.name') }}">
     <meta name="description" content="{{ __('section.contact.connect_with_me_today') }}. {{ __('section.contact.sub_title') }}">
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ config('app.name') }} - {{ __('section.contact.title') }}" />
+    <meta property="og:title" content="{{ __('section.contact.page_title') }} - {{ config('app.name') }}" />
     <meta property="og:description" content="{{ __('section.contact.connect_with_me_today') }}. {{ __('section.contact.sub_title') }}" />
     <meta property="og:image" content="{{ asset('favicon.ico') }}" />
     <meta name="twitter:site" content="@IbnuHMustofa" />
-    <meta name="twitter:title" content="{{ config('app.name') }} - {{ __('section.contact.title') }}" />
+    <meta name="twitter:title" content="{{ __('section.contact.page_title') }} - {{ config('app.name') }}" />
     <meta name="twitter:description" content="{{ __('section.contact.connect_with_me_today') }}. {{ __('section.contact.sub_title') }}" />
     <meta name="twitter:image" content="{{ asset('favicon.ico') }}" />
 @endsection
