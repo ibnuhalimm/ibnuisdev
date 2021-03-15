@@ -22,14 +22,16 @@
 
     <section class="mb-10 py-10">
         <x-frontend-container>
-            <h1 class="mb-3">
-                <span class="font-bold text-4xl block mb-1">
-                    {{ __('section.contact.connect_with_me') }}
-                </span>
-                <span class="block mt-3">
-                    {{ __('section.contact.sub_title') }}
-                </span>
-            </h1>
+            <x-section-title>
+                <h1>
+                    <span class="font-bold text-4xl block mb-1">
+                        {{ __('section.contact.connect_with_me') }}
+                    </span>
+                    <span class="block mt-3">
+                        {{ __('section.contact.sub_title') }}
+                    </span>
+                </h1>
+            </x-section-title>
             <div class="mt-14">
                 <div class="flex flex-col lg:flex-row justify-between">
                     <div class="mb-10 lg:mb-0 lg:w-1/4 lg:order-last">

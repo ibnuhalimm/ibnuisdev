@@ -81,7 +81,7 @@ function Portfolio() {
 
     return (
         <div>
-            <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-6">
                 {projects.map((data, key) => {
                     return <PortfolioItem
                         key={key}

@@ -28991,7 +28991,7 @@ function Portfolio() {
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "mt-14 grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-6"
+    className: "grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-6"
   }, projects.map(function (data, key) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PortfolioItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
       key: key,
