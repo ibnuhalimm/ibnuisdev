@@ -9,11 +9,11 @@
     <meta name="description" content="{{ __('section.home.intro') }}">
     <meta property="og:url" content="{{ url('/') }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ config('app.name') }}" />
+    <meta property="og:title" content="{{ config('app.name') }} - Fullstack Web Developer" />
     <meta property="og:description" content="{{ __('section.home.intro') }}" />
     <meta property="og:image" content="{{ asset('favicon.ico') }}" />
     <meta name="twitter:site" content="@IbnuHMustofa" />
-    <meta name="twitter:title" content="{{ config('app.name') }}" />
+    <meta name="twitter:title" content="{{ config('app.name') }} - Fullstack Web Developer" />
     <meta name="twitter:description" content="{{ __('section.home.intro') }}" />
     <meta name="twitter:image" content="{{ asset('favicon.ico') }}" />
 @endsection
