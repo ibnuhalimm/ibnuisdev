@@ -47,55 +47,38 @@
                 </div>
             </div>
 
-            <div class="hidden xl:grid grid-cols-2 gap-4">
+            <div class="hidden xl:block">
                 @isset($main_posts[0])
-                    <a href="{{ route('blog.post.read', [ 'slug' => $main_posts[0]['slug'] ]) }}" class="block w-full h-64 rounded-md hover:shadow-xl bg-cover bg-no-repeat" style="background-image: url('{{ $main_posts[0]['gbr_url'] }}')">
-                        <div class="w-full h-full p-5 py-6 flex flex-col items-start justify-end bg-ib-one bg-opacity-70 rounded-md">
-                            <p class="font-bold text-white">
-                                {{ $main_posts[0]['judul'] }}
-                            </p>
-                            <p class="text-xs text-gray-200">{{ strftime('%b %e, %Y', strtotime($main_posts[0]['created_at'])) }}</p>
+                    <a href="{{ route('blog.post.read', [ 'slug' => $main_posts[0]['slug'] ]) }}" class="block hover:outline-none text-ib-one hover:text-ib-three transition-all duration-500">
+                        <div class="flex flex-col xl:flex-row justify-between">
+                            <div class="xl:w-1/2 mr-4 xl:h-60 rounded-md bg-cover bg-no-repeat" style="background-image: url('{{ $main_posts[0]['gbr_url'] }}')"></div>
+                            <div class="xl:w-1/2 ml-4">
+                                <p class="text-xl font-bold">
+                                    {{ $main_posts[0]['judul'] }}
+                                </p>
+                                <p class="text-xs text-gray-600 mt-1">{{ strftime('%b %e, %Y', strtotime($main_posts[0]['created_at'])) }}</p>
+                                <p class="mt-3 text-gray-800">
+                                    {{ Str::limit(strip_tags($main_posts[0]['isi']), 200, '...') }}
+                                </p>
+                            </div>
                         </div>
                     </a>
                 @endisset
 
-                <div class="grid grid-rows-2 gap-0">
-
+                <div class="mt-10 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-0 lg:gap-4 xl:gap-8">
                     @isset($main_posts[1])
-                        <a href="{{ route('blog.post.read', [ 'slug' => $main_posts[1]['slug'] ]) }}" class="block w-full h-28 rounded-md hover:shadow-xl bg-cover bg-no-repeat" style="background-image: url('{{ $main_posts[1]['gbr_url'] }}')">
-                            <div class="w-full h-full p-5 py-6 flex flex-col items-start justify-end bg-ib-one bg-opacity-70 rounded-md">
-                                <p class="font-bold text-white">
-                                    {{ $main_posts[1]['judul'] }}
-                                </p>
-                                <p class="text-xs text-gray-200">{{ strftime('%b %e, %Y', strtotime($main_posts[1]['created_at'])) }}</p>
-                            </div>
-                        </a>
+                        <x-blog-post-card slug="{{ $main_posts[1]['slug'] }}" image="{{ $main_posts[1]['gbr_url'] }}" title="{{ $main_posts[1]['judul'] }}" date="{{ $main_posts[1]['created_at'] }}" previewBody="{{ Str::limit(strip_tags($main_posts[1]['isi']), 100, '...') }}" />
                     @endisset
 
-                    <div class="grid grid-cols-2 gap-4">
-                        @isset($main_posts[2])
-                            <a href="{{ route('blog.post.read', [ 'slug' => $main_posts[2]['slug'] ]) }}" class="block w-full h-32 rounded-md hover:shadow-xl bg-cover bg-no-repeat" style="background-image: url('{{ $main_posts[2]['gbr_url'] }}')">
-                                <div class="w-full h-full p-5 py-6 flex flex-col items-start justify-end bg-ib-one bg-opacity-70 rounded-md">
-                                    <p class="font-bold text-white">
-                                        {{ $main_posts[2]['judul'] }}
-                                    </p>
-                                    <p class="text-xs text-gray-200">{{ strftime('%b %e, %Y', strtotime($main_posts[2]['created_at'])) }}</p>
-                                </div>
-                            </a>
-                        @endisset
+                    @isset($main_posts[2])
+                            <x-blog-post-card slug="{{ $main_posts[2]['slug'] }}" image="{{ $main_posts[2]['gbr_url'] }}" title="{{ $main_posts[2]['judul'] }}" date="{{ $main_posts[2]['created_at'] }}" previewBody="{{ Str::limit(strip_tags($main_posts[2]['isi']), 100, '...') }}" />
+                    @endisset
 
-                        @isset($main_posts[3])
-                            <a href="{{ route('blog.post.read', [ 'slug' => $main_posts[3]['slug'] ]) }}" class="block w-full h-32 rounded-md hover:shadow-xl bg-cover bg-no-repeat" style="background-image: url('{{ $main_posts[3]['gbr_url'] }}')">
-                                <div class="w-full h-full p-5 py-6 flex flex-col items-start justify-end bg-ib-one bg-opacity-70 rounded-md">
-                                    <p class="font-bold text-white">
-                                        {{ $main_posts[3]['judul'] }}
-                                    </p>
-                                    <p class="text-xs text-gray-200">{{ strftime('%b %e, %Y', strtotime($main_posts[3]['created_at'])) }}</p>
-                                </div>
-                            </a>
-                        @endisset
-                    </div>
+                    @isset($main_posts[3])
+                        <x-blog-post-card slug="{{ $main_posts[3]['slug'] }}" image="{{ $main_posts[3]['gbr_url'] }}" title="{{ $main_posts[3]['judul'] }}" date="{{ $main_posts[3]['created_at'] }}" previewBody="{{ Str::limit(strip_tags($main_posts[3]['isi']), 100, '...') }}" />
+                    @endisset
                 </div>
+
             </div>
         </x-frontend-container>
     </section>
@@ -105,9 +88,9 @@
             <h2 class="font-bold text-base xl:text-2xl text-ib-one mb-6">
                 {{ __('global.top_post') }}
             </h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-4 xl:gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-0 lg:gap-4 xl:gap-8">
                 @foreach ($top_posts as $top_post)
-                    <x-blog-post-card slug="{{ $top_post->slug }}" image="{{ $top_post->gbr_url }}" title="{{ $top_post->judul }}" date="{{ $top_post->created_at }}" />
+                    <x-blog-post-card slug="{{ $top_post->slug }}" image="{{ $top_post->gbr_url }}" title="{{ $top_post->judul }}" date="{{ $top_post->created_at }}" previewBody="{{ Str::limit(strip_tags($top_post->isi), 100, '...') }}" />
                 @endforeach
             </div>
         </x-frontend-container>

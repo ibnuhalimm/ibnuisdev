@@ -29,7 +29,11 @@ class AddSosmedUrlToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('github');
+        });
+        Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('twitter');
+        });
+        Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('linkedin');
         });
     }

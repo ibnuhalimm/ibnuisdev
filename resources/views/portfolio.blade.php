@@ -22,17 +22,16 @@
 
     <section class="mb-8 py-10">
         <x-frontend-container>
-            <h1 class="mb-3">
-                <span class="font-bold text-4xl block mb-1">
-                    {{ __('global.portfolio') }}
-                </span>
-                <span class="block mt-3">
-                    {{ __('section.portfolio.sub_title_one') }}
-                </span>
-            </h1>
-            <p class="-mt-2">
-                {{ __('section.portfolio.sub_title_two') }}
-            </p>
+            <x-section-title>
+                <h1>
+                    <span class="font-bold text-4xl block mb-1">
+                        {{ __('global.portfolio') }}
+                    </span>
+                    <span class="block mt-3">
+                        {{ __('section.portfolio.sub_title_one') }}
+                    </span>
+                </h1>
+            </x-section-title>
             <div id="ui-content"></div>
         </x-frontend-container>
     </section>

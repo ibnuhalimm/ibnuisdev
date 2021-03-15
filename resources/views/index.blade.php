@@ -123,17 +123,19 @@
 
     <section class="mb-8 py-10">
         <x-frontend-container>
-            <h2 class="mb-6">
-                <span class="font-bold text-4xl block mb-1">
-                    Blog
-                </span>
-                <span>
-                    {{ __('global.my_latest_post') }}
-                </span>
-            </h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-4 xl:gap-8">
+            <x-section-title>
+                <h2>
+                    <span class="font-bold text-4xl block mb-1">
+                        Blog
+                    </span>
+                    <span>
+                        {{ __('global.my_latest_post') }}
+                    </span>
+                </h2>
+            </x-section-title>
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-0 lg:gap-4 xl:gap-8">
                 @foreach ($latest_posts as $post)
-                    <x-blog-post-card slug="{{ $post->slug }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" />
+                    <x-blog-post-card slug="{{ $post->slug }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" previewBody="{{ Str::limit(strip_tags($post->isi), 100, '...') }}" />
                 @endforeach
             </div>
             <div class="mt-6 xl:mt-12 flex justify-center">
@@ -146,14 +148,16 @@
 
     <section class="pt-10 pb-28 bg-ib-four">
         <x-frontend-container>
-            <h2 class="mb-3">
-                <span class="font-bold text-4xl block mb-1">
-                    {{ __('global.portfolio') }}
-                </span>
-                <span>
-                    {{ __('section.portfolio.sub_title_one') }}
-                </span>
-            </h2>
+            <x-section-title>
+                <h2>
+                    <span class="font-bold text-4xl block mb-1">
+                        {{ __('global.portfolio') }}
+                    </span>
+                    <span>
+                        {{ __('section.portfolio.sub_title_one') }}
+                    </span>
+                </h2>
+            </x-section-title>
             <div id="portfolio-ui-content"></div>
         </x-frontend-container>
     </section>

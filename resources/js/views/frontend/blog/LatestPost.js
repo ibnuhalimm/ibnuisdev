@@ -62,7 +62,7 @@ function LatestPost() {
 
     return (
         <div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-4 xl:gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-0 lg:gap-4 xl:gap-8">
                 {posts.map((post, key) => {
                     return (
                         <BlogPostCard
@@ -70,7 +70,8 @@ function LatestPost() {
                             postUrl={post.post_url}
                             title={post.title}
                             image={post.image_url}
-                            date={post.created_at} />
+                            date={post.created_at}
+                            previewBody={post.preview_body} />
                     )
                 }) }
             </div>

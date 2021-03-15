@@ -210,7 +210,7 @@ class Post extends Model
                 ->latest()
                 ->published()
                 ->whereNotIn('id', $main_post_ids)
-                ->take(4)
+                ->take(6)
                 ->get();
     }
 
