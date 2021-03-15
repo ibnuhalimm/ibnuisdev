@@ -1,5 +1,9 @@
 @extends('layouts.frontend')
 
+@section('title')
+    {{ __('global.search_result') }} "{{ $search_text }}"
+@endsection
+
 @section('meta_seo')
     <meta name="title" content="{{ __('global.search_result') }} {{ $search_text }}">
     <meta name="description" content="{{ __('global.search_result') }} {{ $search_text }} di {{ config('app.name') }} website.">
@@ -12,10 +16,6 @@
     <meta name="twitter:title" content="{{ __('global.search_result') }} {{ $search_text }}" />
     <meta name="twitter:description" content="{{ __('global.search_result') }} {{ $search_text }} di {{ config('app.name') }} website." />
     <meta name="twitter:image" content="{{ asset('favicon.ico') }}" />
-@endsection
-
-@section('title')
-    {{ __('global.search_result') }} "{{ $search_text }}"
 @endsection
 
 @section('content')
