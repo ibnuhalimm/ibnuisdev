@@ -45,7 +45,7 @@ class PostController extends Controller
                 'title' => $post->judul,
                 'image_url' => $post->gbr_url,
                 'post_url' => $post->post_url,
-                'preview_body' => Str::limit(strip_tags($post->isi), 100, '...'),
+                'preview_body' => Str::limit(clear_body_post($post->isi), 100, '...'),
                 'created_at' => $post->created_at
             ];
         });

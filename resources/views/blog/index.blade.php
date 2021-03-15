@@ -58,7 +58,7 @@
                                 </p>
                                 <p class="text-xs text-gray-600 mt-1">{{ strftime('%b %e, %Y', strtotime($main_posts[0]['created_at'])) }}</p>
                                 <p class="mt-3 text-gray-800">
-                                    {{ Str::limit(strip_tags($main_posts[0]['isi']), 200, '...') }}
+                                    {{ Str::limit(clear_body_post($main_posts[0]['isi']), 200, '...') }}
                                 </p>
                             </div>
                         </div>
@@ -67,15 +67,15 @@
 
                 <div class="mt-10 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-0 lg:gap-4 xl:gap-8">
                     @isset($main_posts[1])
-                        <x-blog-post-card slug="{{ $main_posts[1]['slug'] }}" image="{{ $main_posts[1]['gbr_url'] }}" title="{{ $main_posts[1]['judul'] }}" date="{{ $main_posts[1]['created_at'] }}" previewBody="{{ Str::limit(strip_tags($main_posts[1]['isi']), 100, '...') }}" />
+                        <x-blog-post-card slug="{{ $main_posts[1]['slug'] }}" image="{{ $main_posts[1]['gbr_url'] }}" title="{{ $main_posts[1]['judul'] }}" date="{{ $main_posts[1]['created_at'] }}" previewBody="{{ Str::limit(clear_body_post($main_posts[1]['isi']), 100, '...') }}" />
                     @endisset
 
                     @isset($main_posts[2])
-                            <x-blog-post-card slug="{{ $main_posts[2]['slug'] }}" image="{{ $main_posts[2]['gbr_url'] }}" title="{{ $main_posts[2]['judul'] }}" date="{{ $main_posts[2]['created_at'] }}" previewBody="{{ Str::limit(strip_tags($main_posts[2]['isi']), 100, '...') }}" />
+                            <x-blog-post-card slug="{{ $main_posts[2]['slug'] }}" image="{{ $main_posts[2]['gbr_url'] }}" title="{{ $main_posts[2]['judul'] }}" date="{{ $main_posts[2]['created_at'] }}" previewBody="{{ Str::limit(clear_body_post($main_posts[2]['isi']), 100, '...') }}" />
                     @endisset
 
                     @isset($main_posts[3])
-                        <x-blog-post-card slug="{{ $main_posts[3]['slug'] }}" image="{{ $main_posts[3]['gbr_url'] }}" title="{{ $main_posts[3]['judul'] }}" date="{{ $main_posts[3]['created_at'] }}" previewBody="{{ Str::limit(strip_tags($main_posts[3]['isi']), 100, '...') }}" />
+                        <x-blog-post-card slug="{{ $main_posts[3]['slug'] }}" image="{{ $main_posts[3]['gbr_url'] }}" title="{{ $main_posts[3]['judul'] }}" date="{{ $main_posts[3]['created_at'] }}" previewBody="{{ Str::limit(clear_body_post($main_posts[3]['isi']), 100, '...') }}" />
                     @endisset
                 </div>
 
@@ -90,7 +90,7 @@
             </h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-0 lg:gap-4 xl:gap-8">
                 @foreach ($top_posts as $top_post)
-                    <x-blog-post-card slug="{{ $top_post->slug }}" image="{{ $top_post->gbr_url }}" title="{{ $top_post->judul }}" date="{{ $top_post->created_at }}" previewBody="{{ Str::limit(strip_tags($top_post->isi), 100, '...') }}" />
+                    <x-blog-post-card slug="{{ $top_post->slug }}" image="{{ $top_post->gbr_url }}" title="{{ $top_post->judul }}" date="{{ $top_post->created_at }}" previewBody="{{ Str::limit(clear_body_post($top_post->isi), 100, '...') }}" />
                 @endforeach
             </div>
         </x-frontend-container>

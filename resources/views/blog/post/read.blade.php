@@ -6,15 +6,15 @@
 
 @section('meta_seo')
     <meta name="title" content="{{ $post->judul }} - {{ config('app.name') }}">
-    <meta name="description" content="{{ Str::limit(strip_tags($post->isi), 200, '') }}">
+    <meta name="description" content="{{ Str::limit(clear_body_post($post->isi), 200, '') }}">
     <meta property="og:url" content="{{ $post->post_url }}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ $post->judul }} - {{ config('app.name') }}" />
-    <meta property="og:description" content="{{ Str::limit(strip_tags($post->isi), 200, '') }}" />
+    <meta property="og:description" content="{{ Str::limit(clear_body_post($post->isi), 200, '') }}" />
     <meta property="og:image" content="{{ $post->gbr_url }}" />
     <meta name="twitter:site" content="@IbnuHMustofa" />
     <meta name="twitter:title" content="{{ $post->judul }} - {{ config('app.name') }}" />
-    <meta name="twitter:description" content="{{ Str::limit(strip_tags($post->isi), 200, '') }}" />
+    <meta name="twitter:description" content="{{ Str::limit(clear_body_post($post->isi), 200, '') }}" />
     <meta name="twitter:image" content="{{ $post->gbr_url }}" />
 @endsection
 
@@ -77,7 +77,7 @@
             </x-section-title>
             <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-0 lg:gap-4 xl:gap-8">
                 @foreach ($related_posts as $post)
-                    <x-blog-post-card slug="{{ $post->slug }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" previewBody="{{ Str::limit(strip_tags($post->isi), 100, '...') }}" />
+                    <x-blog-post-card slug="{{ $post->slug }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" previewBody="{{ Str::limit(clear_body_post($post->isi), 100, '...') }}" />
                 @endforeach
             </div>
         </x-frontend-container>
