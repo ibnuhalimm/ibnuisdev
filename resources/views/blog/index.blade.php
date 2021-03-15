@@ -85,9 +85,11 @@
 
     <section class="bg-ib-four py-10 mt-8">
         <x-frontend-container>
-            <h2 class="font-bold text-base xl:text-2xl text-ib-one mb-6">
-                {{ __('global.top_post') }}
-            </h2>
+            <x-section-title>
+                <h2 class="font-bold text-base xl:text-2xl text-ib-one">
+                    {{ __('global.top_post') }}
+                </h2>
+            </x-section-title>
             <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-0 lg:gap-4 xl:gap-8">
                 @foreach ($top_posts as $top_post)
                     <x-blog-post-card slug="{{ $top_post->slug }}" image="{{ $top_post->gbr_url }}" title="{{ $top_post->judul }}" date="{{ $top_post->created_at }}" previewBody="{{ Str::limit(clear_body_post($top_post->isi), 100, '...') }}" />
@@ -98,9 +100,11 @@
 
     <section class="mt-8 py-10">
         <x-frontend-container>
-            <h2 class="font-bold text-base xl:text-2xl text-ib-one mb-6">
-                {{ __('global.latest_post') }}
-            </h2>
+            <x-section-title>
+                <h2 class="font-bold text-base xl:text-2xl text-ib-one">
+                    {{ __('global.latest_post') }}
+                </h2>
+            </x-section-title>
             <div id="latest-post-ui-content"></div>
         </x-frontend-container>
     </section>
