@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog\Post;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -25,7 +26,7 @@ class PostController extends Controller
             $posts = Post::published()
                         ->orderBy('id', 'desc')
                         ->whereNotIn('id', $except_ids)
-                        ->take(11)
+                        ->take(13)
                         ->get();
         }
         else {
@@ -33,7 +34,7 @@ class PostController extends Controller
                 ->orderBy('id', 'desc')
                 ->where('id', '<', $last_id)
                 ->whereNotIn('id', $except_ids)
-                ->take(11)
+                ->take(13)
                 ->get();
         }
 
@@ -44,6 +45,7 @@ class PostController extends Controller
                 'title' => $post->judul,
                 'image_url' => $post->gbr_url,
                 'post_url' => $post->post_url,
+                'preview_body' => Str::limit(strip_tags($post->isi), 100, '...'),
                 'created_at' => $post->created_at
             ];
         });
@@ -51,8 +53,8 @@ class PostController extends Controller
 
         $post_last_id = -1;
         $posts_data = $posts_result;
-        if ($posts_result->count() == 11) {
-            $posts_data = $posts_result->take(10);
+        if ($posts_result->count() == 13) {
+            $posts_data = $posts_result->take(12);
             $post_last_id = $posts_data->map(function($post) {
                 return $post['id'];
             })->last();

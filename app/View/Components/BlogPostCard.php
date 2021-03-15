@@ -10,18 +10,20 @@ class BlogPostCard extends Component
     public $image;
     public $title;
     public $date;
+    public $preview_body;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($slug, $image, $title, $date)
+    public function __construct($slug, $image, $title, $date, $previewBody)
     {
         $this->slug = $slug;
         $this->image = $image;
         $this->title = $title;
         $this->date = $date;
+        $this->preview_body = $previewBody;
     }
 
     /**

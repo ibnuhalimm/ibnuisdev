@@ -28618,7 +28618,8 @@ function BlogPostCard(props) {
   var postUrl = props.postUrl,
       image = props.image,
       title = props.title,
-      date = props.date;
+      date = props.date,
+      previewBody = props.previewBody;
   var monthList = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
   var postImage = {
     backgroundImage: 'url(' + image + ')'
@@ -28626,23 +28627,19 @@ function BlogPostCard(props) {
   var jsDate = new Date(date);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: postUrl,
-    className: "block w-full py-3 xl:py-0 rounded-md outline-none hover:outline-none text-ib-one hover:text-ib-three transition-all duration-500"
+    className: "block w-full mb-6 py-3 xl:py-0 rounded-md outline-none hover:outline-none text-ib-one hover:text-ib-three transition-all duration-500"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-row items-start justify-between"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-1/3 lg:w-2/5 xl:w-5/12"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-24 h-20 md:w-24 md:h-24 xl:w-4/5 xl:h-24 rounded-md bg-cover bg-no-repeat border border-solid border-gray-200",
+    className: "w-full h-52 lg:h-32 xl:h-64 rounded-md bg-cover bg-no-repeat border border-solid border-gray-200",
     style: postImage
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-2/3 lg:w-3/5 xl:w-7/12 flex flex-col items-start justify-between py-1"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "-ml-2 sm:-ml-4 md:-ml-8"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mt-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    className: "h-auto font-bold truncate-two-lines"
+    className: "text-lg font-bold"
   }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "text-xs text-gray-600 mt-1"
-  }, monthList[jsDate.getMonth()] + ' ' + jsDate.getDay() + ', ' + jsDate.getFullYear())))));
+  }, monthList[jsDate.getMonth()] + ' ' + jsDate.getDay() + ', ' + jsDate.getFullYear()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    "class": "mt-3 text-gray-800"
+  }, previewBody)));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (BlogPostCard);
@@ -28832,14 +28829,15 @@ function LatestPost() {
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-4 xl:gap-8"
+    className: "grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-0 lg:gap-4 xl:gap-8"
   }, posts.map(function (post, key) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_BlogPostCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
       key: key,
       postUrl: post.post_url,
       title: post.title,
       image: post.image_url,
-      date: post.created_at
+      date: post.created_at,
+      previewBody: post.preview_body
     });
   })), morePostButton);
 }
