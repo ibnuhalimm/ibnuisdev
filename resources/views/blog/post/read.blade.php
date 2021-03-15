@@ -70,12 +70,14 @@
 
     <section class="mt-8 py-10 bg-ib-four">
         <x-frontend-container>
-            <h2 class="font-bold text-base xl:text-2xl text-ib-one mb-6">
-                {{ __('global.related_post') }}
-            </h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-4 xl:gap-8">
+            <x-section-title>
+                <h2 class="font-bold text-base xl:text-2xl text-ib-one">
+                    {{ __('global.related_post') }}
+                </h2>
+            </x-section-title>
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-0 lg:gap-4 xl:gap-8">
                 @foreach ($related_posts as $post)
-                    <x-blog-post-card slug="{{ $post->slug }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" />
+                    <x-blog-post-card slug="{{ $post->slug }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" previewBody="{{ Str::limit(strip_tags($post->isi), 100, '...') }}" />
                 @endforeach
             </div>
         </x-frontend-container>
