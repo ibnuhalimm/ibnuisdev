@@ -43,7 +43,7 @@
 <body class="flex flex-col min-h-screen justify-between text-sm text-ib-one">
     <nav class="w-full fixed z-30 top-0 left-0 right-0 bg-white bg-blur bg-opacity-60 xl:bg-opacity-70 border border-t-0 border-r-0 border-l-0 border-solid border-gray-200 py-4 leading-9 xl:leading-7">
         <div class="w-11/12 sm:w-3/5 lg:w-3/4 mx-auto xl:flex xl:flex-row xl:items-center xl:justify-between">
-            <div class="flex flex-row items-center justify-between xl:w-1/4 xl:mr-5">
+            <div class="flex flex-row items-center justify-between xl:w-1/3">
                 <button class="p-1 outline-none hover:outline-none focus:outline-none xl:hidden" id="nav-button">
                     <svg class="w-6 h-auto text-ib-one" id="nav-burger" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
@@ -52,10 +52,10 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
-                <div class="w-full text-center">
-                    <a href="{{ route('index') }}" class="-ml-5 font-bold text-ib-three xl:mt-1 text-xl relative top-1 xl:top-0">
+                <div class="w-full text-center xl:text-left">
+                    <a href="{{ route('index') }}" class="-ml-5 xl:-ml-0 font-bold text-ib-three xl:mt-1 text-xl relative top-1 xl:top-0">
                         <span id="brand-name">
-                            Ibnu Halim Mustofa
+                            {{ config('app.name') }}
                         </span>
                     </a>
                 </div>
@@ -64,7 +64,7 @@
                 <div class="text-center font-bold text-ib-three xl:mt-1 text-4xl mb-10 xl:hidden">
                     IHM
                 </div>
-                <div class="flex flex-col xl:flex-row justify-end w-full xl:w-2/3 xl:mx-auto xl:ml-6 xl:order-last">
+                <div class="flex flex-col xl:flex-row justify-end w-full xl:w-1/2 xl:order-last">
                     <select class="hidden xl:block px-1 mr-4 bg-transparent outline-none" onchange="changeLang(this)">
                         <option value="id" @if (App::isLocale('id')) selected @endif>ID</option>
                         <option value="en" @if (App::isLocale('en')) selected @endif>EN</option>
