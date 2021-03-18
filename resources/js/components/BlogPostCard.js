@@ -16,7 +16,7 @@ function BlogPostCard(props) {
         <a href={postUrl}
             className="block w-full mb-6 py-3 xl:py-0 rounded-md outline-none hover:outline-none text-ib-one hover:text-ib-three transition-all duration-500">
                 <div
-                    className="w-full h-52 lg:h-32 xl:h-64 rounded-md bg-cover bg-no-repeat border border-solid border-gray-200"
+                    className="w-full h-52 lg:h-32 xl:h-64 rounded-md bg-cover bg-no-repeat bg-center border border-solid border-gray-200"
                     style={postImage} />
 
                 <div className="mt-4">
