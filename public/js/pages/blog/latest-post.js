@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -28629,7 +28629,7 @@ function BlogPostCard(props) {
     href: postUrl,
     className: "block w-full mb-6 py-3 xl:py-0 rounded-md outline-none hover:outline-none text-ib-one hover:text-ib-three transition-all duration-500"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full h-52 lg:h-32 xl:h-64 rounded-md bg-cover bg-no-repeat border border-solid border-gray-200",
+    className: "w-full h-52 lg:h-32 xl:h-64 rounded-md bg-cover bg-no-repeat bg-center border border-solid border-gray-200",
     style: postImage
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mt-4"
@@ -28885,7 +28885,7 @@ function MorePost(props) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!**************************************************************!*\
   !*** multi ./resources/js/views/frontend/blog/LatestPost.js ***!
   \**************************************************************/

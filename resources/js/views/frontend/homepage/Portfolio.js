@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
 import Modal from '../../../components/Modal';
 import ModalContent from '../../../components/ModalContent';
 import ModalHeader from '../../../components/ModalHeader';
@@ -155,7 +154,3 @@ function Portfolio() {
 }
 
 export default Portfolio;
-
-if (document.getElementById('portfolio-ui-content')) {
-    ReactDOM.render(<Portfolio/>, document.getElementById('portfolio-ui-content'));
-}

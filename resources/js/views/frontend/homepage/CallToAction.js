@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
 import Alert from '../../../components/Alert';
 import FormError from '../../../components/FormError';
 import API from '../../../constant/API';
@@ -133,7 +132,3 @@ function CallToAction() {
 }
 
 export default CallToAction;
-
-if (document.getElementById('cta-ui-content')) {
-    ReactDOM.render(<CallToAction/>, document.getElementById('cta-ui-content'));
-}

@@ -165,6 +165,5 @@
 @endsection
 
 @push('bottom_js')
-    <script src="{{ URL::asset('js/pages/homepage/portfolio.js?_=' . rand()) }}"></script>
-    <script src="{{ URL::asset('js/pages/homepage/call-to-action.js?_=' . rand()) }}"></script>
+    <script src="{{ URL::asset('js/pages/homepage/bundle.js?_=' . rand()) }}"></script>
 @endpush
