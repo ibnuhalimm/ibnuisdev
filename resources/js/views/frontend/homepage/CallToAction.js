@@ -1,34 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import Alert from '../../../components/Alert';
 import FormError from '../../../components/FormError';
 import API from '../../../constant/API';
 
-function CallToAction() {
+function CallToAction(props) {
+    let { langPack } = props;
+
+    const [ lang, setLang ] = useState({});
+
     const [ showAlert, setShowAlert ] = useState(false);
     const [ alertVariant, setAlertVariant ] = useState('default');
     const [ alertText, setAlertText ] = useState('');
     const [ isLoaded, setIsLoaded ] = useState(true);
 
-    const [ lang, setLang ] = useState({});
     const [ email, setEmail ] = useState('');
     const [ formError, setFormError ] = useState('');
     const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 
     useEffect(() => {
-        _getLangPack();
-    }, []);
-
-
-    const _getLangPack = () => {
-        axios.get(API.lang_pack)
-            .then(response => {
-                let responseBody = response.data;
-                let language = responseBody.data;
-
-                setLang(language);
-            });
-    };
+        langPack.lang ? setLang(langPack.lang) : null;
+    }, [langPack]);
 
 
     const emailChangeHandler = (e) => {
@@ -61,7 +54,7 @@ function CallToAction() {
     const sendMessageHandler = () => {
         setIsLoaded(false);
 
-        axios.post(API.message_cta, { 'email': email })
+        Axios.post(API.message_cta, { 'email': email })
             .then(response => {
                 let responseBody = response.data;
 
@@ -131,4 +124,9 @@ function CallToAction() {
     );
 }
 
-export default CallToAction;
+
+const mapStateToProps = state => {
+    return { langPack: state.lang }
+};
+
+export default connect(mapStateToProps)(CallToAction);

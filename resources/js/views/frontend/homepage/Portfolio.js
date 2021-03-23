@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import Modal from '../../../components/Modal';
 import ModalContent from '../../../components/ModalContent';
 import ModalHeader from '../../../components/ModalHeader';
@@ -9,44 +10,26 @@ import API from '../../../constant/API';
 import ButtonRounded from '../../../components/ButtonRounded';
 import ButtonLinkRounded from '../../../components/ButtonLinkRounded';
 
-function Portfolio() {
-    let [ isLoaded, setIsLoaded ] = useState(false);
-    let [ isModalOpen, setIsModalOpen ] = useState(false);
+function Portfolio(props) {
+    let { langPack } = props;
 
-    let [ projects, setProjects ] = useState([]);
-    let [ project, setProject ] = useState({});
+    const [ lang, setLang ] = useState({});
 
-    let [ lang, setLang ] = useState({});
+    const [ isLoaded, setIsLoaded ] = useState(false);
+    const [ isModalOpen, setIsModalOpen ] = useState(false);
+
+    const [ projects, setProjects ] = useState([]);
+    const [ project, setProject ] = useState({});
 
 
     useEffect(() => {
-        _getLangPack();
+        langPack.lang ? setLang(langPack.lang) : null;
         _getPortfolio(1);
-    }, []);
-
-
-    const _getLangPack = () => {
-        axios.get(API.lang_pack)
-            .then(response => {
-                let responseBody = response.data;
-                let language = responseBody.data;
-
-                setLang({
-                    view_project: language.view_project,
-                    more_portfolio: language.more_portfolio,
-                    loading: language.loading,
-                    project_detail: language.project_detail,
-                    name: language.name,
-                    description: language.description,
-                    link_demo: language.link_demo,
-                    close: language.close
-                });
-            });
-    };
+    }, [langPack, _getPortfolio]);
 
 
     const _getPortfolio = (page) => {
-        axios.get(API.portfolio + '?page=' + page + '&limit=6')
+        Axios.get(API.portfolio + '?page=' + page + '&limit=6')
             .then(response => {
                 let responseBody = response.data;
                 let allProjects = [ ...projects, ...responseBody.data.projects ];
@@ -58,7 +41,7 @@ function Portfolio() {
 
 
     const _getSinglePortfolio = (id) => {
-        axios.get(API.portfolio + '/' + id)
+        Axios.get(API.portfolio + '/' + id)
             .then(response => {
                 let responseBody = response.data;
                 setProject(responseBody.data.project);
@@ -153,4 +136,9 @@ function Portfolio() {
     );
 }
 
-export default Portfolio;
+
+const mapStateToProps = state => {
+    return { langPack: state.lang };
+};
+
+export default connect(mapStateToProps)(Portfolio);
