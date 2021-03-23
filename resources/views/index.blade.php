@@ -121,7 +121,23 @@
         </x-frontend-container>
     </section>
 
-    <section class="mb-8 py-10">
+    <section class="pt-10 pb-28">
+        <x-frontend-container>
+            <x-section-title>
+                <h2>
+                    <span class="font-bold text-4xl block mb-1">
+                        {{ __('global.portfolio') }}
+                    </span>
+                    <span>
+                        {{ __('section.portfolio.sub_title_one') }}
+                    </span>
+                </h2>
+            </x-section-title>
+            <div id="portfolio-ui-content"></div>
+        </x-frontend-container>
+    </section>
+
+    <section class="py-10 bg-ib-four">
         <x-frontend-container>
             <x-section-title>
                 <h2>
@@ -143,22 +159,6 @@
                     {{ __('global.more_post') }}
                 </a>
             </div>
-        </x-frontend-container>
-    </section>
-
-    <section class="pt-10 pb-28 bg-ib-four">
-        <x-frontend-container>
-            <x-section-title>
-                <h2>
-                    <span class="font-bold text-4xl block mb-1">
-                        {{ __('global.portfolio') }}
-                    </span>
-                    <span>
-                        {{ __('section.portfolio.sub_title_one') }}
-                    </span>
-                </h2>
-            </x-section-title>
-            <div id="portfolio-ui-content"></div>
         </x-frontend-container>
     </section>
 
