@@ -24,7 +24,7 @@ function Contact() {
 
 
     const _getLangPack = () => {
-        axios.get(API.lang_pack)
+        Axios.get(API.lang_pack)
             .then(response => {
                 let responseBody = response.data;
                 let language = responseBody.data;
@@ -118,7 +118,7 @@ function Contact() {
         setIsSent(false);
         setErrors({});
 
-        axios.post(API.message, forms)
+        Axios.post(API.message, forms)
             .then(response => {
                 let responseBody = response.data;
 

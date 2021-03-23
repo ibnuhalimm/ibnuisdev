@@ -28935,7 +28935,7 @@ function Portfolio() {
   }, []);
 
   var _getLangPack = function _getLangPack() {
-    axios.get(_constant_API__WEBPACK_IMPORTED_MODULE_8__["default"].lang_pack).then(function (response) {
+    Axios.get(_constant_API__WEBPACK_IMPORTED_MODULE_8__["default"].lang_pack).then(function (response) {
       var responseBody = response.data;
       var language = responseBody.data;
       setLang({
@@ -28952,7 +28952,7 @@ function Portfolio() {
   };
 
   var _getPortfolio = function _getPortfolio(page) {
-    axios.get(_constant_API__WEBPACK_IMPORTED_MODULE_8__["default"].portfolio + '?page=' + page).then(function (response) {
+    Axios.get(_constant_API__WEBPACK_IMPORTED_MODULE_8__["default"].portfolio + '?page=' + page).then(function (response) {
       var responseBody = response.data;
       var allProjects = [].concat(_toConsumableArray(projects), _toConsumableArray(responseBody.data.projects));
       setIsMore(responseBody.data.is_more);
@@ -28967,7 +28967,7 @@ function Portfolio() {
   };
 
   var _getSinglePortfolio = function _getSinglePortfolio(id) {
-    axios.get(_constant_API__WEBPACK_IMPORTED_MODULE_8__["default"].portfolio + '/' + id).then(function (response) {
+    Axios.get(_constant_API__WEBPACK_IMPORTED_MODULE_8__["default"].portfolio + '/' + id).then(function (response) {
       var responseBody = response.data;
       setProject(responseBody.data.project);
       setIsModalOpen(true);

@@ -20,7 +20,7 @@ function LatestPost() {
 
 
     const _getLangPack = () => {
-        axios.get(API.lang_pack)
+        Axios.get(API.lang_pack)
             .then(response => {
                 let responseBody = response.data;
                 let language = responseBody.data;
@@ -33,7 +33,7 @@ function LatestPost() {
     const _getPosts = () => {
         setIsLoaded(false);
 
-        axios.post(API.latest_posts, {
+        Axios.post(API.latest_posts, {
             lastId: lastId,
             exceptIds: blog_except_ids
         })

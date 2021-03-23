@@ -28792,7 +28792,7 @@ function LatestPost() {
   }, []);
 
   var _getLangPack = function _getLangPack() {
-    axios.get(_constant_API__WEBPACK_IMPORTED_MODULE_3__["default"].lang_pack).then(function (response) {
+    Axios.get(_constant_API__WEBPACK_IMPORTED_MODULE_3__["default"].lang_pack).then(function (response) {
       var responseBody = response.data;
       var language = responseBody.data;
       setLang(language);
@@ -28801,7 +28801,7 @@ function LatestPost() {
 
   var _getPosts = function _getPosts() {
     setIsLoaded(false);
-    axios.post(_constant_API__WEBPACK_IMPORTED_MODULE_3__["default"].latest_posts, {
+    Axios.post(_constant_API__WEBPACK_IMPORTED_MODULE_3__["default"].latest_posts, {
       lastId: lastId,
       exceptIds: blog_except_ids
     }).then(function (response) {

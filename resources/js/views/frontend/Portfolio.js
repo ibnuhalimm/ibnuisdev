@@ -28,7 +28,7 @@ function Portfolio() {
 
 
     const _getLangPack = () => {
-        axios.get(API.lang_pack)
+        Axios.get(API.lang_pack)
             .then(response => {
                 let responseBody = response.data;
                 let language = responseBody.data;
@@ -48,7 +48,7 @@ function Portfolio() {
 
 
     const _getPortfolio = (page) => {
-        axios.get(API.portfolio + '?page=' + page)
+        Axios.get(API.portfolio + '?page=' + page)
             .then(response => {
                 let responseBody = response.data;
                 let allProjects = [ ...projects, ...responseBody.data.projects ];
@@ -65,7 +65,7 @@ function Portfolio() {
 
 
     const _getSinglePortfolio = (id) => {
-        axios.get(API.portfolio + '/' + id)
+        Axios.get(API.portfolio + '/' + id)
             .then(response => {
                 let responseBody = response.data;
                 setProject(responseBody.data.project);

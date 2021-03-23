@@ -28860,7 +28860,7 @@ function Contact() {
   }, []);
 
   var _getLangPack = function _getLangPack() {
-    axios.get(_constant_API__WEBPACK_IMPORTED_MODULE_6__["default"].lang_pack).then(function (response) {
+    Axios.get(_constant_API__WEBPACK_IMPORTED_MODULE_6__["default"].lang_pack).then(function (response) {
       var responseBody = response.data;
       var language = responseBody.data;
       setLang(language);
@@ -28945,7 +28945,7 @@ function Contact() {
   var sendMessage = function sendMessage() {
     setIsSent(false);
     setErrors({});
-    axios.post(_constant_API__WEBPACK_IMPORTED_MODULE_6__["default"].message, forms).then(function (response) {
+    Axios.post(_constant_API__WEBPACK_IMPORTED_MODULE_6__["default"].message, forms).then(function (response) {
       var responseBody = response.data;
       setIsSent(true);
       window.scrollTo(0, 0);
