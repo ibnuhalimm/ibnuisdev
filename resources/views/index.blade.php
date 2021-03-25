@@ -121,7 +121,7 @@
         </x-frontend-container>
     </section>
 
-    <section class="pt-10 pb-28">
+    <section class="pt-10">
         <x-frontend-container>
             <x-section-title>
                 <h2>
@@ -137,7 +137,7 @@
         </x-frontend-container>
     </section>
 
-    <section class="py-10 bg-ib-four">
+    <section class="pt-10 pb-28 bg-ib-four">
         <x-frontend-container>
             <x-section-title>
                 <h2>
