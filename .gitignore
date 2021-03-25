@@ -2,6 +2,7 @@
 /public/hot
 /public/storage
 /public/demo-upwork
+/public/demo-html
 /storage/*.key
 /vendor
 .env
