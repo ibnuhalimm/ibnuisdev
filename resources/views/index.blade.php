@@ -121,7 +121,7 @@
         </x-frontend-container>
     </section>
 
-    <section class="pt-10">
+    <section class="pt-10 pb-20">
         <x-frontend-container>
             <x-section-title>
                 <h2>
