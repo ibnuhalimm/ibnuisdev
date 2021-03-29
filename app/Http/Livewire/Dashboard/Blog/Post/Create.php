@@ -20,8 +20,10 @@ class Create extends Component
      */
     public $gbr;
     public $gbr_url;
+    public $image_credits;
     public $judul;
     public $slug;
+    public $brief_text;
     public $isi;
     public $status;
     public $tag;
@@ -62,6 +64,12 @@ class Create extends Component
                 'max:100',
                 'unique:' . Post::class . ',slug'
             ],
+            'brief_text' => [
+                'required',
+                'string',
+                'min:50',
+                'max:200'
+            ],
             'isi' => [
                 'required',
                 'string',
@@ -88,7 +96,9 @@ class Create extends Component
     {
         return [
             'gbr' => 'Image',
+            'image_credits' => 'Image Credits',
             'judul' => 'Title',
+            'brief_text' => 'Brief Text',
             'isi' => 'Text',
             'status' => 'Status',
             'tag' => 'Tag'
@@ -141,8 +151,10 @@ class Create extends Component
 
         Post::create([
             'gbr' => $gbr,
+            'image_credits' => $this->image_credits,
             'judul' => $this->judul,
             'slug' => trim($this->slug),
+            'brief_text' => $this->brief_text,
             'isi' => $this->isi,
             'status' => $this->status,
             'tag' => $this->tag

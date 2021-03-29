@@ -24,8 +24,10 @@ class Edit extends Component
     public $gbr;
     public $gbr_field;
     public $gbr_url;
+    public $image_credits;
     public $judul;
     public $slug;
+    public $brief_text;
     public $isi;
     public $status;
     public $tag;
@@ -44,6 +46,8 @@ class Edit extends Component
         $this->slug = $post->slug;
         $this->gbr_url = $post->gbr_url;
         $this->gbr_field = $post->gbr;
+        $this->image_credits = $post->image_credits;
+        $this->brief_text = $post->brief_text;
         $this->isi = $post->isi;
         $this->status = $post->status;
         $this->tag = $post->tag;
@@ -74,6 +78,12 @@ class Edit extends Component
                 'max:100',
                 'unique:' . Post::class . ',slug,' . $this->post_id
             ],
+            'brief_text' => [
+                'required',
+                'string',
+                'min:50',
+                'max:200'
+            ],
             'isi' => [
                 'required',
                 'string',
@@ -100,7 +110,9 @@ class Edit extends Component
     {
         return [
             'gbr' => 'Image',
+            'image_credits' => 'Image Credits',
             'judul' => 'Title',
+            'brief_text' => 'Brief Text',
             'isi' => 'Text',
             'status' => 'Status',
             'tag' => 'Tag'
@@ -163,8 +175,10 @@ class Edit extends Component
         Post::where('id', $this->post_id)
             ->update([
                     'gbr' => $this->gbr_field,
+                    'image_credits' => $this->image_credits,
                     'judul' => $this->judul,
                     'slug' => trim($this->slug),
+                    'brief_text' => $this->brief_text,
                     'isi' => Str::of($this->isi)->replace('../../../', '../../'),
                     'status' => $this->status,
                     'tag' => $this->tag,

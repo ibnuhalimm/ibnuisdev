@@ -6,15 +6,15 @@
 
 @section('meta_seo')
     <meta name="title" content="{{ $post->judul }} - {{ config('app.name') }}">
-    <meta name="description" content="{{ Str::limit(clear_body_post($post->isi), 200, '') }}">
+    <meta name="description" content="{!! $post->brief_text !!}">
     <meta property="og:url" content="{{ $post->post_url }}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ $post->judul }} - {{ config('app.name') }}" />
-    <meta property="og:description" content="{{ Str::limit(clear_body_post($post->isi), 200, '') }}" />
+    <meta property="og:description" content="{!! $post->brief_text !!}" />
     <meta property="og:image" content="{{ $post->gbr_url }}" />
     <meta name="twitter:site" content="@IbnuHMustofa" />
     <meta name="twitter:title" content="{{ $post->judul }} - {{ config('app.name') }}" />
-    <meta name="twitter:description" content="{{ Str::limit(clear_body_post($post->isi), 200, '') }}" />
+    <meta name="twitter:description" content="{!! $post->brief_text !!}" />
     <meta name="twitter:image" content="{{ $post->gbr_url }}" />
 @endsection
 
@@ -23,7 +23,12 @@
     <section>
         <div class="mb-10 xl:w-2/3 xl:mx-auto xl:order-2">
             <x-post-read-container>
-                <h1 class="text-2xl font-bold text-ib-one">{{ $post->judul }}</h1>
+                <h1 class="text-3xl font-bold text-ib-one">
+                    {{ $post->judul }}
+                </h1>
+                <h2 class="text-base font-bold text-gray-500 mt-3 mb-1">
+                    {!! $post->brief_text !!}
+                </h2>
 
                 <div class="mt-3 flex flex-row justify-between">
                     <span class="mt-3 text-gray-600 text-sm">
@@ -77,7 +82,7 @@
             </x-section-title>
             <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-0 lg:gap-4 xl:gap-8">
                 @foreach ($related_posts as $post)
-                    <x-blog-post-card slug="{{ $post->slug }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" previewBody="{{ Str::limit(clear_body_post($post->isi), 100, '...') }}" />
+                    <x-blog-post-card slug="{{ $post->slug }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" previewBody="{!! $post->brief_text !!}" />
                 @endforeach
             </div>
         </x-frontend-container>

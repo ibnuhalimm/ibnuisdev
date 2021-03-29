@@ -33,6 +33,8 @@ class Post extends Model
         'judul',
         'slug',
         'gbr',
+        'image_credits',
+        'brief_text',
         'isi',
         'status',
         'tag',

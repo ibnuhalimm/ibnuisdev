@@ -13,6 +13,12 @@
                 </div>
                 @error('gbr') <x-form-error> {{ $message }} </x-form-error> @enderror
             </x-form-label-inline>
+            <x-form-label-inline text="Image Credits" required="false" size="large">
+                <div wire:ignore>
+                    <x-textarea id="__imageCreditsCreatePost"></x-textarea>
+                </div>
+                @error('image_credits') <x-form-error> {{ $message }} </x-form-error> @enderror
+            </x-form-label-inline>
             <x-form-label-inline text="Title" required="true" size="large">
                 <x-input-text type="text" wire:model.lazy="judul" />
                 @error('judul') <x-form-error> {{ $message }} </x-form-error> @enderror
@@ -27,6 +33,12 @@
                     </div>
                 </div>
                 @error('slug') <x-form-error> {{ $message }} </x-form-error> @enderror
+            </x-form-label-inline>
+            <x-form-label-inline text="Brief Text" required="true" size="large">
+                <div wire:ignore>
+                    <x-textarea wire:model.lazy="brief_text" rows="5"></x-textarea>
+                </div>
+                @error('brief_text') <x-form-error> {{ $message }} </x-form-error> @enderror
             </x-form-label-inline>
             <x-form-label-inline text="Text" required="true" size="large">
                 <div wire:ignore>
@@ -78,6 +90,23 @@
                 }, ms || 0);
             };
         }
+
+        tinymce.init({
+            selector: '#__imageCreditsCreatePost',
+            setup: function(editor) {
+                editor.on('change', delay(function(e) {
+                    @this.set('image_credits', tinymce.activeEditor.getContent());
+                }, 1000));
+            },
+            height: 150,
+            content_css: '{{ URL::asset('css/tinymce-content.css?_=' . rand()) }}',
+            menubar: false,
+            plugins: [
+                'link'
+            ],
+            toolbar: 'link'
+        });
+
 
         tinymce.init({
             selector: '#__isiCreatePost',

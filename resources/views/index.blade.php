@@ -151,7 +151,7 @@
             </x-section-title>
             <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-0 lg:gap-4 xl:gap-8">
                 @foreach ($latest_posts as $post)
-                    <x-blog-post-card slug="{{ $post->slug }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" previewBody="{{ Str::limit(clear_body_post($post->isi), 100, '...') }}" />
+                    <x-blog-post-card slug="{{ $post->slug }}" image="{{ $post->gbr_url }}" title="{{ $post->judul }}" date="{{ $post->created_at }}" previewBody="{!! $post->brief_text !!}" />
                 @endforeach
             </div>
             <div class="mt-6 xl:mt-12 flex justify-center">
