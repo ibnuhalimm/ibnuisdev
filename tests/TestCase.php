@@ -15,4 +15,10 @@ abstract class TestCase extends BaseTestCase
         parent::setUp();
         $this->runDatabaseMigrations();
     }
+
+    public function tearDown(): void
+    {
+        $this->artisan('migrate:reset');
+        parent::tearDown();
+    }
 }
