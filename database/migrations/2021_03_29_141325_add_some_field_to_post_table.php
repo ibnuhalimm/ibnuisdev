@@ -29,7 +29,7 @@ class AddSomeFieldToPostTable extends Migration
         Schema::table('post', function (Blueprint $table) {
             $table->dropColumn('image_credits');
         });
-        Schema::table('posts', function (Blueprint $table) {
+        Schema::table('post', function (Blueprint $table) {
             $table->dropColumn('brief_text');
         });
     }
