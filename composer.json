@@ -8,16 +8,16 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.2.5",
-        "cviebrock/eloquent-sluggable": "7.x",
+        "php": "^7.3.0",
+        "cviebrock/eloquent-sluggable": "8.x",
         "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
-        "guzzlehttp/guzzle": "^6.3",
+        "guzzlehttp/guzzle": "^7.0.1",
         "intervention/image": "^2.5",
-        "laravel/framework": "^7.0",
+        "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "^2.4",
+        "laravel/ui": "^3.0",
         "livewire/livewire": "^2.2",
         "spatie/laravel-analytics": "^3.10",
         "spatie/laravel-db-snapshots": "^1.7",
@@ -27,8 +27,8 @@
         "facade/ignition": "^2.0",
         "fakerphp/faker": "^1.13",
         "mockery/mockery": "^1.3.1",
-        "nunomaduro/collision": "^4.1",
-        "phpunit/phpunit": "^8.5"
+        "nunomaduro/collision": "^5.1",
+        "phpunit/phpunit": "^9.0"
     },
     "config": {
         "optimize-autoloader": true,
@@ -49,7 +49,7 @@
             "App\\": "app/"
         },
         "classmap": [
-            "database/seeds",
+            "database/seeders",
             "database/factories"
         ]
     },
