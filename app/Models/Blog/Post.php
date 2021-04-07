@@ -76,6 +76,16 @@ class Post extends Model
     }
 
     /**
+     * Relationship to `post_visitors` table
+     *
+     * @return mixed
+     */
+    public function post_visitors()
+    {
+        return $this->hasMany(PostVisitor::class);
+    }
+
+    /**
      * Accessor for `str_status`
      *
      * @return string

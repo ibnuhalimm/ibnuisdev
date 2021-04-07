@@ -24,6 +24,26 @@ class PostVisitor extends Model
     ];
 
     /**
+     * Relationship to `unique_visitors`
+     *
+     * @return mixed
+     */
+    public function unique_visitor()
+    {
+        return $this->belongsTo(UniqueVisitor::class)->withDefault();
+    }
+
+    /**
+     * Relationship to `post`
+     *
+     * @return mixed
+     */
+    public function post()
+    {
+        return $this->belongsTo(Post::class)->withDefault();
+    }
+
+    /**
      * Store post visitor
      *
      * @param int $post_id
