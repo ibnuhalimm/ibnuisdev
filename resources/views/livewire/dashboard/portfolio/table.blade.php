@@ -21,8 +21,8 @@
                 <div class="w-1/3 mr-2">
                     <x-select wire:model.lazy="status">
                         <option value="">All</option>
-                        <option value="{{ \App\Project::STATUS_DRAFT }}">Draft</option>
-                        <option value="{{ \App\Project::STATUS_PUBLISH }}">Publish</option>
+                        <option value="{{ \App\Models\Project::STATUS_DRAFT }}">Draft</option>
+                        <option value="{{ \App\Models\Project::STATUS_PUBLISH }}">Publish</option>
                     </x-select>
                 </div>
                 <div class="w-2/3 ml-2">

@@ -22,10 +22,10 @@
             <div class="w-full mt-4 xl:mt-0 xl:w-2/5 flex flex-col xl:flex-row items-start xl:items-center justify-end">
                 <div class="w-full xl:w-1/2 mr-2">
                     <x-select wire:model.lazy="flag_type">
-                        <option value="{{ \App\Skill::FLAG_TYPE_DAY_TO_DAY }}">
+                        <option value="{{ \App\Models\Skill::FLAG_TYPE_DAY_TO_DAY }}">
                             Day-to-day Comfort
                         </option>
-                        <option value="{{ \App\Skill::FLAG_TYPE_EXPERIENCE }}">
+                        <option value="{{ \App\Models\Skill::FLAG_TYPE_EXPERIENCE }}">
                             Experienced-with
                         </option>
                     </x-select>
@@ -113,10 +113,10 @@
                 <x-form-label-inline text="Type" required="true" size="medium">
                     <div class="w-full">
                         <x-select wire:model.lazy="flag_type_form">
-                            <option value="{{ \App\Skill::FLAG_TYPE_DAY_TO_DAY }}">
+                            <option value="{{ \App\Models\Skill::FLAG_TYPE_DAY_TO_DAY }}">
                                 Day-to-day Comfort
                             </option>
-                            <option value="{{ \App\Skill::FLAG_TYPE_EXPERIENCE }}">
+                            <option value="{{ \App\Models\Skill::FLAG_TYPE_EXPERIENCE }}">
                                 Experienced-with
                             </option>
                         </x-select>
@@ -169,10 +169,10 @@
                 <x-form-label-inline text="Type" required="true" size="medium">
                     <div class="w-full">
                         <x-select wire:model.lazy="flag_type_form">
-                            <option value="{{ \App\Skill::FLAG_TYPE_DAY_TO_DAY }}">
+                            <option value="{{ \App\Models\Skill::FLAG_TYPE_DAY_TO_DAY }}">
                                 Day-to-day Comfort
                             </option>
-                            <option value="{{ \App\Skill::FLAG_TYPE_EXPERIENCE }}">
+                            <option value="{{ \App\Models\Skill::FLAG_TYPE_EXPERIENCE }}">
                                 Experienced-with
                             </option>
                         </x-select>

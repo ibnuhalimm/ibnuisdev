@@ -73,8 +73,8 @@
         <div class="w-full lg:w-1/2 flex items-center justify-between">
             <div class="w-2/3 mr-4">
                 <x-select wire:model.lazy="status">
-                    <option value="{{ \App\Project::STATUS_DRAFT }}">Draft</option>
-                    <option value="{{ \App\Project::STATUS_PUBLISH }}">Publish</option>
+                    <option value="{{ \App\Models\Project::STATUS_DRAFT }}">Draft</option>
+                    <option value="{{ \App\Models\Project::STATUS_PUBLISH }}">Publish</option>
                 </x-select>
             </div>
         </div>
