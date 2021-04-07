@@ -1,19 +1,37 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
 
-use App\Project;
-use Faker\Generator as Faker;
+use App\Models\Project;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-$factory->define(Project::class, function (Faker $faker) {
-    return [
-        'month' => $faker->numberBetween(1, 12),
-        'year' => $faker->dateTimeThisDecade()->format('Y'),
-        'name' => substr($faker->company . ' ' . $faker->words(3, true), 0, 50),
-        'image' => 'project/' . $faker->randomNumber() . '.png',
-        'description' => $faker->text() . Str::random(50),
-        'link' => $faker->url,
-        'status' => $faker->randomElement([Project::STATUS_DRAFT, Project::STATUS_PUBLISH])
-    ];
-});
+class ProjectFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Project::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        $image = $this->faker->image('storage/app/public/project', 1366, 768);
+
+        return [
+            'month' => $this->faker->numberBetween(1, 12),
+            'year' => $this->faker->dateTimeThisDecade()->format('Y'),
+            'name' => substr($this->faker->company() . ' ' . $this->faker->words(3, true), 0, 50),
+            'image' => Str::of($image)->replace('storage/app/public/', ''),
+            'description' => $this->faker->text() . Str::random(50),
+            'link' => $this->faker->url(),
+            'status' => $this->faker->randomElement([Project::STATUS_DRAFT, Project::STATUS_PUBLISH])
+        ];
+    }
+}
