@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\MessageCtaStoreRequest;
 use App\Http\Requests\Api\MessageStoreRequest;
-use App\Message;
+use App\Models\Message;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\FrontEnd;
 
-use App\Message;
+use App\Models\Message;
 use Livewire\Component;
 
 class MessageForm extends Component

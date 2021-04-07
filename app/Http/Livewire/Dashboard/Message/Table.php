@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Dashboard\Message;
 
-use App\Message;
+use App\Models\Message;
 use App\View\Components\Alert;
 use Livewire\Component;
 use Livewire\WithPagination;

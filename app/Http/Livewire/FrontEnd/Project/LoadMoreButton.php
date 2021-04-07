@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\FrontEnd\Project;
 
-use App\Project;
+use App\Models\Project;
 use Livewire\Component;
 
 class LoadMoreButton extends Component

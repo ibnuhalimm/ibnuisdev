@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Dashboard\Skills;
 
-use App\Skill;
+use App\Models\Skill;
 use Livewire\Component;
 use Livewire\WithPagination;
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Dashboard\Portfolio;
 
-use App\Project;
+use App\Models\Project;
 use App\Traits\LivewireOptimizeImage;
 use Livewire\Component;
 use Livewire\WithFileUploads;

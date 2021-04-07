@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\FrontEnd;
 
-use App\Project as AppProject;
+use App\Models\Project as AppProject;
 use Livewire\Component;
 
 class Project extends Component

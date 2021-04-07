@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Dashboard\Section;
 
-use App\Section;
+use App\Models\Section;
 use Livewire\Component;
 
 class Table extends Component

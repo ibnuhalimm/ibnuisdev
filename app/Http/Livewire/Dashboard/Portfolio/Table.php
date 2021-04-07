@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Dashboard\Portfolio;
 
-use App\Project;
+use App\Models\Project;
 use Livewire\Component;
 use Livewire\WithPagination;
 

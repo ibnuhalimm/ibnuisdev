@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Project;
+use App\Models\Project;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 
