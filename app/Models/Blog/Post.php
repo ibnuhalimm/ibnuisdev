@@ -6,13 +6,14 @@ use Carbon\Carbon;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 
 class Post extends Model
 {
-    use SoftDeletes, Sluggable;
+    use SoftDeletes, Sluggable, HasFactory;
 
     CONST STATUS_DRAFT = 1;
     CONST STATUS_PUBLISH = 2;
