@@ -3,9 +3,12 @@
 namespace App\Models\Blog;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class ShareButton extends Model
 {
+    use HasFactory;
+
     /**
      * Define table name
      *
