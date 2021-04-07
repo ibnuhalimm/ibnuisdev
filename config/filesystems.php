@@ -69,6 +69,16 @@ return [
             'driver' => 'local',
             'root' => database_path('snapshots'),
         ],
+
+        /**
+         * Temporary disk test
+         * Fix Livewire issue
+         * - testing.ERROR: Disk [tmp-for-tests] does not have a configured driver.
+         */
+        'tmp-for-tests' => [
+            'driver' => 'local',
+            'root' => storage_path('app/livewire-tmp'),
+        ],
     ],
 
     /*
