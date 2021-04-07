@@ -5,10 +5,13 @@ namespace App\Models\Blog;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Jenssegers\Agent\Agent;
 
 class UniqueVisitor extends Model
 {
+    use HasFactory;
+
     /**
      * Define table name
      */
@@ -28,7 +31,13 @@ class UniqueVisitor extends Model
      * @var array
      */
     protected $fillable = [
-        'ip_address', 'hit', 'device', 'os', 'date', 'time_start', 'time_end'
+        'ip_address',
+        'hit',
+        'device',
+        'os',
+        'date',
+        'time_start',
+        'time_end'
     ];
 
     /**
