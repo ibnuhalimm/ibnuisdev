@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use DB;
-use App\Section;
+use App\Models\Section;
 use Illuminate\Database\Seeder;
 
 class SectionsSeeder extends Seeder
