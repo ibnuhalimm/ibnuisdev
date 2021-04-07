@@ -12,7 +12,7 @@ class SearchingPostTest extends TestCase
      *
      * @return void
      */
-    public function testUserCanViewSearchResultPage()
+    public function test_visitor_can_view_search_result_page()
     {
         $post_title = 'Test';
 
@@ -31,7 +31,7 @@ class SearchingPostTest extends TestCase
      *
      * @return void
      */
-    public function testCanHandleEmptyResult()
+    public function test_can_handle_empty_result()
     {
         $response = $this->get(route('blog.post.search', [ 'q' => 'Test again' ]));
         $response->assertStatus(200)
@@ -43,7 +43,7 @@ class SearchingPostTest extends TestCase
      *
      * @return void
      */
-    public function testContainsLatestPostLivewire()
+    public function test_contains_latest_post_livewire()
     {
         $response = $this->get(route('blog.post.search', [ 'q' => 'Test again' ]));
         $response->assertSeeLivewire('blog.post.latest-post');

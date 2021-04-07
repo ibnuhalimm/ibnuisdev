@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Dashboard;
 
-use App\User;
+use App\Models\User;
 use Tests\TestCase;
 
 class DashboardTest extends TestCase
@@ -23,7 +23,7 @@ class DashboardTest extends TestCase
      *
      * @return void
      */
-    public function testAdminCanViewDashboardPage()
+    public function test_admin_can_view_dashboard_page()
     {
         $this->setLoggedInUser();
 
@@ -37,7 +37,7 @@ class DashboardTest extends TestCase
      *
      * @return void
      */
-    public function testContainsLastDayVisitorLivewire()
+    public function test_contains_last_day_visitor_livewire()
     {
         $this->setLoggedInUser();
 
@@ -50,7 +50,7 @@ class DashboardTest extends TestCase
      *
      * @return void
      */
-    public function testContainsLastMonthVisitorLivewire()
+    public function test_contains_last_month_visitor_livewire()
     {
         $this->setLoggedInUser();
 
@@ -63,7 +63,7 @@ class DashboardTest extends TestCase
      *
      * @return void
      */
-    public function testContainsMostVisitedPagesLivewire()
+    public function test_contains_most_visited_pages_livewire()
     {
         $this->setLoggedInUser();
 

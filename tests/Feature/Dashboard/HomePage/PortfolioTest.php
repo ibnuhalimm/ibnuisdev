@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Dashboard\HomePage;
 
-use App\Project;
-use App\User;
+use App\Models\Project;
+use App\Models\User;
 use Tests\TestCase;
 
 class PortfolioTest extends TestCase
@@ -24,7 +24,7 @@ class PortfolioTest extends TestCase
      *
      * @return void
      */
-    public function testAdminCanViewPortfolioTablePage()
+    public function test_admin_can_view_portfolio_table_page()
     {
         $this->setLoggedInUser();
 
@@ -38,7 +38,7 @@ class PortfolioTest extends TestCase
      *
      * @return void
      */
-    public function testContainsPortolioTableLivewire()
+    public function test_contains_portolio_table_livewire()
     {
         $this->setLoggedInUser();
 
@@ -51,7 +51,7 @@ class PortfolioTest extends TestCase
      *
      * @return void
      */
-    public function testCanShowCreatePage()
+    public function test_can_show_create_page()
     {
         $this->setLoggedInUser();
 
@@ -65,7 +65,7 @@ class PortfolioTest extends TestCase
      *
      * @return void
      */
-    public function testCreatePageContainsPortfolioCreateLivewire()
+    public function test_create_page_contains_portfolio_create_livewire()
     {
         $this->setLoggedInUser();
 
@@ -78,7 +78,7 @@ class PortfolioTest extends TestCase
      *
      * @return void
      */
-    public function testCanShowEditPage()
+    public function test_can_show_edit_page()
     {
         $this->setLoggedInUser();
 
@@ -94,7 +94,7 @@ class PortfolioTest extends TestCase
      *
      * @return void
      */
-    public function testEditPageContainsPortfolioEditLivewire()
+    public function test_edit_page_contains_portfolio_edit_livewire()
     {
         $this->setLoggedInUser();
 

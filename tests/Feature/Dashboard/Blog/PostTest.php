@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Dashboard\Blog;
 
-use App\User;
+use App\Models\User;
 use Tests\TestCase;
 
 class PostTest extends TestCase
@@ -23,7 +23,7 @@ class PostTest extends TestCase
      *
      * @return void
      */
-    public function testAdminCanViewPostTablePage()
+    public function test_admin_can_view_post_table_page()
     {
         $this->setLoggedInUser();
 
@@ -37,7 +37,7 @@ class PostTest extends TestCase
      *
      * @return void
      */
-    public function testContainsDashboardBlogPostTableLivewire()
+    public function test_contains_dashboard_blog_post_table_livewire()
     {
         $this->setLoggedInUser();
 

@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Dashboard;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Str;
 use Tests\TestCase;
@@ -14,7 +14,7 @@ class LoginTest extends TestCase
      *
      * @return void
      */
-    public function testUserCanViewLoginForm()
+    public function test_user_can_view_login_form()
     {
         $response = $this->get(route('login'));
 
@@ -27,7 +27,7 @@ class LoginTest extends TestCase
      *
      * @return void
      */
-    public function testCanLoginUsingCorrectCredentials()
+    public function test_can_login_using_correct_credentials()
     {
         $user = factory(User::class)->create();
 
@@ -45,7 +45,7 @@ class LoginTest extends TestCase
      *
      * @return void
      */
-    public function testCanLoginUsingEmailAndPassword()
+    public function test_can_login_using_email_and_password()
     {
         $user = factory(User::class)->create();
 
@@ -63,7 +63,7 @@ class LoginTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotLoginUsingIncorrectCredentials()
+    public function test_can_not_login_using_incorrect_credentials()
     {
         $user = factory(User::class)->create();
 
@@ -83,7 +83,7 @@ class LoginTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotLoginWithoutCredentials()
+    public function test_can_not_login_without_credentials()
     {
         $response = $this->post(route('login'), []);
 
@@ -98,7 +98,7 @@ class LoginTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotLoginWithoutPassword()
+    public function test_can_not_login_without_password()
     {
         $response = $this->post(route('login'), [
             'username' => 'username',
