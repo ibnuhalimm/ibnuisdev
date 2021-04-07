@@ -3,7 +3,7 @@
 namespace Tests\Unit\Dashboard\HomePage;
 
 use App\Http\Livewire\Dashboard\Portfolio\Edit;
-use App\Project;
+use App\Models\Project;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -30,7 +30,7 @@ class PortfolioEditTest extends TestCase
      *
      * @return void
      */
-    public function testCanUploadImage()
+    public function test_can_upload_image()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -46,7 +46,7 @@ class PortfolioEditTest extends TestCase
      *
      * @return void
      */
-    public function testCanUpdatePortfolio()
+    public function test_can_update_portfolio()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -71,7 +71,7 @@ class PortfolioEditTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotUpdateIfMonthNotProvided()
+    public function test_can_not_update_if_month_not_provided()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -98,7 +98,7 @@ class PortfolioEditTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotUpdateIfYearNotProvided()
+    public function test_can_not_update_if_year_not_provided()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -125,7 +125,7 @@ class PortfolioEditTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotUpdateIfYearLessThanFourChars()
+    public function test_can_not_update_if_year_less_than_four_chars()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -152,7 +152,7 @@ class PortfolioEditTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotUpdateIfNameNotProvided()
+    public function test_can_not_update_if_name_not_provided()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -179,7 +179,7 @@ class PortfolioEditTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotUpdateIfNameLessThanTenChars()
+    public function test_can_not_update_if_name_less_than_ten_chars()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -206,7 +206,7 @@ class PortfolioEditTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotUpdateIfNameMoreThanFiftyChars()
+    public function test_can_not_update_if_name_more_than_fifty_chars()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -233,7 +233,7 @@ class PortfolioEditTest extends TestCase
      *
      * @return void
      */
-    public function testCanUpdateIfImageNotProvided()
+    public function test_can_update_if_image_not_provided()
     {
         $project = factory(Project::class)->create();
 
@@ -256,7 +256,7 @@ class PortfolioEditTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotUpdateIfDescriptionNotProvided()
+    public function test_can_not_update_if_description_not_provided()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -283,7 +283,7 @@ class PortfolioEditTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotUpdateIfDescriptionLessThanTenHundredChars()
+    public function test_can_not_update_if_description_less_than_ten_hundred_chars()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -310,7 +310,7 @@ class PortfolioEditTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotUpdateIfDescriptionMoreThanThreeHundredChars()
+    public function test_can_not_update_if_description_more_than_three_hundred_chars()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -337,7 +337,7 @@ class PortfolioEditTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotUpdateIfUrlIsInvalid()
+    public function test_can_not_update_if_url_is_invalid()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -364,7 +364,7 @@ class PortfolioEditTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotUpdateIfStatusNotProvided()
+    public function test_can_not_update_if_status_not_provided()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -391,7 +391,7 @@ class PortfolioEditTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotUpdateIfStatusNotAllowed()
+    public function test_can_not_update_if_status_not_allowed()
     {
         $fake_image = $this->uploadFakeImage();
 

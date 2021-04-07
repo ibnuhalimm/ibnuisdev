@@ -15,7 +15,7 @@ class PortfolioTest extends TestCase
      *
      * @return void
      */
-    public function testCanSetInitialPageAndPerPage()
+    public function test_can_set_initial_page_and_per_page()
     {
         $page = 1;
         $perPage = 8;

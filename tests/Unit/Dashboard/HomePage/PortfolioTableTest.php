@@ -3,7 +3,7 @@
 namespace Tests\Unit\Dashboard\HomePage;
 
 use App\Http\Livewire\Dashboard\Portfolio\Table;
-use App\Project;
+use App\Models\Project;
 use Livewire\Livewire;
 use Tests\TestCase;
 
@@ -14,7 +14,7 @@ class PortfolioTableTest extends TestCase
      *
      * @return void
      */
-    public function testShowDeleteConfirmationModal()
+    public function test_show_delete_confirmation_modal()
     {
         $project = factory(Project::class)->create();
 
@@ -30,7 +30,7 @@ class PortfolioTableTest extends TestCase
      *
      * @return void
      */
-    public function testHideDeleteConfirmationModalIfCancel()
+    public function test_hide_delete_confirmation_modal_if_cancel()
     {
         Livewire::test(Table::class)
             ->assertSet('delete_project_id', null)
@@ -42,7 +42,7 @@ class PortfolioTableTest extends TestCase
      *
      * @return void
      */
-    public function testCanDeleteProject()
+    public function test_can_delete_project()
     {
         $project = factory(Project::class)->create();
 

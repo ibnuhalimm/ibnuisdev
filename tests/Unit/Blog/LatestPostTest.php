@@ -17,7 +17,7 @@ class LatestPostTest extends TestCase
      *
      * @return void
      */
-    public function testComponentHasFollowingAttributes()
+    public function test_component_has_following_attributes()
     {
         Livewire::test(LatestPost::class, [
                 'except_ids' => $this->except_ids
@@ -30,7 +30,7 @@ class LatestPostTest extends TestCase
      *
      * @return void
      */
-    public function testHasPostsData()
+    public function test_has_posts_data()
     {
         factory(Post::class, 5)->create();
 

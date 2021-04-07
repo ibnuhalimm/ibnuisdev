@@ -3,7 +3,7 @@
 namespace Tests\Unit\Dashboard\HomePage;
 
 use App\Http\Livewire\Dashboard\Section\Table;
-use App\Section;
+use App\Models\Section;
 use Livewire\Livewire;
 use Tests\TestCase;
 
@@ -14,7 +14,7 @@ class SectionTableTest extends TestCase
      *
      * @return void
      */
-    public function testShowEditSectionModal()
+    public function test_show_edit_section_modal()
     {
         $section = factory(Section::class)->create();
 
@@ -31,7 +31,7 @@ class SectionTableTest extends TestCase
      *
      * @return void
      */
-    public function testCancelEditCloseEditModal()
+    public function test_cancel_edit_close_edit_modal()
     {
         Livewire::test(Table::class)
             ->call('cancelEditSection')
@@ -46,7 +46,7 @@ class SectionTableTest extends TestCase
      *
      * @return void
      */
-    public function testCanUpdateSectionDescription()
+    public function test_can_update_section_description()
     {
         $section = factory(Section::class)->create();
 
@@ -65,7 +65,7 @@ class SectionTableTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotUpdateSectionIfSectionFieldIsBlank()
+    public function test_can_not_update_section_if_section_field_is_blank()
     {
         $section = factory(Section::class)->create();
 
@@ -85,7 +85,7 @@ class SectionTableTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotUpdateSectionIfSectionFieldIsInvalid()
+    public function test_can_not_update_section_if_section_field_is_invalid()
     {
         $section = factory(Section::class)->create();
 
@@ -105,7 +105,7 @@ class SectionTableTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotUpdateSectionIfDescriptionFieldIsBlank()
+    public function test_can_not_update_section_if_description_field_is_blank()
     {
         $section = factory(Section::class)->create();
 
@@ -124,7 +124,7 @@ class SectionTableTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotUpdateSectionIfDescriptionLessThanTenChars()
+    public function test_can_not_update_section_if_description_less_than_ten_chars()
     {
         $section = factory(Section::class)->create();
 

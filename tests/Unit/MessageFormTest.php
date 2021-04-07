@@ -17,7 +17,7 @@ class MessageFormTest extends TestCase
      *
      * @return void
      */
-    public function testComponentHasFollowingAttributes()
+    public function test_component_has_following_attributes()
     {
         Livewire::test(MessageForm::class)
             ->assertSet('name', null)
@@ -30,7 +30,7 @@ class MessageFormTest extends TestCase
      *
      * @return void
      */
-    public function testSuccessSendingIfProvidedValidData()
+    public function test_success_sending_if_provided_valid_data()
     {
         Livewire::test(MessageForm::class)
             ->set('name', $this->faker->name())
@@ -45,7 +45,7 @@ class MessageFormTest extends TestCase
      *
      * @return void
      */
-    public function testGetErrorsIfAllFieldsNotFilled()
+    public function test_get_errors_if_all_fields_not_filled()
     {
         Livewire::test(MessageForm::class)
             ->set('name', null)
@@ -64,7 +64,7 @@ class MessageFormTest extends TestCase
      *
      * @return void
      */
-    public function testGetRequiredErrorIfNameNotProvided()
+    public function test_get_required_error_if_name_not_provided()
     {
         Livewire::test(MessageForm::class)
             ->set('name', null)
@@ -79,7 +79,7 @@ class MessageFormTest extends TestCase
      *
      * @return void
      */
-    public function testGetMinErrorIfNameLessThanThreeChars()
+    public function test_get_min_error_if_name_less_than_three_chars()
     {
         Livewire::test(MessageForm::class)
             ->set('name', substr($this->faker->name, 0, 2))
@@ -94,7 +94,7 @@ class MessageFormTest extends TestCase
      *
      * @return void
      */
-    public function testGetMaxErrorIfNameMoreThanFourtyChars()
+    public function test_get_max_error_if_name_more_than_fourty_chars()
     {
         Livewire::test(MessageForm::class)
             ->set('name', substr($this->faker->text(), 0, 41))
@@ -109,7 +109,7 @@ class MessageFormTest extends TestCase
      *
      * @return void
      */
-    public function testGetRequiredErrorIfEmailNotProvided()
+    public function test_get_required_error_if_email_not_provided()
     {
         Livewire::test(MessageForm::class)
             ->set('name', $this->faker->name)
@@ -124,7 +124,7 @@ class MessageFormTest extends TestCase
      *
      * @return void
      */
-    public function testGetInValidErrorIfEmailNotValid()
+    public function test_get_invalid_error_if_email_not_valid()
     {
         Livewire::test(MessageForm::class)
             ->set('name', $this->faker->name)
@@ -139,7 +139,7 @@ class MessageFormTest extends TestCase
      *
      * @return void
      */
-    public function testGetMaxErrorIfEmailMoreThanOneHundredChars()
+    public function test_get_max_error_if_email_more_than_one_hundred_chars()
     {
         $long_fake_email = Str::random(100) . '@' . $this->faker->freeEmailDomain;
 
@@ -156,7 +156,7 @@ class MessageFormTest extends TestCase
      *
      * @return void
      */
-    public function testGetRequiredErrorIfBodyMessageNotProvided()
+    public function test_get_required_error_if_body_message_not_provided()
     {
         Livewire::test(MessageForm::class)
             ->set('name', $this->faker->name)
@@ -171,7 +171,7 @@ class MessageFormTest extends TestCase
      *
      * @return void
      */
-    public function testGetMinErrorIfBodyMessageLessThanTenChars()
+    public function test_get_min_error_if_body_message_less_than_ten_chars()
     {
         Livewire::test(MessageForm::class)
             ->set('name', $this->faker->name)

@@ -3,7 +3,7 @@
 namespace Tests\Unit\Dashboard\HomePage;
 
 use App\Http\Livewire\Dashboard\Portfolio\Create;
-use App\Project;
+use App\Models\Project;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -30,7 +30,7 @@ class PortfolioCreateTest extends TestCase
      *
      * @return void
      */
-    public function testCanUploadImage()
+    public function test_can_upload_image()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -44,7 +44,7 @@ class PortfolioCreateTest extends TestCase
      *
      * @return void
      */
-    public function testCanStoreNewPortfolio()
+    public function test_can_store_new_portfolio()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -66,7 +66,7 @@ class PortfolioCreateTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotStoreIfMonthNotProvided()
+    public function test_can_not_store_if_month_not_provided()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -90,7 +90,7 @@ class PortfolioCreateTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotStoreIfYearNotProvided()
+    public function test_can_not_store_if_year_not_provided()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -114,7 +114,7 @@ class PortfolioCreateTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotStoreIfYearLessThanFourChars()
+    public function test_can_not_store_if_year_less_than_four_chars()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -138,7 +138,7 @@ class PortfolioCreateTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotStoreIfNameNotProvided()
+    public function test_can_not_store_if_name_not_provided()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -162,7 +162,7 @@ class PortfolioCreateTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotStoreIfNameLessThanTenChars()
+    public function test_can_not_store_if_name_less_than_ten_chars()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -186,7 +186,7 @@ class PortfolioCreateTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotStoreIfNameMoreThanFiftyChars()
+    public function test_can_not_store_if_name_more_than_fifty_chars()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -210,7 +210,7 @@ class PortfolioCreateTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotStoreIfImageNotProvided()
+    public function test_can_not_store_if_image_not_provided()
     {
         Livewire::test(Create::class)
             ->set('month', $this->faker->numberBetween(1, 12))
@@ -232,7 +232,7 @@ class PortfolioCreateTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotStoreIfImageNotAllowedExtensions()
+    public function test_can_not_store_if_image_not_allowed_extensions()
     {
         $fake_image = $this->uploadFakeImage('.gif');
 
@@ -256,7 +256,7 @@ class PortfolioCreateTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotStoreIfDescriptionNotProvided()
+    public function test_can_not_store_if_description_not_provided()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -280,7 +280,7 @@ class PortfolioCreateTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotStoreIfDescriptionLessThanTenHundredChars()
+    public function test_can_not_store_if_description_less_than_ten_hundred_chars()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -304,7 +304,7 @@ class PortfolioCreateTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotStoreIfDescriptionMoreThanThreeHundredChars()
+    public function test_can_not_store_if_description_more_than_three_hundred_chars()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -328,7 +328,7 @@ class PortfolioCreateTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotStoreIfUrlIsInvalid()
+    public function test_can_not_store_if_url_is_invalid()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -352,7 +352,7 @@ class PortfolioCreateTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotStoreIfStatusNotProvided()
+    public function test_can_not_store_if_status_not_provided()
     {
         $fake_image = $this->uploadFakeImage();
 
@@ -376,7 +376,7 @@ class PortfolioCreateTest extends TestCase
      *
      * @return void
      */
-    public function testCanNotStoreIfStatusNotAllowed()
+    public function test_can_not_store_if_status_not_allowed()
     {
         $fake_image = $this->uploadFakeImage();
 

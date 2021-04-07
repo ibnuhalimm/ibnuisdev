@@ -13,7 +13,7 @@ class MostVisitedPagesTest extends TestCase
      *
      * @return void
      */
-    public function testCanSetInitialDays()
+    public function test_can_set_initial_days()
     {
         Livewire::test(MostVisitedPages::class, [
             'days' => 7
