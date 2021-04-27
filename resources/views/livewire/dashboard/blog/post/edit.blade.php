@@ -122,6 +122,49 @@
             };
         }
 
+
+        const tinyMceImageUploadHandler = (blobInfo, success, failure, progress) => {
+            let xhr = new XMLHttpRequest();
+            xhr.withCredentials = false;
+            xhr.open('POST', '{{ route('dashboard.post.upload-image') }}');
+
+            xhr.setRequestHeader('X-CSRF-TOKEN', xcsrf_token);
+
+            xhr.upload.onprogress = (event) => {
+                progress(event.loaded / event.total * 100);
+            }
+
+            xhr.onload = () => {
+                if (xhr.status === 403) {
+                    failure(`HTTP Error: ${xhr.status, { remove: true }}`);
+                    return;
+                }
+
+                if (xhr.status < 200 || xhr.status >= 300) {
+                    failure(`HTTP Error: ${xhr.status}`);
+                    return;
+                }
+
+                let json = JSON.parse(xhr.responseText);
+                if (!json || typeof json.location != 'string') {
+                    failure(`Invalid JSON: ${xhr.responseText}`);
+                    return;
+                }
+
+                success(json.location);
+            }
+
+            xhr.onerror = () => {
+                failure(`Image upload failed du to a XHR Transport Error. Code: ${xhr.status}`);
+            }
+
+            let formData = new FormData();
+            formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+            xhr.send(formData);
+        };
+
+
         tinymce.init({
             selector: '#__imageCreditsCreatePost',
             setup: function(editor) {
@@ -133,9 +176,9 @@
             content_css: '{{ URL::asset('css/tinymce-content.css?_=' . rand()) }}',
             menubar: false,
             plugins: [
-                'link',
+                'link'
             ],
-            toolbar: 'link',
+            toolbar: 'link'
         });
 
 
@@ -156,7 +199,7 @@
                 'codesample'
             ],
             toolbar: 'insertfile undo redo | styleselect | codesample | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
-            images_upload_url: '{{ route('dashboard.post.upload-image') }}',
+            images_upload_handler: tinyMceImageUploadHandler,
             images_upload_base_path: '{{ url('/') }}',
             // codesample_global_prismjs: true
         });

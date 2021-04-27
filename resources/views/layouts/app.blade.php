@@ -139,6 +139,9 @@
         </p>
     </footer>
 
+    <script>
+        const xcsrf_token = document.getElementsByName('csrf-token')[0].getAttribute('content');
+    </script>
     @stack('bottom_scripts')
 
 </body>
