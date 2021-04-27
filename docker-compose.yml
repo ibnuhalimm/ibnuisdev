@@ -26,7 +26,24 @@ services:
       MYSQL_DATABASE: ibnuisdev
       MYSQL_ROOT_PASSWORD: toor
 
+  dbtest:
+    image: mariadb:10.3
+    ports:
+      - '33062:3306'
+    tmpfs:
+      - /var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ibnuisdev_test
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+
   redis:
     image: redis
     volumes:
       - ./.docker/dbdata/redis:/data
+
+  sqlite3:
+    image: nouchka/sqlite3:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./.docker/dbdata/sqlite:/root/db
