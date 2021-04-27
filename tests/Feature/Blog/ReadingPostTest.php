@@ -15,7 +15,7 @@ class ReadingPostTest extends TestCase
      */
     public function test_visitor_can_view_post_detail_page()
     {
-        $post = factory(Post::class)->create([
+        $post = Post::factory()->create([
             'status' => Post::STATUS_PUBLISH
         ]);
 
@@ -31,7 +31,7 @@ class ReadingPostTest extends TestCase
      */
     public function test_return_not_found_page_for_drafted_post()
     {
-        $post = factory(Post::class)->create([
+        $post = Post::factory()->create([
             'status' => Post::STATUS_DRAFT
         ]);
 
@@ -46,7 +46,7 @@ class ReadingPostTest extends TestCase
      */
     public function test_success_page_for_drafted_post_on_preview_mode()
     {
-        $post = factory(Post::class)->create([
+        $post = Post::factory()->create([
             'status' => Post::STATUS_DRAFT
         ]);
 

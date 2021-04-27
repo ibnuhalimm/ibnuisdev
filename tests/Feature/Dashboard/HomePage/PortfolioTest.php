@@ -15,7 +15,7 @@ class PortfolioTest extends TestCase
      */
     private function setLoggedInUser()
     {
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
         $this->actingAs($user);
     }
 
@@ -82,7 +82,7 @@ class PortfolioTest extends TestCase
     {
         $this->setLoggedInUser();
 
-        $project = factory(Project::class)->create();
+        $project = Project::factory()->create();
 
         $response = $this->get(route('dashboard.portfolio.edit', [ 'id' => $project->id ]));
         $response->assertStatus(200)

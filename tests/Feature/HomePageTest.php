@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -14,6 +15,8 @@ class HomePageTest extends TestCase
      */
     public function test_visitor_can_view_landing_page()
     {
+        User::factory()->create();
+
         $response = $this->get('/');
 
         $response->assertStatus(200)

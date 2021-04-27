@@ -40,7 +40,7 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         }
 
-
+        View::share('user', []);
         if (Schema::hasTable((new User)->getTable())) {
             View::share('user', User::first());
         }

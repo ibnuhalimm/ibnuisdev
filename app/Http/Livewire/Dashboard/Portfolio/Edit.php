@@ -125,6 +125,7 @@ class Edit extends Component
             return redirect()->route('dashboard.portfolio.index');
 
         } catch (\Throwable $th) {
+            report($th);
             session()->flash('alert-create-status', 'red');
             session()->flash('alert-create-title', 'Error');
             session()->flash('alert-create-body', 'Oops, something went wrong');

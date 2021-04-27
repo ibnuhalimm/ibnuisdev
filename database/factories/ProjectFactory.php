@@ -25,6 +25,7 @@ class ProjectFactory extends Factory
         $image = $this->faker->image('storage/app/public/project', 1366, 768);
 
         return [
+            'lang' => $this->faker->randomElement(['id', 'en']),
             'month' => $this->faker->numberBetween(1, 12),
             'year' => $this->faker->dateTimeThisDecade()->format('Y'),
             'name' => substr($this->faker->company() . ' ' . $this->faker->words(3, true), 0, 50),

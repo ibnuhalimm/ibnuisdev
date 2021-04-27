@@ -21,19 +21,19 @@ trait LivewireOptimizeImage
         $file_name = $prop->getFileName();
         $livewire_dir = 'app/livewire-tmp/';
 
-        $img = Image::make($prop->getRealPath());
-        $img->resize($width, null, function($constraint) {
-            $constraint->aspectRatio();
-        });
-        // $img->crop($width, $height);
-        $img->encode('webp', 80);
+        if (config('app.env') !== 'testing') {
+            $img = Image::make($prop->getRealPath());
+            $img->resize($width, null, function($constraint) {
+                $constraint->aspectRatio();
+            });
+            $img->encode('webp', 80);
 
-        if (Storage::exists(storage_path($livewire_dir . $file_name))) {
-            unlink(storage_path($livewire_dir . $file_name));
+            if (Storage::exists(storage_path($livewire_dir . $file_name))) {
+                unlink(storage_path($livewire_dir . $file_name));
+            }
+
+            $img->save();
         }
-
-        $img->save();
-        // $img->save(storage_path($livewire_dir . $file_name), 80, 'jpg');
 
         return storage_path($livewire_dir . $file_name);
     }

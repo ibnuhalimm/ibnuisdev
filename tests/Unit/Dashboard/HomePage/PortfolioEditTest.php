@@ -22,7 +22,18 @@ class PortfolioEditTest extends TestCase
     {
         Storage::fake('livewire-fake');
 
-        return UploadedFile::fake()->image(Str::random(10) . '.' . $extension);
+        return UploadedFile::fake()->image($this->faker->image(null, 1366, 768));
+    }
+
+    /**
+     * Make month attribute two digits
+     *
+     * @param int $month
+     * @return string
+     */
+    public function setStrMonth($month)
+    {
+        return $month < 10 ? '0' . $month : $month;
     }
 
     /**
@@ -34,7 +45,7 @@ class PortfolioEditTest extends TestCase
     {
         $fake_image = $this->uploadFakeImage();
 
-        $project = factory(Project::class)->create();
+        $project = Project::factory()->create();
 
         Livewire::test(Edit::class, [ 'project' => $project ])
             ->set('image', $fake_image)
@@ -50,10 +61,36 @@ class PortfolioEditTest extends TestCase
     {
         $fake_image = $this->uploadFakeImage();
 
-        $project = factory(Project::class)->create();
+        $project = Project::factory()->create();
 
         Livewire::test(Edit::class, [ 'project' => $project ])
             ->set('project_id', $project->id)
+            ->set('lang', $project->lang)
+            ->set('month', $this->setStrMonth($project->month))
+            ->set('year', $project->year)
+            ->set('image', $fake_image)
+            ->set('name', $project->name)
+            ->set('description', $project->description)
+            ->set('link', $project->link)
+            ->set('status', $project->status)
+            ->call('submitUpdateProject')
+            ->assertStatus(200)
+            ->assertRedirect(route('dashboard.portfolio.index'));
+    }
+
+
+    /**
+     * @test
+     */
+    public function test_can_not_update_if_lang_not_provided()
+    {
+        $fake_image = $this->uploadFakeImage();
+
+        $project = Project::factory()->create();
+
+        Livewire::test(Edit::class, [ 'project' => $project ])
+            ->set('project_id', $project->id)
+            ->set('lang', null)
             ->set('month', $project->month)
             ->set('year', $project->year)
             ->set('name', $project->name)
@@ -62,7 +99,34 @@ class PortfolioEditTest extends TestCase
             ->set('link', $project->link)
             ->set('status', $project->status)
             ->call('submitUpdateProject')
-            ->assertRedirect(route('dashboard.portfolio.index'));
+            ->assertHasErrors([
+                'lang' => 'required'
+            ]);
+    }
+
+    /**
+     * @test
+     */
+    public function test_can_not_update_if_lang_is_invalid()
+    {
+        $fake_image = $this->uploadFakeImage();
+
+        $project = Project::factory()->create();
+
+        Livewire::test(Edit::class, [ 'project' => $project ])
+            ->set('project_id', $project->id)
+            ->set('lang', 'invalid-lang')
+            ->set('month', $project->month)
+            ->set('year', $project->year)
+            ->set('name', $project->name)
+            ->set('image', $fake_image)
+            ->set('description', $project->description)
+            ->set('link', $project->link)
+            ->set('status', $project->status)
+            ->call('submitUpdateProject')
+            ->assertHasErrors([
+                'lang' => 'in'
+            ]);
     }
 
     /**
@@ -75,10 +139,11 @@ class PortfolioEditTest extends TestCase
     {
         $fake_image = $this->uploadFakeImage();
 
-        $project = factory(Project::class)->create();
+        $project = Project::factory()->create();
 
         Livewire::test(Edit::class, [ 'project' => $project ])
             ->set('project_id', $project->id)
+            ->set('lang', $project->lang)
             ->set('month', null)
             ->set('year', $project->year)
             ->set('name', $project->name)
@@ -102,10 +167,11 @@ class PortfolioEditTest extends TestCase
     {
         $fake_image = $this->uploadFakeImage();
 
-        $project = factory(Project::class)->create();
+        $project = Project::factory()->create();
 
         Livewire::test(Edit::class, [ 'project' => $project ])
             ->set('project_id', $project->id)
+            ->set('lang', $project->lang)
             ->set('month', $project->month)
             ->set('year', null)
             ->set('name', $project->name)
@@ -129,10 +195,11 @@ class PortfolioEditTest extends TestCase
     {
         $fake_image = $this->uploadFakeImage();
 
-        $project = factory(Project::class)->create();
+        $project = Project::factory()->create();
 
         Livewire::test(Edit::class, [ 'project' => $project ])
             ->set('project_id', $project->id)
+            ->set('lang', $project->lang)
             ->set('month', $project->month)
             ->set('year', 22)
             ->set('name', $project->name)
@@ -156,10 +223,11 @@ class PortfolioEditTest extends TestCase
     {
         $fake_image = $this->uploadFakeImage();
 
-        $project = factory(Project::class)->create();
+        $project = Project::factory()->create();
 
         Livewire::test(Edit::class, [ 'project' => $project ])
             ->set('project_id', $project->id)
+            ->set('lang', $project->lang)
             ->set('month', $project->month)
             ->set('year', $project->year)
             ->set('name', null)
@@ -183,10 +251,11 @@ class PortfolioEditTest extends TestCase
     {
         $fake_image = $this->uploadFakeImage();
 
-        $project = factory(Project::class)->create();
+        $project = Project::factory()->create();
 
         Livewire::test(Edit::class, [ 'project' => $project ])
             ->set('project_id', $project->id)
+            ->set('lang', $project->lang)
             ->set('month', $project->month)
             ->set('year', $project->year)
             ->set('name', Str::random(9))
@@ -210,10 +279,11 @@ class PortfolioEditTest extends TestCase
     {
         $fake_image = $this->uploadFakeImage();
 
-        $project = factory(Project::class)->create();
+        $project = Project::factory()->create();
 
         Livewire::test(Edit::class, [ 'project' => $project ])
             ->set('project_id', $project->id)
+            ->set('lang', $project->lang)
             ->set('month', $project->month)
             ->set('year', $project->year)
             ->set('name', Str::random(51))
@@ -228,29 +298,6 @@ class PortfolioEditTest extends TestCase
     }
 
     /**
-     * Can update portfolio
-     * if image is not provided
-     *
-     * @return void
-     */
-    public function test_can_update_if_image_not_provided()
-    {
-        $project = factory(Project::class)->create();
-
-        Livewire::test(Edit::class, [ 'project' => $project ])
-            ->set('project_id', $project->id)
-            ->set('month', $project->month)
-            ->set('year', $project->year)
-            ->set('name', $project->name)
-            // ->set('image', null)
-            ->set('description', $project->description)
-            ->set('link', $project->link)
-            ->set('status', $project->status)
-            ->call('submitUpdateProject')
-            ->assertRedirect(route('dashboard.portfolio.index'));
-    }
-
-    /**
      * Can't update portfolio
      * if description not provided
      *
@@ -260,10 +307,11 @@ class PortfolioEditTest extends TestCase
     {
         $fake_image = $this->uploadFakeImage();
 
-        $project = factory(Project::class)->create();
+        $project = Project::factory()->create();
 
         Livewire::test(Edit::class, [ 'project' => $project ])
             ->set('project_id', $project->id)
+            ->set('lang', $project->lang)
             ->set('month', $project->month)
             ->set('year', $project->year)
             ->set('name', $project->name)
@@ -287,10 +335,11 @@ class PortfolioEditTest extends TestCase
     {
         $fake_image = $this->uploadFakeImage();
 
-        $project = factory(Project::class)->create();
+        $project = Project::factory()->create();
 
         Livewire::test(Edit::class, [ 'project' => $project ])
             ->set('project_id', $project->id)
+            ->set('lang', $project->lang)
             ->set('month', $project->month)
             ->set('year', $project->year)
             ->set('name', $project->name)
@@ -314,10 +363,11 @@ class PortfolioEditTest extends TestCase
     {
         $fake_image = $this->uploadFakeImage();
 
-        $project = factory(Project::class)->create();
+        $project = Project::factory()->create();
 
         Livewire::test(Edit::class, [ 'project' => $project ])
             ->set('project_id', $project->id)
+            ->set('lang', $project->lang)
             ->set('month', $project->month)
             ->set('year', $project->year)
             ->set('name', $project->name)
@@ -341,10 +391,11 @@ class PortfolioEditTest extends TestCase
     {
         $fake_image = $this->uploadFakeImage();
 
-        $project = factory(Project::class)->create();
+        $project = Project::factory()->create();
 
         Livewire::test(Edit::class, [ 'project' => $project ])
             ->set('project_id', $project->id)
+            ->set('lang', $project->lang)
             ->set('month', $project->month)
             ->set('year', $project->year)
             ->set('name', $project->name)
@@ -368,10 +419,11 @@ class PortfolioEditTest extends TestCase
     {
         $fake_image = $this->uploadFakeImage();
 
-        $project = factory(Project::class)->create();
+        $project = Project::factory()->create();
 
         Livewire::test(Edit::class, [ 'project' => $project ])
             ->set('project_id', $project->id)
+            ->set('lang', $project->lang)
             ->set('month', $project->month)
             ->set('year', $project->year)
             ->set('name', $project->name)
@@ -395,10 +447,11 @@ class PortfolioEditTest extends TestCase
     {
         $fake_image = $this->uploadFakeImage();
 
-        $project = factory(Project::class)->create();
+        $project = Project::factory()->create();
 
         Livewire::test(Edit::class, [ 'project' => $project ])
             ->set('project_id', $project->id)
+            ->set('lang', $project->lang)
             ->set('month', $project->month)
             ->set('year', $project->year)
             ->set('name', $project->name)

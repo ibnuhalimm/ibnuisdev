@@ -14,25 +14,11 @@ class BlogPageTest extends TestCase
      */
     public function testUserCanViewBlogPage()
     {
-        factory(Post::class, 10)->create();
+        Post::factory(10)->create();
 
         $response = $this->get(route('blog.index'));
 
         $response->assertStatus(200)
             ->assertViewIs('blog.index');
-    }
-
-    /**
-     * Contains latest-post livewire component
-     *
-     * @return void
-     */
-    public function testContainsLatestPostLivewire()
-    {
-        factory(Post::class, 10)->create();
-
-        $response = $this->get(route('blog.index'));
-
-        $response->assertSeeLivewire('blog.post.latest-post');
     }
 }

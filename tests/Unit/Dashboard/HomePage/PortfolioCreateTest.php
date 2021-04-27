@@ -5,6 +5,7 @@ namespace Tests\Unit\Dashboard\HomePage;
 use App\Http\Livewire\Dashboard\Portfolio\Create;
 use App\Models\Project;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Livewire\Livewire;
@@ -20,7 +21,7 @@ class PortfolioCreateTest extends TestCase
      */
     private function uploadFakeImage($extension = 'jpg')
     {
-        Storage::fake('livewire-fake');
+        Storage::fake('livewire-tmp');
 
         return UploadedFile::fake()->image(Str::random(10) . '.' . $extension);
     }
@@ -49,6 +50,7 @@ class PortfolioCreateTest extends TestCase
         $fake_image = $this->uploadFakeImage();
 
         Livewire::test(Create::class)
+            ->set('lang', $this->faker->randomElement(['id', 'en']))
             ->set('month', $this->faker->numberBetween(1, 12))
             ->set('year', $this->faker->dateTimeThisDecade()->format('Y'))
             ->set('name', Str::random(15))
@@ -223,30 +225,6 @@ class PortfolioCreateTest extends TestCase
             ->call('submitCreateProject')
             ->assertHasErrors([
                 'image' => 'required'
-            ]);
-    }
-
-    /**
-     * Can't store new portfolio
-     * if image is not allowed extension
-     *
-     * @return void
-     */
-    public function test_can_not_store_if_image_not_allowed_extensions()
-    {
-        $fake_image = $this->uploadFakeImage('.gif');
-
-        Livewire::test(Create::class)
-            ->set('month', $this->faker->numberBetween(1, 12))
-            ->set('year', $this->faker->dateTimeThisDecade()->format('Y'))
-            ->set('name', Str::random(15))
-            ->set('image', $fake_image)
-            ->set('description', Str::random(101))
-            ->set('link', $this->faker->url)
-            ->set('status', $this->faker->randomElement([ Project::STATUS_DRAFT, Project::STATUS_PUBLISH ]))
-            ->call('submitCreateProject')
-            ->assertHasErrors([
-                'image' => 'mimes'
             ]);
     }
 

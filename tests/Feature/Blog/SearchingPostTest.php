@@ -16,7 +16,7 @@ class SearchingPostTest extends TestCase
     {
         $post_title = 'Test';
 
-        factory(Post::class)->create([
+        Post::factory()->create([
             'judul' => $post_title,
             'status' => Post::STATUS_PUBLISH
         ]);
@@ -36,16 +36,5 @@ class SearchingPostTest extends TestCase
         $response = $this->get(route('blog.post.search', [ 'q' => 'Test again' ]));
         $response->assertStatus(200)
             ->assertViewIs('blog.post.search');
-    }
-
-    /**
-     * Contains `blog.post.latest-post` livewire component
-     *
-     * @return void
-     */
-    public function test_contains_latest_post_livewire()
-    {
-        $response = $this->get(route('blog.post.search', [ 'q' => 'Test again' ]));
-        $response->assertSeeLivewire('blog.post.latest-post');
     }
 }

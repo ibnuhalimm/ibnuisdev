@@ -29,7 +29,7 @@ class LoginTest extends TestCase
      */
     public function test_can_login_using_correct_credentials()
     {
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->post(route('login'), [
             'username' => $user->username,
@@ -47,7 +47,7 @@ class LoginTest extends TestCase
      */
     public function test_can_login_using_email_and_password()
     {
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->post(route('login'), [
             'username' => $user->email,
@@ -65,7 +65,7 @@ class LoginTest extends TestCase
      */
     public function test_can_not_login_using_incorrect_credentials()
     {
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->post(route('login'), [
             'username' => $user->email,

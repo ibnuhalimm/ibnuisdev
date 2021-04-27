@@ -16,7 +16,7 @@ class PortfolioTableTest extends TestCase
      */
     public function test_show_delete_confirmation_modal()
     {
-        $project = factory(Project::class)->create();
+        $project = Project::factory()->create();
 
         Livewire::test(Table::class)
             ->call('deleteProject', $project->id)
@@ -44,7 +44,7 @@ class PortfolioTableTest extends TestCase
      */
     public function test_can_delete_project()
     {
-        $project = factory(Project::class)->create();
+        $project = Project::factory()->create();
 
         Livewire::test(Table::class)
             ->set('delete_project_id', $project->id)
