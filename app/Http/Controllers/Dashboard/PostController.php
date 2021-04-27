@@ -7,6 +7,7 @@ use App\Models\Blog\Post;
 use App\Traits\StoreImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -58,11 +59,22 @@ class PostController extends Controller
     public function uploadImageCkeditor(Request $request)
     {
         if ($request->hasFile('file')) {
-            $store_image = $this->storeAndCompressImage($request, 'file', 'post-images');
-            $file_url = $store_image['uploaded_image'];
+            $file_extension = $request->file('file')->getClientOriginalExtension();
+
+            if ($file_extension === 'gif') {
+                $saveAsFileName = Str::random(30) . '_' . time() . '.' . $file_extension;
+
+                $file_path = Storage::putFileAs(
+                    'public/post-images', $request->file('file'), $saveAsFileName
+                );
+            }
+            else {
+                $store_image = $this->storeAndCompressImage($request, 'file', 'post-images');
+                $file_path = $store_image['uploaded_image'];
+            }
 
             return response()->json([
-                'location' => Storage::url($file_url)
+                'location' => Storage::url($file_path)
             ]);
         }
     }
