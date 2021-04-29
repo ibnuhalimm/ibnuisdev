@@ -42,7 +42,7 @@
 </head>
 <body class="flex flex-col min-h-screen justify-between text-sm text-ib-one">
     <nav class="w-full fixed z-30 top-0 left-0 right-0 bg-white border border-t-0 border-r-0 border-l-0 border-solid border-gray-200 py-4 leading-9 xl:leading-7">
-        <div class="w-11/12 sm:w-3/5 lg:w-3/4 mx-auto xl:flex xl:flex-row xl:items-center xl:justify-between">
+        <div class="w-11/12 sm:w-3/5 lg:w-3/4 xl:max-w-6xl mx-auto xl:flex xl:flex-row xl:items-center xl:justify-between">
             <div class="flex flex-row items-center justify-between xl:w-1/3">
                 <button class="p-1 outline-none hover:outline-none focus:outline-none xl:hidden" id="nav-button">
                     <svg class="w-6 h-auto text-ib-one" id="nav-burger" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -21,7 +21,7 @@
 @section('content')
 
     <section>
-        <div class="mb-10 xl:w-2/3 xl:mx-auto xl:order-2">
+        <div class="mb-10 xl:w-2/3 xl:max-w-4xl xl:mx-auto xl:order-2">
             <x-post-read-container>
                 <h1 class="text-3xl font-bold text-ib-one">
                     {{ $post->judul }}

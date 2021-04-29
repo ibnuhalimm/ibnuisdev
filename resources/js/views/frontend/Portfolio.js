@@ -20,6 +20,14 @@ function Portfolio() {
 
     let [ lang, setLang ] = useState({});
 
+    const initialProject = {
+        id: 0,
+        name: '',
+        image_url: '',
+        description: '',
+        link: '#'
+    };
+
 
     useEffect(() => {
         _getLangPack();
@@ -88,6 +96,7 @@ function Portfolio() {
 
     const closeModalHandler = () => {
         setIsModalOpen(false);
+        setProject(initialProject);
     }
 
 
@@ -108,7 +117,7 @@ function Portfolio() {
                         {isLoaded
                             ?   <ButtonRounded
                                     variant="primary"
-                                    onClick={loadMoreHandler}>
+                                    onClick={() => loadMoreHandler()}>
                                     {lang.more_portfolio}
                                 </ButtonRounded>
                             :   <ButtonRounded
@@ -157,10 +166,10 @@ function Portfolio() {
                                 </p>
                             </div>
                         </div>
-                        <div className="text-center">
+                        <div className="text-center mb-5">
                             <ButtonRounded
                                 variant="primary"
-                                onClick={closeModalHandler}>
+                                onClick={() => closeModalHandler()}>
                                     {lang.close}
                             </ButtonRounded>
                         </div>
