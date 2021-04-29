@@ -41,7 +41,7 @@
     </script>
 </head>
 <body class="flex flex-col min-h-screen justify-between text-sm text-ib-one">
-    <nav class="w-full fixed z-30 top-0 left-0 right-0 bg-white bg-blur bg-opacity-60 xl:bg-opacity-70 border border-t-0 border-r-0 border-l-0 border-solid border-gray-200 py-4 leading-9 xl:leading-7">
+    <nav class="w-full fixed z-30 top-0 left-0 right-0 bg-white border border-t-0 border-r-0 border-l-0 border-solid border-gray-200 py-4 leading-9 xl:leading-7">
         <div class="w-11/12 sm:w-3/5 lg:w-3/4 mx-auto xl:flex xl:flex-row xl:items-center xl:justify-between">
             <div class="flex flex-row items-center justify-between xl:w-1/3">
                 <button class="p-1 outline-none hover:outline-none focus:outline-none xl:hidden" id="nav-button">
@@ -69,9 +69,9 @@
                         <option value="id" @if (App::isLocale('id')) selected @endif>ID</option>
                         <option value="en" @if (App::isLocale('en')) selected @endif>EN</option>
                     </select>
-                    <form action="{{ route('blog.post.search') }}" method="get" class="flex flex-row items-center justify-center py-1 px-3 border border-solid border-gray-400 xl:border-gray-100 rounded-md bg-gray-400 xl:bg-gray-100">
-                        <svg viewBox="0 0 20 20" fill="currentColor" class="search w-6 h-6 xl:w-5 xl:h-5 text-white xl:text-ib-one"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
-                        <input type="search" name="q" class="w-full ml-2 py-1 xl:py-0 px-2 outline-none hover:outline-none bg-transparent text-white xl:text-ib-one placeholder-gray-100 xl:placeholder-gray-400 text-lg xl:text-sm" placeholder="{{ __('nav.search') }}">
+                    <form action="{{ route('blog.post.search') }}" method="get" class="flex flex-row items-center justify-center py-1 px-3 border border-solid border-gray-300 xl:border-gray-100 rounded-md bg-gray-200 xl:bg-gray-100">
+                        <svg viewBox="0 0 20 20" fill="currentColor" class="search w-6 h-6 xl:w-5 xl:h-5 text-ib-one"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                        <input type="search" name="q" class="w-full ml-2 py-1 xl:py-0 px-2 outline-none hover:outline-none bg-transparent text-ib-one placeholder-gray-400 text-lg xl:text-sm" placeholder="{{ __('nav.search') }}">
                     </form>
                 </div>
                 <div class="w-full h-full sm:h-32 md:h-full xl:h-auto sm:overflow-y-scroll xl:overflow-hidden text-center xl:text-left mt-8 xl:mt-0">
