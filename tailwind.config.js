@@ -1,5 +1,10 @@
 module.exports = {
-    purge: false,
+    mode: 'jit',
+    purge: [
+        './storage/framework/views/*.php',
+        './resources/views/**/*.blade.php',
+        './resources/js/**/*.{js,jsx,ts,tsx}'
+    ],
     theme: {
         extend: {
             colors: {
