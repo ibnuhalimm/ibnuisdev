@@ -18,20 +18,12 @@ class PageController extends Controller
     public function index()
     {
         $main_posts = Post::mainPostOnHome();
-        $main_posts_ids = collect($main_posts)->map(function($post) {
+        $except_ids = collect($main_posts)->map(function($post) {
             return $post['id'];
-        });
-
-        $top_posts = Post::getTopPostNotInMain($main_posts_ids);
-        $top_posts_ids = collect($top_posts)->map(function($post) {
-            return $post->id;
-        });
-
-        $except_ids = $main_posts_ids->concat($top_posts_ids)->all();
+        })->toArray();
 
         $data = [
             'main_posts' => $main_posts,
-            'top_posts' => $top_posts,
             'except_ids' => $except_ids
         ];
 

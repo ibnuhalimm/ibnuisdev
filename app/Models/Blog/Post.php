@@ -207,27 +207,6 @@ class Post extends Model
     }
 
     /**
-     * Top top post on home page
-     * ordering by most visited in lates 14 days
-     *
-     * @param array $main_post_ids
-     * @return mixed
-     */
-    public static function getTopPostNotInMain($main_post_ids = [])
-    {
-        return self::orderBy(
-                    PostVisitor::selectRaw('COUNT(*)')
-                        ->whereColumn('post_id', 'post.id')
-                        ->groupBy('post_id')
-                , 'desc')
-                ->latest()
-                ->published()
-                ->whereNotIn('id', $main_post_ids)
-                ->take(6)
-                ->get();
-    }
-
-    /**
      * Query related posts
      *
      * @param \Illuminate\Database\Query\Builder $query
