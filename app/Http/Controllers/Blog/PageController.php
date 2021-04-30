@@ -55,10 +55,15 @@ class PageController extends Controller
 
         PostVisitor::storePostVisitor($post->id);
 
+        $related_post = Post::relatedPosts($post->id, $post->tag)->take(3)->latest()->get();
+        if (count($related_post) < 3) {
+            $related_post = Post::whereNotIn('id', [$post->id])->take(3)->latest()->get();
+        }
+
         $data = [
             'post' => $post,
             'share_buttons' => ShareButton::orderBy('nomor_urut')->get(),
-            'related_posts' => Post::published()->relatedPosts($post->id, $post->tag)->take(4)->get()
+            'related_posts' => $related_post
         ];
 
         return view('blog.post.read', $data);
