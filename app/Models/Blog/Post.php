@@ -236,20 +236,26 @@ class Post extends Model
      */
     public function scopeRelatedPosts($query, $current_post_id, $tags = null)
     {
-        if (!empty($tags)) {
-            $arr_tags = Str::of($tags)->explode(',');
+        $arr_tags = explode(',', $tags);
 
-            return $query->whereNotIn('id', [ $current_post_id ])
-                        ->where(function($post) use ($arr_tags) {
-                            foreach ($arr_tags as $tag) {
-                                $post->orWhere('tag', 'like', '%' . trim($tag) . '%');
-                            }
-                        })
-                        ->published()
-                        ->latest();
+        $where_tags = '';
+
+        if (!empty($tags)) {
+            $where_tags = ' (';
+            foreach ($arr_tags as $idx_tag => $tag) {
+                if ($idx_tag === 0) {
+                    $where_tags .= " tag LIKE '%$tag%'";
+                }
+                else {
+                    $where_tags .= " OR tag LIKE '%$tag%'";
+                }
+            }
+            $where_tags .= ' )';
         }
 
-        return $query->whereNotIn('id', [ $current_post_id ])->published()->latest();
+        return $query->whereNotIn('id', [ $current_post_id ])
+                    ->whereRaw($where_tags)
+                    ->published();
     }
 
     /**
