@@ -24,11 +24,11 @@ class UniqueVisitorFactory extends Factory
         return [
             'ip_address' => $this->faker->ipv4(),
             'hit' => $this->faker->randomNumber(3),
-            'device' => $this->faker->randomElement([ 'mobile', 'desktop', 'tablet' ]),
+            'device' => $this->faker->randomElement(['mobile', 'desktop', 'tablet']),
             'os' => $this->faker->randomElement(['windows', 'linux', 'mac']),
             'date' => $this->faker->dateTimeBetween('-2 years', '+2 years')->format('Y-m-d'),
             'time_start' => $this->faker->time(),
-            'time_end' => date('H:i:s', strtotime($this->faker->time() . '+1 hours'))
+            'time_end' => date('H:i:s', strtotime($this->faker->time().'+1 hours')),
         ];
     }
 }

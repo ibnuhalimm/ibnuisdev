@@ -9,7 +9,7 @@ use Livewire\Component;
 class Create extends Component
 {
     /**
-     * Define properties
+     * Define properties.
      *
      * @var mixed
      */
@@ -19,7 +19,7 @@ class Create extends Component
     public $nomor_urut;
 
     /**
-     * Form validation rules
+     * Form validation rules.
      *
      * @return array
      */
@@ -29,12 +29,12 @@ class Create extends Component
             'nama' => 'required|string|min:2|max:30|unique:share_button,nama',
             'ikon' => 'required|string|max:30',
             'url' => 'required|url',
-            'nomor_urut' => 'required|integer|min:0'
+            'nomor_urut' => 'required|integer|min:0',
         ];
     }
 
     /**
-     * Form validation attributes
+     * Form validation attributes.
      *
      * @return array
      */
@@ -44,12 +44,12 @@ class Create extends Component
             'nama' => 'Name',
             'ikon' => 'Icon',
             'url' => 'URL',
-            'nomor_urut' => 'Order Number'
+            'nomor_urut' => 'Order Number',
         ];
     }
 
     /**
-     * Initialize properties value
+     * Initialize properties value.
      *
      * @return void
      */
@@ -59,7 +59,7 @@ class Create extends Component
     }
 
     /**
-     * Run form validation after updating properties
+     * Run form validation after updating properties.
      *
      * @param string $field_name
      * @return void
@@ -70,7 +70,7 @@ class Create extends Component
     }
 
     /**
-     * Storing data
+     * Storing data.
      *
      * @return \Illuminate\Http\Response
      */
@@ -82,14 +82,14 @@ class Create extends Component
             'nama' => Str::of($this->nama)->trim(),
             'ikon' => Str::of($this->ikon)->trim(),
             'url' => Str::of($this->url)->trim(),
-            'nomor_urut' => $this->nomor_urut
+            'nomor_urut' => $this->nomor_urut,
         ]);
 
         return redirect()->route('dashboard.share-button.index');
     }
 
     /**
-     * Render to view
+     * Render to view.
      *
      * @return \Illuminate\Http\Response
      */

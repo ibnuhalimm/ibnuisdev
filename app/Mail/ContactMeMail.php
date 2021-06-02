@@ -12,7 +12,7 @@ class ContactMeMail extends Mailable
     use Queueable, SerializesModels;
 
     /**
-     * Define properties
+     * Define properties.
      *
      * @var mixed
      */
@@ -37,7 +37,7 @@ class ContactMeMail extends Mailable
     public function build()
     {
         return $this->markdown('emails.contactme')
-                    ->subject('Message from "'. $this->data->email .'" at ' . date('Y-m-d H:i'))
+                    ->subject('Message from "'.$this->data->email.'" at '.date('Y-m-d H:i'))
                     ->to('ibnuhalimm@gmail.com');
     }
 }

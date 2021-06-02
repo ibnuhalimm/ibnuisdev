@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use DB;
 use App\Models\User;
+use DB;
 use Illuminate\Database\Seeder;
 
 class UsersSeeder extends Seeder
@@ -21,7 +21,7 @@ class UsersSeeder extends Seeder
             'name' => 'Ibnu Halim Mustofa',
             'username' => 'ibnu',
             'email' => 'ibnuhalimm@gmail.com',
-            'password' => bcrypt('1234')
+            'password' => bcrypt('1234'),
         ]);
     }
 }

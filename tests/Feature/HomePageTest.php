@@ -9,7 +9,7 @@ use Tests\TestCase;
 class HomePageTest extends TestCase
 {
     /**
-     * Status code of home page should 200
+     * Status code of home page should 200.
      *
      * @return void
      */

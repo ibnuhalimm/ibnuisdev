@@ -22,9 +22,9 @@ class SkillFactory extends Factory
     public function definition()
     {
         return [
-            'flag_type' => $this->faker->randomElement([ Skill::FLAG_TYPE_DAY_TO_DAY, Skill::FLAG_TYPE_EXPERIENCE ]),
+            'flag_type' => $this->faker->randomElement([Skill::FLAG_TYPE_DAY_TO_DAY, Skill::FLAG_TYPE_EXPERIENCE]),
             'name' => $this->faker->randomElement(['HTML', 'Javascript', 'CSS', 'Git', 'Laravel', 'Codeigniter', 'ReactJs', 'SCSS', 'TailwindCss', 'Bootstrap']),
-            'order_number' => $this->faker->numberBetween(1, 10)
+            'order_number' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

@@ -16,7 +16,7 @@ class Edit extends Component
     use WithFileUploads, LivewireOptimizeImage;
 
     /**
-     * Define all properties
+     * Define all properties.
      *
      * @var mixed
      */
@@ -35,7 +35,7 @@ class Edit extends Component
     public $is_delete_modal_open = 0;
 
     /**
-     * Initial properties value
+     * Initial properties value.
      *
      * @return void
      */
@@ -54,7 +54,7 @@ class Edit extends Component
     }
 
     /**
-     * Form validation rules
+     * Form validation rules.
      *
      * @return array
      */
@@ -63,46 +63,46 @@ class Edit extends Component
         return [
             'gbr' => [
                 'image',
-                'nullable'
+                'nullable',
             ],
             'judul' => [
                 'required',
                 'string',
                 'min:20',
-                'max:100'
+                'max:100',
             ],
             'slug' => [
                 'required',
                 'string',
                 'min:10',
                 'max:100',
-                'unique:' . Post::class . ',slug,' . $this->post_id
+                'unique:'.Post::class.',slug,'.$this->post_id,
             ],
             'brief_text' => [
                 'required',
                 'string',
                 'min:50',
-                'max:200'
+                'max:200',
             ],
             'isi' => [
                 'required',
                 'string',
-                'min:300'
+                'min:300',
             ],
             'status' => [
                 'required',
                 'numeric',
-                'in:' . Post::STATUS_DRAFT . ',' . Post::STATUS_PUBLISH
+                'in:'.Post::STATUS_DRAFT.','.Post::STATUS_PUBLISH,
             ],
             'tag' => [
                 'string',
-                'nullable'
-            ]
+                'nullable',
+            ],
         ];
     }
 
     /**
-     * Form validation attributes
+     * Form validation attributes.
      *
      * @return array
      */
@@ -115,26 +115,26 @@ class Edit extends Component
             'brief_text' => 'Brief Text',
             'isi' => 'Text',
             'status' => 'Status',
-            'tag' => 'Tag'
+            'tag' => 'Tag',
         ];
     }
 
     /**
-     * Generate slug if slug is being blank
+     * Generate slug if slug is being blank.
      *
      * @param string $value
      * @return void
      */
     public function updatedJudul($value)
     {
-        if (!empty($value) && empty($this->slug)) {
+        if (! empty($value) && empty($this->slug)) {
             $this->slug = SlugService::createSlug(Post::class, 'slug', $value);
             $this->resetErrorBag('slug');
         }
     }
 
     /**
-     * Event after updating `gbr` property
+     * Event after updating `gbr` property.
      *
      * @return void
      */
@@ -145,7 +145,7 @@ class Edit extends Component
     }
 
     /**
-     * Run form validation
+     * Run form validation.
      *
      * @param string $field_name
      * @return void
@@ -156,7 +156,7 @@ class Edit extends Component
     }
 
     /**
-     * Store Post
+     * Store Post.
      *
      * @return \Illuminate\Http\Response
      */
@@ -164,7 +164,7 @@ class Edit extends Component
     {
         $this->validate($this->formValidationRules(), [], $this->formValidationAttributes());
 
-        if (!empty($this->gbr)) {
+        if (! empty($this->gbr)) {
             if (Storage::disk('public')->exists($this->gbr_field)) {
                 Storage::disk('public')->delete($this->gbr_field);
             }
@@ -174,22 +174,22 @@ class Edit extends Component
 
         Post::where('id', $this->post_id)
             ->update([
-                    'gbr' => $this->gbr_field,
-                    'image_credits' => $this->image_credits,
-                    'judul' => $this->judul,
-                    'slug' => trim($this->slug),
-                    'brief_text' => $this->brief_text,
-                    'isi' => Str::of($this->isi)->replace('../../../', '../../'),
-                    'status' => $this->status,
-                    'tag' => $this->tag,
-                    'user_update' => Auth::user()->username
-                ]);
+                'gbr' => $this->gbr_field,
+                'image_credits' => $this->image_credits,
+                'judul' => $this->judul,
+                'slug' => trim($this->slug),
+                'brief_text' => $this->brief_text,
+                'isi' => Str::of($this->isi)->replace('../../../', '../../'),
+                'status' => $this->status,
+                'tag' => $this->tag,
+                'user_update' => Auth::user()->username,
+            ]);
 
         return redirect()->route('dashboard.post.index');
     }
 
     /**
-     * Action when click `delete` button
+     * Action when click `delete` button.
      *
      * @return void
      */
@@ -199,7 +199,7 @@ class Edit extends Component
     }
 
     /**
-     * Cancel delete post / close delete modal
+     * Cancel delete post / close delete modal.
      *
      * @return void
      */
@@ -209,7 +209,7 @@ class Edit extends Component
     }
 
     /**
-     * Action to delete postingan
+     * Action to delete postingan.
      *
      * @return \Illuminate\Http\Response
      */
@@ -221,7 +221,7 @@ class Edit extends Component
     }
 
     /**
-     * Render to view
+     * Render to view.
      *
      * @return \Illuminate\Http\Response
      */

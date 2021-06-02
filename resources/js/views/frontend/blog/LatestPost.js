@@ -4,61 +4,53 @@ import BlogPostCard from '../../../components/BlogPostCard';
 import API from '../../../constant/API';
 import MorePost from './MorePost';
 
-
 function LatestPost() {
-    let [ initialLoaded, setInitialLoaded ] = useState(false);
-    let [ isLoaded, setIsLoaded ] = useState(false);
-    let [ lastId, setLastId ] = useState(0);
-    let [ posts, setPosts ] = useState([]);
+    let [initialLoaded, setInitialLoaded] = useState(false);
+    let [isLoaded, setIsLoaded] = useState(false);
+    let [lastId, setLastId] = useState(0);
+    let [posts, setPosts] = useState([]);
 
-    let [ lang, setLang ] = useState({});
+    let [lang, setLang] = useState({});
 
     useEffect(() => {
         _getLangPack();
         _getPosts();
     }, []);
 
-
     const _getLangPack = () => {
-        Axios.get(API.lang_pack)
-            .then(response => {
-                let responseBody = response.data;
-                let language = responseBody.data;
+        Axios.get(API.lang_pack).then((response) => {
+            let responseBody = response.data;
+            let language = responseBody.data;
 
-                setLang(language);
-            });
+            setLang(language);
+        });
     };
-
 
     const _getPosts = () => {
         setIsLoaded(false);
 
         Axios.post(API.latest_posts, {
             lastId: lastId,
-            exceptIds: blog_except_ids
-        })
-            .then(response => {
-                let responseBody = response.data;
-                let allPosts = [ ...posts, ...responseBody.data.posts ];
+            exceptIds: blog_except_ids,
+        }).then((response) => {
+            let responseBody = response.data;
+            let allPosts = [...posts, ...responseBody.data.posts];
 
-                setIsLoaded(true);
-                setInitialLoaded(true);
-                setLastId(responseBody.data.lastId);
-                setPosts(allPosts);
-            });
-    }
-
+            setIsLoaded(true);
+            setInitialLoaded(true);
+            setLastId(responseBody.data.lastId);
+            setPosts(allPosts);
+        });
+    };
 
     const loadMorePostHandler = () => {
         _getPosts();
     };
 
-
-    let morePostButton = <MorePost isLoaded={isLoaded} lang={lang} loadMorePost={loadMorePostHandler} />
+    let morePostButton = <MorePost isLoaded={isLoaded} lang={lang} loadMorePost={loadMorePostHandler} />;
     if (lastId == -1 || initialLoaded === false) {
         morePostButton = null;
     }
-
 
     return (
         <div>
@@ -71,9 +63,10 @@ function LatestPost() {
                             title={post.title}
                             image={post.image_url}
                             date={post.created_at}
-                            previewBody={post.preview_body} />
-                    )
-                }) }
+                            previewBody={post.preview_body}
+                        />
+                    );
+                })}
             </div>
             {morePostButton}
         </div>
@@ -83,5 +76,5 @@ function LatestPost() {
 export default LatestPost;
 
 if (document.getElementById('latest-post-ui-content')) {
-    ReactDOM.render(<LatestPost/>, document.getElementById('latest-post-ui-content'));
+    ReactDOM.render(<LatestPost />, document.getElementById('latest-post-ui-content'));
 }

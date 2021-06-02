@@ -13,7 +13,7 @@ class MessageFormTest extends TestCase
      * Message form component should has following attributes
      * - name
      * - email
-     * - body
+     * - body.
      *
      * @return void
      */
@@ -26,7 +26,7 @@ class MessageFormTest extends TestCase
     }
 
     /**
-     * Should success if sending valid data
+     * Should success if sending valid data.
      *
      * @return void
      */
@@ -41,7 +41,7 @@ class MessageFormTest extends TestCase
     }
 
     /**
-     * Should failed if all fields not filled
+     * Should failed if all fields not filled.
      *
      * @return void
      */
@@ -55,12 +55,12 @@ class MessageFormTest extends TestCase
             ->assertHasErrors([
                 'name' => 'required',
                 'email' => 'required',
-                'body' => 'required'
-                ]);
+                'body' => 'required',
+            ]);
     }
 
     /**
-     * Should failed if name not provided
+     * Should failed if name not provided.
      *
      * @return void
      */
@@ -75,7 +75,7 @@ class MessageFormTest extends TestCase
     }
 
     /**
-     * Should failed if name less than 3 characters
+     * Should failed if name less than 3 characters.
      *
      * @return void
      */
@@ -90,7 +90,7 @@ class MessageFormTest extends TestCase
     }
 
     /**
-     * Should failed if name more than 40 characters
+     * Should failed if name more than 40 characters.
      *
      * @return void
      */
@@ -105,7 +105,7 @@ class MessageFormTest extends TestCase
     }
 
     /**
-     * Should failed if `email` not provided
+     * Should failed if `email` not provided.
      *
      * @return void
      */
@@ -120,7 +120,7 @@ class MessageFormTest extends TestCase
     }
 
     /**
-     * Should failed if `email` is not valid
+     * Should failed if `email` is not valid.
      *
      * @return void
      */
@@ -135,13 +135,13 @@ class MessageFormTest extends TestCase
     }
 
     /**
-     * Should failed if `email` is more than one hundred
+     * Should failed if `email` is more than one hundred.
      *
      * @return void
      */
     public function test_get_max_error_if_email_more_than_one_hundred_chars()
     {
-        $long_fake_email = Str::random(100) . '@' . $this->faker->freeEmailDomain;
+        $long_fake_email = Str::random(100).'@'.$this->faker->freeEmailDomain;
 
         Livewire::test(MessageForm::class)
             ->set('name', $this->faker->name)
@@ -152,7 +152,7 @@ class MessageFormTest extends TestCase
     }
 
     /**
-     * Should failed if `body` not provided
+     * Should failed if `body` not provided.
      *
      * @return void
      */
@@ -167,7 +167,7 @@ class MessageFormTest extends TestCase
     }
 
     /**
-     * Should failed if `body` less than 10 chars
+     * Should failed if `body` less than 10 chars.
      *
      * @return void
      */

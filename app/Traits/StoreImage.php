@@ -10,7 +10,7 @@ use Image;
 trait StoreImage
 {
     /**
-     * Store using Storage and Compress Image
+     * Store using Storage and Compress Image.
      *
      * @param Illuminate\Http\Request $request
      * @param string $request_name
@@ -23,12 +23,12 @@ trait StoreImage
         $upload_path = 'file')
     {
         if ($request->hasFile($request_name) && $request->file($request_name)->isValid()) {
-            $file_name = Str::random(30) . '_' . time() . '.jpg';
+            $file_name = Str::random(30).'_'.time().'.jpg';
 
-            $uploaded_image = $upload_path . '/' . $file_name;
+            $uploaded_image = $upload_path.'/'.$file_name;
             $image_jpeg = Image::make($request->file($request_name));
 
-            $image_jpeg->resize(1024, null, function($constraint) {
+            $image_jpeg->resize(1024, null, function ($constraint) {
                 $constraint->aspectRatio();
             });
             $image_jpeg->encode('jpg', 80);
@@ -37,13 +37,13 @@ trait StoreImage
 
             return [
                 'file_name' => $file_name,
-                'uploaded_image' => $uploaded_image
+                'uploaded_image' => $uploaded_image,
             ];
         }
 
         return [
             'file_name' => '',
-            'uploaded_image' => ''
+            'uploaded_image' => '',
         ];
     }
 }

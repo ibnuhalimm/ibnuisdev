@@ -26,9 +26,9 @@ class UserFactory extends Factory
 
         return [
             'name' => $this->faker->name(),
-            'github' => 'https://github.com/' . $userName,
-            'twitter' => 'https://twitter.com/' . $userName,
-            'linkedin' => 'https://linkedin.com/in/' . $userName,
+            'github' => 'https://github.com/'.$userName,
+            'twitter' => 'https://twitter.com/'.$userName,
+            'linkedin' => 'https://linkedin.com/in/'.$userName,
             'username' => $userName,
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),

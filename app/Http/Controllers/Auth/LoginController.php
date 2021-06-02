@@ -51,7 +51,7 @@ class LoginController extends Controller
 
     /**
      * Get the needed authorization credentials from the request.
-     * Override to use email or username
+     * Override to use email or username.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return array
@@ -64,7 +64,7 @@ class LoginController extends Controller
 
         return [
             $field => $request->get($this->username()),
-            'password' => $request->password
+            'password' => $request->password,
         ];
     }
 }

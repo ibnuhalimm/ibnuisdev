@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class OldPageController extends Controller
 {
     /**
-     * Show `redirect_old_pages` CRUD page
+     * Show `redirect_old_pages` CRUD page.
      *
      * @return \Illuminate\View\View
      */

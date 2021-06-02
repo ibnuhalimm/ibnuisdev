@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class SkillsController extends Controller
 {
     /**
-     * Show skills page
+     * Show skills page.
      *
      * @return \Illuminate\View\View
      */

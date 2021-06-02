@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 Route::group([
-    'middleware' => 'lang'
-], function() {
+    'middleware' => 'lang',
+], function () {
     Route::get('/', 'PageController@index')->name('index');
     Route::get('portfolio', 'PageController@portfolio')->name('portfolio');
     Route::get('resume', 'PageController@resume')->name('resume');
@@ -18,7 +18,7 @@ Route::name('blog.')
     ->prefix('blog')
     ->namespace('Blog')
     ->middleware('lang')
-    ->group( function() {
+    ->group(function () {
         Route::get('/', 'PageController@index')->name('index');
         Route::get('/search', 'PageController@searchPost')->name('post.search');
         Route::get('/{slug?}/{mode?}', 'PageController@postRead')->name('post.read');
@@ -33,7 +33,7 @@ Route::name('dashboard.')
     ->prefix('home')
     ->middleware('auth')
     ->namespace('Dashboard')
-    ->group( function() {
+    ->group(function () {
         Route::get('section', 'SectionController@index')->name('section.index');
 
         Route::get('portfolio', 'PortfolioController@index')->name('portfolio.index');
@@ -56,6 +56,5 @@ Route::name('dashboard.')
 
         Route::get('profile', 'ProfileController@index')->name('profile.index');
     });
-
 
 Route::get('{old_slug?}', 'RedirectOldPageController@index')->where('old_slug', '.*')->name('redirect-old-page');

@@ -22,10 +22,10 @@ class ShareButtonFactory extends Factory
     public function definition()
     {
         return [
-            'nama' => $this->faker->randomElement([ 'Facebook', 'Twitter' ]),
+            'nama' => $this->faker->randomElement(['Facebook', 'Twitter']),
             'ikon' => $this->faker->randomElement(['facebook', 'twitter']),
             'url' => $this->faker->url,
-            'nomor_urut' => $this->faker->numberBetween(1, 2)
+            'nomor_urut' => $this->faker->numberBetween(1, 2),
         ];
     }
 }

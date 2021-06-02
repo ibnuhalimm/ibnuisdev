@@ -7,48 +7,44 @@ import Alert from '../../../components/Alert';
 import API from '../../../constant/API';
 
 function Contact() {
-    const [ isSent, setIsSent ] = useState(true);
-    const [ forms, setForms ] = useState({});
-    const [ errors, setErrors ] = useState({});
+    const [isSent, setIsSent] = useState(true);
+    const [forms, setForms] = useState({});
+    const [errors, setErrors] = useState({});
 
-    const [ lang, setLang ] = useState({});
+    const [lang, setLang] = useState({});
 
-    const [ showAlert, setShowAlert ] = useState(false);
-    const [ variantAlert, setVariantAlert ] = useState('default');
-    const [ textAlert, setTextAlert ] = useState('');
-
+    const [showAlert, setShowAlert] = useState(false);
+    const [variantAlert, setVariantAlert] = useState('default');
+    const [textAlert, setTextAlert] = useState('');
 
     useEffect(() => {
         _getLangPack();
     }, []);
 
-
     const _getLangPack = () => {
-        Axios.get(API.lang_pack)
-            .then(response => {
-                let responseBody = response.data;
-                let language = responseBody.data;
+        Axios.get(API.lang_pack).then((response) => {
+            let responseBody = response.data;
+            let language = responseBody.data;
 
-                setLang(language);
-            });
+            setLang(language);
+        });
     };
-
 
     const inputChangeHandler = (e) => {
         let { name, value } = e.target;
 
         setForms({
             ...forms,
-            ...{[name]: value}
+            ...{ [name]: value },
         });
 
         validateForm(name, value);
     };
 
-
     const validateForm = (fieldName, value) => {
         let validationText = '';
-        let emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        let emailRegex =
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         switch (fieldName) {
             case 'name':
@@ -84,9 +80,11 @@ function Contact() {
                     errors.email = <FormError>{validationText.replace(':attribute', 'Email')}</FormError>;
                 }
 
-                if (value.trim() != ''
-                    && emailRegex.test(String(value).toLowerCase()) === true
-                    && String(value.trim()).length > 100) {
+                if (
+                    value.trim() != '' &&
+                    emailRegex.test(String(value).toLowerCase()) === true &&
+                    String(value.trim()).length > 100
+                ) {
                     validationText = lang.validation.custom.email.max;
                     errors.email = <FormError>{validationText.replace(':attribute', lang.email)}</FormError>;
                 }
@@ -111,15 +109,14 @@ function Contact() {
         }
 
         setErrors(errors);
-    }
-
+    };
 
     const sendMessage = () => {
         setIsSent(false);
         setErrors({});
 
         Axios.post(API.message, forms)
-            .then(response => {
+            .then((response) => {
                 let responseBody = response.data;
 
                 setIsSent(true);
@@ -132,7 +129,7 @@ function Contact() {
                     setForms({ name: '', email: '', message: '' });
                 }
             })
-            .catch(error => {
+            .catch((error) => {
                 let responseBody = error.response.data;
 
                 setIsSent(true);
@@ -144,27 +141,26 @@ function Contact() {
                     if (responseBody.message.name !== undefined) {
                         allError = {
                             ...allError,
-                            ...{ name: <FormError>{responseBody.message.name[0]}</FormError> }
+                            ...{ name: <FormError>{responseBody.message.name[0]}</FormError> },
                         };
                     }
 
                     if (responseBody.message.email !== undefined) {
                         allError = {
                             ...allError,
-                            ...{ email: <FormError>{responseBody.message.email[0]}</FormError> }
+                            ...{ email: <FormError>{responseBody.message.email[0]}</FormError> },
                         };
                     }
 
                     if (responseBody.message.message !== undefined) {
                         allError = {
                             ...allError,
-                            ...{ message: <FormError>{responseBody.message.message[0]}</FormError> }
+                            ...{ message: <FormError>{responseBody.message.message[0]}</FormError> },
                         };
                     }
 
                     setErrors(allError);
-                }
-                else {
+                } else {
                     setShowAlert(true);
                     setVariantAlert('danger');
                     setTextAlert(lang.something_went_wrong);
@@ -172,11 +168,9 @@ function Contact() {
             });
     };
 
-
     const alertCloseHandler = () => {
         setShowAlert(false);
-    }
-
+    };
 
     return (
         <div className="w-full lg:w-3/4">
@@ -193,7 +187,8 @@ function Contact() {
                     name="name"
                     id="__nameContactMe"
                     onChange={inputChangeHandler}
-                    value={forms.name} />
+                    value={forms.name}
+                />
                 {errors.name}
             </div>
             <div className="mb-6">
@@ -205,7 +200,8 @@ function Contact() {
                     name="email"
                     id="__emailContactMe"
                     onChange={inputChangeHandler}
-                    value={forms.email} />
+                    value={forms.email}
+                />
                 {errors.email}
             </div>
             <div className="mb-6">
@@ -217,22 +213,26 @@ function Contact() {
                     id="__messageContactMe"
                     className="w-full px-3 py-2 border border-solid border-gray-400 bg-white outline-none resize-none h-60 rounded-md"
                     onChange={inputChangeHandler}
-                    value={forms.message} />
+                    value={forms.message}
+                />
                 {errors.message}
             </div>
-            {isSent
-                ?   <button
-                        type="button"
-                        className="py-2 px-6 bg-ib-three border border-solid border-ib-three text-ib-four outline-none focus:outline-none rounded-md hover:bg-opacity-70 transition-all duration-500"
-                        onClick={sendMessage}>
-                            {lang.send_message}
-                    </button>
-                :   <button
-                        type="button"
-                        className="py-2 px-6 bg-ib-three border border-solid border-ib-three text-ib-four outline-none focus:outline-none rounded-md bg-opacity-50 cursor-default">
-                            {lang.loading}...
-                    </button>
-            }
+            {isSent ? (
+                <button
+                    type="button"
+                    className="py-2 px-6 bg-ib-three border border-solid border-ib-three text-ib-four outline-none focus:outline-none rounded-md hover:bg-opacity-70 transition-all duration-500"
+                    onClick={sendMessage}
+                >
+                    {lang.send_message}
+                </button>
+            ) : (
+                <button
+                    type="button"
+                    className="py-2 px-6 bg-ib-three border border-solid border-ib-three text-ib-four outline-none focus:outline-none rounded-md bg-opacity-50 cursor-default"
+                >
+                    {lang.loading}...
+                </button>
+            )}
         </div>
     );
 }
@@ -240,5 +240,5 @@ function Contact() {
 export default Contact;
 
 if (document.getElementById('contact-ui-content')) {
-    ReactDOM.render(<Contact/>, document.getElementById('contact-ui-content'));
+    ReactDOM.render(<Contact />, document.getElementById('contact-ui-content'));
 }

@@ -18,8 +18,13 @@ function ButtonLinkRounded(props) {
     }
 
     return (
-        <a href={href ? href : '#'}
-            className={ 'px-5 py-2 border border-solid outline-none focus:outline-none rounded-full transition-all duration-500 ' + buttonClass }>
+        <a
+            href={href ? href : '#'}
+            className={
+                'px-5 py-2 border border-solid outline-none focus:outline-none rounded-full transition-all duration-500 ' +
+                buttonClass
+            }
+        >
             {props.children}
         </a>
     );

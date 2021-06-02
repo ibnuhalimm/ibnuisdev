@@ -28,11 +28,11 @@ class ProjectFactory extends Factory
             'lang' => $this->faker->randomElement(['id', 'en']),
             'month' => $this->faker->numberBetween(1, 12),
             'year' => $this->faker->dateTimeThisDecade()->format('Y'),
-            'name' => substr($this->faker->company() . ' ' . $this->faker->words(3, true), 0, 50),
+            'name' => substr($this->faker->company().' '.$this->faker->words(3, true), 0, 50),
             'image' => Str::of($image)->replace('storage/app/public/', ''),
-            'description' => $this->faker->text() . Str::random(50),
+            'description' => $this->faker->text().Str::random(50),
             'link' => $this->faker->url(),
-            'status' => $this->faker->randomElement([Project::STATUS_DRAFT, Project::STATUS_PUBLISH])
+            'status' => $this->faker->randomElement([Project::STATUS_DRAFT, Project::STATUS_PUBLISH]),
         ];
     }
 }

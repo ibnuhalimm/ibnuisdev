@@ -44,14 +44,14 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
 
         $data = [
-            'post' => $post
+            'post' => $post,
         ];
 
         return view('dashboard.blog.post.edit', $data);
     }
 
     /**
-     * Image upload for tinymce on postingan
+     * Image upload for tinymce on postingan.
      *
      * @param \Illuminate\Http\Request $request
      * @return mixed
@@ -62,19 +62,18 @@ class PostController extends Controller
             $file_extension = $request->file('file')->getClientOriginalExtension();
 
             if ($file_extension === 'gif') {
-                $saveAsFileName = Str::random(30) . '_' . time() . '.' . $file_extension;
+                $saveAsFileName = Str::random(30).'_'.time().'.'.$file_extension;
 
                 $file_path = Storage::putFileAs(
                     'public/post-images', $request->file('file'), $saveAsFileName
                 );
-            }
-            else {
+            } else {
                 $store_image = $this->storeAndCompressImage($request, 'file', 'post-images');
                 $file_path = $store_image['uploaded_image'];
             }
 
             return response()->json([
-                'location' => Storage::url($file_path)
+                'location' => Storage::url($file_path),
             ]);
         }
     }

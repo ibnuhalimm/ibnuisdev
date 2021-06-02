@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class SectionController extends Controller
 {
     /**
-     * Show section page
+     * Show section page.
      *
      * @return \Illuminate\View\View
      */

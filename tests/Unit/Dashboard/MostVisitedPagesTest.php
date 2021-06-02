@@ -9,14 +9,14 @@ use Tests\TestCase;
 class MostVisitedPagesTest extends TestCase
 {
     /**
-     * Can set initial days
+     * Can set initial days.
      *
      * @return void
      */
     public function test_can_set_initial_days()
     {
         Livewire::test(MostVisitedPages::class, [
-            'days' => 7
+            'days' => 7,
         ])
         ->assertSet('days', 7);
     }

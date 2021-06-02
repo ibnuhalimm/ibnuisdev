@@ -5,7 +5,7 @@ namespace App\Traits;
 trait ApiResponser
 {
     /**
-     * API response format
+     * API response format.
      *
      * @param int $status
      * @param string $message
@@ -17,7 +17,7 @@ trait ApiResponser
         $data = [
             'status' => $status,
             'message' => $message,
-            'data' => $data
+            'data' => $data,
         ];
 
         return response()->json($data, $status);

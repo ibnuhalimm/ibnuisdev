@@ -11,7 +11,7 @@ class LanguageController extends Controller
     use ApiResponser;
 
     /**
-     * Get language pack
+     * Get language pack.
      *
      * @return \Illuminate\Http\Response
      */
@@ -36,10 +36,10 @@ class LanguageController extends Controller
             'message' => __('global.message'),
             'email' => __('global.email'),
             'something_went_wrong' => __('global.something_went_wrong'),
-            'email_required' => __('validation.required', [ 'Attribute' => 'Email' ]),
-            'name_required' => __('validation.required', [ 'Attribute' => __('global.name') ]),
-            'message_required' => __('validation.required', [ 'Attribute' => __('global.message') ]),
-            'validation' => __('validation')
+            'email_required' => __('validation.required', ['Attribute' => 'Email']),
+            'name_required' => __('validation.required', ['Attribute' => __('global.name')]),
+            'message_required' => __('validation.required', ['Attribute' => __('global.message')]),
+            'validation' => __('validation'),
         ];
 
         return $this->apiResponse($status, $message, $data);

@@ -11,7 +11,7 @@ class Table extends Component
     use WithPagination;
 
     /**
-     * Defined properties
+     * Defined properties.
      *
      * @var mixed
      */
@@ -25,7 +25,7 @@ class Table extends Component
     public $new_url;
 
     /**
-     * Run form validation after updating properties
+     * Run form validation after updating properties.
      *
      * @param string $field_name
      * @return void
@@ -36,7 +36,7 @@ class Table extends Component
     }
 
     /**
-     * Open create new modal
+     * Open create new modal.
      *
      * @return void
      */
@@ -46,7 +46,7 @@ class Table extends Component
     }
 
     /**
-     * Close modal and reset all field properties
+     * Close modal and reset all field properties.
      *
      * @return void
      */
@@ -57,7 +57,7 @@ class Table extends Component
     }
 
     /**
-     * Delete, open confirm modal
+     * Delete, open confirm modal.
      *
      * @param int $db_id
      * @return void
@@ -69,7 +69,7 @@ class Table extends Component
     }
 
     /**
-     * Close delete confirmation modal
+     * Close delete confirmation modal.
      *
      * @return void
      */
@@ -80,7 +80,7 @@ class Table extends Component
     }
 
     /**
-     * Delete data from database
+     * Delete data from database.
      *
      * @return void
      */
@@ -94,7 +94,6 @@ class Table extends Component
 
             session()->flash('alert-delete-type', 'success');
             session()->flash('alert-delete-message', 'Data deleted!');
-
         } catch (\Throwable $th) {
             report($th);
 
@@ -104,20 +103,20 @@ class Table extends Component
     }
 
     /**
-     * Form validation rules
+     * Form validation rules.
      *
      * @return array
      */
     private function formValidationRules()
     {
         return [
-            'old_slug' => [ 'required' ],
-            'new_url' => [ 'required', 'url' ]
+            'old_slug' => ['required'],
+            'new_url' => ['required', 'url'],
         ];
     }
 
     /**
-     * Form validation attributes
+     * Form validation attributes.
      *
      * @return array
      */
@@ -125,12 +124,12 @@ class Table extends Component
     {
         return [
             'old_slug' => 'Old Slug',
-            'new_url' => 'New Page URL'
+            'new_url' => 'New Page URL',
         ];
     }
 
     /**
-     * Store or update new redirect
+     * Store or update new redirect.
      *
      * @return void
      */
@@ -141,7 +140,7 @@ class Table extends Component
         try {
             RedirectOldPage::create([
                 'slug' => trim($this->old_slug),
-                'new_url' => trim($this->new_url)
+                'new_url' => trim($this->new_url),
             ]);
 
             $this->reset('old_slug', 'new_url');
@@ -149,7 +148,6 @@ class Table extends Component
 
             session()->flash('alert-type', 'success');
             session()->flash('alert-message', 'Data saved!');
-
         } catch (\Throwable $th) {
             report($th);
 
@@ -159,7 +157,7 @@ class Table extends Component
     }
 
     /**
-     * Override pagination view to custom view
+     * Override pagination view to custom view.
      *
      * @return string
      */
@@ -169,15 +167,14 @@ class Table extends Component
     }
 
     /**
-     * Render to view
+     * Render to view.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function render()
     {
         $data = [
-            'old_pages' => RedirectOldPage::search($this->search)->paginate(20)
+            'old_pages' => RedirectOldPage::search($this->search)->paginate(20),
         ];
 
         return view('livewire.dashboard.blog.old-page.table', $data);

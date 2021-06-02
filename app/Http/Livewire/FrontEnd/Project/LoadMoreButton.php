@@ -30,7 +30,7 @@ class LoadMoreButton extends Component
                 'projects' => Project::status(Project::STATUS_PUBLISH)
                                         ->orderBy('year', 'desc')
                                         ->orderBy('month', 'desc')
-                                        ->paginate($this->perPage, ['*'], null, $this->page)
+                                        ->paginate($this->perPage, ['*'], null, $this->page),
             ];
 
             return view('livewire.front-end.project', $data);

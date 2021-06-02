@@ -9,7 +9,7 @@ use Tests\TestCase;
 class PortfolioTest extends TestCase
 {
     /**
-     * Set logged in user
+     * Set logged in user.
      *
      * @return void
      */
@@ -20,7 +20,7 @@ class PortfolioTest extends TestCase
     }
 
     /**
-     * Show portfolio table page
+     * Show portfolio table page.
      *
      * @return void
      */
@@ -34,7 +34,7 @@ class PortfolioTest extends TestCase
     }
 
     /**
-     * Contains portfolio.table livewire component
+     * Contains portfolio.table livewire component.
      *
      * @return void
      */
@@ -47,7 +47,7 @@ class PortfolioTest extends TestCase
     }
 
     /**
-     * Can show portfolio create page
+     * Can show portfolio create page.
      *
      * @return void
      */
@@ -61,7 +61,7 @@ class PortfolioTest extends TestCase
     }
 
     /**
-     * Create page contains dashboard.portfolio.create livewire
+     * Create page contains dashboard.portfolio.create livewire.
      *
      * @return void
      */
@@ -74,7 +74,7 @@ class PortfolioTest extends TestCase
     }
 
     /**
-     * Can show portfolio edit page
+     * Can show portfolio edit page.
      *
      * @return void
      */
@@ -84,13 +84,13 @@ class PortfolioTest extends TestCase
 
         $project = Project::factory()->create();
 
-        $response = $this->get(route('dashboard.portfolio.edit', [ 'id' => $project->id ]));
+        $response = $this->get(route('dashboard.portfolio.edit', ['id' => $project->id]));
         $response->assertStatus(200)
             ->assertViewIs('dashboard.portfolio.edit');
     }
 
     /**
-     * Edit page contains dashboard.portfolio.edit livewire
+     * Edit page contains dashboard.portfolio.edit livewire.
      *
      * @return void
      */

@@ -23,19 +23,24 @@ function Alert(props) {
     }
 
     return isShow ? (
-        <div className={ 'bg-'+ colorBase +'-200 p-4 mb-4 rounded-lg' }>
+        <div className={'bg-' + colorBase + '-200 p-4 mb-4 rounded-lg'}>
             <button type="button" className="bg-transparent float-right" onClick={closeHandler}>
-                <svg className={ 'w-4 h-auto text-'+ colorBase +'-600' } xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                    className={'w-4 h-auto text-' + colorBase + '-600'}
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            <p className={ 'text-'+ colorBase +'-600 pr-5' }>
+            <p className={'text-' + colorBase + '-600 pr-5'}>
                 <strong className="mr-2">{titleText}</strong>
                 {props.children}
             </p>
         </div>
-    )
-    : null;
+    ) : null;
 }
 
 export default Alert;

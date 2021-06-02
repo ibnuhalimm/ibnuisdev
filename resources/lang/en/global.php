@@ -34,5 +34,5 @@ return [
     'your_email' => 'Your Email',
     'message' => 'Message',
     'loading' => 'Loading',
-    'something_went_wrong' => 'Something went wrong'
+    'something_went_wrong' => 'Something went wrong',
 ];

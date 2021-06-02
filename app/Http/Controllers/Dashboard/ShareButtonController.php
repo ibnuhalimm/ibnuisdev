@@ -39,7 +39,7 @@ class ShareButtonController extends Controller
         $share_button = ShareButton::findOrFail($id);
 
         $data = [
-            'share_button' => $share_button
+            'share_button' => $share_button,
         ];
 
         return view('dashboard.blog.share_button.edit', $data);

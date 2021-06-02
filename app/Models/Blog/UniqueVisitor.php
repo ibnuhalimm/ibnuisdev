@@ -2,10 +2,10 @@
 
 namespace App\Models\Blog;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Jenssegers\Agent\Agent;
 
 class UniqueVisitor extends Model
@@ -13,20 +13,20 @@ class UniqueVisitor extends Model
     use HasFactory;
 
     /**
-     * Define table name
+     * Define table name.
      */
     protected $table = 'unique_visitor';
 
     /**
      * Disabled timestamps
-     * `created_at` and `updated_at` columns
+     * `created_at` and `updated_at` columns.
      *
      * @var bool
      */
     public $timestamps = false;
 
     /**
-     * Mass fillable fields
+     * Mass fillable fields.
      *
      * @var array
      */
@@ -37,11 +37,11 @@ class UniqueVisitor extends Model
         'os',
         'date',
         'time_start',
-        'time_end'
+        'time_end',
     ];
 
     /**
-     * Booted event
+     * Booted event.
      *
      * @return void
      */
@@ -64,7 +64,7 @@ class UniqueVisitor extends Model
     }
 
     /**
-     * Storing / updating data when visitor arrive or hitting links
+     * Storing / updating data when visitor arrive or hitting links.
      *
      * @param string $ip_address
      * @param string $user_agent
@@ -87,12 +87,12 @@ class UniqueVisitor extends Model
             'ip_address' => $ip_address,
             'device' => $device,
             'os' => $agent->platform(),
-            'date' => date('Y-m-d')
+            'date' => date('Y-m-d'),
         ])->save();
     }
 
     /**
-     * Count datetime range visitor
+     * Count datetime range visitor.
      *
      * @param datetime $start_datetime
      * @param datetime $end_datetime

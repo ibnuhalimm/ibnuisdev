@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class MessageController extends Controller
 {
     /**
-     * Show message page
+     * Show message page.
      *
      * @return \Illuminate\View\View
      */

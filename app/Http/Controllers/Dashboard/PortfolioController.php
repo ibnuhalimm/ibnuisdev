@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class PortfolioController extends Controller
 {
     /**
-     * Show section page
+     * Show section page.
      *
      * @return \Illuminate\View\View
      */
@@ -19,7 +19,7 @@ class PortfolioController extends Controller
     }
 
     /**
-     * Show create form
+     * Show create form.
      *
      * @return \Illuminate\View\View
      */
@@ -29,7 +29,7 @@ class PortfolioController extends Controller
     }
 
     /**
-     * Show edit form
+     * Show edit form.
      *
      * @param int $project_id
      * @return \Illuminate\View\View
@@ -39,7 +39,7 @@ class PortfolioController extends Controller
         $project = Project::findOrFail($project_id);
 
         $data = [
-            'project' => $project
+            'project' => $project,
         ];
 
         return view('dashboard.portfolio.edit', $data);

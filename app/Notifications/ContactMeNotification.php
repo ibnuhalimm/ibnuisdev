@@ -13,7 +13,7 @@ class ContactMeNotification extends Notification implements ShouldQueue
     use Queueable;
 
     /**
-     * Define properties
+     * Define properties.
      *
      * @var mixed
      */
@@ -49,7 +49,7 @@ class ContactMeNotification extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        return (new ContactMeMail($this->message));
+        return new ContactMeMail($this->message);
     }
 
     /**

@@ -43,7 +43,7 @@ class LastDayTotalVisitor extends Command
         $datas = Analytics::fetchTotalVisitorsAndPageViews(Period::days(1));
 
         $total = 0;
-        if (!empty($datas)) {
+        if (! empty($datas)) {
             foreach ($datas as $data) {
                 $total += $data['visitors'];
             }
@@ -51,11 +51,11 @@ class LastDayTotalVisitor extends Command
 
         AppAnalytics::updateOrCreate(
             [
-                'name' => AppAnalytics::LAST_DAY_TOTAL_VISITOR
+                'name' => AppAnalytics::LAST_DAY_TOTAL_VISITOR,
             ],
             [
                 'name' => AppAnalytics::LAST_DAY_TOTAL_VISITOR,
-                'data' => $total
+                'data' => $total,
             ]
         );
     }

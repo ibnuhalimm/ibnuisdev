@@ -135,7 +135,7 @@ return [
         ],
         'name' => [
             'min' => 'The :attribute is too short.',
-            'max' => 'The :attribute is too long.'
+            'max' => 'The :attribute is too long.',
         ],
         'email' => [
             'email' => ':attribute must be a valid email address.',
@@ -143,7 +143,7 @@ return [
         ],
         'message' => [
             'min' => 'The :attribute is too short.',
-        ]
+        ],
     ],
 
     /*
@@ -158,7 +158,7 @@ return [
     */
 
     'attributes' => [
-        'email' => 'E-mail Address'
+        'email' => 'E-mail Address',
     ],
 
 ];

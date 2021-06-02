@@ -11,7 +11,7 @@ class PortfolioTest extends TestCase
     /**
      * Test can initialize value of properties
      * - page
-     * - perPage
+     * - perPage.
      *
      * @return void
      */
@@ -21,9 +21,9 @@ class PortfolioTest extends TestCase
         $perPage = 8;
 
         Livewire::test(Project::class, [
-                'page' => $page,
-                'perPage' => $perPage
-            ])
+            'page' => $page,
+            'perPage' => $perPage,
+        ])
             ->assertSet('page', $page)
             ->assertSet('perPage', $perPage);
     }

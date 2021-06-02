@@ -12,13 +12,13 @@ return [
         'linux_expert' => 'Linux Expert',
         'linux_expert_description' => 'Configure or troubleshot the linux server or desktop. Linux is my daily driver.',
         'cta_title' => 'Do you need a website or assistant?',
-        'cta_description' => 'Let\'s talk about what you\'re needed'
+        'cta_description' => 'Let\'s talk about what you\'re needed',
     ],
     'portfolio' => [
         'page_title' => 'Portfolio. High-quality Software by',
         'title' => 'Portofolio',
         'sub_title_one' => 'List of projects I\'ve worked on.',
-        'sub_title_two' => 'Software quality and customer satisfaction are my first priority.'
+        'sub_title_two' => 'Software quality and customer satisfaction are my first priority.',
     ],
     'resume' => [
         'page_title' => 'Keep Learning and Growing Up',
@@ -31,7 +31,7 @@ return [
         'career_history' => 'Career History',
         'career_sub_title' => 'Work Experience more than :year years',
         'education_history' => 'Education History',
-        'education_sub_title' => 'Formal education history'
+        'education_sub_title' => 'Formal education history',
     ],
     'contact' => [
         'page_title' => 'Connect with me Today',
@@ -43,6 +43,6 @@ return [
     'not_found' => [
         'title' => 'Page Not Found',
         'sub_title' => 'The page you\'re looking for can\'t be found',
-        'back_to_home' => 'Back to Home'
-    ]
+        'back_to_home' => 'Back to Home',
+    ],
 ];

@@ -11,7 +11,7 @@ class Table extends Component
     use WithPagination;
 
     /**
-     * Define properties
+     * Define properties.
      *
      * @var mixed
      */
@@ -22,7 +22,7 @@ class Table extends Component
     public $is_delete_modal_open = 0;
 
     /**
-     * Open delete confirmation modal
+     * Open delete confirmation modal.
      *
      * @param int $project_id
      * @return void
@@ -34,7 +34,7 @@ class Table extends Component
     }
 
     /**
-     * Cancel delete, close the modal
+     * Cancel delete, close the modal.
      *
      * @return void
      */
@@ -45,7 +45,7 @@ class Table extends Component
     }
 
     /**
-     * Delete project from database
+     * Delete project from database.
      *
      * @return void
      */
@@ -60,18 +60,15 @@ class Table extends Component
             session()->flash('alert-delete-status', 'green');
             session()->flash('alert-delete-title', 'Success');
             session()->flash('alert-delete-body', 'Portfolio deleted!');
-
         } catch (\Throwable $th) {
             session()->flash('alert-delete-status', 'red');
             session()->flash('alert-delete-title', 'Error');
             session()->flash('alert-delete-body', 'Oops, something went wrong');
-
         }
     }
 
-
     /**
-     * Copy data
+     * Copy data.
      *
      * @param int $project_id
      * @return void
@@ -87,13 +84,12 @@ class Table extends Component
             'image' => $project->image,
             'description' => $project->description,
             'link' => $project->link,
-            'status' => $project->status
+            'status' => $project->status,
         ]);
     }
 
-
     /**
-     * Override pagination view to custom view
+     * Override pagination view to custom view.
      *
      * @return string
      */
@@ -103,7 +99,7 @@ class Table extends Component
     }
 
     /**
-     * Render to view
+     * Render to view.
      *
      * @return \Illuminate\View\View
      */
@@ -114,7 +110,7 @@ class Table extends Component
                                 ->orderBy('month', 'desc')
                                 ->status($this->status)
                                 ->searchTable($this->search)
-                                ->paginate(10)
+                                ->paginate(10),
         ];
 
         return view('livewire.dashboard.portfolio.table', $data);

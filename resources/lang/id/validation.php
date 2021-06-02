@@ -135,7 +135,7 @@ return [
         ],
         'name' => [
             'min' => ':attribute terlalu pendek.',
-            'max' => ':attribute terlalu panjang.'
+            'max' => ':attribute terlalu panjang.',
         ],
         'email' => [
             'email' => ':attribute harus berupa email yang valid.',
@@ -143,7 +143,7 @@ return [
         ],
         'message' => [
             'min' => ':attribute terlalu pendek.',
-        ]
+        ],
     ],
 
     /*
@@ -160,6 +160,6 @@ return [
     'attributes' => [
         'name' => 'Nama',
         'email' => 'Alamat Email',
-        'message' => 'Pesan'
+        'message' => 'Pesan',
     ],
 ];

@@ -8,7 +8,7 @@ use Image;
 trait LivewireOptimizeImage
 {
     /**
-     * Resizing and cropping image after uploading to livewire tmp folder
+     * Resizing and cropping image after uploading to livewire tmp folder.
      *
      * @param string $prop
      * @param int $width
@@ -23,18 +23,18 @@ trait LivewireOptimizeImage
 
         if (config('app.env') !== 'testing') {
             $img = Image::make($prop->getRealPath());
-            $img->resize($width, null, function($constraint) {
+            $img->resize($width, null, function ($constraint) {
                 $constraint->aspectRatio();
             });
             $img->encode('webp', 80);
 
-            if (Storage::exists(storage_path($livewire_dir . $file_name))) {
-                unlink(storage_path($livewire_dir . $file_name));
+            if (Storage::exists(storage_path($livewire_dir.$file_name))) {
+                unlink(storage_path($livewire_dir.$file_name));
             }
 
             $img->save();
         }
 
-        return storage_path($livewire_dir . $file_name);
+        return storage_path($livewire_dir.$file_name);
     }
 }

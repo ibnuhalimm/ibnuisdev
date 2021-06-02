@@ -8,7 +8,7 @@ use Livewire\Component;
 class MessageForm extends Component
 {
     /**
-     * Define properties
+     * Define properties.
      *
      * @var mixed
      */
@@ -17,21 +17,21 @@ class MessageForm extends Component
     public $body;
 
     /**
-     * Form validation rules
+     * Form validation rules.
      *
      * @return array
      */
     private function formValidatioRules()
     {
         return [
-            'name' => [ 'required', 'string', 'min:3', 'max:40' ],
-            'email' => [ 'required', 'email', 'max:100' ],
-            'body' => [ 'required', 'min:10' ]
+            'name' => ['required', 'string', 'min:3', 'max:40'],
+            'email' => ['required', 'email', 'max:100'],
+            'body' => ['required', 'min:10'],
         ];
     }
 
     /**
-     * Form validation messages
+     * Form validation messages.
      *
      * @return array
      */
@@ -44,7 +44,7 @@ class MessageForm extends Component
     }
 
     /**
-     * Form validation attributes
+     * Form validation attributes.
      *
      * @return array
      */
@@ -53,12 +53,12 @@ class MessageForm extends Component
         return [
             'name' => 'Name',
             'email' => 'Email Address',
-            'body' => 'Message'
+            'body' => 'Message',
         ];
     }
 
     /**
-     * Realtime form validation
+     * Realtime form validation.
      *
      * @param string $property_name
      * @return void
@@ -72,7 +72,7 @@ class MessageForm extends Component
     }
 
     /**
-     * Send the message
+     * Send the message.
      *
      * @return void
      */
@@ -84,7 +84,7 @@ class MessageForm extends Component
             Message::create([
                 'name' => $this->name,
                 'email' => $this->email,
-                'message' => trim($this->body)
+                'message' => trim($this->body),
             ]);
 
             $this->reset('name', 'email', 'body');
@@ -92,19 +92,17 @@ class MessageForm extends Component
             session()->flash('alert-status', 'green');
             session()->flash('alert-title', 'Success');
             session()->flash('alert-body', 'Thank your for contacting me, I will reply your email soon. :)');
-
         } catch (\Throwable $th) {
             report($th);
 
             session()->flash('alert-status', 'red');
             session()->flash('alert-title', 'Error');
             session()->flash('alert-body', 'Oops, sorry something went wrong. :(');
-
         }
     }
 
     /**
-     * Render to view
+     * Render to view.
      *
      * @return \Illuminate\View\View
      */

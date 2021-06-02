@@ -2,9 +2,9 @@
 import { LOAD_LANG } from './actionTypes';
 import API from '../constant/API';
 
-export const loadLang = content => ({
+export const loadLang = (content) => ({
     type: LOAD_LANG,
-    payload: content
+    payload: content,
 });
 
 /**
@@ -12,7 +12,7 @@ export const loadLang = content => ({
  *
  */
 export const fetchLanguagePack = () => {
-    return async dispatch => {
+    return async (dispatch) => {
         try {
             let language = await Axios.get(API.lang_pack);
             dispatch(loadLang(language.data.data));

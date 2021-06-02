@@ -8,7 +8,7 @@ use Tests\TestCase;
 class SearchingPostTest extends TestCase
 {
     /**
-     * User can view search result page
+     * User can view search result page.
      *
      * @return void
      */
@@ -18,22 +18,22 @@ class SearchingPostTest extends TestCase
 
         Post::factory()->create([
             'judul' => $post_title,
-            'status' => Post::STATUS_PUBLISH
+            'status' => Post::STATUS_PUBLISH,
         ]);
 
-        $response = $this->get(route('blog.post.search', [ 'q' => $post_title ]));
+        $response = $this->get(route('blog.post.search', ['q' => $post_title]));
         $response->assertStatus(200)
             ->assertViewIs('blog.post.search');
     }
 
     /**
-     * Can handle empty result of search
+     * Can handle empty result of search.
      *
      * @return void
      */
     public function test_can_handle_empty_result()
     {
-        $response = $this->get(route('blog.post.search', [ 'q' => 'Test again' ]));
+        $response = $this->get(route('blog.post.search', ['q' => 'Test again']));
         $response->assertStatus(200)
             ->assertViewIs('blog.post.search');
     }

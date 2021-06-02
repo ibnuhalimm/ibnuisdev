@@ -45,11 +45,11 @@ class MostVisitedPages extends Command
 
         AppAnalytics::updateOrCreate(
             [
-                'name' => AppAnalytics::MOST_VISITED_PAGES . '-' . $days . '-' . 'days'
+                'name' => AppAnalytics::MOST_VISITED_PAGES.'-'.$days.'-'.'days',
             ],
             [
-                'name' => AppAnalytics::MOST_VISITED_PAGES . '-' . $days . '-' . 'days',
-                'data' => json_encode($datas)
+                'name' => AppAnalytics::MOST_VISITED_PAGES.'-'.$days.'-'.'days',
+                'data' => json_encode($datas),
             ]
         );
     }

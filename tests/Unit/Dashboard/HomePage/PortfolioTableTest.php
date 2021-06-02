@@ -10,7 +10,7 @@ use Tests\TestCase;
 class PortfolioTableTest extends TestCase
 {
     /**
-     * Show delete confirmation modal
+     * Show delete confirmation modal.
      *
      * @return void
      */
@@ -26,7 +26,7 @@ class PortfolioTableTest extends TestCase
 
     /**
      * Hide delete confirmation modal
-     * if user tap to cancel button
+     * if user tap to cancel button.
      *
      * @return void
      */
@@ -38,7 +38,7 @@ class PortfolioTableTest extends TestCase
     }
 
     /**
-     * Can delete project
+     * Can delete project.
      *
      * @return void
      */

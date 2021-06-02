@@ -23,31 +23,26 @@ class Table extends Component
         try {
             Message::where('id', $message_id)
                 ->update([
-                    'is_replied' => 1
+                    'is_replied' => 1,
                 ]);
-
         } catch (\Throwable $th) {
             session()->flash('alert-status', 'red');
             session()->flash('alert-title', 'Error');
             session()->flash('alert-body', 'Something went wrong');
-
         }
     }
-
 
     public function markAsUnReplyMessage($message_id)
     {
         try {
             Message::where('id', $message_id)
                 ->update([
-                    'is_replied' => 0
+                    'is_replied' => 0,
                 ]);
-
         } catch (\Throwable $th) {
             session()->flash('alert-status', 'red');
             session()->flash('alert-title', 'Error');
             session()->flash('alert-body', 'Something went wrong');
-
         }
     }
 
@@ -70,7 +65,7 @@ class Table extends Component
     }
 
     /**
-     * Override pagination view to custom view
+     * Override pagination view to custom view.
      *
      * @return string
      */
@@ -82,7 +77,7 @@ class Table extends Component
     public function render()
     {
         $data = [
-            'messages' => Message::latest()->paginate(10)
+            'messages' => Message::latest()->paginate(10),
         ];
 
         return view('livewire.dashboard.message.table', $data);

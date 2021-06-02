@@ -12,13 +12,13 @@ return [
         'linux_expert' => 'Linux Expert',
         'linux_expert_description' => 'Konfigurasi atau troubleshot linux server atau desktop, pengguna linux di keseharian.',
         'cta_title' => 'Ingin membuat website atau konsultasi?',
-        'cta_description' => 'Mari kita diskusikan sekarang'
+        'cta_description' => 'Mari kita diskusikan sekarang',
     ],
     'portfolio' => [
         'page_title' => 'Portofolio. Aplikasi yang Berkualitas dari',
         'title' => 'Portofolio',
         'sub_title_one' => 'Daftar project yang pernah saya kerjakan.',
-        'sub_title_two' => 'Kualitas aplikasi dan kepuasan pelanggan adalah prioritas utama.'
+        'sub_title_two' => 'Kualitas aplikasi dan kepuasan pelanggan adalah prioritas utama.',
     ],
     'resume' => [
         'page_title' => 'Selalu Belajar dan Tumbuh',
@@ -31,7 +31,7 @@ return [
         'career_history' => 'Riwayat Karir',
         'career_sub_title' => 'Pengalaman kerja lebih dari :year tahun',
         'education_history' => 'Riwayat Pendidikan',
-        'education_sub_title' => 'Riwayat pendidikan formal'
+        'education_sub_title' => 'Riwayat pendidikan formal',
     ],
     'contact' => [
         'page_title' => 'Terhubung dengan Saya Hari ini',
@@ -43,6 +43,6 @@ return [
     'not_found' => [
         'title' => 'Halaman tidak ditemukan',
         'sub_title' => 'Halaman yang Anda maksud tidak ditemukan',
-        'back_to_home' => 'Kembali ke Home'
-    ]
+        'back_to_home' => 'Kembali ke Home',
+    ],
 ];

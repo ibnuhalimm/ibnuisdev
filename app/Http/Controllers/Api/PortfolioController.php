@@ -12,7 +12,7 @@ class PortfolioController extends Controller
     use ApiResponser;
 
     /**
-     * Get project page resource
+     * Get project page resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -36,13 +36,13 @@ class PortfolioController extends Controller
 
         $projects = Project::latestProject()->published()->take($take)->skip($skip)->lang($request->header('X-LANG'))->get();
         $projects_count = Project::published()->lang($request->header('X-LANG'))->count();
-        $projects_result = $projects->map(function($data) {
+        $projects_result = $projects->map(function ($data) {
             return [
                 'id' => $data->id,
                 'name' => $data->name,
                 'image_url' => $data->image_url,
                 'description' => $data->description,
-                'link' => $data->link
+                'link' => $data->link,
             ];
         });
 
@@ -51,14 +51,14 @@ class PortfolioController extends Controller
 
         $data = [
             'is_more' => $projects_count > ($page * $take),
-            'projects' => $projects_result
+            'projects' => $projects_result,
         ];
 
         return $this->apiResponse($status, $message, $data);
     }
 
     /**
-     * Get portfolio details
+     * Get portfolio details.
      *
      * @param int $id
      * @return void
@@ -70,7 +70,7 @@ class PortfolioController extends Controller
         $status = 404;
         $message = 'Not found';
         $data = [];
-        if (!empty($project)) {
+        if (! empty($project)) {
             $status = 200;
             $message = 'Success';
             $data = [
@@ -79,8 +79,8 @@ class PortfolioController extends Controller
                     'name' => $project->name,
                     'image_url' => $project->image_url,
                     'description' => $project->description,
-                    'link' => $project->link
-                ]
+                    'link' => $project->link,
+                ],
             ];
         }
 

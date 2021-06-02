@@ -6,5 +6,5 @@ return [
     'resume' => 'Resume',
     'blog' => 'Blog',
     'contact' => 'Hubungi Saya',
-    'search' => 'Pencarian'
+    'search' => 'Pencarian',
 ];

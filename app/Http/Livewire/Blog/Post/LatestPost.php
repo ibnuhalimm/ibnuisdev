@@ -11,14 +11,14 @@ class LatestPost extends Component
     use WithPagination;
 
     /**
-     * Define all properties
+     * Define all properties.
      *
      * @var mixed
      */
     public $except_ids;
 
     /**
-     * Initialize properties data
+     * Initialize properties data.
      *
      * @return void
      */
@@ -28,7 +28,7 @@ class LatestPost extends Component
     }
 
     /**
-     * Override pagination view
+     * Override pagination view.
      *
      * @return string
      */
@@ -38,7 +38,7 @@ class LatestPost extends Component
     }
 
     /**
-     * Render to view
+     * Render to view.
      *
      * @return \Illuminate\View\View
      */
@@ -48,7 +48,7 @@ class LatestPost extends Component
             'posts' => Post::published()
                             ->orderBy('created_at', 'desc')
                             ->whereNotIn('id', $this->except_ids)
-                            ->paginate(10)
+                            ->paginate(10),
         ];
 
         return view('livewire.blog.post.latest-post', $data);

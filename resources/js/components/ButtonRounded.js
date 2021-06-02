@@ -24,8 +24,12 @@ function ButtonRounded(props) {
     return (
         <button
             type={type ? type : 'button'}
-            className={ 'px-5 py-2 border border-solid outline-none focus:outline-none rounded-full transition-all duration-500 ' + buttonClass }
-            onClick={props.onClick}>
+            className={
+                'px-5 py-2 border border-solid outline-none focus:outline-none rounded-full transition-all duration-500 ' +
+                buttonClass
+            }
+            onClick={props.onClick}
+        >
             {props.children}
         </button>
     );

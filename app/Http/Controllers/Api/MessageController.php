@@ -14,7 +14,7 @@ class MessageController extends Controller
     use ApiResponser;
 
     /**
-     * Send message from contact page
+     * Send message from contact page.
      *
      * @return \Iluminate\Http\Response
      */
@@ -29,7 +29,7 @@ class MessageController extends Controller
             Message::create([
                 'name' => trim($request->name),
                 'email' => trim($request->email),
-                'message' => trim($request->message)
+                'message' => trim($request->message),
             ]);
 
             $status = 200;
@@ -44,9 +44,8 @@ class MessageController extends Controller
         return $this->apiResponse($status, $message);
     }
 
-
     /**
-     * Send message from homepage CTA
+     * Send message from homepage CTA.
      *
      * @return \Iluminate\Http\Response
      */
@@ -63,12 +62,11 @@ class MessageController extends Controller
             Message::create([
                 'name' => 'Guest',
                 'email' => trim($request->email),
-                'message' => $message
+                'message' => $message,
             ]);
 
             $status = 200;
             $message = $response_message;
-
         } catch (\Throwable $th) {
             report($th);
 

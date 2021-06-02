@@ -13,7 +13,7 @@ store.dispatch(fetchLanguagePack());
 if (document.getElementById('cta-ui-content')) {
     ReactDOM.render(
         <Provider store={store}>
-            <CallToAction/>
+            <CallToAction />
         </Provider>,
         document.getElementById('cta-ui-content')
     );
@@ -22,7 +22,7 @@ if (document.getElementById('cta-ui-content')) {
 if (document.getElementById('portfolio-ui-content')) {
     ReactDOM.render(
         <Provider store={store}>
-            <Portfolio/>,
+            <Portfolio />,
         </Provider>,
         document.getElementById('portfolio-ui-content')
     );

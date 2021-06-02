@@ -11,7 +11,7 @@ class Table extends Component
     use WithPagination;
 
     /**
-     * Define all public properties
+     * Define all public properties.
      *
      * @var mixed
      */
@@ -19,7 +19,7 @@ class Table extends Component
     public $search;
 
     /**
-     * Reset pagination while applying filter
+     * Reset pagination while applying filter.
      *
      * @return void
      */
@@ -29,7 +29,7 @@ class Table extends Component
     }
 
     /**
-     * Override pagination view to custom view
+     * Override pagination view to custom view.
      *
      * @return string
      */
@@ -39,7 +39,7 @@ class Table extends Component
     }
 
     /**
-     * Render to view
+     * Render to view.
      *
      * @return \Illuminate\Http\Response
      */
@@ -49,7 +49,7 @@ class Table extends Component
             'posts' => Post::orderBy('created_at', 'desc')
                             ->status($this->status)
                             ->searchTable($this->search)
-                            ->paginate(20)
+                            ->paginate(20),
         ];
 
         return view('livewire.dashboard.blog.post.table', $data);

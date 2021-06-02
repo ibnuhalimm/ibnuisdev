@@ -10,7 +10,7 @@ use Livewire\Component;
 class Data extends Component
 {
     /**
-     * Define properties
+     * Define properties.
      *
      * @var mixed
      */
@@ -22,23 +22,23 @@ class Data extends Component
     public $linkedin;
 
     /**
-     * Form validation rules
+     * Form validation rules.
      *
      * @return array
      */
     protected function formValidationRules()
     {
         return [
-            'name' => [ 'required', 'string', 'min:3', 'max:40' ],
-            'email' => [ 'required', 'email', 'max:100', 'unique:users,email,' . Auth::user()->id ],
-            'github' => [ 'required', 'url', 'max:100' ],
-            'twitter' => [ 'required', 'url', 'max:100' ],
-            'linkedin' => [ 'required', 'url', 'max:100' ]
+            'name' => ['required', 'string', 'min:3', 'max:40'],
+            'email' => ['required', 'email', 'max:100', 'unique:users,email,'.Auth::user()->id],
+            'github' => ['required', 'url', 'max:100'],
+            'twitter' => ['required', 'url', 'max:100'],
+            'linkedin' => ['required', 'url', 'max:100'],
         ];
     }
 
     /**
-     * Initialize properties data
+     * Initialize properties data.
      *
      * @return void
      */
@@ -55,7 +55,7 @@ class Data extends Component
     }
 
     /**
-     * Run form validation after updated properties
+     * Run form validation after updated properties.
      *
      * @return void
      */
@@ -65,7 +65,7 @@ class Data extends Component
     }
 
     /**
-     * Update profile data
+     * Update profile data.
      *
      * @return void
      */
@@ -80,23 +80,21 @@ class Data extends Component
                     'email' => Str::of($this->email)->trim()->lower(),
                     'github' => $this->github,
                     'twitter' => $this->twitter,
-                    'linkedin' => $this->linkedin
+                    'linkedin' => $this->linkedin,
                 ]);
 
             session()->flash('status_color', 'green');
             session()->flash('status_message', 'Profile successfully updated');
-
         } catch (\Throwable $th) {
             report($th);
 
             session()->flash('status_color', 'red');
             session()->flash('status_message', 'Sorry, something went wrong');
         }
-
     }
 
     /**
-     * Render to view
+     * Render to view.
      *
      * @return \Illuminate\Http\Response
      */

@@ -13,7 +13,7 @@ class PostController extends Controller
     use ApiResponser;
 
     /**
-     * Get latest posts
+     * Get latest posts.
      *
      * @return \Illuminate\Http\Response
      */
@@ -28,8 +28,7 @@ class PostController extends Controller
                         ->whereNotIn('id', $except_ids)
                         ->take(13)
                         ->get();
-        }
-        else {
+        } else {
             $posts = Post::published()
                 ->orderBy('id', 'desc')
                 ->where('id', '<', $last_id)
@@ -38,24 +37,22 @@ class PostController extends Controller
                 ->get();
         }
 
-
-        $posts_result = $posts->map(function($post) {
+        $posts_result = $posts->map(function ($post) {
             return [
                 'id' => $post->id,
                 'title' => $post->judul,
                 'image_url' => $post->gbr_url,
                 'post_url' => $post->post_url,
                 'preview_body' => $post->brief_text,
-                'created_at' => $post->created_at
+                'created_at' => $post->created_at,
             ];
         });
-
 
         $post_last_id = -1;
         $posts_data = $posts_result;
         if ($posts_result->count() == 13) {
             $posts_data = $posts_result->take(12);
-            $post_last_id = $posts_data->map(function($post) {
+            $post_last_id = $posts_data->map(function ($post) {
                 return $post['id'];
             })->last();
         }
@@ -64,7 +61,7 @@ class PostController extends Controller
         $message = 'Success';
         $data = [
             'lastId' => $post_last_id,
-            'posts' => $posts_data
+            'posts' => $posts_data,
         ];
 
         return $this->apiResponse($status, $message, $data);

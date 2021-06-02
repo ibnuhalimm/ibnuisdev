@@ -8,7 +8,7 @@ use Livewire\Component;
 class LastDayVisitor extends Component
 {
     /**
-     * Render to view
+     * Render to view.
      *
      * @return \Illuminate\View\View
      */
@@ -17,7 +17,7 @@ class LastDayVisitor extends Component
         $total_visitor_today = Analytics::where('name', Analytics::LAST_DAY_TOTAL_VISITOR)->first();
 
         $data = [
-            'total_visitor_today' => isset($total_visitor_today->data) ? $total_visitor_today->data : 0
+            'total_visitor_today' => isset($total_visitor_today->data) ? $total_visitor_today->data : 0,
         ];
 
         return view('livewire.dashboard.blog.last-day-visitor', $data);

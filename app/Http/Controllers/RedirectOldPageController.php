@@ -17,7 +17,7 @@ class RedirectOldPageController extends Controller
     {
         $old_page = RedirectOldPage::where('slug', $old_slug)->first();
 
-        abort_if(!$old_page, 404);
+        abort_if(! $old_page, 404);
 
         return redirect()->to($old_page->new_url, 302);
     }

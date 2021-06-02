@@ -11,7 +11,7 @@ use Tests\TestCase;
 class PostTest extends TestCase
 {
     /**
-     * Set logged in user
+     * Set logged in user.
      *
      * @return void
      */
@@ -20,7 +20,6 @@ class PostTest extends TestCase
         $user = User::factory()->create();
         $this->actingAs($user);
     }
-
 
     public function test_admin_can_view_post_table_page()
     {
@@ -31,7 +30,6 @@ class PostTest extends TestCase
             ->assertViewIs('dashboard.blog.post.index');
     }
 
-
     public function test_contains_dashboard_blog_post_table_livewire()
     {
         $this->setLoggedInUser();
@@ -40,14 +38,13 @@ class PostTest extends TestCase
         $response->assertSeeLivewire('dashboard.blog.post.table');
     }
 
-
     public function test_can_upload_image_on_tinyimce_editor()
     {
         $this->setLoggedInUser();
 
-        $image = UploadedFile::fake()->image(Str::random(10) . '.jpg');
+        $image = UploadedFile::fake()->image(Str::random(10).'.jpg');
 
-        $response = $this->post(route('dashboard.post.upload-image'), [ 'file' => $image ]);
+        $response = $this->post(route('dashboard.post.upload-image'), ['file' => $image]);
         $response->assertStatus(200)
             ->assertJsonStructure(['location']);
     }

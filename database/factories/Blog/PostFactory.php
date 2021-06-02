@@ -31,13 +31,13 @@ class PostFactory extends Factory
             'judul' => $judul,
             'slug' => $slug,
             'gbr' => Str::of($gbr)->replace('storage/app/public/', ''),
-            'image_credits' => 'Image by ' . $this->faker->name(),
+            'image_credits' => 'Image by '.$this->faker->name(),
             'brief_text' => $this->faker->sentence(10),
             'isi' => $this->faker->paragraph(100),
             'status' => $this->faker->numberBetween(1, 2),
             'tag' => implode(',', $this->faker->words(5)),
             'user_create' => 'ibnu',
-            'created_at' => $this->faker->dateTimeBetween('-1 year', 'now', 'Asia/Jakarta')
+            'created_at' => $this->faker->dateTimeBetween('-1 year', 'now', 'Asia/Jakarta'),
         ];
     }
 }

@@ -13,7 +13,7 @@ class Table extends Component
     public $edit_description;
 
     /**
-     * Edit section, open the edit modal
+     * Edit section, open the edit modal.
      *
      * @param int $section_id
      * @return void
@@ -29,7 +29,7 @@ class Table extends Component
     }
 
     /**
-     * Form validation rules
+     * Form validation rules.
      *
      * @return array
      */
@@ -38,14 +38,14 @@ class Table extends Component
         return [
             'edit_section' => [
                 'required',
-                'in:' . Section::SECTION_TOP . ',' . Section::SECTION_PORTFOLIO . ',' . Section::SECTION_SKILLS . ',' . Section::SECTION_CONTACT
+                'in:'.Section::SECTION_TOP.','.Section::SECTION_PORTFOLIO.','.Section::SECTION_SKILLS.','.Section::SECTION_CONTACT,
             ],
-            'edit_description' => [ 'required', 'string', 'min:10' ]
+            'edit_description' => ['required', 'string', 'min:10'],
         ];
     }
 
     /**
-     * Form validation attributes
+     * Form validation attributes.
      *
      * @return array
      */
@@ -53,12 +53,12 @@ class Table extends Component
     {
         return [
             'edit_section' => 'Section',
-            'edit_description' => 'Description'
+            'edit_description' => 'Description',
         ];
     }
 
     /**
-     * Run realtime validation
+     * Run realtime validation.
      *
      * @param string $property_name
      * @return void
@@ -69,7 +69,7 @@ class Table extends Component
     }
 
     /**
-     * Cancel edit, close the modal
+     * Cancel edit, close the modal.
      *
      * @return void
      */
@@ -80,7 +80,7 @@ class Table extends Component
     }
 
     /**
-     * Cancel edit, close the modal
+     * Cancel edit, close the modal.
      *
      * @return void
      */
@@ -91,7 +91,7 @@ class Table extends Component
         try {
             Section::where('id', $this->edit_section_id)
                     ->update([
-                        'description' => $this->edit_description
+                        'description' => $this->edit_description,
                     ]);
 
             $this->is_edit_modal_open = 0;
@@ -100,24 +100,22 @@ class Table extends Component
             session()->flash('alert-edit-status', 'green');
             session()->flash('alert-edit-title', 'Success');
             session()->flash('alert-edit-body', 'Section successfully updated!');
-
         } catch (\Throwable $th) {
             session()->flash('alert-edit-status', 'red');
             session()->flash('alert-edit-title', 'Error');
             session()->flash('alert-edit-body', 'Oops, something went wrong');
-
         }
     }
 
     /**
-     * Render to view
+     * Render to view.
      *
      * @return \Illuminate\View\View
      */
     public function render()
     {
         $data = [
-            'sections' => Section::orderBy('section', 'asc')->get()
+            'sections' => Section::orderBy('section', 'asc')->get(),
         ];
 
         return view('livewire.dashboard.section.table', $data);

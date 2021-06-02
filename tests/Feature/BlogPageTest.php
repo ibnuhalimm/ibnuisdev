@@ -8,7 +8,7 @@ use Tests\TestCase;
 class BlogPageTest extends TestCase
 {
     /**
-     * User can view blog page
+     * User can view blog page.
      *
      * @return void
      */

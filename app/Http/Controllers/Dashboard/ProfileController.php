@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ProfileController extends Controller
 {
     /**
-     * Display profile page of user
+     * Display profile page of user.
      *
      * @return \Illuminate\Http\Response
      */

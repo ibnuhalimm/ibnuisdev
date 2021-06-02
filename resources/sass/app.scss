@@ -28,7 +28,6 @@ body.modal-active {
     backdrop-filter: saturate(180%) blur(20px);
 }
 
-
 /* purgecss start ignore */
 body.nav-open {
     overflow-y: hidden !important;
@@ -37,7 +36,6 @@ body.nav-open {
     display: block;
 }
 /* purgecss end ignore */
-
 
 .article-content {
     line-height: 2rem;
@@ -58,8 +56,10 @@ body.nav-open {
 }
 
 @media (min-width: 1280px) {
-    [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-    [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+    [class^='flaticon-']:before,
+    [class*=' flaticon-']:before,
+    [class^='flaticon-']:after,
+    [class*=' flaticon-']:after {
         font-size: 14px;
     }
 
@@ -72,7 +72,6 @@ body.nav-open {
         display: block;
     }
 }
-
 
 .timeline,
 .timeline-gray {
@@ -148,9 +147,9 @@ body.nav-open {
 }
 .timeline-gray--container.left::before {
     content: ' ';
-    border: medium solid #F4F4F4;
+    border: medium solid #f4f4f4;
     border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent #F4F4F4;
+    border-color: transparent transparent transparent #f4f4f4;
     @apply absolute w-0 h-0 top-4 right-4;
 }
 
@@ -163,9 +162,9 @@ body.nav-open {
 }
 .timeline-gray--container.right::before {
     content: ' ';
-    border: medium solid #F4F4F4;
+    border: medium solid #f4f4f4;
     border-width: 10px 10px 10px 0px;
-    border-color: transparent #F4F4F4 transparent transparent;
+    border-color: transparent #f4f4f4 transparent transparent;
     @apply absolute w-0 h-0 top-4 left-4;
 }
 
@@ -174,7 +173,6 @@ body.nav-open {
 }
 .timeline-gray--content {
     @apply p-6 bg-ib-four rounded-lg shadow-md;
-
 }
 
 @tailwind utilities;

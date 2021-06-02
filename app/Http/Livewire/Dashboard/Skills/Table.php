@@ -11,7 +11,7 @@ class Table extends Component
     use WithPagination;
 
     /**
-     * Define properties
+     * Define properties.
      *
      * @var mixed
      */
@@ -29,7 +29,7 @@ class Table extends Component
     public $is_delete_modal_open = 0;
 
     /**
-     * Initial properties value
+     * Initial properties value.
      *
      * @return void
      */
@@ -40,21 +40,21 @@ class Table extends Component
     }
 
     /**
-     * Form validation rules
+     * Form validation rules.
      *
      * @return array
      */
     private function formValidationRules()
     {
         return [
-            'name' => [ 'required', 'string', 'min:3', 'max:40' ],
-            'order_number' => [ 'required', 'numeric' ],
-            'flag_type' => [ 'required', 'in:' . Skill::FLAG_TYPE_DAY_TO_DAY . ',' . Skill::FLAG_TYPE_EXPERIENCE ]
+            'name' => ['required', 'string', 'min:3', 'max:40'],
+            'order_number' => ['required', 'numeric'],
+            'flag_type' => ['required', 'in:'.Skill::FLAG_TYPE_DAY_TO_DAY.','.Skill::FLAG_TYPE_EXPERIENCE],
         ];
     }
 
     /**
-     * Realtime form validation
+     * Realtime form validation.
      *
      * @param string $property_name
      * @return void
@@ -65,7 +65,7 @@ class Table extends Component
     }
 
     /**
-     * Open new skill modal
+     * Open new skill modal.
      *
      * @return void
      */
@@ -77,7 +77,7 @@ class Table extends Component
 
     /**
      * Cancel save new skill,
-     * close the modal
+     * close the modal.
      *
      * @return void
      */
@@ -88,7 +88,7 @@ class Table extends Component
     }
 
     /**
-     * Store skill to database
+     * Store skill to database.
      *
      * @return void
      */
@@ -100,12 +100,12 @@ class Table extends Component
             Skill::updateOrCreate(
                 [
                     'name' => $this->name,
-                    'flag_type' => $this->flag_type_form
+                    'flag_type' => $this->flag_type_form,
                 ],
                 [
                     'name' => $this->name,
                     'order_number' => $this->order_number,
-                    'flag_type' => $this->flag_type_form
+                    'flag_type' => $this->flag_type_form,
                 ]
             );
 
@@ -115,18 +115,16 @@ class Table extends Component
             session()->flash('alert-status', 'green');
             session()->flash('alert-title', 'Success');
             session()->flash('alert-body', 'New skill saved!');
-
         } catch (\Throwable $th) {
             session()->flash('alert-create-status', 'red');
             session()->flash('alert-create-title', 'Error');
             session()->flash('alert-create-body', 'Something went wrong');
-
         }
     }
 
     /**
      * Edit skill
-     * Get data and open the edit modal
+     * Get data and open the edit modal.
      *
      * @param int $skill_id
      * @return void
@@ -145,7 +143,7 @@ class Table extends Component
 
     /**
      * Cancel Update skill,
-     * close the modal
+     * close the modal.
      *
      * @return void
      */
@@ -156,7 +154,7 @@ class Table extends Component
     }
 
     /**
-     * Update skill on database
+     * Update skill on database.
      *
      * @return void
      */
@@ -169,7 +167,7 @@ class Table extends Component
                     ->update([
                         'name' => $this->name,
                         'order_number' => $this->order_number,
-                        'flag_type' => $this->flag_type_form
+                        'flag_type' => $this->flag_type_form,
                     ]);
 
             $this->is_edit_modal_open = 0;
@@ -178,17 +176,15 @@ class Table extends Component
             session()->flash('alert-status', 'green');
             session()->flash('alert-title', 'Success');
             session()->flash('alert-body', 'Skill data updated!');
-
         } catch (\Throwable $th) {
             session()->flash('alert-edit-status', 'red');
             session()->flash('alert-edit-title', 'Error');
             session()->flash('alert-edit-body', 'Something went wrong');
-
         }
     }
 
     /**
-     * Open delete skill confirm modal
+     * Open delete skill confirm modal.
      *
      * @param int $skill_id
      * @return void
@@ -201,7 +197,7 @@ class Table extends Component
 
     /**
      * Cancel delete skill,
-     * close the modal
+     * close the modal.
      *
      * @return void
      */
@@ -212,7 +208,7 @@ class Table extends Component
     }
 
     /**
-     * Delete skill from database
+     * Delete skill from database.
      *
      * @return void
      */
@@ -227,17 +223,15 @@ class Table extends Component
             session()->flash('alert-status', 'green');
             session()->flash('alert-title', 'Success');
             session()->flash('alert-body', 'Skill data deleted!');
-
         } catch (\Throwable $th) {
             session()->flash('alert-delete-status', 'red');
             session()->flash('alert-delete-title', 'Error');
             session()->flash('alert-delete-body', 'Something went wrong');
-
         }
     }
 
     /**
-     * Override pagination view to custom view
+     * Override pagination view to custom view.
      *
      * @return string
      */
@@ -247,7 +241,7 @@ class Table extends Component
     }
 
     /**
-     * Render to view
+     * Render to view.
      *
      * @return \Illuminate\View\View
      */
@@ -257,7 +251,7 @@ class Table extends Component
             'skills' => Skill::orderBy('order_number', 'asc')
                 ->flagType($this->flag_type)
                 ->searchTable($this->search)
-                ->paginate(20)
+                ->paginate(20),
         ];
 
         return view('livewire.dashboard.skills.table', $data);

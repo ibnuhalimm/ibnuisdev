@@ -7,7 +7,7 @@ const API = {
     portfolio: _BASE_URL + '/api/portfolios',
     latest_posts: _BASE_URL + '/api/posts/latest',
     message: _BASE_URL + '/api/messages',
-    message_cta: _BASE_URL + '/api/messages/cta'
+    message_cta: _BASE_URL + '/api/messages/cta',
 };
 
 export default API;

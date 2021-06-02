@@ -13,7 +13,7 @@ use Tests\TestCase;
 class PortfolioEditTest extends TestCase
 {
     /**
-     * Upload fake image
+     * Upload fake image.
      *
      * @param string $extension
      * @return mixed
@@ -26,18 +26,18 @@ class PortfolioEditTest extends TestCase
     }
 
     /**
-     * Make month attribute two digits
+     * Make month attribute two digits.
      *
      * @param int $month
      * @return string
      */
     public function setStrMonth($month)
     {
-        return $month < 10 ? '0' . $month : $month;
+        return $month < 10 ? '0'.$month : $month;
     }
 
     /**
-     * Test uploading an image
+     * Test uploading an image.
      *
      * @return void
      */
@@ -47,13 +47,13 @@ class PortfolioEditTest extends TestCase
 
         $project = Project::factory()->create();
 
-        Livewire::test(Edit::class, [ 'project' => $project ])
+        Livewire::test(Edit::class, ['project' => $project])
             ->set('image', $fake_image)
             ->assertSee('image');
     }
 
     /**
-     * Can update portfolio
+     * Can update portfolio.
      *
      * @return void
      */
@@ -63,7 +63,7 @@ class PortfolioEditTest extends TestCase
 
         $project = Project::factory()->create();
 
-        Livewire::test(Edit::class, [ 'project' => $project ])
+        Livewire::test(Edit::class, ['project' => $project])
             ->set('project_id', $project->id)
             ->set('lang', $project->lang)
             ->set('month', $this->setStrMonth($project->month))
@@ -78,7 +78,6 @@ class PortfolioEditTest extends TestCase
             ->assertRedirect(route('dashboard.portfolio.index'));
     }
 
-
     /**
      * @test
      */
@@ -88,7 +87,7 @@ class PortfolioEditTest extends TestCase
 
         $project = Project::factory()->create();
 
-        Livewire::test(Edit::class, [ 'project' => $project ])
+        Livewire::test(Edit::class, ['project' => $project])
             ->set('project_id', $project->id)
             ->set('lang', null)
             ->set('month', $project->month)
@@ -100,7 +99,7 @@ class PortfolioEditTest extends TestCase
             ->set('status', $project->status)
             ->call('submitUpdateProject')
             ->assertHasErrors([
-                'lang' => 'required'
+                'lang' => 'required',
             ]);
     }
 
@@ -113,7 +112,7 @@ class PortfolioEditTest extends TestCase
 
         $project = Project::factory()->create();
 
-        Livewire::test(Edit::class, [ 'project' => $project ])
+        Livewire::test(Edit::class, ['project' => $project])
             ->set('project_id', $project->id)
             ->set('lang', 'invalid-lang')
             ->set('month', $project->month)
@@ -125,13 +124,13 @@ class PortfolioEditTest extends TestCase
             ->set('status', $project->status)
             ->call('submitUpdateProject')
             ->assertHasErrors([
-                'lang' => 'in'
+                'lang' => 'in',
             ]);
     }
 
     /**
      * Can not update portfolio
-     * if month is not provided
+     * if month is not provided.
      *
      * @return void
      */
@@ -141,7 +140,7 @@ class PortfolioEditTest extends TestCase
 
         $project = Project::factory()->create();
 
-        Livewire::test(Edit::class, [ 'project' => $project ])
+        Livewire::test(Edit::class, ['project' => $project])
             ->set('project_id', $project->id)
             ->set('lang', $project->lang)
             ->set('month', null)
@@ -153,13 +152,13 @@ class PortfolioEditTest extends TestCase
             ->set('status', $project->status)
             ->call('submitUpdateProject')
             ->assertHasErrors([
-                'month' => 'required'
+                'month' => 'required',
             ]);
     }
 
     /**
      * Can not update portfolio
-     * if year is not provided
+     * if year is not provided.
      *
      * @return void
      */
@@ -169,7 +168,7 @@ class PortfolioEditTest extends TestCase
 
         $project = Project::factory()->create();
 
-        Livewire::test(Edit::class, [ 'project' => $project ])
+        Livewire::test(Edit::class, ['project' => $project])
             ->set('project_id', $project->id)
             ->set('lang', $project->lang)
             ->set('month', $project->month)
@@ -181,13 +180,13 @@ class PortfolioEditTest extends TestCase
             ->set('status', $project->status)
             ->call('submitUpdateProject')
             ->assertHasErrors([
-                'year' => 'required'
+                'year' => 'required',
             ]);
     }
 
     /**
      * Can not update portfolio
-     * if year digits less than 4 is not provided
+     * if year digits less than 4 is not provided.
      *
      * @return void
      */
@@ -197,7 +196,7 @@ class PortfolioEditTest extends TestCase
 
         $project = Project::factory()->create();
 
-        Livewire::test(Edit::class, [ 'project' => $project ])
+        Livewire::test(Edit::class, ['project' => $project])
             ->set('project_id', $project->id)
             ->set('lang', $project->lang)
             ->set('month', $project->month)
@@ -209,13 +208,13 @@ class PortfolioEditTest extends TestCase
             ->set('status', $project->status)
             ->call('submitUpdateProject')
             ->assertHasErrors([
-                'year' => 'digits'
+                'year' => 'digits',
             ]);
     }
 
     /**
      * Can not update portfolio
-     * if name is not provided
+     * if name is not provided.
      *
      * @return void
      */
@@ -225,7 +224,7 @@ class PortfolioEditTest extends TestCase
 
         $project = Project::factory()->create();
 
-        Livewire::test(Edit::class, [ 'project' => $project ])
+        Livewire::test(Edit::class, ['project' => $project])
             ->set('project_id', $project->id)
             ->set('lang', $project->lang)
             ->set('month', $project->month)
@@ -237,13 +236,13 @@ class PortfolioEditTest extends TestCase
             ->set('status', $project->status)
             ->call('submitUpdateProject')
             ->assertHasErrors([
-                'name' => 'required'
+                'name' => 'required',
             ]);
     }
 
     /**
      * Can not update portfolio
-     * if name less than 10 chars
+     * if name less than 10 chars.
      *
      * @return void
      */
@@ -253,7 +252,7 @@ class PortfolioEditTest extends TestCase
 
         $project = Project::factory()->create();
 
-        Livewire::test(Edit::class, [ 'project' => $project ])
+        Livewire::test(Edit::class, ['project' => $project])
             ->set('project_id', $project->id)
             ->set('lang', $project->lang)
             ->set('month', $project->month)
@@ -265,13 +264,13 @@ class PortfolioEditTest extends TestCase
             ->set('status', $project->status)
             ->call('submitUpdateProject')
             ->assertHasErrors([
-                'name' => 'min'
+                'name' => 'min',
             ]);
     }
 
     /**
      * Can not update portfolio
-     * if name more than 50 chars
+     * if name more than 50 chars.
      *
      * @return void
      */
@@ -281,7 +280,7 @@ class PortfolioEditTest extends TestCase
 
         $project = Project::factory()->create();
 
-        Livewire::test(Edit::class, [ 'project' => $project ])
+        Livewire::test(Edit::class, ['project' => $project])
             ->set('project_id', $project->id)
             ->set('lang', $project->lang)
             ->set('month', $project->month)
@@ -290,16 +289,16 @@ class PortfolioEditTest extends TestCase
             ->set('image', $fake_image)
             ->set('description', $project->description)
             ->set('link', $this->faker->url)
-            ->set('status', $this->faker->randomElement([ Project::STATUS_DRAFT, Project::STATUS_PUBLISH ]))
+            ->set('status', $this->faker->randomElement([Project::STATUS_DRAFT, Project::STATUS_PUBLISH]))
             ->call('submitUpdateProject')
             ->assertHasErrors([
-                'name' => 'max'
+                'name' => 'max',
             ]);
     }
 
     /**
      * Can't update portfolio
-     * if description not provided
+     * if description not provided.
      *
      * @return void
      */
@@ -309,7 +308,7 @@ class PortfolioEditTest extends TestCase
 
         $project = Project::factory()->create();
 
-        Livewire::test(Edit::class, [ 'project' => $project ])
+        Livewire::test(Edit::class, ['project' => $project])
             ->set('project_id', $project->id)
             ->set('lang', $project->lang)
             ->set('month', $project->month)
@@ -321,13 +320,13 @@ class PortfolioEditTest extends TestCase
             ->set('status', $project->status)
             ->call('submitUpdateProject')
             ->assertHasErrors([
-                'description' => 'required'
+                'description' => 'required',
             ]);
     }
 
     /**
      * Can't update portfolio
-     * if description less than 100 chars
+     * if description less than 100 chars.
      *
      * @return void
      */
@@ -337,7 +336,7 @@ class PortfolioEditTest extends TestCase
 
         $project = Project::factory()->create();
 
-        Livewire::test(Edit::class, [ 'project' => $project ])
+        Livewire::test(Edit::class, ['project' => $project])
             ->set('project_id', $project->id)
             ->set('lang', $project->lang)
             ->set('month', $project->month)
@@ -349,13 +348,13 @@ class PortfolioEditTest extends TestCase
             ->set('status', $project->status)
             ->call('submitUpdateProject')
             ->assertHasErrors([
-                'description' => 'min'
+                'description' => 'min',
             ]);
     }
 
     /**
      * Can't update portfolio
-     * if description more than 300 chars
+     * if description more than 300 chars.
      *
      * @return void
      */
@@ -365,7 +364,7 @@ class PortfolioEditTest extends TestCase
 
         $project = Project::factory()->create();
 
-        Livewire::test(Edit::class, [ 'project' => $project ])
+        Livewire::test(Edit::class, ['project' => $project])
             ->set('project_id', $project->id)
             ->set('lang', $project->lang)
             ->set('month', $project->month)
@@ -377,13 +376,13 @@ class PortfolioEditTest extends TestCase
             ->set('status', $project->status)
             ->call('submitUpdateProject')
             ->assertHasErrors([
-                'description' => 'max'
+                'description' => 'max',
             ]);
     }
 
     /**
      * Can't update portfolio
-     * if url is invalid
+     * if url is invalid.
      *
      * @return void
      */
@@ -393,7 +392,7 @@ class PortfolioEditTest extends TestCase
 
         $project = Project::factory()->create();
 
-        Livewire::test(Edit::class, [ 'project' => $project ])
+        Livewire::test(Edit::class, ['project' => $project])
             ->set('project_id', $project->id)
             ->set('lang', $project->lang)
             ->set('month', $project->month)
@@ -405,13 +404,13 @@ class PortfolioEditTest extends TestCase
             ->set('status', $project->status)
             ->call('submitUpdateProject')
             ->assertHasErrors([
-                'link' => 'url'
+                'link' => 'url',
             ]);
     }
 
     /**
      * Can't update portfolio
-     * if status is not provided
+     * if status is not provided.
      *
      * @return void
      */
@@ -421,7 +420,7 @@ class PortfolioEditTest extends TestCase
 
         $project = Project::factory()->create();
 
-        Livewire::test(Edit::class, [ 'project' => $project ])
+        Livewire::test(Edit::class, ['project' => $project])
             ->set('project_id', $project->id)
             ->set('lang', $project->lang)
             ->set('month', $project->month)
@@ -433,13 +432,13 @@ class PortfolioEditTest extends TestCase
             ->set('status', null)
             ->call('submitUpdateProject')
             ->assertHasErrors([
-                'status' => 'required'
+                'status' => 'required',
             ]);
     }
 
     /**
      * Can't update portfolio
-     * if status is not allowed
+     * if status is not allowed.
      *
      * @return void
      */
@@ -449,7 +448,7 @@ class PortfolioEditTest extends TestCase
 
         $project = Project::factory()->create();
 
-        Livewire::test(Edit::class, [ 'project' => $project ])
+        Livewire::test(Edit::class, ['project' => $project])
             ->set('project_id', $project->id)
             ->set('lang', $project->lang)
             ->set('month', $project->month)
@@ -461,7 +460,7 @@ class PortfolioEditTest extends TestCase
             ->set('status', 'NOT ALLOWED!!!')
             ->call('submitUpdateProject')
             ->assertHasErrors([
-                'status' => 'in'
+                'status' => 'in',
             ]);
     }
 }

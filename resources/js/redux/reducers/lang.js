@@ -2,7 +2,7 @@ import { LOAD_LANG } from '../actionTypes';
 
 const initialState = {};
 
-export default function(state = initialState, action) {
+export default function (state = initialState, action) {
     switch (action.type) {
         case LOAD_LANG:
             return { ...state, lang: action.payload };
@@ -10,4 +10,4 @@ export default function(state = initialState, action) {
         default:
             return state;
     }
-};
+}

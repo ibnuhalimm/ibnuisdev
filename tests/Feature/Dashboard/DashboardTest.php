@@ -8,7 +8,7 @@ use Tests\TestCase;
 class DashboardTest extends TestCase
 {
     /**
-     * Set logged in user
+     * Set logged in user.
      *
      * @return void
      */
@@ -19,7 +19,7 @@ class DashboardTest extends TestCase
     }
 
     /**
-     * Admin can view dashboard page
+     * Admin can view dashboard page.
      *
      * @return void
      */
@@ -33,7 +33,7 @@ class DashboardTest extends TestCase
     }
 
     /**
-     * Contains last-day-visitor livewire component
+     * Contains last-day-visitor livewire component.
      *
      * @return void
      */
@@ -46,7 +46,7 @@ class DashboardTest extends TestCase
     }
 
     /**
-     * Contains last-month-visitor livewire component
+     * Contains last-month-visitor livewire component.
      *
      * @return void
      */
@@ -59,7 +59,7 @@ class DashboardTest extends TestCase
     }
 
     /**
-     * Contains most-visited-pages livewire component
+     * Contains most-visited-pages livewire component.
      *
      * @return void
      */

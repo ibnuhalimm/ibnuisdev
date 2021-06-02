@@ -31,19 +31,19 @@ class LanguageMiddleware
 
     /**
      * Get visitor locale based on their IP address
-     * Using geoplugin.net
+     * Using geoplugin.net.
      *
      * @param string $ip
      * @return string
      */
     private function getVisitorLocale($ip = '127.0.0.1')
     {
-        if (in_array($ip, [ '127.0.0.1', 'localhost' ])) {
+        if (in_array($ip, ['127.0.0.1', 'localhost'])) {
             return 'id';
         }
 
         $http = new Client();
-        $geoplugin = $http->get('http://geoplugin.net/json.gp?ip=' . $ip);
+        $geoplugin = $http->get('http://geoplugin.net/json.gp?ip='.$ip);
         $response = collect($geoplugin->getBody()->getContents())->toArray();
         $country_name = isset($response['geoplugin_countryName'])
                         ? $response['geoplugin_countryName']

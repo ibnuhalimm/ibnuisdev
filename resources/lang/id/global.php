@@ -34,5 +34,5 @@ return [
     'your_email' => 'Email Anda',
     'message' => 'Isi Pesan',
     'loading' => 'Memuat',
-    'something_went_wrong' => 'Terjadi kesalahan'
+    'something_went_wrong' => 'Terjadi kesalahan',
 ];

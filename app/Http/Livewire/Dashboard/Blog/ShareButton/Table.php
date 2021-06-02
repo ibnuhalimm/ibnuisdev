@@ -11,14 +11,14 @@ class Table extends Component
     use WithPagination;
 
     /**
-     * Defined properties
+     * Defined properties.
      *
      * @var mixed
      */
     public $search;
 
     /**
-     * Override pagination view to custom view
+     * Override pagination view to custom view.
      *
      * @return string
      */
@@ -28,7 +28,7 @@ class Table extends Component
     }
 
     /**
-     * Render to view
+     * Render to view.
      *
      * @return \Illuminate\Http\Response
      */
@@ -36,8 +36,8 @@ class Table extends Component
     {
         $data = [
             'share_buttons' => ShareButton::orderBy('nomor_urut', 'asc')
-                                        ->where('nama', 'like', '%' . $this->search . '%')
-                                        ->paginate(10)
+                                        ->where('nama', 'like', '%'.$this->search.'%')
+                                        ->paginate(10),
         ];
 
         return view('livewire.dashboard.blog.share-button.table', $data);

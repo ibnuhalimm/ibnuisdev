@@ -10,7 +10,7 @@ use Tests\TestCase;
 class LoginTest extends TestCase
 {
     /**
-     * Login page return success code
+     * Login page return success code.
      *
      * @return void
      */
@@ -23,7 +23,7 @@ class LoginTest extends TestCase
     }
 
     /**
-     * Can login using correct credentials
+     * Can login using correct credentials.
      *
      * @return void
      */
@@ -33,7 +33,7 @@ class LoginTest extends TestCase
 
         $response = $this->post(route('login'), [
             'username' => $user->username,
-            'password' => 'password'
+            'password' => 'password',
         ]);
 
         $response->assertRedirect(route('home'));
@@ -41,7 +41,7 @@ class LoginTest extends TestCase
     }
 
     /**
-     * Can login using `email` and `password`
+     * Can login using `email` and `password`.
      *
      * @return void
      */
@@ -51,7 +51,7 @@ class LoginTest extends TestCase
 
         $response = $this->post(route('login'), [
             'username' => $user->email,
-            'password' => 'password'
+            'password' => 'password',
         ]);
 
         $response->assertRedirect(route('home'));
@@ -59,7 +59,7 @@ class LoginTest extends TestCase
     }
 
     /**
-     * Can not login using incorrect credentials
+     * Can not login using incorrect credentials.
      *
      * @return void
      */
@@ -69,17 +69,17 @@ class LoginTest extends TestCase
 
         $response = $this->post(route('login'), [
             'username' => $user->email,
-            'password' => 'wrong-password'
+            'password' => 'wrong-password',
         ]);
 
         $response->assertSessionHasErrors([
-            'username' => Lang::get('auth.failed')
+            'username' => Lang::get('auth.failed'),
         ]);
     }
 
     /**
      * User will get error message
-     * if try to login without credentials
+     * if try to login without credentials.
      *
      * @return void
      */
@@ -88,13 +88,13 @@ class LoginTest extends TestCase
         $response = $this->post(route('login'), []);
 
         $response->assertSessionHasErrors([
-            'username' => Str::replaceFirst(':attribute', 'username', Lang::get('validation.required'))
+            'username' => Str::replaceFirst(':attribute', 'username', Lang::get('validation.required')),
         ]);
     }
 
     /**
      * User will get errors
-     * if try to login without password
+     * if try to login without password.
      *
      * @return void
      */
@@ -102,11 +102,11 @@ class LoginTest extends TestCase
     {
         $response = $this->post(route('login'), [
             'username' => 'username',
-            'password' => null
+            'password' => null,
         ]);
 
         $response->assertSessionHasErrors([
-            'password' => Str::replaceFirst(':attribute', 'password', Lang::get('validation.required'))
+            'password' => Str::replaceFirst(':attribute', 'password', Lang::get('validation.required')),
         ]);
     }
 }

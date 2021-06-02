@@ -27,9 +27,9 @@ class MessageStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => [ 'required', 'min:3', 'max:40' ],
-            'email' => [ 'required', 'email', 'max:100' ],
-            'message' => [ 'required', 'min:50' ]
+            'name' => ['required', 'min:3', 'max:40'],
+            'email' => ['required', 'email', 'max:100'],
+            'message' => ['required', 'min:50'],
         ];
     }
 }

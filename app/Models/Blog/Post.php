@@ -4,9 +4,9 @@ namespace App\Models\Blog;
 
 use Carbon\Carbon;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
@@ -15,18 +15,18 @@ class Post extends Model
 {
     use SoftDeletes, Sluggable, HasFactory;
 
-    CONST STATUS_DRAFT = 1;
-    CONST STATUS_PUBLISH = 2;
+    const STATUS_DRAFT = 1;
+    const STATUS_PUBLISH = 2;
 
     /**
-     * Define table name
+     * Define table name.
      *
      * @var string
      */
     protected $table = 'post';
 
     /**
-     * Mass fillable columns
+     * Mass fillable columns.
      *
      * @var array
      */
@@ -40,11 +40,11 @@ class Post extends Model
         'status',
         'tag',
         'user_create',
-        'user_update'
+        'user_update',
     ];
 
     /**
-     * Append custom fields
+     * Append custom fields.
      *
      * @var array
      */
@@ -52,11 +52,11 @@ class Post extends Model
         'str_status',
         'str_status_color',
         'gbr_url',
-        'post_url'
+        'post_url',
     ];
 
     /**
-     * Inverse relationship to `users` table
+     * Inverse relationship to `users` table.
      *
      * @return mixed
      */
@@ -66,7 +66,7 @@ class Post extends Model
     }
 
     /**
-     * Inverse relationship to `users` table
+     * Inverse relationship to `users` table.
      *
      * @return mixed
      */
@@ -76,7 +76,7 @@ class Post extends Model
     }
 
     /**
-     * Relationship to `post_visitors` table
+     * Relationship to `post_visitors` table.
      *
      * @return mixed
      */
@@ -86,7 +86,7 @@ class Post extends Model
     }
 
     /**
-     * Accessor for `str_status`
+     * Accessor for `str_status`.
      *
      * @return string
      */
@@ -104,7 +104,7 @@ class Post extends Model
     }
 
     /**
-     * Accessor for `str_status_color`
+     * Accessor for `str_status_color`.
      *
      * @return string
      */
@@ -122,7 +122,7 @@ class Post extends Model
     }
 
     /**
-     * Accessor for `gbr_url`
+     * Accessor for `gbr_url`.
      *
      * @return string
      */
@@ -136,17 +136,17 @@ class Post extends Model
     }
 
     /**
-     * Accessor for `gbr_url`
+     * Accessor for `gbr_url`.
      *
      * @return string
      */
     public function getPostUrlAttribute()
     {
-        return route('blog.post.read', [ 'slug' => $this->slug ]);
+        return route('blog.post.read', ['slug' => $this->slug]);
     }
 
     /**
-     * Query to filter only published post
+     * Query to filter only published post.
      *
      * @param \Illuminate\Database\Query\Builder $query
      *
@@ -158,7 +158,7 @@ class Post extends Model
     }
 
     /**
-     * Query to filter by `status`
+     * Query to filter by `status`.
      *
      * @param \Illuminate\Database\Query\Builder $query
      * @param string|null $status
@@ -171,11 +171,10 @@ class Post extends Model
             return $query->where('status', $status);
         }
 
-        return;
     }
 
     /**
-     * Query to search from datatable
+     * Query to search from datatable.
      *
      * @param \Illuminate\Database\Query\Builder $query
      * @param string|null $search
@@ -184,20 +183,19 @@ class Post extends Model
      */
     public function scopeSearchTable($query, $search = null)
     {
-        if (!empty($search)) {
+        if (! empty($search)) {
             $search = str_replace(',', '.', $search);
-            $search_term = '%' . $search . '%';
+            $search_term = '%'.$search.'%';
 
-            return $query->where(function($query) use ($search_term) {
+            return $query->where(function ($query) use ($search_term) {
                 return $query->where('judul', 'like', $search_term);
             });
         }
 
-        return;
     }
 
     /**
-     * Main post on home page
+     * Main post on home page.
      *
      * @return array
      */
@@ -207,7 +205,7 @@ class Post extends Model
     }
 
     /**
-     * Query related posts
+     * Query related posts.
      *
      * @param \Illuminate\Database\Query\Builder $query
      * @param string|null $tags
@@ -219,26 +217,25 @@ class Post extends Model
 
         $where_tags = '';
 
-        if (!empty($tags)) {
+        if (! empty($tags)) {
             $where_tags = ' (';
             foreach ($arr_tags as $idx_tag => $tag) {
                 if ($idx_tag === 0) {
                     $where_tags .= " tag LIKE '%$tag%'";
-                }
-                else {
+                } else {
                     $where_tags .= " OR tag LIKE '%$tag%'";
                 }
             }
             $where_tags .= ' )';
         }
 
-        return $query->whereNotIn('id', [ $current_post_id ])
+        return $query->whereNotIn('id', [$current_post_id])
                     ->whereRaw($where_tags)
                     ->published();
     }
 
     /**
-     * Query to search posts
+     * Query to search posts.
      *
      * @param \Illuminate\Database\Query\Builder $
      * @param string|null $search
@@ -246,16 +243,15 @@ class Post extends Model
      */
     public function scopeSearch($query, $search = null)
     {
-        if (!empty($search)) {
-            $search_term = '%' . $search . '%';
+        if (! empty($search)) {
+            $search_term = '%'.$search.'%';
 
-            return $query->where(function($post) use ($search_term) {
+            return $query->where(function ($post) use ($search_term) {
                 $post->where('judul', 'like', $search_term)
                     ->orWhere('tag', 'like', $search_term);
             });
         }
 
-        return;
     }
 
     /**
@@ -267,8 +263,8 @@ class Post extends Model
     {
         return [
             'slug' => [
-                'source' => 'judul'
-            ]
+                'source' => 'judul',
+            ],
         ];
     }
 }

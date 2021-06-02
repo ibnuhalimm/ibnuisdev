@@ -2,26 +2,26 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Project extends Model
 {
     use SoftDeletes, HasFactory;
 
     /**
-     * Define `status` field
+     * Define `status` field.
      *
      * @var mixed
      */
-    CONST STATUS_DRAFT = 'draft';
-    CONST STATUS_PUBLISH = 'publish';
+    const STATUS_DRAFT = 'draft';
+    const STATUS_PUBLISH = 'publish';
 
     /**
-     * Mass fillable field
+     * Mass fillable field.
      *
      * @var array
      */
@@ -33,20 +33,20 @@ class Project extends Model
         'image',
         'description',
         'link',
-        'status'
+        'status',
     ];
 
     /**
-     * Append custom fields
+     * Append custom fields.
      *
      * @var array
      */
     protected $appends = [
-        'image_url'
+        'image_url',
     ];
 
     /**
-     * Accessor for `image_url`
+     * Accessor for `image_url`.
      *
      * @return string
      */
@@ -60,7 +60,7 @@ class Project extends Model
     }
 
     /**
-     * Query to filter/searching from table
+     * Query to filter/searching from table.
      *
      * @param \Illuminate\Database\Query\Builder $query
      * @param string|null $search
@@ -68,20 +68,19 @@ class Project extends Model
      */
     public function scopeSearchTable($query, $search = null)
     {
-        if (!empty($search)) {
+        if (! empty($search)) {
             $search = str_replace(',', '.', $search);
-            $search_term = '%' . $search . '%';
+            $search_term = '%'.$search.'%';
 
-            return $query->where(function($query) use ($search_term) {
+            return $query->where(function ($query) use ($search_term) {
                 return $query->where('name', 'like', $search_term);
             });
         }
 
-        return;
     }
 
     /**
-     * Query to filter by status
+     * Query to filter by status.
      *
      * @param \Illuminate\Database\Query\Builder $query
      * @param string|null $status
@@ -89,15 +88,14 @@ class Project extends Model
      */
     public function scopeStatus($query, $status = null)
     {
-        if (!empty($status)) {
+        if (! empty($status)) {
             return $query->where('status', $status);
         }
 
-        return;
     }
 
     /**
-     * Query to filter by published status
+     * Query to filter by published status.
      *
      * @param \Illuminate\Database\Query\Builder $query
      * @return \Illuminate\Database\Query\Builder
@@ -108,7 +106,7 @@ class Project extends Model
     }
 
     /**
-     * Query to order my month and year
+     * Query to order my month and year.
      *
      * @param \Illuminate\Database\Query\Builder $query
      * @return \Illuminate\Database\Query\Builder
@@ -119,7 +117,7 @@ class Project extends Model
     }
 
     /**
-     * Query to get data by lang
+     * Query to get data by lang.
      *
      * @param \Illuminate\Database\Query\Builder $query
      * @param string $lang

@@ -29,12 +29,12 @@ class AppServiceProvider extends ServiceProvider
     {
         /**
          * Fixing error
-         * SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long;
+         * SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long;.
          */
         Schema::defaultStringLength(191);
 
         /**
-         * Force URL/Link to https
+         * Force URL/Link to https.
          */
         if (env('APP_SECURE', false) === true) {
             URL::forceScheme('https');

@@ -27,7 +27,7 @@ class HomeController extends Controller
     {
         $data = [
             'total_post' => Post::count(),
-            'total_admin' => User::count()
+            'total_admin' => User::count(),
         ];
 
         return view('home', $data);

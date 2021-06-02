@@ -12,46 +12,46 @@ class Message extends Model
     use SoftDeletes, Notifiable;
 
     /**
-     * Mass fillable field
+     * Mass fillable field.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'message', 'is_replied'
+        'name', 'email', 'message', 'is_replied',
     ];
 
     /**
-     * Append some custom field
+     * Append some custom field.
      *
      * @var array
      */
     protected $appends = [
-        'str_replied', 'str_replied_color'
+        'str_replied', 'str_replied_color',
     ];
 
     /**
-     * Casts field
+     * Casts field.
      *
      * @var array
      */
     protected $casts = [
-        'is_replied' => 'boolean'
+        'is_replied' => 'boolean',
     ];
 
     /**
-     * Model event
+     * Model event.
      *
      * @return void
      */
     protected static function booted()
     {
-        static::created(function($message) {
+        static::created(function ($message) {
             $message->notify(new ContactMeNotification($message));
         });
     }
 
     /**
-     * ACcessor for `str_replied`
+     * ACcessor for `str_replied`.
      *
      * @return string
      */
@@ -65,7 +65,7 @@ class Message extends Model
     }
 
     /**
-     * ACcessor for `str_replied_color`
+     * ACcessor for `str_replied_color`.
      *
      * @return string
      */
@@ -79,7 +79,7 @@ class Message extends Model
     }
 
     /**
-     * Query to filter/searching from table
+     * Query to filter/searching from table.
      *
      * @param \Illuminate\Database\Query\Builder $query
      * @param string|null $search
@@ -87,16 +87,15 @@ class Message extends Model
      */
     public function scopeSearchTable($query, $search = null)
     {
-        if (!empty($search)) {
+        if (! empty($search)) {
             $search = str_replace(',', '.', $search);
-            $search_term = '%' . $search . '%';
+            $search_term = '%'.$search.'%';
 
-            return $query->where(function($query) use ($search_term) {
+            return $query->where(function ($query) use ($search_term) {
                 return $query->where('name', 'like', $search_term)
                             ->orWhere('email', 'like', $search_term);
             });
         }
 
-        return;
     }
 }

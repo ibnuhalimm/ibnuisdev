@@ -18,10 +18,8 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-
 Route::namespace('Api')
-->group(function() {
-
+->group(function () {
     Route::get('lang', 'LanguageController@index');
 
     Route::get('portfolios', 'PortfolioController@index');
@@ -31,5 +29,4 @@ Route::namespace('Api')
     Route::post('messages/cta', 'MessageController@storeFromCta');
 
     Route::post('posts/latest', 'PostController@getLatestPosts');
-
 });

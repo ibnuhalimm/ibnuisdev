@@ -7,21 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 class Section extends Model
 {
     /**
-     * Define `section` field
+     * Define `section` field.
      *
      * @var mixed
      */
-    CONST SECTION_TOP = 'top';
-    CONST SECTION_PORTFOLIO = 'portfolio';
-    CONST SECTION_SKILLS = 'skills';
-    CONST SECTION_CONTACT = 'contact';
+    const SECTION_TOP = 'top';
+    const SECTION_PORTFOLIO = 'portfolio';
+    const SECTION_SKILLS = 'skills';
+    const SECTION_CONTACT = 'contact';
 
     /**
-     * Mass fillable field
+     * Mass fillable field.
      *
      * @var array
      */
     protected $fillable = [
-        'section', 'description'
+        'section', 'description',
     ];
 }
