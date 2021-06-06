@@ -27,7 +27,7 @@
             </h1>
 
             @if ($posts->isEmpty())
-                <h1>
+                <h1 class="font-serif">
                     {{ __('global.not_found_post') }}
                 </h1>
             @else
@@ -42,10 +42,11 @@
 
     <section class="mt-8 py-10 bg-ib-four">
         <x-frontend-container>
-            <h2 class="font-bold text-base xl:text-2xl text-ib-one mb-6">
-                {{ __('global.another_interested_post') }}
-            </h2>
-
+            <x-section-title>
+                <h2 class="font-bold text-base xl:text-2xl text-ib-one font-serif">
+                    {{ __('global.another_interested_post') }}
+                </h2>
+            </x-section-title>
             <div id="latest-post-ui-content"></div>
         </x-frontend-container>
     </section>

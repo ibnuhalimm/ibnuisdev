@@ -23,7 +23,7 @@
     <section class="mb-8 py-10">
         <x-frontend-container>
             <h1 class="mb-3">
-                <span class="font-bold text-4xl block mb-1">
+                <span class="font-bold text-4xl block mb-1 font-serif">
                     Resume
                 </span>
                 <span class="block mt-3">
@@ -34,7 +34,7 @@
                 {{ __('section.resume.sub_title_two') }}
             </p>
             <div class="mt-14">
-                <h2 class="font-bold text-xl mb-2">
+                <h2 class="font-bold text-xl mb-2 font-serif">
                     {{ __('section.resume.technology') }}
                 </h2>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -84,7 +84,7 @@
     <section class="mb-8 py-10 bg-ib-four">
         <x-frontend-container>
             <h2 class="mb-3 text-center">
-                <span class="font-bold text-4xl block">
+                <span class="font-bold text-4xl block font-serif">
                     {{ __('section.resume.career_history') }}
                 </span>
                 <span class="block mt-2">
@@ -130,7 +130,7 @@
     <section class="py-10">
         <x-frontend-container>
             <h2 class="mb-3 text-center">
-                <span class="font-bold text-4xl block">
+                <span class="font-bold text-4xl block font-serif">
                     {{ __('section.resume.education_history') }}
                 </span>
                 <span class="block mt-2">

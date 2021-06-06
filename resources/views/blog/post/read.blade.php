@@ -23,31 +23,31 @@
     <section>
         <div class="mb-10 xl:w-2/3 xl:max-w-4xl xl:mx-auto xl:order-2">
             <x-post-read-container>
-                <h1 class="text-3xl font-bold text-ib-one">
+                <h1 class="text-4xl font-bold text-ib-one font-serif">
                     {{ $post->judul }}
                 </h1>
-                <h2 class="text-base font-bold text-gray-500 mt-3 mb-1">
+                <h2 class="text-base font-bold text-gray-500 mt-2 mb-1">
                     {!! $post->brief_text !!}
                 </h2>
 
-                <div class="mt-3 flex flex-row justify-between">
-                    <span class="mt-3 text-gray-600 text-sm">
+                <div class="mt-6 flex flex-row justify-between">
+                    <span class="text-gray-600 text-sm">
                         {{ strftime('%b %e, %Y', strtotime($post->created_at)) }}
                     </span>
                     <div class="flex flex-row items-center justify-end">
                         @foreach ($share_buttons as $share)
-                            <a href="{{ $share->url . $post->post_url }}" target="_blank" class="w-10 h-10 ml-1 xl:w-8 xl:h-8 inline-flex justify-center p-2 border border-solid border-gray-600 hover:border-ib-three rounded-full text-gray-600 hover:text-ib-three transition delay-100">
+                            <a href="{{ $share->url . $post->post_url }}" target="_blank" class="w-10 h-10 ml-1 xl:w-8 xl:h-8 inline-flex justify-center px-2 hover:border-ib-three rounded-full text-gray-600 hover:text-ib-three transition delay-100">
                                 <i class="flaticon-{{ $share->ikon }} text-sm"></i>
                             </a>
                         @endforeach
-                        <a href="javascript:;" id="__btnShareViaLink" data-url="{{ $post->post_url }}" class="w-10 h-10 ml-1 xl:w-8 xl:h-8 inline-flex justify-center p-2 border border-solid border-gray-600 hover:border-ib-three rounded-full text-gray-600 hover:text-ib-three transition delay-100">
+                        <a href="javascript:;" id="__btnShareViaLink" data-url="{{ $post->post_url }}" class="w-10 h-10 ml-1 xl:w-8 xl:h-8 inline-flex justify-center px-2 hover:border-ib-three rounded-full text-gray-600 hover:text-ib-three transition delay-100">
                             <i class="flaticon-link text-sm"></i>
                         </a>
                     </div>
                 </div>
             </x-post-read-container>
 
-            <div class="my-3 mb-5 lg:w-3/4 mx-auto">
+            <div class="mb-5 lg:w-3/4 mx-auto">
                 <div class="w-full">
                     <img src="{{ $post->gbr_url }}" alt="{{ $post->judul }}" class="w-full h-auto">
                 </div>
@@ -61,11 +61,11 @@
                 <div class="mt-6 py-4 flex flex-row items-center justify-center border border-solid border-r-0 border-b-0 border-l-0 border-ib-three">
                     <span class="text-ib-two text-sm mr-2">{{ __('global.share') }} : </span>
                     @foreach ($share_buttons as $share)
-                        <a href="{{ $share->url . $post->post_url }}" target="_blank" class="w-10 h-10 ml-1 xl:w-8 xl:h-8 inline-flex justify-center p-2 border border-solid border-gray-600 hover:border-ib-three rounded-full text-gray-600 hover:text-ib-three transition delay-100">
+                        <a href="{{ $share->url . $post->post_url }}" target="_blank" class="w-10 h-10 ml-1 xl:w-8 xl:h-8 inline-flex justify-center p-2 hover:border-ib-three rounded-full text-gray-600 hover:text-ib-three transition delay-100">
                             <i class="flaticon-{{ $share->ikon }} text-sm"></i>
                         </a>
                     @endforeach
-                    <a href="javascript:;" id="__btnShareViaLink" data-url="{{ $post->post_url }}" class="w-10 h-10 ml-1 xl:w-8 xl:h-8 inline-flex justify-center p-2 border border-solid border-gray-600 hover:border-ib-three rounded-full text-gray-600 hover:text-ib-three transition delay-100">
+                    <a href="javascript:;" id="__btnShareViaLink" data-url="{{ $post->post_url }}" class="w-10 h-10 ml-1 xl:w-8 xl:h-8 inline-flex justify-center p-2 hover:border-ib-three rounded-full text-gray-600 hover:text-ib-three transition delay-100">
                         <i class="flaticon-link text-sm"></i>
                     </a>
                 </div>
@@ -76,7 +76,7 @@
     <section class="mt-8 py-10 bg-ib-four">
         <x-frontend-container>
             <x-section-title>
-                <h2 class="font-bold text-base xl:text-2xl text-ib-one">
+                <h2 class="font-bold text-base xl:text-2xl text-ib-one font-serif">
                     {{ __('global.related_post') }}
                 </h2>
             </x-section-title>

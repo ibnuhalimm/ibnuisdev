@@ -24,7 +24,7 @@
         <x-frontend-container>
             <x-section-title>
                 <h1>
-                    <span class="font-bold text-4xl block mb-1">
+                    <span class="font-bold text-4xl block mb-1 font-serif">
                         {{ __('global.portfolio') }}
                     </span>
                     <span class="block mt-3">

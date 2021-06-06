@@ -21,11 +21,11 @@ function BlogPostCard(props) {
             />
 
             <div className="mt-4">
-                <h3 className="text-lg font-bold">{title}</h3>
-                <p className="text-xs text-gray-600 mt-1">
+                <h3 className="text-xl xl:text-2xl font-bold font-serif">{title}</h3>
+                <p className="text-xs text-gray-600 mt-2">
                     {monthList[jsDate.getMonth()] + ' ' + jsDate.getDay() + ', ' + jsDate.getFullYear()}
                 </p>
-                <p class="mt-3 text-gray-800">{previewBody}</p>
+                <p className="mt-3 text-gray-800">{previewBody}</p>
             </div>
         </a>
     );

@@ -46,7 +46,7 @@
                 <div class="lg:w-3/5">
                     <div>
                         <h1>
-                            <span class="font-bold text-4xl block mb-1 lg:mb-3">
+                            <span class="font-bold text-4xl block mb-1 lg:mb-3 font-serif">
                                 {{ __('section.home.i_am_ibnu') }}
                             </span>
                             <span class="leading-6">
@@ -74,7 +74,7 @@
                     <svg class="w-20 lg:w-16 xl:w-24 h-auto text-ib-three" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                     </svg>
-                    <h2 class="font-bold text-center text-ib-three mb-1 text-lg">
+                    <h2 class="font-bold text-center text-ib-three mb-1 text-lg font-serif">
                         {{ __('section.home.web_development') }}
                     </h2>
                     <p class="text-center">
@@ -85,7 +85,7 @@
                     <svg class="w-20 lg:w-16 xl:w-24 h-auto text-ib-three" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
-                    <h2 class="font-bold text-center text-ib-three mb-1 text-lg">
+                    <h2 class="font-bold text-center text-ib-three mb-1 text-lg font-serif">
                         {{ __('section.home.bug_fix') }}
                     </h2>
                     <p class="text-center">
@@ -96,7 +96,7 @@
                     <svg class="w-20 lg:w-16 xl:w-24 h-auto text-ib-three" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    <h2 class="font-bold text-center text-ib-three mb-1 text-lg">
+                    <h2 class="font-bold text-center text-ib-three mb-1 text-lg font-serif">
                         {{ __('section.home.linux_expert') }}
                     </h2>
                     <p class="text-center">
@@ -110,7 +110,7 @@
     <section class="mb-8 py-10">
         <x-frontend-container>
             <h2 class="mb-6 text-center">
-                <span class="font-bold text-2xl px-5 block mb-3">
+                <span class="font-bold text-2xl px-5 block mb-3 font-serif">
                     {{ __('section.home.cta_title') }}
                 </span>
                 <span>
@@ -125,7 +125,7 @@
         <x-frontend-container>
             <x-section-title>
                 <h2>
-                    <span class="font-bold text-4xl block mb-1">
+                    <span class="font-bold text-4xl block mb-1 font-serif">
                         {{ __('global.portfolio') }}
                     </span>
                     <span>
@@ -141,7 +141,7 @@
         <x-frontend-container>
             <x-section-title>
                 <h2>
-                    <span class="font-bold text-4xl block mb-1">
+                    <span class="font-bold text-4xl block mb-1 font-serif">
                         Blog
                     </span>
                     <span>

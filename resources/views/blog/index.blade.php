@@ -53,10 +53,10 @@
                         <div class="flex flex-col xl:flex-row justify-between">
                             <div class="xl:w-1/2 mr-4 xl:h-60 rounded-md bg-cover bg-no-repeat" style="background-image: url('{{ $main_posts[0]['gbr_url'] }}')"></div>
                             <div class="xl:w-1/2 ml-4">
-                                <p class="text-xl font-bold">
+                                <p class="text-4xl font-bold font-serif">
                                     {{ $main_posts[0]['judul'] }}
                                 </p>
-                                <p class="text-xs text-gray-600 mt-1">{{ strftime('%b %e, %Y', strtotime($main_posts[0]['created_at'])) }}</p>
+                                <p class="text-xs text-gray-600 mt-2">{{ strftime('%b %e, %Y', strtotime($main_posts[0]['created_at'])) }}</p>
                                 <p class="mt-3 text-gray-800">
                                     {!! $main_posts[0]['brief_text'] !!}
                                 </p>
@@ -86,7 +86,7 @@
     <section class="bg-ib-four mt-8 py-10">
         <x-frontend-container>
             <x-section-title>
-                <h2 class="font-bold text-base xl:text-2xl text-ib-one">
+                <h2 class="font-bold text-base xl:text-2xl text-ib-one font-serif">
                     {{ __('global.latest_post') }}
                 </h2>
             </x-section-title>

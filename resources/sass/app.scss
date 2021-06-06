@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&family=Inter&display=swap');
 
 // Tailwindcss
 /* purgecss start ignore */
@@ -11,7 +11,7 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Inter, sans-serif;
 }
 
 [x-cloak] {
@@ -36,6 +36,10 @@ body.nav-open {
     display: block;
 }
 /* purgecss end ignore */
+
+.font-serif {
+    font-family: 'Zilla Slab', Georgia, 'Times New Roman', Times, serif;
+}
 
 .article-content {
     line-height: 2rem;
@@ -173,6 +177,10 @@ body.nav-open {
 }
 .timeline-gray--content {
     @apply p-6 bg-ib-four rounded-lg shadow-md;
+}
+.timeline--content p,
+.timeline-gray--content p {
+    @apply text-gray-600;
 }
 
 @tailwind utilities;
