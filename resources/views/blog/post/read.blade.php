@@ -23,7 +23,7 @@
     <section>
         <div class="mb-10 xl:w-2/3 xl:max-w-4xl xl:mx-auto xl:order-2">
             <x-post-read-container>
-                <h1 class="text-4xl font-bold text-ib-one font-serif">
+                <h1 class="text-2xl xl:text-4xl font-bold text-ib-one font-serif">
                     {{ $post->judul }}
                 </h1>
                 <h2 class="text-base font-bold text-gray-500 mt-2 mb-1">
