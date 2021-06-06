@@ -29,3 +29,5 @@ mix.react('resources/js/app.js', 'public/js')
         extensions: ['html', 'js', 'php', 'vue', 'blade.php'],
         // whitelistPatternsChildren: [/^bg/, /^text/]
     });
+
+mix.disableNotifications();
