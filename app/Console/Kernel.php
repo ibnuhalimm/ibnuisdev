@@ -33,6 +33,8 @@ class Kernel extends ConsoleKernel
 
         $schedule->command('snapshot:create')->everyFourHours();
         $schedule->command('snapshot:cleanup --keep=3')->everyFourHours();
+
+        $schedule->command('telescope:prune --hours=48')->daily();
     }
 
     /**
