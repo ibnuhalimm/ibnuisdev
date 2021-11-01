@@ -26,6 +26,9 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
 
+	$schedule->command('optimize:clear')->hourly();
+	$schedule->command('optimize')->hourly();
+
         $schedule->command('sitemap:generate')->daily();
         $schedule->command('analytics:last-day-total-visitor')->everyFiveMinutes();
         $schedule->command('analytics:last-month-total-visitor')->everyFiveMinutes();
