@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Section;
-use DB;
+use DateTime;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class SectionsSeeder extends Seeder
 {
