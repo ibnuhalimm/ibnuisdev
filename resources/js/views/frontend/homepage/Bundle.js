@@ -22,7 +22,7 @@ if (document.getElementById('cta-ui-content')) {
 if (document.getElementById('portfolio-ui-content')) {
     ReactDOM.render(
         <Provider store={store}>
-            <Portfolio />,
+            <Portfolio />
         </Provider>,
         document.getElementById('portfolio-ui-content')
     );
