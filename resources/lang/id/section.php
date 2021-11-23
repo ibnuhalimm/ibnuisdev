@@ -21,7 +21,7 @@ return [
         'sub_title_two' => 'Kualitas aplikasi dan kepuasan pelanggan adalah prioritas utama.',
     ],
     'resume' => [
-        'page_title' => 'Selalu Belajar dan Tumbuh',
+        'page_title' => 'Terus Belajar, Terus Berkembang',
         'title' => 'Resume',
         'sub_title_one' => 'Saya berasal dari Rembang, Jawa Tengah, Indonesia.',
         'sub_title_two' => 'Sangat tertarik dengan hal-hal baru di dunia sains dan teknologi.',
