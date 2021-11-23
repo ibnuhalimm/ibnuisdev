@@ -98,28 +98,54 @@
             </h2>
             <div class="mt-8">
                 <div class="timeline">
+                    <div class="timeline--container right">
+                        <div class="timeline--content">
+                            <h2 class="font-bold">{{ __('month.may') }} 2021 - {{ __('global.present') }}</h2>
+                            <p>
+                                Remote Fullstack Web Developer
+                                <br>
+                                ACPlus Global, Inc
+                            </p>
+                        </div>
+                    </div>
                     <div class="timeline--container left">
                         <div class="timeline--content">
                             <h2 class="font-bold">{{ __('month.may') }} 2020 - {{ __('global.present') }}</h2>
-                            <p>Web Developer<br>Self-employee (Freelancer)</p>
+                            <p>
+                                Fullstack Web Developer
+                                <br>
+                                Self-employee (Freelancer)
+                            </p>
                         </div>
                     </div>
                     <div class="timeline--container right">
                         <div class="timeline--content">
                             <h2 class="font-bold">{{ __('month.nov') }} 2017 - {{ __('month.apr') }} 2020</h2>
-                            <p>Web Developer<br>PT Media Sarana Data (Gmedia)</p>
+                            <p>
+                                Fullstack Web Developer
+                                <br>
+                                PT Media Sarana Data (Gmedia)
+                            </p>
                         </div>
                     </div>
                     <div class="timeline--container left">
                         <div class="timeline--content">
                             <h2 class="font-bold">{{ __('month.may') }} 2016 - {{ __('month.nov') }} 2017</h2>
-                            <p>IT Helpdesk<br>PT Media Sarana Data (Gmedia)</p>
+                            <p>
+                                IT Helpdesk
+                                <br>
+                                PT Media Sarana Data (Gmedia)
+                            </p>
                         </div>
                     </div>
                     <div class="timeline--container right">
                         <div class="timeline--content">
                             <h2 class="font-bold">{{ __('month.oct') }} 2015 - {{ __('month.mar') }} 2016</h2>
-                            <p>{{ __('global.lab_technician') }}<br>SMK N 1 Rembang</p>
+                            <p>
+                                {{ __('global.lab_technician') }}
+                                <br>
+                                SMK N 1 Rembang
+                            </p>
                         </div>
                     </div>
                 </div>
