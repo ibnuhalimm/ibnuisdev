@@ -106,13 +106,13 @@
                     </div>
                     <div class="timeline--container right">
                         <div class="timeline--content">
-                            <h2 class="font-bold">{{ __('month.nov') }} 2018 - {{ __('month.apr') }} 2020</h2>
+                            <h2 class="font-bold">{{ __('month.nov') }} 2017 - {{ __('month.apr') }} 2020</h2>
                             <p>Web Developer<br>PT Media Sarana Data (Gmedia)</p>
                         </div>
                     </div>
                     <div class="timeline--container left">
                         <div class="timeline--content">
-                            <h2 class="font-bold">{{ __('month.may') }} 2016 - {{ __('month.nov') }} 2018</h2>
+                            <h2 class="font-bold">{{ __('month.may') }} 2016 - {{ __('month.nov') }} 2017</h2>
                             <p>IT Helpdesk<br>PT Media Sarana Data (Gmedia)</p>
                         </div>
                     </div>
