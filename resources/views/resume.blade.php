@@ -104,7 +104,7 @@
                             <p>
                                 Remote Fullstack Web Developer
                                 <br>
-                                ACPlus Global, Inc
+                                AC Plus Global, Ltd.
                             </p>
                         </div>
                     </div>
