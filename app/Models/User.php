@@ -21,6 +21,7 @@ class User extends Authenticatable
         'github',
         'twitter',
         'linkedin',
+        'upwork',
         'email',
         'password',
     ];

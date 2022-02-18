@@ -20,6 +20,7 @@ class Data extends Component
     public $github;
     public $twitter;
     public $linkedin;
+    public $upwork;
 
     /**
      * Form validation rules.
@@ -34,6 +35,7 @@ class Data extends Component
             'github' => ['required', 'url', 'max:100'],
             'twitter' => ['required', 'url', 'max:100'],
             'linkedin' => ['required', 'url', 'max:100'],
+            'upwork' => ['required', 'url', 'max:100'],
         ];
     }
 
@@ -52,6 +54,7 @@ class Data extends Component
         $this->github = $user->github;
         $this->twitter = $user->twitter;
         $this->linkedin = $user->linkedin;
+        $this->upwork = $user->upwork;
     }
 
     /**
@@ -81,6 +84,7 @@ class Data extends Component
                     'github' => $this->github,
                     'twitter' => $this->twitter,
                     'linkedin' => $this->linkedin,
+                    'upwork' => $this->upwork,
                 ]);
 
             session()->flash('status_color', 'green');
