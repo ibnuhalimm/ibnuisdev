@@ -98,9 +98,19 @@
             </h2>
             <div class="mt-8">
                 <div class="timeline">
+                    <div class="timeline--container left">
+                        <div class="timeline--content">
+                            <h2 class="font-bold">{{ __('month.may') }} 2020 - {{ __('global.present') }}</h2>
+                            <p>
+                                Fullstack Web Developer
+                                <br>
+                                Self-employee (Freelancer)
+                            </p>
+                        </div>
+                    </div>
                     <div class="timeline--container right">
                         <div class="timeline--content">
-                            <h2 class="font-bold">{{ __('month.may') }} 2021 - {{ __('global.present') }}</h2>
+                            <h2 class="font-bold">{{ __('month.may') }} 2021 - {{ __('month.apr') }} 2022</h2>
                             <p>
                                 Remote Fullstack Web Developer
                                 <br>
