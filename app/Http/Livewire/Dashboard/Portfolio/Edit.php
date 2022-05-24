@@ -70,8 +70,8 @@ class Edit extends Component
             'lang' => ['required', 'in:id,en'],
             'month' => ['required', 'between:01,12'],
             'year' => ['required', 'digits:4'],
-            'name' => ['required', 'min:10', 'max:50'],
-            'description' => ['required', 'min:100', 'max:300'],
+            'name' => ['required', 'min:10'],
+            'description' => ['required', 'min:100'],
             'link' => ['nullable', 'url'],
             'status' => ['required', 'in:'.Project::STATUS_DRAFT.','.Project::STATUS_PUBLISH],
         ];
