@@ -76,8 +76,18 @@
                                             </a>
                                         </li>
                                         <li>
+                                            <a href="{{ route('dashboard.old-page.index') }}" class="block px-4 py-1 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm @if (Request::is('home/old-page*')) font-bold @endif">
+                                                Redirect Old Pages
+                                            </a>
+                                        </li>
+                                        <li>
                                             <a href="{{ route('dashboard.share-button.index') }}" class="block px-4 py-1 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm @if (Request::is('home/share-button*')) font-bold @endif">
                                                 Share Button
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('dashboard.short-url.index') }}" class="block px-4 py-1 text-gray-400 hover:text-gray-100 focus:text-gray-100 xl:text-gray-500 text-sm @if (request()->routeIs('dashboard.short-url.index')) font-bold @endif">
+                                                Short URL
                                             </a>
                                         </li>
                                     </ul>
