@@ -23,7 +23,7 @@ return [
     'resume' => [
         'page_title' => 'Keep Learning, Keep Growing',
         'title' => 'Resume',
-        'sub_title_one' => 'I am from Rembang, Central Java, Indonesia.',
+        'sub_title_one' => '',
         'sub_title_two' => 'Very interested in new things of science and technology.',
         'technology' => 'Technology',
         'day_to_day' => 'Day-to-day comfort',
