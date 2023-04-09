@@ -100,6 +100,16 @@
                 <div class="timeline">
                     <div class="timeline--container left">
                         <div class="timeline--content">
+                            <h2 class="font-bold">{{ __('month.august') }} 2022 - {{ __('global.present') }}</h2>
+                            <p>
+                                Front-end Developer
+                                <br>
+                                Playtime Solutions
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline--container right">
+                        <div class="timeline--content">
                             <h2 class="font-bold">{{ __('month.may') }} 2020 - {{ __('global.present') }}</h2>
                             <p>
                                 Fullstack Web Developer
@@ -108,7 +118,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="timeline--container right">
+                    <div class="timeline--container left">
                         <div class="timeline--content">
                             <h2 class="font-bold">{{ __('month.may') }} 2021 - {{ __('month.apr') }} 2022</h2>
                             <p>
@@ -118,7 +128,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="timeline--container left">
+                    <div class="timeline--container right">
                         <div class="timeline--content">
                             <h2 class="font-bold">{{ __('month.may') }} 2020 - {{ __('global.present') }}</h2>
                             <p>
@@ -128,7 +138,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="timeline--container right">
+                    <div class="timeline--container left">
                         <div class="timeline--content">
                             <h2 class="font-bold">{{ __('month.nov') }} 2017 - {{ __('month.apr') }} 2020</h2>
                             <p>
@@ -138,7 +148,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="timeline--container left">
+                    <div class="timeline--container right">
                         <div class="timeline--content">
                             <h2 class="font-bold">{{ __('month.may') }} 2016 - {{ __('month.nov') }} 2017</h2>
                             <p>
@@ -148,7 +158,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="timeline--container right">
+                    <div class="timeline--container left">
                         <div class="timeline--content">
                             <h2 class="font-bold">{{ __('month.oct') }} 2015 - {{ __('month.mar') }} 2016</h2>
                             <p>
@@ -177,7 +187,7 @@
                 <div class="timeline-gray">
                     <div class="timeline-gray--container left">
                         <div class="timeline-gray--content">
-                            <h2 class="font-bold">2018 - {{ __('global.present') }}</h2>
+                            <h2 class="font-bold">2018 - 2023</h2>
                             <p>{{ __('global.computer_science_degree') }}<br>Universitas Stikubank Semarang</p>
                         </div>
                     </div>
