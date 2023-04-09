@@ -23,7 +23,7 @@ return [
     'resume' => [
         'page_title' => 'Terus Belajar, Terus Berkembang',
         'title' => 'Resume',
-        'sub_title_one' => 'Saya berasal dari Rembang, Jawa Tengah, Indonesia.',
+        'sub_title_one' => '',
         'sub_title_two' => 'Sangat tertarik dengan hal-hal baru di dunia sains dan teknologi.',
         'technology' => 'Teknologi',
         'day_to_day' => 'Keseharian',
