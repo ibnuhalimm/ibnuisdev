@@ -56,6 +56,7 @@
                             </a>
                         </div>
                     </div>
+                    {--
                     <div class="w-full lg:w-3/4">
                         <h2 class="font-bold text-xl mb-2 font-serif">
                             {{ __('global.send_message') }}
@@ -64,6 +65,7 @@
                             <div id="contact-ui-content"></div>
                         </div>
                     </div>
+                    --}
                 </div>
             </div>
         </x-frontend-container>
