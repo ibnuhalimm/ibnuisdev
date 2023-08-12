@@ -100,7 +100,7 @@
                 <div class="timeline">
                     <div class="timeline--container left">
                         <div class="timeline--content">
-                            <h2 class="font-bold">{{ __('month.august') }} 2022 - {{ __('global.present') }}</h2>
+                            <h2 class="font-bold">{{ __('month.aug') }} 2022 - {{ __('global.present') }}</h2>
                             <p>
                                 Front-end Developer
                                 <br>
