@@ -24,7 +24,7 @@
         <x-frontend-container>
             <div class="flex flex-col lg:flex-row lg:justify-between">
                 <div class="flex flex-col items-center justify-center mb-10 lg:mt-4 xl:mt-0 lg:order-last">
-                    <div class="w-36 h-36 lg:w-24 lg:h-24 xl:w-32 xl:h-32 rounded-full bg-gray-300 bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('img/me.jpeg') }}')"></div>
+                    <div class="w-36 h-36 lg:w-24 lg:h-24 xl:w-32 xl:h-32 rounded-full bg-gray-300 bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('img/me.webp?=') . rand() }}')"></div>
                     <div class="mt-6 lg:mt-4 flex flex-row items-center justify-center">
                         <a href="{{ $user->github ?? '#' }}" target="_blank" title="Github" rel="noopener noreferrer" class="w-10 h-10 lg:w-8 lg:h-8 flex items-center justify-center bg-white mx-1 border border-solid border-ib-one hover:border-ib-three hover:text-ib-three transition-all duration-500 rounded-full">
                             <svg class="w-6 lg:w-5 h-auto" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
